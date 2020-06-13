@@ -1,0 +1,711 @@
+\documentclass[linearalgebraII]{subfiles}
+
+\begin{document}
+
+    \chap{Polynomials}
+
+    \section{Algebras} 
+    
+    \begin{definition}{Linear Algebra}{over a Field}
+        We say $\alg$ is an \emph{linear algebra} over a field $\F$ if $\alg$ is a vector space over $\F$ equipped with a bilinear product $\alg\times\alg\to\alg$ that has the following properties. Let $\alpha, \beta, \gamma\in \alg$ and $c\in \F$. 
+
+        \begin{enumerate}
+            \item Multiplication is associative.
+                \begin{equation*}
+                    \alpha(\beta\gamma) = (\alpha\beta)\gamma.
+                \end{equation*}
+            \item Multiplication is distributive with respect to addition.
+                \begin{equation*}
+                    \alpha(\beta+\gamma) = \alpha\beta + \alpha\gamma \ \ \ \ (\beta+\gamma)\alpha = \beta\alpha + \gamma\alpha.
+                \end{equation*}
+            \item Multiplication is compatible with respect to scalar multiplication.
+                \begin{equation*}
+                    c(\alpha\beta) = (c\alpha)\beta = \alpha(c\beta).
+                \end{equation*}
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}{Unity}{of an Algebra}
+        An element $\alpha\in\alg$ such that
+        \begin{equation*}
+            \forall\beta\in\alg \left[ \alpha\beta = \beta\alpha = \beta \right]  
+        \end{equation*}
+        is called the \emph{unity} of $\alg$. If such element exists, then it is unique, and we say $\alg$ is \emph{unital}.
+    \end{definition}
+
+    \begin{remark}
+        The rest of this section will be devoted to the construction of the polynomial algebra. Recall that the set of all functions from $\N\cup \left\lbrace 0 \right\rbrace$ to $\F$ is a vector space, which we denote by $\F^\infty$. Then, any $f\in\F^\infty$ can be represented as an infinite sequence
+        \begin{equation*}
+            f = \left( f_0, f_1, \ldots \right) 
+        \end{equation*}
+        where $f_n = f(n)$ for each $n\in\N\cup \left\lbrace 0 \right\rbrace$.
+    \end{remark}
+
+    \begin{prop}{Space of Sequences}
+        Let $\F^\infty$ be the space of all sequences in $\F$. That is, an element $f\in \F^\infty$ can be represented as
+        \begin{equation*}
+            f = \left( f_0, f_1, \ldots \right) \in \F^\infty, 
+        \end{equation*}
+        where $f: \N\cup \left\lbrace 0 \right\rbrace \to \F$ satisfy that $f_k = f(k)$ for any $k\in \N$. Define addition and scalar multiplication to be componentwise. Further define multiplication $\F^\infty\times\F^\infty\to\F^\infty$ to be such that
+        \begin{equation*}
+            \left( fg \right)_n = \sum^n_{i=0} f_ig_{n-i}.
+        \end{equation*}
+        Then $\F^\infty$ is an infinite-dimensional, unital, and commutative algebra over $\F$.
+    \end{prop}
+
+    \begin{proof}
+        To verify that $\F^\infty$ is infinite-dimensional, observe that
+        \begin{equation*}
+            \left\lbrace e_k: k\in\N \right\rbrace \subseteq \F^\infty
+        \end{equation*}
+        is linearly independent. We verify other necessary properties componentwise. To verify distributavity, let $f = \left( f_0, f_1, \ldots \right), g = \left( g_0, g_1, \ldots \right), h = \left( h_0, h_1, \ldots \right)\in \F^\infty$. Then,
+        \begin{equation*}
+                \left( f(g+h) \right)_n = \sum^n_{i=0} f_i(g+h)_{n-i} = \sum^n_{i=0} f_i(g_{n-i} + h_{n-i}) = \sum^n_{i=0} f_ig_{n-i} + \sum^n_{i=0} f_ih_{n-i} = (fg)_n + (fh)_n. 
+        \end{equation*}
+        Similar proof holds for compatibility. To verify commutavity,
+        \begin{equation*}
+            (fg)_n = \sum^n_{i=0} f_ig_{n-i} = \sum^n_{i=0} g_if_{n-i} = (gf)_n.
+        \end{equation*}
+        We claim that
+        \begin{equation*}
+            1_{\F^\infty} = \left( 1, 0, \ldots \right) 
+        \end{equation*}
+        is the unity of $\F^\infty$. To verify this, observe that
+        \begin{equation*}
+            \left( 1_{\F^\infty}f \right)_n = \sum^n_{i=0} \left( 1_{\F^\infty} \right)_if_{n-i} = \sum^n_{i=0} \delta_{0i}f_{n-i} = f_n.
+        \end{equation*}
+        To verify the associativity, observe that
+        \begin{flalign*}
+            && \left[ (fg)h \right]_n & = \sum^n_{i=0} (fg)_ih_{n-i} = \sum^n_{i=0} \left( \sum^i_{j=0} f_jg_{i-j} \right)h_{n-i} = \sum^n_{i=0}\sum^i_{j=0} f_jg_{i-j}h_{n-i} && \\ 
+                                   && & = \sum^n_{j=0}\sum^n_{i=j} f_jg_{i-j}h_{n-i} = \sum^n_{j=0} f_j\left( \sum^n_{i=j} g_{i-j}h_{n-k} \right) && \\
+                                   && & = \sum^n_{j=0} f_j \left( \sum^{n-j}_{l=0} g_lh_{n-j-l} \right) = \sum^n_{j=0} f_j(gh)_{n-j} = \left[ f(gh) \right]_n,  && 
+        \end{flalign*} 
+        which is the desired result.
+    \end{proof}
+
+    \begin{remark}
+        The vector
+        \begin{equation*}
+            x = \left( 0, 1, 0, \ldots \right)
+        \end{equation*}
+        plays a distinguished role in what follows, and we shall consistently denote it by $x$. The product of $x$ with itself $n$ times,
+        \begin{equation*}
+            x^n := \underbrace{x\cdot x\cdot\cdots\cdot x}_{n\text{ multiplicands}} = \underbrace{\left( 0, 0, \ldots, 0, 1, 0, \ldots \right)}_{n+1\text{th entry is }1}, 
+        \end{equation*}
+        shall be denoted by $x^n$. Notice that $x^0 = 1$ is the unity. 
+    \end{remark}
+
+    \section{Polynomial Space}
+
+    \begin{definition}{Polynomial Space}{}
+        We call the subspace of $\F^\infty$ spanned by $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ the \emph{polynomial space} and denote which by $\F[x]$. Notice that $f\in \F^\infty$ is an element of $\F[x]$ if there exists $a_0, a_1, \ldots, a_n\in \F$ with $a_n\neq 0$ such that
+        \begin{equation*}
+            f = a_0 1+ a_1x+ a_2x^2 + \cdots + a_nx^n,
+        \end{equation*}
+        for some $n\in \N$.
+    \end{definition}
+
+    \begin{remark}
+        \begin{enumerate}
+            \item $\F[x]\subsetneq \F^\infty$.
+            \item $\F[x]$ is infinite-dimensional and the spanning set $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ is linearly independent. That is, $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ is a basis for $\F[x]$.
+        \end{enumerate}
+    \end{remark}
+
+    \begin{definition}{Degree}{of a Polynomial}
+        Let $f\in \F$ be nonzero. Write
+        \begin{equation*}
+            f = a_0 1 + a_1x + a_2x^2 + \cdots.
+        \end{equation*}
+        If $n\in \N$ is the largest element such that $a_n\neq 0$, we say $n$ is the \emph{degree} of $f$ and denote as $\deg(f) = n$.
+    \end{definition}
+
+    \begin{remark}
+        We do not assign a degree to $0\in \F[x]$.
+    \end{remark}
+
+    \begin{definition}{Coefficient, Leading Coefficient}{of a Polynomial}
+        Let
+        \begin{equation*}
+            f = a_0 1+ a_1x + a_2x^2 + \cdots + a_nx^n\in \F[x].
+        \end{equation*}
+        Then we say $a_0, a_1, \ldots, a_n\in \F$ are \emph{coefficients} of $f$ and, in particular, $a_n$ with $n=\deg(f)$ is called the \emph{leading coefficient} of $f$.
+    \end{definition}
+
+    \begin{definition}{Scalar, Monic}{Polynomial}
+        We say $f\in \F[x]$ is \emph{scalar} if $f=0$ or $\deg(f) = 0$. Moreover, we say $f\in\F[x]$ is \emph{monic} if the leading coefficient of $f$ is 1. 
+    \end{definition}
+
+    \begin{prop}{Properties of Polynomials}
+        Let $f, g\in \F[x]$ be nonzero. Then the following holds.
+        \begin{enumerate}
+            \item $fg\neq 0$. In fact, $\deg(fg) = \deg(f)+\deg(g)$.
+
+            \item $fg$ is monic if $f$ and $g$ are monic.
+
+            \item $fg$ is scalar if $f$ and $g$ are scalar.
+
+            \item $f+g = 0$ or $\deg(f+g)\leq \max \left( \deg(f), \deg(g) \right)$.
+             
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        To verify (1), let $n=\deg(f), m=\deg(g)$, and $k\in \N\cup \left\lbrace 0 \right\rbrace$. Observe that
+        \begin{equation*}
+            (fg)_{n+m+k} = \sum^{n+m+k}_{i=0} f_ig_{n+m+k-i},
+        \end{equation*}
+        where $f_i=0$ if $i>n$ and $g_{n+m+k-i}=0$ if $n+m+k-i>m\iff i<n+k$. That is, when $k\geq 1$, we have
+        \begin{equation*}
+            (fg)_{n+m+k} = 0.
+        \end{equation*}
+        When $k=0$,
+        \begin{equation*}
+            (fg)_{n+m+k} = (fg)_{n+m} = \sum^{n+m}_{i=0} f_ig_{n+m-i} = f_ng_m \neq 0.
+        \end{equation*}
+        Thus $\deg(fg) = n+m = \deg(f) + \deg(g)$. It follows that (2) and (3) are true as well. To verify (4), suppose that $\deg(f) = n \geq m = \deg(g)$ without loss of generality. Then for each $k\in \N$,
+        \begin{equation*}
+            (f+g)_{n+k} = f_{n+k} + g_{n+k} = 0 + 0 = 0. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        (1) of Proposition 1.2 shows that $\F[x]$ is an integral domain. That is, $\F[x]$ has a cancellative property.
+    \end{remark}
+
+    \begin{cor}{$\F[x]$ Is Commutative and Unital}
+        $\F[x]$ is a commutative, unital algebra.
+    \end{cor}	
+
+    \begin{proof}
+        Observe that the associativity of $\F[x]$ is guaraneteed by the associativity of $\F^\infty$. Let $f,g\in \F$ with $\deg(f) = n$ and $\deg(g) = m$. Then $fg\in \F[x]$, where
+        \begin{equation*}
+            f = \sum^n_{i=0} a_ix^i \ \ \ \ g = \sum^m_{j=0} b_jx^j 
+        \end{equation*}
+        for some $a_0, a_1, \ldots, a_n, b_0, b_1, \ldots, b_m\in \F$. So
+        \begin{equation*}
+            fg = \sum^n_{i=0}\sum^m_{j=0} a_ib_jx^{i+j} = \sum^{n+m}_{p=0} \left( \sum^p_{l=0} a_lb_{p-l}x^p \right) = gf. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        Let $\alg$ be a unital algebra over $\F$. Let $f\in \F[x]$. We evaluate $f$ on an element $\alpha\in \alg$ as follows. Denote
+        \begin{equation*}
+            \alpha^n = \underbrace{\alpha\cdot\alpha\cdot\cdots\cdot\alpha}_{n\text{ multiplicands}}
+        \end{equation*}
+        for each $n\in \N$, and $\alpha^0 = 1$. Moreover, write
+        \begin{equation*}
+            f = \sum^n_{i=0} c_ix^i\in \F[x],
+        \end{equation*}
+        where $c_0, c_1, \ldots, c_n\in\F$. We define $f(\alpha)\in\alg$ to be
+        \begin{equation*}
+            f(\alpha) := \sum^n_{i=0} c_i\alpha^i = c_0 1 + c_1\alpha + c_2\alpha^2 + \cdots + c_n\alpha^n.
+        \end{equation*}
+    \end{remark}
+
+    \begin{prop}{Properties of Evaluating Polynomials on $\alpha\in\alg$}
+        Let $f,g\in \F[x]$ and let $\alg$ be a unital linear algebra over $\F$. Let $\alpha\in \alg$ and $c\in\F$. Then the following hold.
+        \begin{enumerate}
+            \item $(cf+g)(\alpha) = cf(\alpha)+g(\alpha)$.
+            \item $(fg)(\alpha) = f(\alpha)g(\alpha)$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        (1) is a direct result of componentwise addition. To verify (2), write
+        \begin{equation*}
+            f = \sum^n_{i=0} f_ix^i \ \ \ \ g = \sum^m_{j=0} g_jx^j
+        \end{equation*}
+        where $n = \dim(f)$ and $m = \dim(g)$. Then,
+        \begin{equation*}
+            (fg)(\alpha) = \sum_{i,j} f_ig_j\alpha^{i+j} = \left( \sum^n_{i=0} f_i\alpha^i \right)\left( \sum^m_{j=0} g_j\alpha^j \right) = f(\alpha)g(\alpha). \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \section{Lagrange Interpolation}
+
+    \begin{theorem}{Lagrange Interpolation}
+        Let $F_n[x]$ be the vector space spanned by $\left\lbrace 1, x, x^2, \ldots, x^n \right\rbrace$ over a field $\F$ with at least $n+1$ elements. Let $t_0, t_1, \ldots, t_n\in \F$ be distinct. Define linear $L_j: \F_n[x]\to \F$ by
+        \begin{equation*}
+            L_j(f) = f(t_j)
+        \end{equation*}
+        for each $j\in \left\lbrace 0, 1, \ldots, n \right\rbrace$. Then $\left\lbrace L_0, L_1, \ldots, L_n \right\rbrace$ is a basis for $\F_n[x]^*$.
+    \end{theorem}
+
+    \begin{proof}
+        We proceed to show that $\left\lbrace L_0, L_1, \ldots, L_n \right\rbrace$ is the dual of a basis for $\F_n[x]$. For each $j\in \left\lbrace 0, 1, \ldots, n \right\rbrace$, define $p_i\in F_n[x]$ by
+        \begin{equation*}
+            p_i = \prod^n_{j=0,j\neq i} \frac{x-t_j}{t_i-t_j}.
+        \end{equation*}
+        This is well-defined since each $t_j$ is distinct. Then,
+        \begin{equation*}
+            p_i(t_j) = \delta_{ij}
+        \end{equation*}
+        by construction. Let $f = \sum^n_{i=0} c_ip_i\in \spn \left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$. Then,
+        \begin{equation*}
+            f(t_j) = \left( \sum^n_{i=0} c_ip_i \right)(t_j) = \sum^n_{i=0} c_ip_i(t_j) = \sum^n_{i=0} c_i\delta_{ij} = c_j.
+        \end{equation*}
+        Since $0\in \F_n[x]$ has the property
+        \begin{equation*}
+            \forall c\in \F \left[ 0(t) = 0 \right], 
+        \end{equation*}
+        it follows that $\left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$ is linearly independent. Moreover, since
+        \begin{equation*}
+            \left| \left\lbrace p_0, p_1, \ldots, p_n \right\rbrace  \right| = n+1 = \dim \left( \F_n[x] \right), 
+        \end{equation*}
+        $\left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$ is a basis for $\F_n[x]$. Notice that
+        \begin{equation*}
+            L_j(p_i) = p_i(t_j) = \delta_{ij}
+        \end{equation*}
+        by construction. That is, $\left\lbrace L_0, L_1, \ldots, L_n \right\rbrace$ is the dual of $\left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$, as desired.
+    \end{proof}
+
+    \begin{cor}{Characterization of a Polynomial}
+        Let $c_0, c_1, \ldots, c_n\in \F$. Then there exists a unique polynomial $f\in \F_n[x]$ such that
+        \begin{equation*}
+            f(t_i) = c_i.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{cor}{Lagrange's Interpolation Formula}
+        Let $\F$ be a field with at least $n+1$ distinct elements and suppose we have constructed $P_0, P_1, \ldots, P_n$ as described in Theorem 1.4. Then for each $f\in \F[x]$,
+        \begin{equation*}
+            f = \sum^{n}_{i=0} f(t_i)P_i.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{definition}{Polynomial Function}{}
+        Let $f\in \F[x]$ be a polynomial. We define a \emph{polynomial function} $\tilde{f}:\F\to\F$ by the mapping $t\mapsto f(t)$, where $f(t)$ is the evaluation of the polynomial $f$ at $t$.
+    \end{definition}
+
+    \begin{remark}
+        By definition, every polynomial function is constructed in this way. However, it may happen that $\tilde{f}=\tilde{g}$ for two distinct polynomials $f,g\in \F$. Fortunately, this only occurs in the case where $\F$ is a finite field.
+    \end{remark}
+
+    \begin{remark}
+        In order to describe in a precise way the relation between polynomials and polynomial functions, we proceed to define the product of two polynomial functions. Let $f,g\in\F[x]$ then we define the product of $\tilde{f}$ and $\tilde{g}$ by the mapping $t\mapsto \tilde{f}(t)\tilde{g}(t)$. Equvalently,
+        \begin{equation*}
+            \left( \tilde{f}\tilde{g} \right)(t) = \tilde{f}(t)\tilde{g}(t).
+        \end{equation*}
+        From Proposition 1.3, $(fg)(t) = f(t)g(t)$, and thus
+        \begin{equation*}
+            \widetilde{(fg)}(t) = \tilde{f}(t)\tilde{g}(t).
+        \end{equation*}
+        It follows that $\tilde{f}\tilde{g} = \widetilde{fg}$.
+    \end{remark}
+
+    \section{Polynomial Ideals}
+
+    \clearpage
+    \begin{lemma}{}
+        Let $f,d\in \F[x]$ be nonzero such that $\deg(f)\geq\deg(d)$. Then there exists $g\in \F[x]$ such that $f-dg = 0$ or $\deg(f-dg) < \deg(f)$.
+    \end{lemma}
+
+    \begin{proof}
+        Write
+        \begin{equation*}
+            f = \sum^n_{i=0} a_ix^i \ \ \ \ d = \sum^m_{j=0} b_jx^j
+        \end{equation*}
+        where $\deg(f) = n \geq m = \deg(d)$. So $a_n, b_m\neq 0$, which means
+        \begin{equation*}
+            g = \frac{a_n}{b_m}x^{n-m}
+        \end{equation*}
+        is a well-defined expression. Moreover,
+        \begin{equation*}
+            f - dg = \sum^n_{i=0} a_ix^i - \frac{a_n}{b_m}x^{n-m} \sum^m_{j=0} b_jx^j = a_nx^n - \left(\frac{a_n}{b_m}x^{n-m} b_mx^m\right) + \cdots = 0 + \cdots
+        \end{equation*}
+        by construction, so $\deg(f-dg) < \deg(f)$. 
+    \end{proof}
+
+    \begin{theorem}{Division Algorithm}
+        Let $f,d\in \F[x]$ with $d\neq 0$. Then there exist unique polynomials $q,r\in \F[x]$ such that
+        \begin{equation*}
+            f = dq+r
+        \end{equation*}
+        where $r = 0$ or $\deg(r)<\deg(d)$.
+    \end{theorem}
+
+    \begin{proof}
+        When $\deg(f) < \deg(d)$, we have $q=0, r=f$ and their uniqueness is trivial. So suppose $\deg(f)\geq\deg(d)$. We verify the existence of $q, r\in \F[x]$ with $\deg(r)<\deg(d)$ or $r=0$ such that
+        \begin{equation*}
+            f = dq+r
+        \end{equation*}
+        first. By Lemma 1.5, there exists $q_1\in \F[x]$ such that
+        \begin{equation*}
+            \deg(f) > \deg(f-dq_1).
+        \end{equation*}
+        If $\deg(d) > \deg(f-dq_1)$ or $f-dq_1 = 0$, we are done. Otherwise, there exists another $q_2\in \F[x]$ such that
+        \begin{equation*}
+            \deg(f) > \deg(f-dq_1) > \deg(f-dq_1-dq_1).
+        \end{equation*}
+        Since this is a strict inequality, by continuing this process, we get polynomials $q_1, q_2, \ldots, q_n\in \F[x]$ such that
+        \begin{equation*}
+            \deg(d) > \deg(f-dq_1-dq_2-\cdots-dq_n)
+        \end{equation*}
+        or, if $\deg(d) = 0$,
+        \begin{equation*}
+            f - dq_1 - dq_2 - \cdots - dq_n = 0.
+        \end{equation*}
+        That is, $q = q_1+q_2+\cdots+q_n$ and $r = f-dq_1-dq_2-\cdots-dq_n$ satisfy the listed conditions. To verify uniqueness, suppose that there exist another $q'\in \F[x]$ such that
+        \begin{equation*}
+            f = dq'+r'
+        \end{equation*}
+        where $r' = 0$ or $\deg(r')<\deg(d)$. For the sake of contradiction, suppose that $q\neq q'$. Then $r-r' = (f-dq)-(f-dq') = dq'-dq \neq 0$ and we have
+        \begin{equation*}
+            \deg(r-r') = \deg(d)\deg(q'-q).
+        \end{equation*}
+        But clearly
+        \begin{equation*}
+            \deg(r-r') \leq \max(\deg(r), \deg(r')) < \deg(d),
+        \end{equation*}
+        so we have a contradiction. Thus $q'=q$ and, consequently, $r=r'$, which verifies the uniqueness.
+    \end{proof}
+
+    \begin{definition}{Divisor, Quotient, Remainder}{}
+        Let $f, d, q, r\in F[x]$ satisfy conditions listed in Theorem 1.6. Then we call $d\neq 0$ the \emph{divisor}, $q$ the \emph{quotient}, and $r$ the \emph{remainder}.
+    \end{definition}
+
+    \begin{definition}{Divides}{}
+        Let $f\in \F[x]$. We say $d\in \F[x]$ \emph{divides} $f$, denoted by $d\mid f$, if there exists $q\in\F[x]$ such that
+        \begin{equation*}
+            f = dq.
+        \end{equation*}
+        By Theorem 1.6, the existence of such $q$ guarantees its uniqueness. 
+    \end{definition}
+
+    \begin{cor}{Remainder Theorem}
+        Let $f\in \F[x]$ and $c\in \F$. Then
+        \begin{equation*}
+            (x-c)\mid f \iff f(c) = 0.
+        \end{equation*}
+    \end{cor}
+
+    \begin{proof}
+        By division algorithm,
+        \begin{equation*}
+            f = (x-c)q + r
+        \end{equation*}
+        for some unique $q,r\in \F[x]$. Notice that $r$ is a scalar, since if $r\neq 0$, then $\deg(r)< \deg(x-c) = 1$. That is,
+        \begin{equation*}
+            f(c) = (c-c)q(c)+r = r,
+        \end{equation*}
+        which means $f(c) = 0 \iff r = 0$. But $r=0$ exactly means $(x-c)\mid f$, as desired.
+    \end{proof}
+
+    \begin{definition}{Root}{of a Polynomial}
+        Let $f\in \F[x]$. We say $c\in \F$ is a \emph{root} of $f$ if $f(c) = 0$.
+    \end{definition}
+
+    \begin{cor}{Nonzero $f$ Has at Most $\deg(f)$ Roots}
+        Let $f\in F[x]$ be nonzero and let $n=\deg(f)$.Then $f$ has at most $n$ roots.
+    \end{cor}
+
+    \begin{proof}
+        We proceed by induction. When $\deg(f) = 0$, $f = a_0 1$ so $f\neq 0$ for all $c\in \F$. When $\deg(f) = 1, f = a_0 1+a_1x$. That is
+        \begin{equation*}
+            f(c) = 0 \iff c = -\frac{a_1}{a_0}.
+        \end{equation*}
+        Now suppose that every $f\in \F[x]$ with $\deg(f) = k$ has at most $k$ roots. Let $g\in \F[x]$ be such that $\deg(g) = k+1$. If $g$ does not have any root, then we are done. So suppose $g$ has a root $c\in \F$. Then by the remainder theorem,
+        \begin{equation*}
+            g = (x-c)q
+        \end{equation*}
+        for some unique $q\in \F[x]$ with $\deg(q) = k$. But by induction hypothesis, $q$ has at most $k$ roots, so $g$ has at most $k+1$ roots, as desired.
+    \end{proof}
+
+    \begin{remark}
+        If $\deg(f)>1$, there needs not exist any roots.
+    \end{remark}
+
+    \begin{definition}{Algebraically Closed}{Field}
+        Let $\F$ be a field. We say $\F$ is \emph{algebraically closed} if
+        \begin{equation*}
+            \forall f\in \left\lbrace p\in\F[x]: \deg(p)\geq 1 \right\rbrace \left[ \exists c\in \F, f(c) = 0 \right]. 
+        \end{equation*}
+        In other words, every polynomial of nonzero degree always have a root when it is defined over an algebraically closed field.
+    \end{definition}
+
+    \begin{definition}{Formal Differentiation}{}
+        The linear operator $D: \F[x]\to \F[x]$ defined as
+        \begin{equation*}
+            D \left[ \sum^n_{i=0} a_ix^i \right] := \sum^n_{i=1} ia_ix^{i-1} 
+        \end{equation*}
+        is called the \emph{formal differentiation}.
+    \end{definition}
+
+    \begin{theorem}{Binomial Theorem}
+        Let $\alg$ be an commutative algebra over $\F$ with characteristic zero and let $\alpha, \beta \in \alg$. Then
+        \begin{equation*}
+            (\alpha + \beta)^n = \sum^n_{r=0} \binom{n}{r} \alpha^{n-r}\beta^r.
+        \end{equation*}
+    \end{theorem}
+
+    \begin{proof}
+        We proceed inductively. Observe that
+        \begin{equation*}
+            (\alpha+\beta)^1 = \alpha + \beta = \binom{1}{0} \alpha^1\beta^0 + \binom{1}{1}\alpha^0\beta^1 = \sum^1_{k=0} \binom{1}{k} \alpha^{1-k}\beta^k.
+        \end{equation*}
+        Now suppose
+        \begin{equation*}
+            (\alpha+\beta)^k = \sum^k_{r=0} \binom{k}{r} \alpha^{k-r}\beta^r.
+        \end{equation*}
+        Then,
+        \begin{equation*}
+            (\alpha+\beta)^{k+1} = (\alpha+\beta) \sum^k_{r=0} \binom{k}{r} \alpha^{k-r}\beta^r = \sum^k_{r=0} \binom{k}{r} \alpha^{k+1-r}\beta^r + \sum^k_{r=0} \binom{k}{r} \alpha^{k-r}\beta^{r+1}.
+        \end{equation*}
+        Since $\F$ has zero characteristic, the coefficient of the term $\alpha^{k+1-r}\beta^r$ is given by the expression
+        \begin{equation*}
+            \binom{k}{r} + \binom{k}{r-1} = \binom{k+1}{r},
+        \end{equation*}
+        which exactly means
+        \begin{equation*}
+            \sum^k_{r=0} \binom{k}{r} \alpha^{k+1-r}\beta^r + \sum^k_{r=0} \binom{k}{r} \alpha^{k-r}\beta^{r+1} = \sum^{k+1}_{r=0} \binom{k+1}{r} \alpha^{k+1-r}\beta^r.
+        \end{equation*}
+        So by the principle of mathematical induction,
+        \begin{equation*}
+            (\alpha+\beta)^n = \sum^n_{r=0} \binom{n}{r} \alpha^{n-r}\beta^r,
+        \end{equation*}
+        as desired.
+    \end{proof}
+
+    \begin{theorem}{Taylor's Formula}
+        Let $\F$ be a field with characteristic zero and let $f\in \F[x]$ be a nonzero polynomial with $\deg(f)\leq n$ for some $n\in \N$. Then,
+        \begin{equation*}
+            f = \sum^{n}_{k=0} \frac{D^kf}{k!} (c)(x-c)^k
+        \end{equation*}
+        for any $c\in \F$.
+    \end{theorem}
+
+    \begin{proof}
+        We first verify the result for the standard basis vectors $1, x, x^2, \ldots\in\F[x]$. Let $f = x^m$ for some $m\leq n$. Then,
+        \begin{flalign*}
+            && \sum^{n}_{k=0} \frac{D^kf}{k!}(c)(x-c)^k & = \sum^{n}_{k=n+1} \frac{D^kf}{k!}(c)(x-c)^k + \sum^{m}_{k=0} \frac{D^kf}{k!} (c)(x-c)^k && \\
+            && & = \sum^{m}_{k=0} \frac{\frac{m!}{(m-k)!}c^{m-k}}{k!} (x-c)^k = \sum^{m}_{k=0} \binom{m}{k} c^{m-k} (x-c)^k = (c+(x-c))^m = x^m. && 
+        \end{flalign*} 
+        That is, for any $f = \sum^{m}_{p=0} a_px^p$ for some $m\leq n$, 
+        \begin{flalign*}
+            && \sum^{n}_{k=0} \frac{D^kf}{k!}(c)(x-c)^k & = \sum^{n}_{k=0} \frac{D^k \left( \sum^{m}_{p=0} a_px^p \right) }{k!} (c)(x-c)^k = \sum^{n}_{k=0} \sum^{m}_{p=0}  \frac{a_p D^k (x^p)}{k!} (c)(x-c)^k && \\
+            && & = \sum^{m}_{p=0} a_p \sum^{n}_{k=0} \frac{D^k(x^p)}{k!} (c)(x-c)^k = \sum^{m}_{p=0} a_px^p = f, && 
+        \end{flalign*} 
+        as desired.
+    \end{proof}
+
+    \begin{definition}{Multiplicity}{of a Root}
+        Let $f\in \F[x]$ and $c\in \F$. We say $m\in \N$ is the \emph{multiplicity} of $c$ provided that $(x-c)^m\mid f$ and $(x-c)^{m+1}\nmid f$.
+    \end{definition}
+
+    \begin{prop}{Characterization of Multiplicity}
+        Let $\F$ be a field with characteristic zero and $f\in \F[x]$. Then $c\in \F$ is a root with multiplicity $r$ if and only if
+        \begin{equation*}
+            \left[ \forall i\in \left\lbrace 0, 1, \ldots, r-1 \right\rbrace \left[ D^if(c) = 0 \right]  \right] \land \left[ D^rf(c) \neq 0 \right].  
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose $c\in \F$ is a root of multiplicity $r$. Write $f = (x-c)^rq$ where $\deg(f) = n$, $\deg(q) = n-r$, and $q(c)\neq 0$. By Taylor's formula,
+        \begin{equation*}
+            f = (x-c)^rq = (x-c)^r \sum^{n-r}_{k=0} \frac{D^kq}{k!} (c)(x-c)^k = \sum^{n-r}_{k=0} \frac{D^kq}{k!}(c)(x-c)^{k+r}. 
+        \end{equation*}
+        Since $\left\lbrace 1, (x-c), (x-c)^2, \ldots \right\rbrace$ is a basis for $\F[x]$, the above expression is the unique representation of $f$ as a linear combination of $1, (x-c), (x-c)^2, \ldots, (x-c)^n$. So
+        \begin{equation*}
+            \sum^{n}_{k=0} \frac{D^kf}{k!}(c)(x-c)^k = \sum^{n-r}_{k=0} \frac{D^kq}{k!} (c)(x-c)^{k+r} = \sum^{n}_{k=r}  \frac{D^{k-r}q}{(k-r)!} (c)(x-c)^k. 
+        \end{equation*}
+        It follows that $D^rf(c) = r! q(c) \neq 0$ and $\frac{D^kf}{k!}(c) = 0$ for each $k\in \left\lbrace 0, 1, \ldots, r-1 \right\rbrace$. For the reverse direction, suppose that $D^k f(c) = 0$ for each $K\in \left\lbrace 0, 1, \ldots, r-1 \right\rbrace$ and $D^rf(c) \neq 0$. Then
+        \begin{equation*}
+            f = \sum^{n}_{k=0} \frac{D^kf}{k!}(c)(x-c)^k = \sum^{n}_{k=r}  \frac{D^kf}{k!}(c)(x-c)^k = (x-c)^r \sum^{n}_{k=r} \frac{D^kf}{k!} (c)(x-c)^{k-r}
+        \end{equation*}
+        so $(x-c)^r\mid f$ but $(x-c)^{r+1}\nmid f$, as desired.
+    \end{proof}
+
+    \begin{definition}{Ideal}{of a Polynomial Space}
+        We say a subspace $M\subseteq \F[x]$ is an \emph{ideal} of $\F[x]$ if
+        \begin{equation*}
+            f\in M \land g\in \F[x] \implies fg\in M.
+        \end{equation*}
+    \end{definition}
+
+    \begin{theorem}{Ideal Test}
+        Let $M\subseteq \F[x]$. Then $M$ is an ideal of $\F[x]$ if the following holds.
+        \begin{enumerate}
+            \item For each $f, g\in M$, $f-g\in M$.
+            \item For each $f\in M$ and $h\in \F[x]$, $fh = hf \in M$.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{definition}{Generator}{of an Ideal}
+        Let $M\subseteq \F[x]$ be an ideal. We say $\left\lbrace d_1, d_2, \ldots, d_n \right\rbrace \subseteq \F[x]$ is a generator of $M$ if
+        \begin{equation*}
+            M = \left\lbrace \sum^{n}_{i=1} d_if : f\in \F[x] \right\rbrace.
+        \end{equation*}
+        For such case, we say $M$ is the ideal \emph{generated} by $\left\lbrace d_1, d_2, \ldots, d_n \right\rbrace$ and we often denote $M$ by $\left< d_1, d_2, \ldots, d_n \right>$.
+    \end{definition}
+
+    \begin{definition}{Principal Ideal}{}
+        Let $d\in \F[x]$. We say $\left<d\right>$ is the \emph{principal ideal} generated by $d$ of $\F[x]$.
+    \end{definition}
+
+    \begin{definition}{Trivial Ideal}{}
+        For any polynomial space $\F[x]$, $\left\lbrace 0 \right\rbrace$ is an ideal, which we call the \emph{trivial ideal}.
+    \end{definition}
+
+    \begin{prop}{Every Nontrivial Ideal Is Principal and Generated by a Monic Polynomial}
+        Let $M\subseteq \F[x]$ be a nontrivial ideal. Then $M = \left<d\right>$ for some monic $d\in \F[x]$.
+    \end{prop}
+
+    \begin{proof}
+        Let $d\in M$ be a monic polynomial with minimum degree. We claim that $\left< d \right> = M$. Clearly $\left< d \right> \subseteq M$. Let $f\in M$ be nonzero. By division algorithm,
+        \begin{equation*}
+            f = dq+r
+        \end{equation*}
+        for some $q,r\in \F[x]$ with $\deg(d) > \deg(r)$ or $r = 0$. By the closure under subtraction of vector spaces, $r = f-dq\in M$. So if $r\leq 0$, we violate the minimality of $d$, since $\deg(d) > \deg(r)$. That is, $f = dq$ for some $q\in \F[x]$, so $f\in \left< d \right>$, as desired. 
+    \end{proof}
+
+    \begin{cor}{Uniqueness of the Monic Generator}
+        Let $p_1, p_2, \ldots, p_k\in \F[x]$ be nonzero. Then there exists a unique monic $d\in \F[x]$ that satisfies
+        \begin{enumerate}
+            \item $d\in \left< p_1, p_2, \ldots, p_k \right>$.  
+            \item $d\mid p_1\land d\mid p_2\land \cdots \land d\mid p_k$.
+            \item $\forall f\in \F[x] \left[ f\mid p_1\land f\mid p_2\land \cdots f\mid p_k \implies f\mid d \right]$. 
+        \end{enumerate}
+    \end{cor}	
+
+    \begin{proof}
+        We claim that the monic generator $d\in \F[x]$ of $\left< p_1, p_2, \ldots, p_k \right>$ uniquely satisfies (a), (b), and (c). Notice that $\left< d \right> = \left< p_1, p_2, \ldots, p_k \right>$ means $d\in \left< p_1, p_2, \ldots, p_k \right>$ and (b) is a direct result of Proposition 1.10. To verify that $d$ satisfies (c), observe that $d = \sum^{k}_{i=1} p_if_i$ for some $f_1, f_2, \ldots, f_k\in \F[x]$ and, for each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace
+        $, $p_i = fq_i$ for some $q_i\in \F[x]$. So,
+        \begin{equation*}
+            d = \sum^{k}_{i=1} p_if_i = \sum^{k}_{i=1}  fq_if_i = f \sum^{k}_{i=1} q_if_i
+        \end{equation*}
+        is divisible by $f$. To verify the uniqueness, suppose $d'\in\F[x]$ satisfies (a), (b), and (c). Then by (b), $d'\mid p_1\land d'\mid p_2\land\cdots\land d'\mid p_k$, so $d'\mid d$ by (c). But by symmetry $d\mid d'$ as well. Since both $d$ and $d'$ are monic, it follows that $d=d'$, as required.
+    \end{proof}
+
+    \begin{definition}{Greatest Common Divisor}{of Polynomials}
+        Let $p_1, p_2, \ldots, p_k\in \F[x]$ be nonzero. We call the unique monic generator $d\in \F[x]$ of $\left< p_1, p_2, \ldots, p_k \right>$ the \emph{greatest common divisor} of $p_1, p_2, \ldots, p_k$, denoted as $d = \gcd \left( p_1, p_2, \ldots, p_k \right)$. 
+    \end{definition}
+
+    \begin{definition}{Coprime}{Polynomials}
+        We say nonzero $p_1, p_2, \ldots, p_k$ are \emph{coprime} if $\gcd(p_1, p_2, \ldots, p_k) = 1$.
+    \end{definition}
+
+    \begin{prop}{Alternative Definitions of Coprime Polynomials}
+        Let $p_1, p_2, \ldots, p_k\in \F[x]$. Then the following are equivalent.
+        \begin{enumerate}
+            \item $p_1, p_2, \ldots, p_k$ are coprime.
+            \item There exists $q_1, q_2, \ldots, q_k\in F[x]$ such that $\sum^k_{i=1} p_iq_i = 1$.
+            \item $\left< p_1, p_2, \ldots, p_k \right> = \F[x]$. 
+        \end{enumerate}
+    \end{prop}
+
+    \begin{theorem}{Bezout's Lemma for Polynomials}
+        Let $M\subseteq \F[x]$ be an ideal. For each $p,q\in M$, $\gcd(p,q) = d$ if and only if $d\mid p$, $d\mid q$, and $\exists f,g\in \F[x]$ such that $d = fp+gq$.
+    \end{theorem}
+
+    \begin{definition}{Reducible, Irreducible, Prime}{Polynomials}
+        Let $f\in \F[x]$. We say $f$ is \emph{reducible} if there exist $g,h\in \F[x]$ such that $\deg(g), \deg(h)\geq 1$ and $f=gh$. Otherwise, we say $f$ is \emph{irreducible}. An irreducible $f$ is \emph{prime} if $\deg(f)\geq 1$.
+    \end{definition}
+
+    \begin{remark}
+        Every polynomial with degree 1 is prime.
+    \end{remark}
+
+    \begin{prop}{Alternative Definition of Prime}
+        Let $f,g,h\in \F[x]$ and $f$ be prime. Then $f\mid gh \implies f\mid g \lor f\mid h$.
+    \end{prop}
+
+    \begin{proof}
+        Without loss of generality, suppose $f$ is monic. Let $d=\gcd(g,h)$. Then $d$ is a monic polynomial that divides $f$, so $d=f$ or $d=1$. Since if $d=f$, then $f\mid g$ and $f\mid h$, suppose $d=1$. It follows that $f$ is relatively prime with $g$ or $h$, so without loss of generality, suppose $f$ is relatively prime with $g$. Then there are $f', g'\in \F[x]$ such that $ff'+gg'=1$. By multiplying both sides by $h$< we get
+        \begin{equation*}
+            h = ff'h + gg'h = f(f'h) + (gh)g'.
+        \end{equation*}
+        Clearly $f\mid f(f'h)$ and $f\mid gh$. That is, $f\mid h$, as required.
+    \end{proof}
+
+    \begin{cor}{If $f$ Is Prime, Then $f\mid \prod^n_{i=1} p_i \implies f\mid p_k$ for Some $k\in \left\lbrace 1, 2, \ldots, n \right\rbrace $}
+        Let $f, p_1, p_2, \ldots, p_n\in \F[x]$ be such that $f$ is prime and $f\mid \prod^n_{i=1} p_i$. Then there is $k\in \left\lbrace 1, 2, \ldots, n \right\rbrace$ such that $f\mid p_k$.
+    \end{cor}	
+
+    \begin{proof}
+        We proceed inductively. When $n=1$ the result holds trivially. Suppose that the result holds for $n=m$ and $f\mid \prod^n_{i=1} p_i$. Then by Proposition 1.13,
+        \begin{equation*}
+            f\left|\prod^n_{i=1} p_i \lor f\mid p_{m+1}\right.
+        \end{equation*}
+        If $f\mid p_{m+1}$, then $k=m+1$ and we are done. If $f\mid\prod^n_{i=1} p_i$, then the result follows by the induction hypothesis.
+    \end{proof}
+
+    \begin{theorem}{Primary Decomposition of a Monic Polynomial}
+        Let $f\in \F[x]$ be nonscalar and monic. Then there exist unique monic, prime $p_1, p_2, \ldots, p_n\in \F[x]$ such that $f = \prod^n_{i=1} p_i$.
+    \end{theorem}
+
+    \begin{proof}
+        We proceed inductively. When $\deg(f)=1$, $f$ itself is prime. For some $k\in \N$, suppose the result for all $f\in \F[x]$ with $\deg(f)\leq k$. Let $g\in \F[x]$ be monic with $\deg(g) = k+1$. If $g$ is prime, then we are done. So suppose that $g$ is not prime. Then there are monic $p, q\in \F[x]$ with $\deg(p),\deg(q)\geq 1$ such that $g=pq$. Clearly $\deg(p), \deg(q)\leq m$, so there exist unique primes $p_1, p_2, \ldots, p_r, p_{r+1}, \ldots, p_n$ such that $p =
+        \prod^{r}_{i=1} p_i$ and $q = \prod^{n}_{i=r+1} p_i$. That is, $g = \prod^{n}_{i=1} p_i$. To verify uniqueness, suppose that there exist nomic, prime $q_1, q_2, \ldots, q_n\in \F[x]$ such that $g = \prod^{h}_{j=1} q_j$. Then for each $i\in \left\lbrace 1, 2, \ldots, n \right\rbrace$,
+        \begin{equation*}
+            p_i \left| \prod^{h}_{j=1} q_j\right. 
+        \end{equation*}
+        so $p_i\mid q_j$ for some $j\in \left\lbrace 1, 2, \ldots, h \right\rbrace$. But both $p_i$ and $q_j$ are prime and monic, which means $p_i = q_j$. By symmetry, for each $j\in \left\lbrace 1, 2, \ldots, r \right\rbrace$, $q_j = p_i$ for some $i\in \left\lbrace 1, 2, \ldots, n \right\rbrace$. It follows that $n = r$, and by some renumbering,
+        \begin{equation*}
+            \forall i\in \left\lbrace 1, 2, \ldots, n \right\rbrace \left[ p_i = q_j \right],
+        \end{equation*}
+        as desired.
+    \end{proof}
+
+    \begin{prop}{$f$ Is a Product of Distinct Primes If and Only If $f$ and $Df$ Are Coprime}
+        Let $f\in \F[x]$. Then $f$ is a product of distinct primes if and only if $\gcd(f, Df) = 1$.
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that there exist distinct primes $p_1, p_2, \ldots, p_n\in \F[x]$ such that $f = \prod^{n}_{i=1} p_i$. By product rule,
+        \begin{equation*}
+            Df = \sum^{n}_{j=1} D(p_j) \prod^{n}_{i=1, i\neq j} p_i. 
+        \end{equation*}
+        Clearly $p_j\nmid Dp_j$ since $\deg(p_j) > \deg(Dp_j)$. That is, for each $j\in \left\lbrace 1, 2, \ldots, n \right\rbrace$, $p_j\nmid Df$, or, $f$ and $Df$ are coprime. For the reverse direction, suppose that there exists a prime $p_j\in \F[x]$ such that $f = p_j^k \prod^{n}_{i=1, i\neq j} p_i$ for some $k\geq 2$. By product rule and chain rule,
+        \begin{equation*}
+            Df = \left( \sum^{n}_{s=1, s\neq j} D(p_s) \prod^{n}_{i=1, i\neq s} p_i  \right) + kp_j^{k-1} D(p_j) \prod^{n}_{i=1, i\neq j} p_i, 
+        \end{equation*}
+        where $p_j$ divides both summands. So $\gcd(f, Df)\neq 1$, as desired.
+    \end{proof}
+
+    \begin{definition}{Algebraically Closed}{Field}
+        Let $\F$ be a field. We say $\F$ is \emph{algebraically closed} if every nonscalar $f\in \F[x]$ has a root $c\in \F$.
+    \end{definition}
+
+    \begin{prop}{Alternative Definitions of Algebraic Closure}
+        Let $\F$ be a field. Then the following are equivalent.
+        \begin{enumerate}
+            \item $\F$ is algebraically closed.
+            \item For each $f\in \F[x]$, $f = c(x-c_1)^{p_1} (x-c_2)^{p_2} \cdots (x-c_n)^{p_n}$ for some $c_1, c_2, \ldots, c_n\in \F$ and $p_1, p_2, \ldots, p_n\in \N$.
+            \item Every prime polynomial of $\F[x]$ has degree 1.
+        \end{enumerate}
+    \end{prop}
+
+    \ruleline{Exercises}
+
+    \begin{exercise}
+        Verify the existence of the formal differentiation $D: \F[x]\to \F[x]$.
+    \end{exercise}
+
+    \begin{exercise}
+        Verify the formula
+        \begin{equation*}
+            \sum_{i,j} f_ig_jx^{i+j} = \left( \sum^n_{i=0}f_ix^i \right) \left( \sum^m_{i=1} g_jx^j \right).
+        \end{equation*}
+    \end{exercise}
+
+    \begin{exercise}
+        For any $c\in \F$, verify $\left\lbrace 1, (x-c), (x-c)^2, \ldots, (x-c)^k \right\rbrace$ is a basis for $\F_n[x]$.
+    \end{exercise}
+
+    \begin{exercise}
+        Let $V$ be a $n$-dimensional vector space over $\F$, $\beta$ be an ordered basis for $V$, and $T:V\to V$ be a linear operator. Verify that
+        \begin{equation*}
+            \left[ f(T) \right]_\beta = f \left( \left[ T \right]_\beta \right).         
+        \end{equation*}
+    \end{exercise}
+
+    \begin{exercise}
+        Let $d_1, d_2, \ldots, d_n\in \F[x]$. Verify that $\left<d_1, d_2, \ldots, d_n\right>$ is an ideal of $\F[x]$
+    \end{exercise}
+
+    \begin{exercise}
+        Verify that $f = x^2 + 1\in \R[x]$ is prime.
+    \end{exercise}
+
+\end{document}

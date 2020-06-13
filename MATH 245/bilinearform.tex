@@ -1,4 +1,4 @@
-\documentclass[math_245.tex]{subfiles}
+\documentclass[linearalgebraII]{subfiles}
 
 \begin{document}
 
@@ -6,10 +6,9 @@
 
     \section{Bilinear Forms}
 
-    \ruleline{Notation}
-    \noindent Unless otherwise specified, let $V$ denote a finite-dimensional vector space.
-
-    \ruleline{Notation}
+    \begin{remark}
+        For this and nex section, unless otherwise specified, let $V$ denote a finite-dimensional vector space.
+    \end{remark}
 
     \begin{recall}{Linear Functional}{on a Vector Space}
         Let $V$ be a vector space. We say a function $L:V\to\F$ is a \emph{linear functional} on $V$ if $L$ is linear.
@@ -122,12 +121,13 @@
         \end{equation*}
     \end{definition}
     
+    \clearpage
     \begin{theorem}{$[]_\beta:\lin\left( V,V,\F \right)\to M_{n\times n}(\F)$ Is an Isomorphism}
         Let $\beta$ be an ordered basis for $V$. Then $[]_\beta:\lin\left( V,V,\F \right)\to M_{n\times n}(\F)$ is an isormorphism.
     \end{theorem}
 
     \begin{proof}
-        The bijectivity of $[]_\beta$ is supplied by Remark 4.6. To verify the linearity, let $f,g\in\lin\left( V,V,\F \right)$ and $c\in\F$. Then
+        The bijectivity of $[]_\beta$ is supplied by Remark 4.5. To verify the linearity, let $f,g\in\lin\left( V,V,\F \right)$ and $c\in\F$. Then
         \begin{equation*}
             \left( \left[ cf+g \right] _\beta \right) _{ij} = \left( cf+g \right) \left( v_i,v_j \right) = cf\left( v_i,v_j \right) + g\left( v_i,v_j \right) = \left( c\left[ f \right]_\beta  \right)_{ij} + \left( \left[ g \right]_\beta  \right) _{ij}.
         \end{equation*}
@@ -307,7 +307,7 @@
         \begin{equation*}
             L_f,R_f:V\to V^*
         \end{equation*}
-        as Remark 4.10. Then $\rank\left( L_f \right) = \rank\left( R_f \right)$.
+        as Remark 4.9. Then $\rank\left( L_f \right) = \rank\left( R_f \right)$.
     \end{prop}
 
     \begin{proof}
@@ -343,7 +343,7 @@
     \end{proof}
 
     \begin{definition}{Rank}{of a Bilinear Form}
-        Let $f$ be a bilinear form on $V$ and let $L_f, R_f: V\to V^*$ be linear transformations provided by Remark 4.10. Then we define the rank of $f$ by
+        Let $f$ be a bilinear form on $V$ and let $L_f, R_f: V\to V^*$ be linear transformations provided by Remark 4.9. Then we define the rank of $f$ by
         \begin{equation*}
             \rank\left( f \right) = \rank\left( L_f \right) = \rank\left( R_f \right),
         \end{equation*}
@@ -554,22 +554,444 @@
         \begin{equation*}
             \left( \left[ f_\perp \right] _{\beta_\perp} \right) _{ij} = f\left( v_i,v_j \right) = 0
         \end{equation*}
-        whenenver $i\neq j$. Thus, if we define $\beta = \left\lbrace v_1,v_2,\ldots,v_k,v_{k+1} \right\rbrace$, then $\beta$ is the ordered basis for $V$ by direct sum decomposition $V = W\oplus W_\perp$, and we have diagonal $\left[ f \right] _\beta$, since
-        \begin{equation*}
-            \left( \left[ f_\perp \right] _{\beta_\perp} \right) _{ij} = f\left( v_i,v_j \right) = 0
-        \end{equation*}
-        for all $i,j\in \left\lbrace 1,2,\ldots,k \right\rbrace$ whenever $i\neq j$, and 
-        \begin{equation*}
-            \left( \left[ f_\perp \right] _{\beta_\perp} \right) _{(k+1)i} = \left( \left[ f_\perp \right] _{\beta_\perp} \right) _{i(k+1)} = f\left( v_{k+1}, v_i \right) = f\left( v_i, v_{k+1} \right) = 0
-        \end{equation*}
-        for all $i\in \left\lbrace 1,2,\ldots,k \right\rbrace$ by construction.
+        whenenver $i\neq j$. Thus, if we define $\beta = \left\lbrace v_1,v_2,\ldots,v_k,v_{k+1} \right\rbrace$, then $\beta$ is the ordered basis for $V$ by direct sum decomposition $V = W\oplus W_\perp$, and we have diagonal $\left[ f \right] _\beta$ by construction.
     \end{proof}
 
+    \begin{cor}{}
+        Let $\F\subseteq\CC$ be a subfield and let $A\in M_{n\times n}(\F)$. Then there exists invertible $P\in M_{n\times n}(\F)$ such that $P^TAP$ is diagonal.
+    \end{cor}	
 
+    \begin{theorem}{Diagonalization of a Symmetric Bilinear Form on a Real Vector Space where Nonzero Entries Are $\pm 1$}
+        Let $V$ be a finite-dimensional vector spcae over $\R$ and let $f$ be a symmetric bilinear form on $V$ with $\rank\left( f \right) = r\in\N$. Then there exists an ordered basis $\beta=\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace $ for $V$ such that $\left[ f \right] _\beta$ is diagonal and
+        \begin{equation*}
+            f\left( v_i,v_i \right) =
+            \begin{cases} 
+                \pm 1 & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                0 & \text{ otherwise }
+            \end{cases}.
+        \end{equation*}
+        Furthermore, the number of $v_i\in\beta$ such that $f\left( v_i,v_i \right) = 1$ is independent of the choice of an ordered basis $\beta$ for $V$. 
+    \end{theorem}
 
+    \begin{proof}
+        By Theorem 4.3, there exists an ordered basis $\alpha$ for $V$ such that $\left[ f \right] _\alpha$ is diagonal. Since
+        \begin{equation*}
+            \rank\left( f \right) = \rank\left[ f \right] _\alpha,
+        \end{equation*}
+        it follows that exactly $r$ entries on the main diagonal of $\left[ f \right] _\alpha$ are nonzero. That is, we may rearrange the elements of $\alpha$ to obtain an ordered basis $\gamma$ for $V$ such that $\left[ f \right] _\gamma$ is diagonal and
+        \begin{equation*}
+            \left( \left[ f \right] _\gamma \right)_{ii} =
+            \begin{cases} 
+                1 & \text{ if } i\in \left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                0 & \text{ otherwise }
+            \end{cases}.
+        \end{equation*}
+        Write $\gamma=\left\lbrace u_1,u_2,\ldots,u_n \right\rbrace$ for convenience. For all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, define
+        \begin{equation*}
+            v_i =
+            \begin{cases} 
+                \frac{1}{\sqrt{\left|f\left( u_i,u_i \right)\right| }}u_i & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                u_i & \text{ otherwise }
+            \end{cases}
+        \end{equation*}
+        and let $\beta=\left\lbrace v_1,v_2,\ldots,v_r \right\rbrace$. Then
+        \begin{equation*}
+            f\left( v_i,v_i \right) = \left( \left[ f \right] _\beta \right) _{ii} = 
+            \begin{cases} 
+                \pm 1 & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                0 & \text{ otherwise }
+            \end{cases}
+        \end{equation*}
+        as desired. To prove the uniqueness of the number of $v_i\in\beta$ such that
+        \begin{equation*}
+            f\left( v_i,v_i \right) = \left( \left[ f \right] _\beta \right) _{ii} = 1,
+        \end{equation*}
+        let $p\in\N$ be the number of such $v_i\in\beta$. Also, let
+        \begin{equation*}
+            V_+ = \spn\left\lbrace v_i\in\beta: f\left( v_i,v_i \right) =1 \right\rbrace , V_-=\spn\left\lbrace v_i\in\beta: f\left( v_i,v_i \right) = -1 \right\rbrace \subseteq V 
+        \end{equation*}
+        be subspaces. Now $p=\dim\left( V \right)$, so what we shold verify is the uniqueness of the dimension of $V_+$. But first, notice that $f$ is positive definite on $V_+$. That is,
+        \begin{equation*}
+            \forall v\in V_+\setminus \left\lbrace 0 \right\rbrace \left[ f\left( v,v \right) > 0 \right].
+        \end{equation*}
+        Similarly, $f$ is negative definite on $V_-$. Moreover, if we define
+        \begin{equation*}
+            V_\perp = \spn\left\lbrace v_i\in\beta: f\left( v_i,v_i \right) =0 \right\rbrace \subseteq V,
+        \end{equation*}
+        then $V_\perp$ is also the subspace of $V$, and clearly we have
+        \begin{equation*}
+            \forall v\in V_\perp \left[ f\left( v,v \right) = 0 \right].
+        \end{equation*}
+        Since the union of bases of $V_+, V_-, V_\perp$ is $\beta$, and it is clear from the above constructions that $V_+, V_-, V_\perp$ are independent, we have
+        \begin{equation*}
+            V = V_+\oplus V_-\oplus V_\perp.
+        \end{equation*}
+        Now the claim is that, if $W\subseteq V$ is any subspace on which $f$ is positive definite, then $W, V_-, V_\perp$ are independent. To verify this claim, suppose $w\in W, v_-\in V_-, v_\perp\in V_\perp$ satisfy
+        \begin{equation*}
+            w + v_- + v_\perp = 0.
+        \end{equation*}
+        Then,
+        \begin{equation*}
+            \begin{cases} 
+                f\left( w, w+v_-,v_\perp \right) & = f\left( w,w \right) + f\left( w,v_- \right) + f\left( w,v_\perp \right) = 0 \\
+                f\left( v_-, w+v_-,v_\perp \right) & = f\left( v_-,w \right) + f\left( v_-,v_- \right) + f\left( v_-,v_\perp \right) = 0 
+            \end{cases}.
+        \end{equation*}
+        Since $v_\perp\in V_\perp$, $f\left( w,v_\perp \right) = f\left( v_-,v_\perp \right) = 0$,
+        \begin{equation*}
+            \begin{cases} 
+                f\left( w,w \right) + f\left( w,v_- \right) & = 0 \\
+                f\left( v_-,w \right) + f\left( v_-,v_- \right) & = 0 \\
+            \end{cases},
+        \end{equation*}
+        and $f$ is symmetric, it follows that $f\left( w,w \right) = f\left( v_-,v_- \right)$. Moreover, since $f$ is positive definite on $W$ and negative definite on $V_-$, we obtain
+        \begin{equation*}
+            f\left( w,w \right) = f\left( v_-,v_- \right) = 0.
+        \end{equation*}
+        So it must be the case that
+        \begin{equation*}
+            w = v_- = v_\perp = 0,
+        \end{equation*}
+        verifying the claim. Then by the direct sum decomposition
+        \begin{equation*}
+            V = V_+\oplus v_-\oplus V_\perp,
+        \end{equation*}
+        we have $\dim\left( V_+ \right) \geq \dim\left( W \right)$. On the other hand, if $\zeta$ is another ordered basis which satisfy the property
+        \begin{equation*}
+            \left( \left[ f \right] _\zeta \right) _{ii} =
+            \begin{cases} 
+                \pm 1 & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                0 & \text{ otherwise }
+            \end{cases},
+        \end{equation*}
+        then we get another direct sum decomposition
+        \begin{equation*}
+            V = W_+\oplus W_-\oplus W_\perp,
+        \end{equation*}
+        where $f$ is positive definite on $W_+$, negative definite on $W_-$, and zero on $W_\perp$. So we have
+        \begin{equation*}
+            \dim\left( V_+ \right) \geq \dim\left( W_+ \right) .
+        \end{equation*}
+        But by symmetry,
+        \begin{equation*}
+            \dim\left( W_+ \right) \geq \dim\left( V_+ \right) ,
+        \end{equation*}
+        which means $\dim\left( W_+ \right) = \dim\left( V_+ \right)$. Thus
+        \begin{equation*}
+            p = \dim\left( W_+ \right) = \dim\left( V_+ \right) 
+        \end{equation*}
+        is unique, as desired.
+    \end{proof}
 
+    \begin{remark}
+        Let $f$ be a symmetric bilinear form on a finite dimensional vector space $V$ over $\R$ and let $\beta$ and 
+        \begin{equation*}
+            V = V_+\oplus V_-\oplus V_\perp
+        \end{equation*}
+        be as described in Theorem 4.4. Now let $V_0\subseteq V$ be subspace such that
+        \begin{equation*}
+            \forall v_0\in V_0\forall v\in V \left[ f\left( v_0,v \right) = 0 \right] .
+        \end{equation*}
+        We claim that $V_\perp = V_0$. To verify this, first observe that Theorem 4.4 provides $V_\perp\subseteq V_0$ by construction. On the other hand, it is clear that
+        which means
+        \begin{equation*}
+            \dim\left( V_\perp \right) = \dim\left( V \right) - \left( \dim\left( V_+ \right) + \dim\left( V_- \right)  \right) = \dim\left( V \right) -\rank\left( f \right) ,
+        \end{equation*}
+        so it must be the case that every $v_0\in V$ such that $f\left( v_0,v \right) = 0$ for all $v\in V$ are such that $v_0\in V_\perp$. Thus $V_0\subseteq V_\perp$, verifying our claim. Thus we also see that $V_\perp$ is unique. On the other hand, the subspaces $V_+$ and $V_-$ are not unique. However, their dimension is unique as Theorem 4.4 shows, allowing us to make the following definition.
+    \end{remark}
+
+    \begin{definition}{Signature}{of a Symmetric Bilinear Form on a Finite-Dimensional Real Vector Space}
+        Let $f$ be a symmetric bilinear form on $V$, a finite-dimensional vector space over $\R$, and let $V_+, V_-, V_\perp\subseteq V$ be subspaces such that
+        \begin{equation*}
+            V = V_+\oplus V_-\oplus V_\perp
+        \end{equation*}
+        and as described in Theorem 4.4. Then we define the \emph{signature} of $f$ by
+        \begin{equation*}
+            \dim\left( V_+ \right) - \dim\left( V_- \right).
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        Let $V$ is a finite-dimensional vector space over $\R$ and let $V_1,V_2,V_3\subseteq V$ be such that
+        \begin{equation*}
+            V = \bigoplus^{3}_{i=1} V_i.
+        \end{equation*}
+        Let $f_1,f_2$ be an inner product on $V_1,V_2$, respectively. Then, we may define a symmetric bilinear form $f$ on $V$ as follows. If $v,u\in V$, then write
+        \begin{equation*}
+            v = \sum^{3}_{i=1} v_i, u = \sum^{3}_{i=1} u_i\in V
+        \end{equation*}
+        for some $v_1,u_1\in V_1, v_2,u_2\in V_2, v_3,u_3\in V_3$. Then a direct sum decomposition
+        \begin{equation*}
+            V = V_+\oplus V_-\oplus V_\perp
+        \end{equation*}
+        for $f$, as described in Theorem 4.4, would be, $V_+ = V_1, V_- = V_2, V_\perp = V_3$. Of course, $V_+$ and $V_-$ need not be $V_1$ and $V_2$, respectively; $V_1$ and $V_2$ are some suitable candidates. In fact, Theorem 4.4 guarantees that every symmetric bilinear form on $V$ can be constructed in this way. Moreover, the part which states that
+        \begin{equation*}
+            \left( \left[ f \right] _\beta \right) _{ii} 
+            \begin{cases} 
+                \pm 1 & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                0 & \text{ otherwise }
+            \end{cases},
+        \end{equation*}
+        for some ordered basis $\beta$ for $V$, is that any inner product can be represented by the identity matrix in some ordered basis for $V$.
+    \end{remark}
+
+    \begin{remark}
+        If $V$ is instead a finite-dimensional vector space over $\CC$, then we may further simplify the matrix of a bilinear form.
+    \end{remark}
+
+    \begin{cor}{}
+        Let $V$ be a finite-dimensional vector space over $\CC$ and let $f$ be a symmetric bilinear form on $V$ with $\rank\left( f \right) = r\in\N$. Then there exists an ordered basis $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ for $V$ such that $\left[ f \right] _\beta$ is diagonal and
+        \begin{equation*}
+            f\left( v_i,v_i \right) = 
+            \begin{cases} 
+                1 & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                0 & \text{ otherwise }
+            \end{cases}.
+        \end{equation*}
+    \end{cor}	
+    
+    \begin{proof}
+        A suitable proof for Corollary 4.4.1 can be done in an analogously to the proof of Theorem 4.4 above. The only difference is that, since $\CC$ is an algebraically closed field, we are allowed to take a square root of $f\left( u_i,u_i \right)$, and that we define
+        \begin{equation*}
+            v_i = 
+            \begin{cases} 
+                \frac{1}{\sqrt{\left( u_i,u_i \right) }}u_i & \text{ if } i\in\left\lbrace 1,2,\ldots,r \right\rbrace \\ 
+                u_i & \text{ otherwise }
+            \end{cases}. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \continued{Remark}
+    \noindent In fact, the proof of Corollary 4.4.1 is valid for any algebraically closed field, or, any field closed under the operation of taking the square root. 
+    
+    \section{Skew-Symmetric Bilinear Form}
+
+    \begin{remark}
+        Throughout this section, let $V$ be a vector space over a subfield $\F\subseteq\CC$.
+    \end{remark}
+
+    \begin{definition}{Skew-Symmetric}{Bilinear Form}
+        Let $f$ be a bilinear form. We say $f$ is \emph{skew-symmetric} if
+        \begin{equation*}
+            f(v,u) = -f(u,v)
+        \end{equation*}
+        for all $v,u\in V$.
+    \end{definition}
+    
+    \begin{remark}
+        We claim that any bilinear form $f$ on $V$ can be written as a sum of a symmetric bilinear form $g$ on $V$ and a skew-symmetric bilinear form $h$ on $V$. To verify this, let
+        \begin{align*}
+            g & = \frac{1}{2} \left( f(v,u) + f(u,v) \right) \\
+            h & = \frac{1}{2} \left( f(v,u) - f(u,v) \right) ,
+        \end{align*} 
+        then $g$ and $h$ are symmetric and skew-symmetric by definition and clearly $f=g+h$. Moreover, it turns out that $g$ and $h$ are unique. That is, if $S$ is the set of symmetric bilinear forms on $V$ and $K$ is the set of skew-symmetric bilinear forms on $V$, then
+        \begin{equation*}
+            \lin\left( V,V,\F \right) = S\oplus K.
+        \end{equation*}
+    \end{remark}
+
+    \begin{remark}
+        If $f$ is a skew-symmetric bilinear form on $V$, then for any ordered basis $\beta$ for $V$, $\left[ f \right] _\beta$ is skew-symmetric.
+    \end{remark}
+
+    \begin{remark}
+        Let $f$ be a skew-symmetric bilinear form on $V$. Similear to linear operators and symmetric bilinear forms, we are interested in finding an ordered basis $\beta$ such that $\left[ f \right] _\beta$ is simple, if such $\beta$ exists. We proceed as follows. If $f$ is nonzero, then there exists $v, u\in V$ such that
+        \begin{equation*}
+            f(v,u) = 1.
+        \end{equation*}
+        To see this, one may first pick $v',u\in V$ such that $f\left( v',u \right)\neq 0$, since $f$ is nonzero. Then it is clear that
+        \begin{equation*}
+            v = \frac{v'}{f\left( v',u \right) } 
+        \end{equation*}
+        satisfies the above condition. Let
+        \begin{equation*}
+            x = av + bu\in \spn\left\lbrace v,u \right\rbrace \subseteq V
+        \end{equation*}
+        for some $a,b\in\F$. Then
+        \begin{align*}
+            f\left( x,v \right) & = f\left( av+bu, v \right) = bf(u,v) = -b \\
+            f\left( x,u \right) & = f\left( av+bu, u \right) = af(u,u) = a,
+        \end{align*} 
+        and so
+        \begin{equation*}
+            x = av+bu = f\left( x,u \right) v - f\left( x,v \right) u.
+        \end{equation*}
+        The above equation shows that $a=f(x,u)$ and $b=f(x,v)$ are zero whenever $x=0$, so $v$ and $u$ are linearly independent and $\dim(W)=2$. Moreover, let
+        \begin{equation*}
+            W_\perp = \left\lbrace w_\perp\in V: f\left( w_\perp,v \right) = f\left( w_\perp, u \right) = 0 \right\rbrace \subseteq V.
+        \end{equation*}
+        We claim that
+        \begin{equation*}
+            V = W\oplus W_\perp.
+        \end{equation*}
+        To verify this, let $y\in V$ be arbitrary, and let
+        \begin{align*}
+            w & = f\left( y,u \right) v - f\left( y,v \right) u \\
+            w_\perp &= y-w.
+        \end{align*} 
+        Then $w\in\spn\left( v,u \right) = W$ and $w_\perp\in W_\perp$, since
+        \begin{equation*}
+            f\left( w_\perp, v \right) = f\left( y-f\left( y,u \right) v + f\left( y,v \right) u, v\right) = f\left( y+f(y,v)u, v \right) = f\left( y,v \right) + f\left( y,v \right) f(u,v) = 0, 
+        \end{equation*}
+        and we can show that $f\left( w_\perp, u \right) =0$ in a similar way. Thus any $y\in V$ can be written by the form $y = w + w_\perp$ for some $w\in W$ and $w_\perp\in W_\perp$. Moreover, it is clear from the definition of $W$ and $W_\perp$ that $W\cap W_\perp = \left\lbrace 0 \right\rbrace $. That is,
+        \begin{equation*}
+            V = W\oplus W_\perp,
+        \end{equation*}
+        as claimed. Now, let $f_\perp$ be the restriction of $f$ on $W_\perp$. Then $f_\perp$ is a skew-symmetric bilinear form on $W_\perp$. That is, if $f_\perp$ is nonzero, then we may further decompose $V$ as
+        \begin{equation*}
+            V = W_1\oplus W_2\oplus W_{\perp_2}
+        \end{equation*}
+        by repeating the process above, where $W_1 = W$. In other words, if $V$ is finite-dimensional, we are going to get a decomposition
+        \begin{equation*}
+            V = \left( \bigoplus^{k}_{i=1} W_i \right) \oplus W_0
+        \end{equation*}
+        at the end, where each $W_1,W_2, \ldots, W_k\subseteq V$ is spanned by two vectors $v_i, u_i\in V$ such that
+        \begin{enumerate}
+            \item $f\left( v_i,u_i \right) = 1$,
+            \item $f\left( v_i, v_j \right) = f\left( u_i,u_j \right) = f\left( v_i,u_j \right) = 0$ for any $j\in \left\lbrace 1,2,\ldots,k \right\rbrace$ with $j\neq i$, 
+            \item for all $w_0\in W_0$, $w_0$ is \textit{orthogonal} to any $v\in V$, which means $f\left( v, w_0 \right) = 0$, and
+            \item the restriction of $f$ into $W_0$ is zero.
+        \end{enumerate}
+        The following theorem summarizes the matrix analogue of this result.
+    \end{remark}
+
+    \begin{theorem}{}
+        Let $f$ be a skew-symmetric bilinear form on $V$. Then $r=\rank(f)=2k$ for some $k\in\N\cup\left\lbrace 0 \right\rbrace$, and there exists an ordered basis $\beta$ for $V$ such that
+        \begin{equation*}
+            \left[ f \right] _\beta = \left( \bigoplus^{k}_{i=1} \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \right) \oplus O,
+        \end{equation*}
+        where $O\in M_{n-r\times n-r}(\F)$ is the zero matrix. 
+    \end{theorem}
+
+    \begin{cor}{}
+        If there exists nondegenerate skew-symmetric bilinear form $f$ on $V$, then $n=\dim(V)$ is even. Moreover, there exists an ordered basis $\beta$ for $V$ such that
+        \begin{equation*}
+            \left[ f \right] _\beta = \left( \bigoplus^{\frac{n}{2}}_{i=1} \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \right).
+        \end{equation*}
+    \end{cor}	
+
+    \begin{remark}
+        Theorem 4.5 also provides the following standard matrix representation of a nondegenerate skew-symmetric bilinear form $f$ on $V$. That is, if $\beta = \left\lbrace v_1,u_1, v_2,u_2,\ldots,v_{\frac{n}{2}}, u_{\frac{n}{2}} \right\rbrace $ is an ordered basis for $V$ such that $\left[ f \right] _\beta$ is as described in Corollary 4.5.1, then $\alpha = \left\lbrace v_1,v_2,\ldots, v_{\frac{n}{2}}, u_1, \ldots, u_{\frac{n}{2}} \right\rbrace$ is such that
+        \begin{equation*}
+            \left[ f \right] _\alpha = \begin{bmatrix} 0 & J \\ -J & 0 \end{bmatrix},
+        \end{equation*}
+        where $J\in M_{\frac{n}{2}\times \frac{n}{2}}(\F)$ is
+        \begin{equation*}
+            J = 
+            \begin{bmatrix}
+                0 & \cdots & 0 & 1 \\
+                0 & \cdots & 1 & 0 \\
+                \vdots & \iddots & \vdots & \vdots \\
+                1 & \cdots & 0 & 0 \\
+            \end{bmatrix}.
+        \end{equation*}
+    \end{remark}
+
+    \section{Groups Preserving Bilnear Forms}
+
+    \begin{definition}{Preserve}{}
+        Let $f$ be a bilinear form on a vector space $V$ and let $T:V\to V$ be linear. We say $T$ \emph{preserves} $f$ if
+        \begin{equation*}
+            f\left( Tv, Tu \right) = f\left( v,u \right) 
+        \end{equation*}
+        for all $v,u\in V$.
+    \end{definition}
+
+    \begin{remark}
+        Notice that for any bilinear form $f$ and linear operator $T$ on $V$,
+        \begin{equation*}
+            g\left( v,u \right) = f\left( Tv, Tu \right) 
+        \end{equation*}
+        is a bilinear form. Thus $T$ preserves $f$ if and only if $g=f$.
+    \end{remark}
+
+    \begin{remark}
+        Clearly $f\left( Iv, Iu \right) = f\left( v,u \right)$. Moreover, if $T,S:V\to V$ preserve $f$ then
+        \begin{equation*}
+            f\left( STv, STu \right) = f\left( Tv, Tu \right) = f\left( v, u \right) 
+        \end{equation*}
+        so $ST$ preserves $f$ as well. That is, if
+        \begin{equation*}
+            M_f = \left\lbrace T\in\lin\left( V \right) : T\text{ preserves }f \right\rbrace,
+        \end{equation*}
+        then $\left( M_f, \circ \right)$ is a monoid, where $\circ$ is the usual composition operation. In general, there is not much to talk about monoids of linear operators. However, if $f$ is nondegenerate, then we have the following.
+    \end{remark}
+
+    \begin{prop}{Set of Linear Operator Preserving Nondegenerate $f$ Is a Group}
+        Let $f$ be a nondegenerate bilinear form on a vector space $V$, and let
+        \begin{equation*}
+            G_f = \left\lbrace T\in\lin\left( V \right) : T\text{ preserves }f \right\rbrace,
+        \end{equation*}
+        Then $G_f$ is a group under the usual composition operation of linear operators.
+    \end{prop}
+
+    \begin{proof}
+        Remark 4.27 provides that $G_f$ is a monoid, so we only have to prove that every $T\in G_f$ has an inverse $T^{-1}$. Let $T\in G_f$ be and let $v\in\ker(T)$. Then for any $u\in V$,
+        \begin{equation*}
+            f\left( v,u \right) = f\left( Tv, Tu \right) = f\left( 0, Tu \right) = 0.
+        \end{equation*}
+        Since $f$ is nondegenerate, $v=0$. That is, $v=0$ whenever $Tv = 0$, which means that $T$ is invertible. Moreover, 
+        \begin{equation*}
+            f\left( T^{-1}v, T^{-1}u \right) = f\left( TT^{-1}v, TT^{-1}u \right) = f\left( v,u \right) 
+        \end{equation*}
+        for any $v,u\in V$, so $T^{-1}$ preserves $f$, or $T^{-1}\in G_f$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        When $V$ is finite-dimensional, an immediate consequence of Proposition 4.6 is that
+        \begin{equation*}
+            G = \left\lbrace \left[ T \right] _\beta\in M_{n\times n}(\F): T\text{ preserves }f \right\rbrace 
+        \end{equation*}
+        is a group under usualy matrix composition, where $n=\dim(V)$. However, there is an alternative way of describing matrices which preserve $f$.
+    \end{remark}
+
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\F)$ be invertible. Then
+        \begin{equation*}
+            G = \left\lbrace M\in M_{n\times n}(\F): M^TAM = A \right\rbrace 
+        \end{equation*}
+        is a group under usual matrix composition.
+    \end{cor}	
+
+    \begin{proof}
+        We have shown that $[]_\beta:\lin\left( V,V,\F \right) \to M_{n\times n}(\F)$ is an isomorphism, where $\dim(V)=n$ and $\beta$ is an ordered basis for $V$, and also that
+        \begin{equation*}
+            \rank(f) = \rank\left[ f \right] _\beta
+        \end{equation*}
+        for any bilinear form $f$ on $V$. That is, if $A\in M_{n\times n}(\F)$ is invertible and if we fix an ordered basis $\beta$ for $V$, then there exists unique bilinear form $f$ on $V$ such that $A = \left[ f \right] _\beta$. Moreover, the isomorphism $[]_\beta: \lin(V)\to M_{n\times n}(\F)$, there exists unique linear operator $T:V\to V$ such that $M=\left[ T \right] _\beta$. Observe that
+        \begin{equation*}
+            f\left( x,y \right) = X^TAY,
+        \end{equation*}
+        where $X=\left[ x \right] _\beta$ and $Y=\left[ y \right] _\beta$ by definition. But $A=M^TAM$, so
+        \begin{align*}
+            f\left( x,y \right) & = X^TAY = X^TM^TAMY = \left( MX \right) ^TA\left( MY \right) \\ 
+                                & = \left( \left[ T \right] _\beta\left[ x \right] _\beta \right) ^T \left[ f \right] _\beta\left( \left[ T \right] _\beta\left[ y \right] _\beta \right) = \left[ Tx \right] _\beta^T\left[ f \right] _\beta\left[ Ty \right] _\beta = f\left( Tx,Ty \right) ,
+        \end{align*} 
+        which means $T$ preserves $f$. Since the set $G_f$ of linear operators preserving $f$ is a group, $G$ is also a group by isomorphism $[]_\beta$. 
+    \end{proof}
+
+    \begin{remark}
+        Consider the case which $f$ is a symmetric nondegenerate bilinear form over a vector space $V$ over a subfield $\F\subset\CC$. Then a linear operator $T$ on $V$ preserves $f$ if and only if $T$ preserves 
+        \begin{equation*}
+            q(v) = f(v,v),
+        \end{equation*}
+        the quadratic form associated with $f$. This can be verified as follows. If $T$ preserves $f$, then it is clear that
+        \begin{equation*}
+            q\left( Tv \right) = f\left( Tv,Tv \right) = f\left( v,v \right) = q\left( v \right) .
+        \end{equation*}
+        Conversely, if $T$ preserves $q$, then by the polarization identity
+        \begin{equation*}
+            f\left( v,u \right) = \frac{1}{4}q\left( v+u \right) - \frac{1}{4}q\left( v-u \right) , 
+        \end{equation*}
+        $T$ preserves $f$.
+    \end{remark}
+    
+    
+    
 
     
+
+
 
 
 

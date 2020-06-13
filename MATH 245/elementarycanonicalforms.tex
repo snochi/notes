@@ -1,4 +1,4 @@
-\documentclass[math_245.tex]{subfiles}
+\documentclass[linearalgebraII]{subfiles}
 
 \begin{document}
 
@@ -59,6 +59,7 @@
         \end{equation*}
     \end{proof}
 
+    \clearpage
     \begin{lemma}{}
         Let $V$ be a finite-dimensional vector space and let $T:V\to V$ be a linear operator. Let $c_1, c_2, \ldots, c_k\in \F$ be distinct eigenvalues of $T$ and let $W_1, W_2, \ldots, W_k$ be the corresponding eigenspaces, respectively. Then
         \begin{equation*}
@@ -108,6 +109,7 @@
         But this exactly means $f = \sum^{n^2}_{i=0} a_ix^i\in\F[x]$ is an annihilating polynomial of $T$, as desired.
     \end{proof}
 
+    \clearpage
     \begin{lemma}{The Characteristic and Minimal Polynomials Have the Same Roots}
         Let $V$ be a finite-dimensional vector space and let $T$ be a linear operator on $V$. Then the characteristic polynomial and minimal polynomial have the same roots.
     \end{lemma}
@@ -120,8 +122,6 @@
         so $T-cI$ is not invertible and $c$ is an eigenvalue of $T$. The reverse direction is a direct consequence of Lemma 2.3.
     \end{proof}
 
-    \clearpage
-    
     \begin{prop}{Minimal Polynomial of any Diagonalizable Operator Is a Product of Linear Factors}
         Let $V$ be a vector space over $\F$ and let $T:V\to V$ be a diagonalizable linear operator with eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n\\ \in \F$. Then
         \begin{equation*}
@@ -219,6 +219,7 @@
         which we call the \emph{$T$-conductor} of $v$ into $W$. If $W = \left\lbrace 0 \right\rbrace$, we say $S_T(v, W)$ is a \emph{$T$-annihilator} of $v$. Moreover, the unique monic generator of $S_T(v, W)$, denoted as $s_T(v, W)$, is unique and also called the \emph{$T$-conductor} of $v$ into $W$.
     \end{definition}
 
+    \clearpage
     \begin{prop}{$T$-Conductor Is an Ideal}
         $S_T(v, W)$ is an ideal of $\F[x]$.
     \end{prop}
@@ -377,8 +378,6 @@
         Let $V$ be a vector space. A linear operator $E:V\to V$ is called a \emph{projection} on $V$ if $E^2 = E$.
     \end{definition}
 
-    \clearpage
-
     \begin{prop}{Properties of Projections}
         Let $V$ be a vector space and let $E: V\to V$ be a projection. Then the following hold.
         \begin{enumerate}
@@ -431,6 +430,7 @@
         whenever $i\neq j$. We summarize our observations and prove its converse in the following theorem.
     \end{remark}
 
+    \clearpage
     \begin{theorem}{Direct Sum Decomposition}
         Let $V$ be a vector space and let $W_1, W_2, \ldots, W_k\subseteq V$ be subspaces such that $V = \bigoplus^{k}_{i=1} W_i$. Then there exist linear operations $E_1, E_2, \ldots, E_k:V\to V$ such that the following hold.
         \begin{enumerate}
@@ -495,10 +495,12 @@
         \begin{equation*}
             \left[ T \right] _\beta =
             \begin{bmatrix}
+                & & & \\
                 \left[ T_{W_1} \right]_{\beta_1} & & & \\
                 & \left[ T_{W_2} \right]_{\beta_2} & & \\
                 & & \ddots & \\
                 & & & \left[ T_{W_k} \right]_{\beta_k} \\
+                & & & \\
             \end{bmatrix}
         \end{equation*}
         We also describe this by saying that $[T]_\beta$ is the \emph{direct sum} of $[T_{W_1}]_{\beta_1}, [T_{W_2}]_{\beta_2}, \ldots, [T_{W_k}]_{\beta_k}$.
@@ -548,8 +550,13 @@
         We now proceed to describe diagonalizable linear operator $T$ in terms of a direct sum decomposition of invariant subspaces by using projections that commute with $T$.
     \end{remark}
 
+    \clearpage
     \begin{theorem}{$T = \sum^{k}_{i=1} c_iE_i$ Decomposition}
-        Let $V$ be a vector space and let $T:V\to V$ be a linear operator. If $T$ is diagonalizable and if $c_1, c_2, \ldots, c_k\in \F$ are the distinct characteristic values of $T$, then there exist linear operators $E_1, E_2, \ldots, E_k:V\to V$ such that the following hold.
+        Let $V$ be a vector space and let $T:V\to V$ be a linear operator. If $T$ is diagonalizable and if $c_1, c_2, \ldots, c_k\in \F$ are the distinct characteristic values of $T$, then there exist linear operators 
+        \begin{equation*}
+            E_1, E_2, \ldots, E_k :V\to V 
+        \end{equation*}
+        such that the following hold.
         \begin{enumerate}
             \item $T = \sum^{k}_{i=1} c_iE_i$.
             \item $I = \sum^{k}_{i=1} E_i$.

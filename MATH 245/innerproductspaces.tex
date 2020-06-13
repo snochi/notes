@@ -1,0 +1,1036 @@
+\documentclass[linearalgebraII]{subfiles}
+
+\begin{document}
+
+    \chap{Inner Product Spaces} 
+
+    \section{Inner Products}
+    
+    \begin{remark}
+        Throughout this section, we are going to discuss about vector spaces over $\R$ or $\CC$. For this reason, we shall consistently use $\K$ to denote $\R$ or $\CC$, when there is no need to distinguish between two fields.
+    \end{remark}
+
+    \begin{recall}{Dot Produt}{on $\R^n$}
+        We define the \emph{dot product} on $\R^n$ by
+        \begin{equation*}
+            x\cdot y = \sum^{n}_{i=1} x_iy_i
+        \end{equation*}
+        for all $x = \left( x_1,x_2,\ldots,x_n \right), y = \left( y_1,y_2,\ldots,y_n \right)\in\R^n$.
+    \end{recall}
+
+    \begin{remark}
+        There is an important geometric interpretation of $x\cdot y$. If we let $\norm{x}, \norm{y}$ be the length of $x$ and $y$, respectively, and let $\theta$ be the angle between $x$ and $y$, then
+        \begin{equation*}
+            x\cdot y = \norm{x}\norm{y}\cos(\theta).
+        \end{equation*}
+        The motivation for an inner product is to generalize the notion of length and angle to any vector space over $\K$. However, our discussions about angle will be restricted to the concept of orthogonality of vectors.
+    \end{remark}
+
+    \begin{definition}{Inner Product}{on a Vector Space}
+        Let $V$ be a vector space over $\K$. An \emph{inner product} on $V$ is a function $\left\langle \cdot, \cdot\right\rangle : V\times V\to \K$ that satisfies the following properties. Suppose $u,v,w\in V$ and $c\in\K$. 
+        \begin{enumerate}
+            \item $\left\langle u+v, w\right\rangle = \left\langle u, w\right\rangle  + \left\langle v, w\right\rangle $. 
+            \item $\left\langle cv, u\right\rangle  = c\left\langle v, u\right\rangle $.
+            \item $\left\langle v, u\right\rangle  = \overline{\left\langle u, v\right\rangle }$, where the bar represents the complex conjugate.
+            \item $\left\langle v, v\right\rangle  > 0$ whenever $v\neq 0$.
+        \end{enumerate}
+    \end{definition}
+
+    \begin{remark}
+        By using (a), (b), and (c) of the definition above, one can deduce
+        \begin{equation*}
+            \left\langle u, cv+w\right\rangle  = \overline{c}\left\langle u, v\right\rangle  + \left\langle u, w\right\rangle  .
+        \end{equation*}
+        In case of $\K=\R$, the bars can be ignored; the purpose of including complex conjugate in the defition is to make an inner product positive definite on $\CC$ as well. For instance, without complex conjugate, if
+        \begin{equation*}
+            \left\langle v, v\right\rangle  > 0,
+        \end{equation*}
+        for some $v\in V$, then
+        \begin{equation*}
+            \left\langle iv, iv\right\rangle i\left\langle v, iv\right\rangle = -1\left\langle v, v\right\rangle < 0
+        \end{equation*}
+        which is inconsistent with (d).
+    \end{remark}
+
+    \begin{remark}
+        Notice that the definition of inner product here is consistent with the one provided in Chapter 4. That is, if $f(v,u) = \left\langle v, u\right\rangle $, then $f$ is bilinear by (a), (b), and (c), symmetric by (c), and positive definite by (d).
+    \end{remark}
+
+    \clearpage
+    \begin{definition}{Standard Inner Product}{on $\K^n$}
+        We define the \emph{standard inner product} $\left\langle \cdot, \cdot\right\rangle $ on $\K^n$ by
+        \begin{equation*}
+            \left\langle x, y\right\rangle  = \sum^{n}_{i=1} x_i\overline{y_i},
+        \end{equation*}
+        where $x=\left( x_1,x_2,\ldots,x_n \right), y = \left( y_1,y_2,\ldots,y_n \right)\in\K^n$.
+    \end{definition}
+
+    \begin{remark}
+        In case of $\K = \R$, the standard inner product on $\K^n$ is the inner product.
+    \end{remark}
+
+    \begin{remark}
+        Consider the space of square $n\times n$ matrices, $M_{n\times n}(\K)$. Then $M_{n\times n}(\K)\iso\K^{n^2}$ in a natural way. Thus we may use the definition of standard inner product on $\K^n$ to define an inner product
+        \begin{equation*}
+            \left\langle A, B\right\rangle = \sum^{}_{i,j} A_{ij}\overline{B_{ij}}
+        \end{equation*}
+        on $M_{n\times n}(\K)$. To simplify this further, we introduce the following definition.
+    \end{remark}
+
+    \begin{definition}{Complex Conjugate}{of a Complex Matrix}
+        Let $A\in M_{n\times n}(\K)$. We define the \emph{complex conjugate} of $A$, denoted as $A^*$, by
+        \begin{equation*}
+            A^*_{ij} = \overline{A_{ji}}.
+        \end{equation*}
+    \end{definition}
+
+    \continued{Remark}
+    \noindent Then, the above definition of an inner product on $M_{n\times n}(\K)$ can be alternatively written as 
+    \begin{equation*}
+        \left\langle A, B\right\rangle = \tr\left( AB^* \right) = \tr\left( B^*A \right) ,
+    \end{equation*}
+    since
+    \begin{equation*}
+        \left\langle A, B\right\rangle = \sum^{}_{i,j} A_{ij}\overline{B_{ij}} = \sum^{}_{i,j} A_{ij}B^*_{ji} = \sum^{}_{i} \left( AB^* \right) _{ii} = \tr\left( AB^* \right),
+    \end{equation*}
+    and the second equality holds by definition of trace.
+
+    \begin{remark}
+        Suppose $Q\in M_{n\times n}(\K)$ is invertible. Then for any $X,Y\in M_{n\times 1}(\K)$, let
+        \begin{equation*}
+            \left\langle X, Y\right\rangle = X^*Q^*QY. 
+        \end{equation*}
+        Then $\left\langle X, Y\right\rangle $ is an inner product on $M_{n\times 1}(\K)$. Moreover, when $Q=I$, the identity matrix, then the above definition is essentially identical to the definition of the standard inner product on $\K^n$.
+    \end{remark}
+
+    \begin{definition}{Standard Inner Product}{on $\K^n$}
+        We call the inner product
+        \begin{equation*}
+            \left\langle X, Y\right\rangle = X^*Y
+        \end{equation*}
+        on $M_{n\times 1}(\K)$ the \emph{standard inner product} on $\K^n$. 
+    \end{definition}
+
+    \begin{example}
+        Let
+        \begin{equation*}
+            V = \left\lbrace f:\CC\to\CC: f\text{ continuous on }[0,1] \right\rbrace .
+        \end{equation*}
+        Then
+        \begin{equation*}
+            \left\langle f, g\right\rangle = \int^{1}_{0} f(t)\overline{g(t)}\dt
+        \end{equation*}
+        is an inner product.
+    \end{example}
+
+    \begin{remark}
+        By using the following method, one may define a new inner product from a given one. Let $U$ and $V$ be vector spaces over $\K$ and suppose $\left\langle \cdot, \cdot\right\rangle $ is an inner product on $U$. If $T:V\to W$ is an isomorphism, then
+        \begin{equation*}
+            p_T\left( v,u \right) = \left\langle Tv, Tv\right\rangle : V\times V\to\K
+        \end{equation*}
+        is an inner product on $V$. The inner product shown in Remark 5.7 is a special case of this result.
+    \end{remark}
+
+    \begin{example}
+        Let $V$ be an $n$-dimensional vector space over $\K$ and let
+        \begin{equation*}
+            \beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace 
+        \end{equation*}
+        be an ordered basis for $V$. Then there exists a natural isomorphism $\varphi$ in between $V$ and $\K^n$ by the mapping
+        \begin{equation*}
+            v_i\mapsto e_i
+        \end{equation*}
+        for each $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, where $e_i\in\left\lbrace e_1,e_2,\ldots,e_n \right\rbrace$, the standard ordered basis for $\K^n$. Then by the standard inner product on $\K^n$ and the method described in Remark 5.9, one may define an inner product
+        \begin{equation*}
+            p_\varphi\left( \sum^{}_{i} x_iv_i, \sum^{}_{j} y_jv_j \right) = \sum^{}_{i} x_i\overline{y_i}
+        \end{equation*}
+        for any $x = \sum^{}_{i} x_iv_i, y = \sum^{}_{j} y_jv_j\in V$. That is, for any ordered basis $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ for $V$, there exists an inner product $\left\langle \cdot, \cdot\right\rangle $ on $V$ such that
+        \begin{equation*}
+            \left\langle v_i, v_j\right\rangle  = \delta_{ij}
+        \end{equation*}
+        for all $i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace$.
+    \end{example}
+
+    \begin{example}
+        We take a look at Example 5.8 again. Let
+        \begin{equation*}
+            V = \left\lbrace f:\CC\to\CC: f\text{ continuous on }[0,1] \right\rbrace 
+        \end{equation*}
+        and let $T:V\to V$ be defined by the mapping
+        \begin{equation*}
+            f(t)\mapsto tf(t).
+        \end{equation*}
+        It can be easily verified that $T$ is linear. Moreover, $T$ is invertible, since if $Tf(t) = 0$, then
+        \begin{equation*}
+            \forall t\in[0,1], tf(t) = 0,
+        \end{equation*}
+        which means
+        \begin{equation*}
+            \forall t\in(0,1], f(t) = 0.
+        \end{equation*}
+        But $f$ is continuous, so $f(0) = 0$, or, $f=0$ on $[0,1]$. Thus $T$ is an isomorphism, and
+        \begin{equation*}
+            p_T(f,g) = \left\langle Tf, Tg\right\rangle = \int^{1}_{0} t^2fg\dt
+        \end{equation*}
+        is an inner product.
+    \end{example}
+
+    \begin{remark}
+        We no turn into some general observation about inner products on a complex vector space. Let $V$ be a vector space over $\CC$ with an inner product $\left\langle \cdot, \cdot\right\rangle $. Then for all $v,u\in V$,
+        \begin{equation*}
+            \left\langle v, u\right\rangle = \re\left\langle v, u\right\rangle + i\imaginary\left\langle v, u\right\rangle .
+        \end{equation*}
+        where $\re\left\langle v, u\right\rangle$ and $\imaginary\left\langle v, u\right\rangle$ are the real and imaginary parts of $\left\langle v, u\right\rangle $, respectively. Observe that for any $z\in\CC$,
+        \begin{equation*}
+            \imaginary(z) = \re(-iz).
+        \end{equation*}
+        It follows that
+        \begin{equation*}
+            \imaginary\left\langle v, u\right\rangle = \re\left( -i\left\langle v, u\right\rangle  \right) = \re\left\langle v, -iu\right\rangle .
+        \end{equation*}
+        Thus the inner product $\left\langle v,u \right\rangle$ is completely determined by the its real part, such that
+        \begin{equation*}
+            \left\langle v, u\right\rangle = \re\left\langle v, u\right\rangle + i\re\left\langle v, -iu\right\rangle.
+        \end{equation*}
+    \end{remark}
+
+    \begin{remark}
+        Occationally, it is very useful to know that an inner product $\left\langle \cdot, \cdot\right\rangle$ on a vector space $V$ is completely determined by the quadratic form associated with $\left\langle \cdot, \cdot\right\rangle$. The definition is similar to how we define a quadratic form associated with a bilienar form. However, for inner products, we utilize the following concept.
+    \end{remark}
+
+    \begin{definition}{Norm}{on a Vector Space}
+        Let $V$ be a vector space on $\K$ and let $\left\langle \cdot, \cdot\right\rangle$ be an inner product on $V$. We define the \emph{norm} with respect to $\left\langle \cdot, \cdot\right\rangle$ by
+        \begin{equation*}
+            \norm{v} = \sqrt{\left\langle v, v\right\rangle } : V\to \K.
+        \end{equation*}
+    \end{definition}
+
+    \continued{Remark}
+    \noindent By looking at the standard inner product on $\K^n$ (in particular, when $n\in\left\lbrace 1,2,3 \right\rbrace$), it should be convincing that the norm $\norm{v}$ of a vector $v\in V$ is a generalization of length.
+
+    \begin{definition}{Quadratic Form}{of an Inner Product}
+        We define the quadratic form of an inner product $\left\langle \cdot, \cdot\right\rangle$ on a vector space $V$ by the mapping
+        \begin{equation*}
+            v\mapsto\norm{v}^2
+        \end{equation*}
+        for all $v\in V$, where $\norm{\cdot}$ is the norm with respect to $\left\langle \cdot, \cdot\right\rangle$.
+    \end{definition}
+
+    \continued{Remark}
+    \noindent It follows from the properties of inner product that 
+    \begin{equation*}
+        \norm{v\pm u}^2 = \norm{v}^2\pm 2\re\left\langle v, u\right\rangle + \norm{u}^2,
+    \end{equation*}
+    provided that $v,u\in V$ and $\norm{\cdot}$ is the norm with respect to $\left\langle \cdot, \cdot\right\rangle$. When $V$ is over $\R$,
+    \begin{equation*}
+        \left\langle v, u\right\rangle \frac{1}{4}\norm{v+u}^2 - \frac{1}{4}\norm{v-u}^2.
+    \end{equation*}
+    When $V$ is over $\CC$, we get a more complicated result that
+    \begin{equation*}
+        \left\langle v, u\right\rangle = \frac{1}{4}\norm{v+u}^2 - \frac{1}{4}\norm{v-u}^2 + \frac{i}{4}\norm{v+iu}^2 - \frac{i}{4}\norm{v-iu}^2 =\frac{1}{4} \sum^{}_{p} i^p\norm{v+i^pu}^2
+    \end{equation*}
+    The above equations are unsurprisingly called the polarization identities; observe that the equation when $V$ is over $\R$ is a special case of the polarization identity of bilinear forms, as discussed in Chapter 4.
+
+    \begin{remark}
+        The discussions so far apply to every vector space $V$ over $\K$, regardless of the dimension. We now turn to the case when $V$ is finite-dimensional. As one might guess, an inner product on a finite-dimensional vector space can be represented by a matrix with respect to an ordered basis for $V$. To show this, suppose $V$ is finite-dimensional and let $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be an ordered basis for $V$, where $n=\dim(V)$. Let $\left\langle \cdot, \cdot\right\rangle$ be an inner product on $V$. Now the claim is that $\left\langle \cdot, \cdot\right\rangle$ is completely determined by the scalars
+        \begin{equation*}
+            g_{ij} = \left\langle v_i, v_j\right\rangle \in\K,
+        \end{equation*}
+        where $i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace$. To verify this, let $x=\sum^{}_{j} x_jv_j, y=\sum^{}_{i} y_iv_i\in V$ for some $x_1,x_2,\ldots,x_n,y_1,\ldots,y_n\in\K$. Then
+        \begin{equation*}
+            \left\langle x, y\right\rangle = \left\langle \sum^{}_{j} x_jv_j, y \right\rangle = \sum^{}_{j} x_j\left\langle v_j, y\right\rangle = \sum^{}_{j} x_j \sum^{}_{i} \overline{y_i} \left\langle v_j, v_i\right\rangle = \sum^{}_{i,j} \overline{y_i}g_{ij}x_{j} = Y^*GX,
+        \end{equation*}
+        where $Y = \left[ y \right] _\beta$ and $X=\left[ x \right] _\beta$, and $G\in M_{n\times n}(\K)$ is defined by
+        \begin{equation*}
+            G_{ij} = g_{ij}
+        \end{equation*}
+        for each $i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace$. This motivates the following definition.
+    \end{remark}
+
+    \begin{definition}{Matrix}{of an Inner Product}
+        Let $\left\langle \cdot, \cdot\right\rangle $ be an inner product on an $n$-dimensional vector space $V$ over $\K$ and let $\beta$ be an ordered basis for $V$. If we define $G\in M_{n\times n}(\K)$ as described in Remark 5.14, then we call $G$ the \emph{matrix} of $\left\langle \cdot, \cdot\right\rangle$.
+    \end{definition}
+
+    \begin{remark}
+        Suppose $G\in M_{n\times n}(\K)$ is a matrix of an inner product $\left\langle \cdot, \cdot\right\rangle$ on a finite-dimensional vector space $V$ over $\K$. Then by definition of the entries of $G$,
+        \begin{equation*}
+            G_{ij} = \left\langle v_j, v_i\right\rangle ,
+        \end{equation*}
+        $G$ has the property that $G=G^*$.
+    \end{remark}
+
+    \begin{definition}{Hermitian}{matrix}
+        Let $G\in M_{n\times n}(\K)$. We say $G$ is \emph{Hermitian} if $G=G^*$.
+    \end{definition}
+
+    \continued{Remark}
+    \noindent However, $G$ is a rather special kind of Hermitian matrix, that $G$ satisfies
+    \begin{equation*}
+        X^*GX > 0
+    \end{equation*}
+    for any nonzero $X\in M_{n\times 1}(\K)$. In particular, $G$ is invertible, since if $G$ is singular, then there exists $X\in M_{n\times 1}(\K)$ such that $GX = 0$. More explicitly, the above inequality implies that for any nonzero $x = \left( x_1,x_2,\ldots,x_n \right) \in\K^n$,
+    \begin{equation*}
+        \sum^{}_{i,j} \overline{x_i}G_{ij}x_j > 0.
+    \end{equation*}
+    An immediate consequence of this result is that the diagonal entries are positive,
+    \begin{equation*}
+        G_{ii} > 0
+    \end{equation*}
+    for all $i\in \left\lbrace 1,2,\ldots,n \right\rbrace$. However, this condition solely does not guarantee
+    \begin{equation*}
+        X^*GX > 0
+    \end{equation*}
+    for all $X\in M_{n\times 1}(\K)$. Sufficient conditions on $G$ such that the above inequality holds will be provided later. 
+
+    \section{Inner Product Spaces}
+    
+    \begin{definition}{Inner Product Space, Euclidean Space, Unitary Space}{}
+        Let $V$ be a vector space over $\K$ and let $\left\langle \cdot, \cdot\right\rangle$ be an inner product on $V$. Then $\left( V, \left\langle \cdot, \cdot\right\rangle \right) $ is called an \emph{inner product space}. In particular, in case of $V=\K^n$ for some $n\in\N$, we say $\left( \K^n,\left\langle \cdot, \cdot\right\rangle  \right)$ is an \emph{Euclidean space} if $\K = \R$ and a \emph{unitary space} if $\K = \CC$.
+    \end{definition}
+
+    \begin{theorem}{Properties of the Associated Norm on an Inner Product Space}
+        Let $\left( V, \left\langle \cdot, \cdot\right\rangle  \right)$ be an inner product space over $\K$ and let $\norm{\cdot}$ be the norm associated with $\left\langle \cdot, \cdot\right\rangle$. Then the following holds. Suppose $v,u\in V$ and $c\in\K$ are arbitrary.
+        \begin{enumerate}
+            \item $\norm{cv} = \left| c \right|\norm{v}$.
+            \item $\norm{v} > 0$ if $v\neq 0$.
+            \item $\left| \left\langle v, u\right\rangle  \right| \leq \norm{v}\norm{u}$.
+            \item $\norm{v+u}\leq \norm{v}+\norm{u}$.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        Notice that (a) and (b) immediately follow from the definition of an inner product. To verify (c), first fix $u\in V$ without loss of generality. Since the result is trivially valid when $v=0$, suppose $v\neq 0$. Let
+        \begin{equation*}
+            w = u - \frac{\left\langle u, v\right\rangle }{\norm{v}^2}v,
+        \end{equation*}
+        then $\left\langle w, v\right\rangle = 0$ and
+        \begin{equation*}
+            0\leq \norm{w}^2 = \left\langle u-\frac{\left\langle u, v\right\rangle }{\norm{v}^2}v, u-\frac{\left\langle u, v\right\rangle }{\norm{v}^2}v\right\rangle = \left\langle u, u\right\rangle - \frac{\left\langle u, v\right\rangle \left\langle v, u\right\rangle }{\norm{v}^2} = \norm{u}^2 - \frac{\left|\left\langle v, u\right\rangle\right| ^2}{\norm{v}^2},
+        \end{equation*}
+        rearranging which gives
+        \begin{equation*}
+            \left| \left\langle v, u\right\rangle  \right| \leq \norm{v}\norm{u}.
+        \end{equation*}
+        Now, using the inequality above, we find
+        \begin{align*}
+            \norm{v+u}^2 & = \norm{v}^2 + \left\langle v, u\right\rangle + \left\langle u, v\right\rangle + \norm{u}^2 = \norm{v}^2 + \re{\left\langle v, u\right\rangle } + \norm{u}^2 \\
+                         & \leq \norm{v}^2 + 2\norm{v}\norm{u} + \norm{u}^2 = \left( \norm{v} + \norm{u} \right)^2.
+        \end{align*} 
+        Thus
+        \begin{equation*}
+            \norm{v+u}\leq \norm{v} + \norm{u},
+        \end{equation*}
+        as desired.
+    \end{proof}
+
+    \begin{definition}{Cauchy-Schwarz Inequality}{}
+        The inequality
+        \begin{equation*}
+            \left| \left\langle v, u\right\rangle  \right| \leq \norm{v}\norm{u}
+        \end{equation*}
+        from (c) of Theorem 5.1 is known as the \emph{Cauchy-Schwarz inequality}.
+    \end{definition}
+
+    \begin{remark}
+        The proof of the Cauchy-Schwarz inequality shows that, when $v,u\neq 0$, then the strict inequality
+        \begin{equation*}
+            \left| \left\langle v, u\right\rangle  \right| < \norm{v}\norm{u}
+        \end{equation*}
+        applies unless
+        \begin{equation*}
+            u = \frac{\left\langle v, u\right\rangle }{\norm{v}^2} v.
+        \end{equation*}
+        In other words, the equality occurs if and only if $v$ and $u$ are linearly dependent.
+    \end{remark}
+
+    \begin{definition}{Orthogonal}{Vectors}
+        Let $V$ be an inner product space. We say $v,u\in V$ are \emph{orthogonal} with respect to $\left\langle \cdot, \cdot\right\rangle$ if $\left\langle v, u\right\rangle = 0$.
+    \end{definition}
+
+    \begin{definition}{Orthogonal, Orthonormal}{Set}
+        Let $V$ be an inner product space. We say a subset $S\subseteq V$ is \emph{orthogonal} if every pair of vectors in $S$ are orthogonal. That is,
+        \begin{equation*}
+            \forall v,u\in S \left[ \left\langle v, u\right\rangle = 0 \right] .
+        \end{equation*}
+        If $S$ has an additional property that every vector has the unit norm,
+        \begin{equation*}
+            \forall v\in S \left[ \left\langle v, v\right\rangle = \norm{v}^2 = \norm{v} = 1 \right] ,
+        \end{equation*}
+        we say $S$ is \emph{orthonormal}.
+    \end{definition}
+
+    \begin{example}
+        For any inner product space, $0\in V$ is the unique vector orthogonal to every $v\in V$.
+    \end{example}
+
+    \begin{example}
+        The standard ordered basis for $\K^n$ is an orthonormal set.
+    \end{example}
+
+    \begin{example}
+        Let $\left\langle \cdot, \cdot\right\rangle$ be the inner product described in Remark 5.8, and let
+        \begin{equation*}
+            \beta = \left\lbrace E^{pq}\in M_{n\times n}(\CC): E^{pq}_{ij} = \begin{cases} 1 & \text{ if } i=p\land j=q \\ 0 & \text{ otherwise }\end{cases}  \right\rbrace .
+        \end{equation*}
+        Then $\beta$ is an orthonormal set with respect to $\left\langle \cdot, \cdot\right\rangle$. For, if $p,q,r,s\in\left\lbrace 1,2,\ldots,n \right\rbrace$, then
+        \begin{equation*}
+            \left\langle E^{pq}, E^{rs}\right\rangle = \tr\left( E^{pq}E^{rs*} \right) = \tr\left( E^{pq}E^{sr} \right) = \delta_{qs}\delta_{pr}.
+        \end{equation*}
+    \end{example}
+
+    \begin{remark}
+        The two examples of orthogonal sets above are linearly independent. We show that this is true for all orthogonal sets containing nonzero elements.
+    \end{remark}
+
+    \begin{theorem}{Orthogonality Implies Linear Independence}
+        Let $V$ be an inner product space and let $S\subseteq V$ be orthogonal such that every $v\in S$ is nonzero. Then $S$ is linearly independent.
+    \end{theorem}
+
+    \begin{proof}
+        Let $v_1,v_2,\ldots,v_n\in S$ for some $n\in\N$ be arbitrary and let
+        \begin{equation*}
+            v = \sum^{n}_{i=1} c_iv_i
+        \end{equation*}
+        for some $c_1,c_2,\ldots,c_n\in\K$. Then for all $k\in\left\lbrace 1,2,\ldots,n \right\rbrace$,
+        \begin{equation*}
+            \left\langle v, v_k\right\rangle = \left\langle \sum^{n}_{i=1} c_iv_i, v_k\right\rangle = \sum^{n}_{i=1} c_i\left\langle v_i,v_k \right\rangle = c_k\left\langle v_k, v_k\right\rangle.
+        \end{equation*}
+        Therefore,
+        \begin{equation*}
+            c_k = \frac{\left\langle v, v_k\right\rangle }{\norm{v_k}^2},
+        \end{equation*}
+        which means that, if $v=0$, then $c_1=c_2=\cdots=c_n=0$, verifying the linear independence of $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace \in S$. Since we have shown that every finite subset of $S$ is linearly independent, $S$ is linearly independent.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V$ and $S$ be define as Theorem 5.2 and let $v_1,v_2,\ldots,v_n\in S$. If $v\in V$ is a linear combination of $v_1,v_2,\ldots,v_n$< then
+        \begin{equation*}
+            v = \sum^{n}_{i=1} \frac{\left\langle v, v_i\right\rangle }{\norm{v_i}^2} v_i.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{cor}{}
+        Let $V$ be a finite-dimensional inner product space and let $\left\lbrace v_1,v_2,\ldots,v_k \right\rbrace \subseteq V$ be diagonal. Then $\dim(V) \leq k$.
+    \end{cor}	
+
+    \begin{remark}
+        One possible - and geometrically important - interpretation of Corollary 5.2.2 is that the number of mutually perpendicular directions of an inner product space does not exceedthe dimension of the space. Also, it is intuitive to think that the maximum number of mutually perpendicular direction is the dimension of the space; however, we only know that it cannot exceed the dimension of the space so far. It is a particular corollary to the upcoming theorem.
+    \end{remark}
+
+    \clearpage
+    \begin{theorem}{Gram-Schmidt Orthogonalization Process}
+        Let $V$ be an inner product space. Then for any linearly independent
+        \begin{equation*}
+            \beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace \subseteq V,
+        \end{equation*}
+        there exists and orthogonal set
+        \begin{equation*}
+            \alpha = \left\lbrace u_1, u_2, \ldots, u_n \right\rbrace \subseteq V
+        \end{equation*}
+        such that $\left\lbrace u_1,u_2,\ldots,u_k \right\rbrace$ is a basis for $\spn\left\lbrace v_1,v_2,\ldots,v_k \right\rbrace$ for any $k\in\left\lbrace 1,2,\ldots,n \right\rbrace$.
+    \end{theorem}
+
+    \begin{proof}
+        Fix $n\in\N$. We proceed inductively to construct vectors $u_1,u_2,\ldots,u_n$. Clearly $\left\lbrace u_1 \right\rbrace = \left\lbrace v_1 \right\rbrace $ is an orthogonal set which spans $\spn\left\lbrace v_1 \right\rbrace$. Now suppose that, for some $m\in\N$, $\left\lbrace u_1,u_2,\ldots,u_m \right\rbrace$ is orthogonal and such that
+        \begin{equation*}
+            \spn\left\lbrace u_1,u_2,\ldots,u_k \right\rbrace = \spn\left\lbrace v_1,v_2,\ldots,v_k \right\rbrace 
+        \end{equation*}
+        for all $k\in\left\lbrace 1,2,\ldots,m \right\rbrace$. Then define
+        \begin{equation*}
+            u_{m+1} = v_{m+1} - \sum^{m}_{i=1} \frac{\left\langle v_{m+1}, u_i\right\rangle }{\norm{u_i}^2} u_i.
+        \end{equation*}
+        We claim that $\left\lbrace u_1,u_2,\ldots,u_{m+1} \right\rbrace$ is a basis for $\left\lbrace v_1,v_2,\ldots,v_{m+1} \right\rbrace$. To verify this, first notice that $u_{m+1}\neq 0$, since
+        \begin{equation*}
+            \spn\left\lbrace u_1,u_2,\ldots,u_m \right\rbrace = \spn\left( \beta\setminus \left\lbrace v_{m+1} \right\rbrace  \right) 
+        \end{equation*}
+        and $\beta$ is linearly independent. Moreover, for any $J\in\left\lbrace 1,2,\ldots,m \right\rbrace$,
+        \begin{align*}
+            \left\langle v_{m+1}, u_j\right\rangle & = \left\langle v_{m+1} - \sum^{m}_{i=1} \frac{\left\langle v_{m+1}, u_i\right\rangle }{\norm{u_i}^2} u_i, u_j\right\rangle \\
+                                                   & = \left\langle v_{m+1}, u_j\right\rangle - \sum^{m}_{i=1} \frac{\left\langle v_{m+1}, u_i\right\rangle }{\norm{u_i}^2} \left\langle u_i, u_j\right\rangle = \left\langle v_{m+1}, u_j\right\rangle - \frac{\left\langle v_{m+1}, u_j\right\rangle }{\norm{u_j}^2} \left\langle u_j, u_j\right\rangle = 0,
+        \end{align*} 
+        so $u_{m+1}$ is orthogonal to every $v_i\in\left\lbrace u_1,u_2,\ldots,u_m \right\rbrace$. Thus
+        \begin{equation*}
+            \left\lbrace u_1,u_2,\ldots,u_{m+1} \right\rbrace 
+        \end{equation*}
+        is an orthogonal set containing $m+1$ vectors, so by Theorem 5.2, is a basis for $\spn\left\lbrace v_1,v_2,\ldots,v_{m+1} \right\rbrace$. Thus by induction we have the desired result.
+    \end{proof}
+
+    \begin{cor}{Exitence of Orthonormal Basis}
+        Every finite-dimensional inner product space has an orthonormal basis.
+    \end{cor}	
+
+    \begin{proof}
+        Let $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be a basis for $V$, and $n$-dimensional inner product space over $\K$. Then by Theorem 5.3, one may construct an orthogonal set
+        \begin{equation*}
+            \left\lbrace u_1,u_2,\ldots,u_n \right\rbrace \subseteq V.
+        \end{equation*}
+        Then,
+        \begin{equation*}
+            \left\lbrace \frac{u_1}{\norm{u_1}}, \frac{u_2}{\norm{u_2}}, \ldots, \frac{u_n}{\norm{u_n}} \right\rbrace 
+        \end{equation*}
+        is an orthonormal basis for $V$, as required.
+    \end{proof}
+
+    \begin{remark}
+        One of the main advantages of orthonormal basis is that computations involving coordinates are simpler. To demonstrate this, suppose $V$ is a finite-dimensional inner product space, and let
+        \note{Since the inner product of an inner product space is fixed, we may proceed in the reverse direction of Remark 5.14.}
+        $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be an ordered basis for an inner product space $V$ over $\K$. Then we may associate a matrix $G$ with $\beta$ by 
+        \begin{equation*}
+            G_{ij} = \left\langle v_j, v_i\right\rangle .
+        \end{equation*}
+        In particular, when $\beta$ is orthonormal,
+        \begin{equation*}
+            G_{ij} = \left\langle v_j, v_i\right\rangle = \delta_{ji},
+        \end{equation*}
+        which means $G=I$, the identity matrix. So by using an orthonormal basis, we may treat the inner product $\left\langle \cdot, \cdot\right\rangle$ on $V$ as the standard inner product on $\K^n$.
+    \end{remark}
+
+    \begin{remark}
+        It is interesting to note that the Gram-Schmidt process can be used to determine linear independence. To show this, suppose $v_1,v_2,\ldots,v_n\in V$ are linearly dependent, where $V$ is an inner product space over $\K$. To make the case nontrivial, suppose that $v_1\neq 0$. Let $m\in\N$ be the greatest integer such that $v_1,v_2,\ldots,v_m$ are linearly independent. Then it is clear from the constuction that $u_{m+1} = 0$, since $v_{m+1}\in\spn\left\lbrace v1,v_2,\ldots,v_m \right\rbrace$ and so
+        \begin{equation*}
+            u_{m+1}\in \spn\left\lbrace v_1,v_2,\ldots,v_{m+1} \right\rbrace = \spn\left\lbrace v_1,v_2,\ldots,v_m \right\rbrace = \spn\left\lbrace u_1,u_2,\ldots,u_m \right\rbrace .
+        \end{equation*}
+        But, this means $u_{m+1}$ is orthogonal to every $v\in\spn\left\lbrace u_1,u_2,\ldots,u_m \right\rbrace$, and as we mentioned in Example 5.17, $0$ is the unique vector with this property.
+    \end{remark}
+
+    \begin{remark}
+        In essence, the Gram-Schmidt process consists of a basic geometric operation called orthogonal projection, and it is best understood from this point of view. The method of orthogonal projection also arises naturally in the solution of an important approximation problem, which is described as follows. Let $V$ be an inner product space and let $W\in V$ be a subspace. The problem is to find the best possible approximation $w\in W$ for any $v\in V$. That is,
+        \begin{equation*}
+            \forall u\in W\left[ \norm{v-w}\leq \norm{v-u} \right].
+        \end{equation*}
+        By looking at this problem in $\R^2$ or in $\R^3$, it is intuitive to conclude that a $w\in W$ such that $v-w$ is perpendicular to every vector in $W$ is the best approximation, and there is a unique such $w\in W$. Although this conclusion is valid for any finite-dimensional inner product space, it is not valid for some infinite-dimensional case. Since the precise situation is too complicated, we shall only prove the following.
+    \end{remark}
+
+    \begin{theorem}{Orthogonal Approximation}
+        Let $V$ be an inner product space and let $W\subseteq V$ be a subspace. Let $v\in V$ be arbitrary. Then the following hold.
+        \begin{enumerate}
+            \item $w\in W$ is a best approximation to $v$ on $W$ if and only if $v-w$ is orthogonal to every $u\in W$.
+            \item If a best approximation $w\in W$ of $v$ exists, then it is unique.
+            \item If $V$ is finite-dimensional and if $\beta = \left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ is any orthonormal basis for $W$, then
+                \begin{equation*}
+                    w = \sum^{}_{i} \frac{\left\langle v, w_i\right\rangle }{\norm{w_i}^2}w_i
+                \end{equation*}
+                is the best approximation of $v$ by vectors in $W$.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        For the reverse direction of (a), suppose that $v-w$ is orthogonal to $W$, and let $u\in W$. Then $v-u = \left( v-w \right) + \left( w-u \right)$ and
+        \begin{equation*}
+            \norm{v-u}^2 = \norm{v-w}^2 + 2\re\left\langle v-w, w-u\right\rangle + \norm{w-u}^2,
+        \end{equation*}
+        where the equality occurs if and only if $w-u$. For the forward direction, suppose that
+        \begin{equation*}
+            \norm{v-w}\leq \norm{v-u}
+        \end{equation*}
+        for all $u\in W$. Then we claim that
+        \begin{equation*}
+            2\re\left\langle v-w, y\right\rangle + \norm{y}^2 \geq 0
+        \end{equation*}
+        for any $y\in W$. This can be verified by observing that any $y\in W$ can be written as $w-u$ for some $u\in W$ and by using 
+        \begin{equation*}
+            \norm{v-u}^2 = \norm{v-w}^2 + 2\re\left\langle v-w, w-u\right\rangle + \norm{w-u}^2.
+        \end{equation*}
+        In particular, if $w\neq u$, let
+        \begin{equation*}
+            y = - \frac{\left\langle v-w, w-u\right\rangle }{\norm{w-u}^2} (w-u).
+        \end{equation*}
+        Then the inequality becomes
+        \begin{align*}
+            & 2\re\left\langle v-w, -\frac{\left\langle v-w, w-u\right\rangle }{\norm{w-u}^2}\left( w-u \right) \right\rangle +  \norm{-\frac{\left\langle v-w, w-u\right\rangle }{\norm{w-u}^2}(w-u)}^2 \\
+            & = 2\re\left( -\frac{\overline{\left\langle v-w, w-u\right\rangle }}{\norm{w-u}^2}\left\langle v-w, w-u\right\rangle  \right) + \left| \frac{\left\langle v-w, w-u\right\rangle }{\norm{w-u}^2} \right| ^2 \norm{w-u}^2 \\
+            & = -2 \frac{\left| \left\langle v-w, w-u\right\rangle  \right| ^2}{\norm{w-u}^2} + \frac{\left| \left\langle v-w, w-u\right\rangle  \right| ^2}{\norm{w-u}^2} \geq 0,
+        \end{align*} 
+        which is true if and only if $\left\langle v-w,w-u \right\rangle = 0$ for all $w-u\in W$. For (b), suppose $w_1,w_2\in W$ are best approximations to $v\in V$ on $W$. Write
+        \begin{equation*}
+            v-w_1 = \left( v-w_2 \right) + \left( w_2-w_1 \right) .
+        \end{equation*}
+        Then,
+        \begin{equation*}
+            \norm{v-w_1} \leq \norm{v-w_2} + \norm{w_2-w_1}.
+        \end{equation*}
+        But by symmetry,
+        \begin{equation*}
+            \norm{v-w_2} \leq \norm{v-w_1} + \norm{w_1-w_2},
+        \end{equation*}
+        where $\norm{w_1-w_2} = \norm{w_2-w_1}$. Thus we conclude
+        \begin{equation*}
+            \norm{w_1-w_2} = \norm{w_2-w_1} = 0,
+        \end{equation*}
+        or $w_1=w_2$. For (c), let $k\in \left\lbrace 1,2,\ldots,n \right\rbrace$. Then
+        \begin{equation*}
+            \left\langle v-w, w_k\right\rangle = \left\langle v-\sum^{}_{i} \frac{\left\langle v, w_i\right\rangle }{\norm{w_i}^2}w_i, w_k\right\rangle = \left\langle v, w_k\right\rangle - \sum^{}_{i} \frac{\left\langle v, w_i\right\rangle }{\norm{w_I}^2}\left\langle w_i, w_k\right\rangle = \left\langle v, w_k\right\rangle - \left\langle v, w_k\right\rangle = 0.
+        \end{equation*}
+        The uniqueness is provided by (b).
+    \end{proof}
+
+    \begin{definition}{Orthogonal Complement}{}
+        Let $V$ be an inner product space and let $S\subseteq V$ be a subset. We say $S_\perp\subseteq V$ is an \emph{orthogonal complement} to $S$ if
+        \begin{equation*}
+            \forall s_\perp\forall s\in S \left[ \left\langle s_\perp, s\right\rangle =0 \right] .
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        For any inner product space $V$, $V_\perp = \left\lbrace 0 \right\rbrace$ and, conversely, $\left\lbrace 0 \right\rbrace _\perp = V$. Moreover, if $S\subseteq V$, then $S_\perp$ is a subspace of $V$, since $0\in S_\perp$ and whenever $v,u\in S_\perp$ and $c\in\K$,
+        \begin{equation*}
+            \left\langle cv+u, w\right\rangle = c\left\langle v, w\right\rangle + \left\langle u, w\right\rangle = 0
+        \end{equation*}
+        for any $w\in V$. In Theorem 5.4, the property which characterizes the best approximation $w\in W$ of $v\in V$ on $W$ is that $w$ is the unique vector in $W$ such that $v-w\in W_\perp$.
+    \end{remark}
+
+    \begin{definition}{Orthogonal Projection}{of a Vector on a Subspace}
+        Let $V$ be an inner product space and let $v\in V$. If the best approximation $w\in W$ of $v$ on $W$ exists, then we say $w$ is the \emph{orthogonal projection} of $v$ on $W$.
+    \end{definition}
+
+    \begin{definition}{Orthogonal Projection}{of an Inner Product Space on a Subspace}
+        Let $V$ be an inner product space. If for all $v\in V$ there exists $w\in W$ such that $w$ is the orthogonal projection of $v$, then we call the unique function $P: V\to V$ defined by the mapping
+        \begin{equation*}
+            v\mapsto w
+        \end{equation*}
+        the \emph{orthogonal projection} of $V$ on $W$.
+    \end{definition}
+
+    \begin{remark}
+        By Theorem 5.4, the orthogonal projection of $V$ on $W$ always exists when $V$ is a finite-dimensional inner product space and $W\subseteq V$. But Theorem 5.4 also provides the following result.
+    \end{remark}
+
+    \begin{cor}{}
+        Let $V$ be an inner product space and let $W\subseteq V$ be a finite-dimensional subspace. Let $P:V\to V$ be the orthogonal projection of $V$ on $W$. Then the mapping
+        \begin{equation*}
+            v\mapsto v-Pv
+        \end{equation*}
+        defines the orthogonal projection of $V$ on $W_\perp$.
+    \end{cor}	
+
+    \begin{proof}
+        Let $v\in V$ be arbitrary. Then it is clear that
+        \begin{equation*}
+            v - Pv \in W_\perp 
+        \end{equation*}
+        from the definition of orthogonal projection. To verify that $v-Pv$ is the best approximation of v on $W_\perp$. let $w_\perp\in W_\perp$ be arbitrary. Then
+        \begin{align*}
+            \left\lVert v-w_\perp\right\rVert ^2 & = \left\langle v-w_\perp, v-w_\perp\right\rangle = \left\langle \left( v-w_\perp-Pv \right) + Pv, \left( v-w_\perp-Pv \right) + Pv\right\rangle \\
+                                                 & = \left\lVert v-w_\perp-Pv\right\rVert ^2 + \left\langle v-w_\perp-Pv, Pv\right\rangle + \left\langle Pv, v-w_\perp-Pv\right\rangle + \left\lVert Pv\right\rVert ^2 \\
+                                                 & = \left\lVert v-w_\perp-Pv\right\rVert ^2 + \left\lVert Pv\right\rVert ^2 \geq \left\lVert Pv\right\rVert ^2 = \left\lVert v-\left( v-Pv \right) \right\rVert ^2,
+        \end{align*} 
+        where the equality holds if and only if $w_\perp = v - Pv$. Thus $v-Pv$ is the best approximation of $v$ on $W_\perp$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        We now proceed to prove some properties of the orthogonal projection.
+    \end{remark}
+
+    \begin{definition}{Idempotent}{Linear Operator}
+        Let $V$ be a vector space and let $T:V\to V$ be a linear operator. We say $T$ is \emph{idempotent} if $T^n=T$ for all $n\in\N$.
+    \end{definition}
+
+    \begin{prop}{Properties of Orthogonal Projection}
+        Let $W\subseteq V$ be a subspace of an inner product space $V$ and let $P:V\to V$ be the orthogonal projection of $V$ on $W$. Then the following holds.
+        \begin{enumerate}
+            \item $P$ is an idempotent linear operator.
+            \item $\im(P) = W$ and $\ker(P) = W_\perp$.
+            \item $V = W\oplus W_\perp$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        To prove linearity, let $v,u\in V$ and $c\in\K$ be arbitrary. Then
+        \begin{equation*}
+            cPv + Pu = c\sum^{}_{i} \frac{\left\langle v, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i + \sum^{\left\langle u, w_i\right\rangle }_{\left\lVert w_i\right\rVert } w_i = \sum^{}_{i} \frac{c\left\langle v, w_i\right\rangle + \left\langle u, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} \frac{\left\langle cv+u, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = P\left( cv+u \right) 
+        \end{equation*}
+        by Theorem 5.4, provided that $\left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ is an orthonormal basis for $W$. To prove that $P$ is idempotent, first notice that $\im(P) = W$ by definition. Then, for any $w\in W$, it is clear that $w$ is the best approximation. To see this algebraically, notice that
+        \begin{equation*}
+            P\sum^{}_{j} c_jw_j = \sum^{}_{i} \frac{\left\langle \sum^{}_{j} c_jw_j, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} \frac{\sum^{}_{j} c_j\left\langle w_j, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} \frac{c_i\left\langle w_i, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} c_iw_i 
+        \end{equation*}
+        for any $c_1,c_2,\ldots,c_n\in\K$. To show that $\ker(P) = W_\perp$, suppose $Pv=0$. Since $v-Pv\in W_\perp$ by definition, it follows that $v\in W_\perp$. Conversely, if $v\in W_\perp$, then
+        \begin{equation*}
+            \left\langle v, w_i\right\rangle = 0
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, so $Pv = 0$ and $v\in\ker(P)$. The direct sum
+        \begin{equation*}
+            V = W\oplus W_\perp
+        \end{equation*}
+        follows from the fact that $v = Pv + \left( v-Pv \right)$ for any $v\in V$ and that $W\cap W_\perp = \left\lbrace 0 \right\rbrace $.
+    \end{proof}
+
+    \begin{cor}{}
+        Assume the conditions of Proposition 5.5. Then $I-P:V\to V$ is the orthogonal projection of $V$ on $W_\perp$. Moreover, $I-P$ is idempotent and $\ker(I-P) = W$.
+    \end{cor}	
+
+    \begin{proof}
+        The first part of this corollary is supplied by Corollary 5.4.1. To show that $I-P$ is idempotent, notice that
+        \begin{equation*}
+            \left( I-P \right) ^2 = I^2 - 2P + P^2 = I - P,
+        \end{equation*}
+        since $P$ is idempotent. The result $\ker(I-P) = W$ easily follows from the fact that $(I-P)v = 0$ if and only if $v=Pv$, which exactly means $v\in W$.
+    \end{proof}
+
+    \begin{remark}
+        The Gram-Schmidt process can now be described geometrically in the following way. GIven an inner product space $V$ and $v_1,v_2,\ldots,v_n\in V$, let $P_k$ be the orthogonal projection of $V$ on the orthogonal complement of the subspace $\spn\left\lbrace v_1,v_2,\ldots,v_{k-1} \right\rbrace \subseteq V$ for each $k\in\left\lbrace 2,3,\ldots,n+1 \right\rbrace$ and let $P_1=I$> Then the vectors $u_1,u_2,\ldots,u_n\in V$ one obtains from the orthogonalization process is defined by
+        \begin{equation*}
+            u_i = P_iv_i
+        \end{equation*}
+        for each $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$.
+    \end{remark}
+
+    \begin{cor}{Bessel's Inequality}
+        Let $V$ be an inner product space and let $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace \subseteq V$ be an orthogonal set of nonzero vectors. Then for any $v\in V$,
+        \begin{equation*}
+            \sum^{}_{i} = \frac{\left| \left\langle v, v_j\right\rangle  \right| ^2}{\left\lVert v_i\right\rVert ^2}\leq \left\lVert v\right\rVert ^2 
+        \end{equation*}
+        and the equality holds if and only if
+        \begin{equation*}
+            v = \sum^{}_{i} \frac{\left\langle v, v_i\right\rangle }{\left\lVert v_i\right\rVert ^2}v_i.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{proof}
+        Let
+        \begin{equation*}
+            w = \sum^{}_{i} \frac{\left\langle v, v_i\right\rangle }{\left\lVert v_i\right\rVert ^2}v_i,
+        \end{equation*}
+        the orthogonal projection of $v$ on $W = \spn\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$. Then
+        \begin{equation*}
+            v = w + w_\perp
+        \end{equation*}
+        for some $w_\perp\in W_\perp$, where $W_\perp$ is the orthogonal complement of $W$. So,
+        \begin{equation*}
+            \left\lVert v\right\rVert = \left\lVert w\right\rVert + \left\lVert w_\perp\right\rVert = \sum^{}_{i} \frac{\left| \left\langle v, v_i\right\rangle  \right| ^2}{\left\lVert v_i\right\rVert ^2} + \left\lVert w_\perp\right\rVert 
+        \end{equation*}
+        which proves the inequality. In particular, the equality
+        \begin{equation*}
+            \left\lVert v\right\rVert = \sum^{}_{i} \frac{\left| \left\langle v, v_i\right\rangle  \right| ^2}{\left\lVert v_i\right\rVert ^2}
+        \end{equation*}
+        occurs if and only if $w_\perp = 0$. But this exactly means
+        \begin{equation*}
+            v = \sum^{}_{i} \frac{\left\langle v, v_i\right\rangle }{\left\lVert v_i\right\rVert ^2}v_i. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        In the special case which $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace\subseteq V$ is an orthonormal set of an inner product space $V$, Bassel's inequality can be written as
+        \begin{equation*}
+            \sum^{}_{i} \left| \left\langle v, v_i\right\rangle  \right| ^2\leq \left\lVert v\right\rVert 
+        \end{equation*}
+        for any $v\in V$, and that $v\in\spn\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace $ if and only if
+        \begin{equation*}
+            v = \sum^{}_{i} \left\langle v, v_i\right\rangle v_i.
+        \end{equation*}
+        In particular, if $V$ is finite-dimensional, and $\beta = \left\lbrace v_1,v_2,..,v_n \right\rbrace$ is an orthonormal basis for $V$, then the above equation implies that
+        \begin{equation*}
+            \left( \left[ v \right] _\beta \right) _i = \left\langle v, v_i\right\rangle .
+        \end{equation*}
+    \end{remark}
+
+    \section{Linear Functionals and Adjoints}
+    
+    \begin{remark}
+        We proceed to discuss linear functoinals in an inner product space $\left( V,\left\langle \cdot, \cdot\right\rangle  \right)$. In particular, what we will discover is that any linear functional $f:V\to\K$ can be defined by 
+        \begin{equation*}
+            v\mapsto \left\langle v, u\right\rangle 
+        \end{equation*}
+        for some fixed $u\in V$, provided that $V$ is finite-dimensional. We then use this result to prove that for all linear operator $T:V\to V$ there exists a unique linear operator $T^*:V\to V$ such that
+        \begin{equation*}
+            \left\langle Tv, u\right\rangle = \left\langle v, T^*u\right\rangle .
+        \end{equation*}
+        This \textit{adjoint} operations on linear operators $T$ and $T^*$ is identified with the operation of forming the conjugate transpose of a matrix.
+    \end{remark}
+
+    \clearpage
+    \begin{theorem}{Linear Functional Is an Inner Product with a Fixed Argument}
+        Let $V$ be a finite-dimensional inner product space, and let $f:V\to\K$ be a linear functional. Then there exists a unique $u\in V$ such that
+        \begin{equation*}
+            \forall v\in V\left[ f(v)= \left\langle v, u\right\rangle  \right] .
+        \end{equation*}
+    \end{theorem}
+
+    \begin{proof}
+        Let $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be an orthonormal basis for $V$ and let 
+        \begin{equation*}
+            u = \sum^{}_{i} \overline{f\left( v_i \right) }v_i.
+        \end{equation*}
+        Define $f_u:V\to\K$ by
+        \begin{equation*}
+            v\mapsto\left\langle v, u\right\rangle .
+        \end{equation*}
+        Then,
+        \begin{equation*}
+            f_u\left( v_i \right) = \left\langle v_i, \sum^{}_{j} \overline{f\left( v_j \right)v_j }\right\rangle f\left( v_i \right) 
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace $, which means
+        \begin{equation*}
+            f(v) = f_u(v) = \left\langle v, u\right\rangle 
+        \end{equation*}
+        for all $v\in V$. To verify the uniqueness, suppose there exists $w\in W$ such that
+        \begin{equation*}
+            f(v) = \left\langle v, w\right\rangle 
+        \end{equation*}
+        for all $v\in V$. In particular, $\left\langle v, w\right\rangle = \left\langle v, u\right\rangle$ for any $v\in V$, and so
+        \begin{equation*}
+            \left\langle u-w, u-w\right\rangle = \left( \left\langle u, u\right\rangle - \left\langle u, w\right\rangle  \right) + \left( \left\langle w, w\right\rangle - \left\langle w, u\right\rangle  \right) = 0,
+        \end{equation*}
+        which exactly means $u = w$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        Here is another proof of Theorem 5.6 in terms of the representation of a linear functional in an ordered basis. For any $x=\sum^{}_{i} x_iv_i, y=\sum^{}_{j} y_jv_j\in V$, we have
+        \begin{equation*}
+            \left\langle x, y\right\rangle = \sum^{}_{i} x_i \overline{y_i}
+        \end{equation*}
+        by Remark 5.22. Since any linear functional $f:V\to\K$ is of the form
+        \begin{equation*}
+            f(x) = \sum^{}_{i} c_iv_i
+        \end{equation*}
+        for some $c_1,c_2,\ldots,c_n\in\K$ determined by the basis. That is,
+        \begin{equation*}
+            c_i = f\left( v_i \right) 
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$. So we may find $y\in V$ such that $f(x) = \left\langle x, y\right\rangle$ by observing that $\overline{y_i} = c_i$, or,
+        \begin{equation*}
+            \overline{f\left( v_i \right) } = y_i
+        \end{equation*}
+        for all $i\in \left\lbrace 1,2,\ldots,n \right\rbrace$. Thus we find
+        \begin{equation*}
+            y = \sum^{}_{i} \overline{f\left( v_i \right) }v_i
+        \end{equation*}
+        satisfies $f(x) = \left\langle x, y\right\rangle$ for all $x\in V$.
+    \end{remark}
+
+    \begin{remark}
+        The proof of Theorem 5.6 fails to emphasize the essential geometric fact that $u\in V$ such that $f(v) = \left\langle v, u\right\rangle$ for all $v\in V$ is an element of the orthogonal complement of the null space of $f$. To show this, let $W = \ker(f)$ and let $W_\perp$ be the orthogonal complement of $W$. Now the claim is that
+        \begin{equation*}
+            f(v) = f\left( Pv \right)
+        \end{equation*}
+        for all $v\in V$, where $P:V\to V$ is the orthogonal projection of $V$ on $W$. To verify this, first observe that $V = W\oplus W_\perp$, since if $\left\lbrace w_1,w_2,\ldots,w_k \right\rbrace$ is an orthogonal basis for $W$, then we may choose $v_{k+1}, v_{k+2}, \ldots, v_n\in V$ such that $\left\lbrace w_1,w_2,\ldots,w_k, v_{k+1}, \ldots, v_n \right\rbrace$ is a basis for $V$. Then by the Gram-Schmidt process, we may find $w_{k+1}, w_{k+2}, \ldots, w_n\in W_\perp$ such that $\left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ is an orthogonal basis for $V$. It follows that $\left\lbrace w_{k+1}, w_{k+2}, \ldots, w_{n} \right\rbrace$ is a basis for $W_\perp$, and
+        \begin{equation*}
+            W\oplus W_\perp = V,
+        \end{equation*}
+        as claimed. That is, for any
+        \begin{equation*}
+            v = \sum^{n}_{i=1} c_iw_i\in V
+        \end{equation*}
+        we have
+        \begin{equation*}
+            f\left( v \right) = f\left( \sum^{n}_{i=1} c_iw_i \right) = \sum^{n}_{i=1} c_if\left( w_i \right) = \sum^{n}_{i=k+1} c_if\left( w_i \right) = f\left( \sum^{n}_{i=k+1} c_iw_i \right) = f\left( Pv \right).
+        \end{equation*}
+        Moreover, 
+        \begin{equation*}
+            \dim\left( W_\perp \right) = \dim(V)-\dim(W) = \dim(V)-\nullity(f) = \rank(f) = \dim\left( \K \right) = 1,
+        \end{equation*}
+        if we suppose that $f$ is nonzero. So any nonzero $w_\perp\in W_\perp$ satisfies 
+        \begin{equation*}
+            Pv = \frac{\left\langle v, w_\perp\right\rangle }{\left\lVert w_\perp\right\rVert ^2}w_\perp
+        \end{equation*}
+        for all $v\in V$ by (c) of Theorem 5.4. Thus, for any $v\in V$,
+        \begin{equation*}
+            f(v) = f\left( Pv \right) = f\left( \frac{\left\langle v, w_\perp\right\rangle }{\left\lVert w_\perp\right\rVert ^2}w_\perp \right) = \frac{\left\langle v, w_\perp\right\rangle }{\left\lVert w_\perp\right\rVert ^2}f\left( w_\perp \right) = \left\langle v, w_\perp\right\rangle \frac{f\left( w_\perp \right) }{\left\lVert w_\perp\right\rVert ^2},
+        \end{equation*}
+        and thus
+        \begin{equation*}
+            u = \frac{\overline{f\left( w_\perp \right) }w_\perp}{\left\lVert w_\perp\right\rVert }
+        \end{equation*}
+        is the unique vector in $V$ such that $f(v) = \left\langle v, u\right\rangle$ for all $v\in V$ by Remark 5.31.
+    \end{remark}
+
+    \begin{remark}
+        We now turn to the concept of the adjoint of a linear operator.
+    \end{remark}
+
+    \begin{theorem}{Existence and Uniqueness of Adjoint}
+        Let $V$ be a finite-dimensional inner product space. Then for any linear operator $T:V\to V$ there exists a unique linear operator $T^*:V\to V$ such that
+        \begin{equation*}
+            \left\langle Tv, u\right\rangle = \left\langle v, T^*u\right\rangle 
+        \end{equation*}
+        for all $v,u\in V$.
+    \end{theorem}
+
+    \begin{proof}
+        Consider the mapping
+        \begin{equation*}
+            v\mapsto \left\langle Tv, u\right\rangle 
+        \end{equation*}
+        which defines a linear functional $f:V\to\K$. Then Theorem 5.6 provides a unique $w\in V$ such that
+        \begin{equation*}
+            f\left( v \right) = \left\langle Tv, u\right\rangle = \left\langle v, w\right\rangle .
+        \end{equation*}
+        That is, if $T^*:V\to V$ is a function defined by 
+        \begin{equation*}
+            u\mapsto w
+        \end{equation*}
+        for all $u\in V$, $\left\langle Tv, u\right\rangle = \left\langle u, T^*\right\rangle$ for all $v,u\in V$. To show that the constructed $T^*$ is linear, let $x,y\in V$ and $c\in\K$ be arbitrary. Then
+        \begin{equation*}
+            \left\langle v, T^*(cx+y)\right\rangle = \left\langle Tv, cx+y\right\rangle = \overline{c}\left\langle Tv, x\right\rangle + \left\langle Tv, y\right\rangle = \left\langle v, T^*x\right\rangle + \left\langle v, T^*y\right\rangle = \left\langle v, cT^*x+T^*\right\rangle 
+        \end{equation*}
+        for all $v\in V$. Thus $T^*(cx+y) = cT^*(x)+T^*(y)$. The uniqueness of $T^*$ easily follows from Theorem 5.6 and the above construction.
+    \end{proof}
+
+    \begin{prop}{Matrix Representation of a Linear Operator in an Orthogonal Basis}
+        Let $V$ be a finite-dimensional inner product space and let $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be an orthonormal ordered basis. Then for any linear operator $T:V\to V$,
+        \begin{equation*}
+            \left( \left[ T \right] _\beta \right) _{ij} = \left\langle Tv_j, v_i\right\rangle .
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Since $\beta$ is an orthonormal basis, we have
+        \begin{equation*}
+            v = \sum^{}_{i} \left\langle v, v_i\right\rangle v_i
+        \end{equation*}
+        for any $v\in V$ by Remark 5.29. So
+        \begin{equation*}
+            Tv_j = \sum^{}_{i} \left\langle Tv_j, v_i\right\rangle v_i = \sum^{}_{i} \left( \left[ T \right] _\beta \right) _{ij}v_i,
+        \end{equation*}
+        where the second equality holds by the definition of the matrix representation of a linear operator.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a linear operator. Then for any orthonormal ordered basis $\beta$ for $V$,
+        \begin{equation*}
+            \left[ T \right] _\beta^* = \left[ T^* \right] _\beta.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{proof}
+        By Proposition 5.8,
+        \begin{equation*}
+            \begin{cases} 
+                \left( \left[ T \right] _\beta \right) _{ij} & = \left\langle Tv_j, v_i\right\rangle \\
+                \left( \left[ T^* \right] _\beta \right) _{ij} & = \left\langle T^*v_j, v_i\right\rangle 
+            \end{cases},
+        \end{equation*}
+        provided that $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$. But by definition, 
+        \begin{equation*}
+            \overline{\left( \left[ T \right] _\beta \right) _{\ij}} = \overline{\left\langle Tv_j, v_i\right\rangle } = \overline{\left\langle v_j, T^*v_i\right\rangle} = \left\langle T^*v_i, v_j\right\rangle = \left( \left[ T^* \right] _\beta \right) _{ij},
+        \end{equation*}
+        which exactly means $\left[ T \right] _\beta^* = \left[ T^* \right] _\beta$.
+    \end{proof}
+
+    \begin{definition}{Adjoint}{of a Linear Operator}
+        Let $V$ be an inner product space and let $T:V\to V$ be a linear operator. If there exists a linear operator $T^*:V\to V$ such that
+        \begin{equation*}
+            \left\langle Tv, u\right\rangle = \left\langle v, T^*u\right\rangle 
+        \end{equation*}
+        for all $v,u\in V$, then we call $T^*$ the \emph{adjoint} of $T$.
+    \end{definition}
+
+    \begin{remark}
+        By Theorem 5.7, any linear operator on a finite-dimensional inner product space has a unique adjoint. In an infinite-dimensional case, some linear operator does not have an adjoint. But in any case, there is at most one adjoint of a linear operator.
+    \end{remark}
+
+    \begin{remark}
+        Here are some general comments about the finite-dimensional case.
+        \begin{enumerate}
+            \item The adjoint of a linear operator $T$ depends not only on $T$ but also the inner product of the space.
+            \item In case of $\beta$ is an arbitrary ordered basis for th e inner product space, it need not be the case which
+                \begin{equation*}
+                    \left[ T \right] _\beta^* = \left[ T^* \right] _\beta.
+                \end{equation*}
+        \end{enumerate}
+    \end{remark}
+
+    \begin{remark}
+        There is a natural analogue in between taking the complex conjugate of a complex number and taking the adjoint of a linear operator on an inner product space, as the following proposition shows.
+    \end{remark}
+
+    \begin{prop}{Properties of the Adjoint Operation}
+        Let $V$ be a finite-dimensional inner product space. Then the following holds for any linear operators $T,S:V\to V$ and $c\in\K$.
+        \begin{enumerate}
+            \item $\left( T+S \right) ^* = T^* + S^*$.
+            \item $\left( cT \right) ^* = \overline{c} T^*$.
+            \item $\left( TS \right) ^* = S^*T^*$. 
+            \item $\left( T^* \right) ^* = T$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        We treat (a) and (b) together. Observe that
+        \begin{equation*}
+            \left\langle v, \left( cT+S \right)u \right\rangle = \left\langle \left( cT+S \right) v, u\right\rangle = c\left\langle Tv, u\right\rangle + \left\langle Sv, u\right\rangle  = \left\langle v, \overline{c} T^*v\right\rangle + \left\langle v, S^*u\right\rangle = \left\langle v, \left( \overline{c} T^*+S^* \right) \right\rangle .
+        \end{equation*}
+        For (c),
+        \begin{equation*}
+            \left\langle v, \left( TS \right) ^*u\right\rangle = \left\langle \left( TS \right) v, u\right\rangle = \left\langle T\left( Sv \right) ,u\right\rangle = \left\langle Sv, T^*u\right\rangle = \left\langle v, T^*S^*u\right\rangle . 
+        \end{equation*}
+        For (d),
+        \begin{equation*}
+            \left\langle v, \left( T^* \right) ^*u\right\rangle = \left\langle T^*v, u\right\rangle = \overline{\left\langle u, T^*v\right\rangle} = \overline{\left\langle Tu, v\right\rangle}  = \left\langle v, Tu\right\rangle . \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        Proposition 5.9 is often phrased as follows. The adjoint operation $\left( \cdot \right) ^*:\lin(V)\to\lin(V)$ is a conjugate linear
+        \begin{equation*}
+            \left( cT+U \right) ^* = \overline{c} T^* + U^*
+        \end{equation*}
+        antiisomorphism
+        \begin{equation*}
+            \left( TU \right) ^* = U*T*
+        \end{equation*}
+        of period 2
+        \begin{equation*}
+            \left( T^* \right) ^* = T.
+        \end{equation*}
+        Of course, the analogy with complex conjugation is based upon the observation that, if $w,z\in\CC$, then $\overline{\left( w+z \right) } = \overline{w} + \overline{z}$, $\overline{\left( wz \right) } =  \overline{w} \overline{z}$, and $\overline{\left( \overline{z}  \right) } = z$. One should be careful about the reversal of order in a product, that
+        \begin{equation*}
+            \left( TU \right) ^* = U*T*.
+        \end{equation*}
+        This is analogous to the transpose of a matrix product. We might also mention that $z\in\CC$ satisfies $z\in\R$ if and only if
+        \begin{equation*}
+            \overline{z} = z,
+        \end{equation*}
+        so one might expect that there exists some linear operator $T:V\to V$ such that
+        \begin{equation*}
+            T^* = T
+        \end{equation*}
+        and that $T$ behaves linke real numbers. This is in fact the case. If $T:V\to V$ is a linear operator, where $V$ is a inner product space over $\CC$, then $T$ can be written as
+        \begin{equation*}
+            T = T_1 + iT_2
+        \end{equation*}
+        for some $T_1, T_2:V\to V$ satisfying $T_1^* = T_1$ and $T_2^* = T_2$. Thus, in some sence, $T_1$ is the \textit{real part} of $T$ and $T_2$ is the \textit{imaginary part} of $T$. Such $T_1$ and $T_2$ are unique, and we may obtain them by
+        \begin{align*}
+            T_1 & = \frac{1}{2}\left( T+T^* \right) \\
+            T_2 & = \frac{1}{2}\left( T-T^* \right) .
+        \end{align*} 
+    \end{remark}
+
+    \begin{definition}{Hermitian (Self-Adjoint)}{Linear Operator}
+        Let $V$ be a inner product space. We say a linear operator $T:V\to V$ is \emph{Hermitian} (or \emph{self-adjoint}) if $T^* = T$.
+    \end{definition}
+
+    \continued{Remark}
+    \noindent If $T:V\to V$ is Hermitian and $\beta$ is an orthonormal ordered basis for $V$, then $\left[ T \right] _\beta$ is also Hermitian. That is, $\left[ T \right] _\beta$ is equal to its conjugate transpose,
+    \begin{equation*}
+        \left[ T \right] _\beta = \left[ T \right] _\beta^*.
+    \end{equation*}
+    Hermitian operators are important for the following reasons:
+    \begin{enumerate}
+        \item Hermitian operators have many special properties. For instance, Hermitian operators have orthonormal eigenbasis.
+        \item Many linear operators which arise in practice are Hermitian.
+    \end{enumerate}
+    We shall discuss the special properties of Hermitian operators later.
+
+    \section{Unitary Operators}
+    
+    \begin{remark}
+        In this section we consider the concept of isomorphisms between two inner product spaces. Recall that an isomorphism between two algebraic structures of the same type (e.g. group, ring, vector space, ...) is a bijective function which preserves the operations defined on the structures.
+    \end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
