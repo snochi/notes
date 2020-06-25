@@ -340,4 +340,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT innerproductspaces.tex
 INPUT innerproductspaces.tex
+INPUT innerproductspaces2.tex
+INPUT innerproductspaces2.tex
 INPUT linearalgebraII.aux

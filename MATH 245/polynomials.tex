@@ -5,15 +5,11 @@
     \chap{Polynomials}
 
     \section{Algebras} 
-    
-    \begin{definition}{Linear Algebra}{over a Field}
-        We say $\alg$ is an \emph{linear algebra} over a field $\F$ if $\alg$ is a vector space over $\F$ equipped with a bilinear product $\alg\times\alg\to\alg$ that has the following properties. Let $\alpha, \beta, \gamma\in \alg$ and $c\in \F$. 
+
+    \begin{definition}{Algebra}{over a Field}
+        We say $\alg$ is \emph{algebra} over a field $\F$ if $\alg$ is a vector space over $\F$ equipped with a binary operation $\alg\times\alg\to\alg$ called multiplication that has the following properties. Let $\alpha, \beta, \gamma\in \alg$ and $c\in \F$. 
 
         \begin{enumerate}
-            \item Multiplication is associative.
-                \begin{equation*}
-                    \alpha(\beta\gamma) = (\alpha\beta)\gamma.
-                \end{equation*}
             \item Multiplication is distributive with respect to addition.
                 \begin{equation*}
                     \alpha(\beta+\gamma) = \alpha\beta + \alpha\gamma \ \ \ \ (\beta+\gamma)\alpha = \beta\alpha + \gamma\alpha.
@@ -23,6 +19,17 @@
                     c(\alpha\beta) = (c\alpha)\beta = \alpha(c\beta).
                 \end{equation*}
         \end{enumerate}
+    \end{definition}
+
+    \begin{definition}{Associative, Commutative}{Algebra}
+        We say an algebra $\alg$ is \emph{associative} if the multiplication on $\alg$ is associative. That is, for any $\alpha,\beta,\gamma\in\alg$,
+        \begin{equation*}
+            \alpha(\beta\gamma) = (\alpha\beta)\gamma.
+        \end{equation*}
+        Moreover, we say $\alg$ is \emph{commutative} if the multiplication on $\alg$ is commutative. That is, for any $\alpha,\beta\in\alg$,
+        \begin{equation*}
+            \alpha\beta = \beta\alpha.
+        \end{equation*}
     \end{definition}
 
     \begin{definition}{Unity}{of an Algebra}
@@ -41,8 +48,8 @@
         where $f_n = f(n)$ for each $n\in\N\cup \left\lbrace 0 \right\rbrace$.
     \end{remark}
 
-    \begin{prop}{Space of Sequences}
-        Let $\F^\infty$ be the space of all sequences in $\F$. That is, an element $f\in \F^\infty$ can be represented as
+    \begin{prop}{Algebra of Sequences}
+        Let $\F^\infty$ be the algebra of all sequences in $\F$. That is, an element $f\in \F^\infty$ can be represented as
         \begin{equation*}
             f = \left( f_0, f_1, \ldots \right) \in \F^\infty, 
         \end{equation*}
@@ -95,21 +102,22 @@
         shall be denoted by $x^n$. Notice that $x^0 = 1$ is the unity. 
     \end{remark}
 
-    \section{Polynomial Space}
+    \section{Algebra of Polynomials}
 
-    \begin{definition}{Polynomial Space}{}
-        We call the subspace of $\F^\infty$ spanned by $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ the \emph{polynomial space} and denote which by $\F[x]$. Notice that $f\in \F^\infty$ is an element of $\F[x]$ if there exists $a_0, a_1, \ldots, a_n\in \F$ with $a_n\neq 0$ such that
-        \begin{equation*}
-            f = a_0 1+ a_1x+ a_2x^2 + \cdots + a_nx^n,
-        \end{equation*}
-        for some $n\in \N$.
+    \begin{definition}{Algebra of Polynomials, Polynomial}{}
+        We call the subspace of $\F^\infty$ spanned by $\left\lbrace 1, x, x^2, \ldots \right\rbrace$, denoted by $\F[x]$, the \emph{algebra of polynomials}. An element $f\in\F[x]$ of the algebra is called a \emph{polynomial}.
     \end{definition}
 
     \begin{remark}
-        \begin{enumerate}
-            \item $\F[x]\subsetneq \F^\infty$.
-            \item $\F[x]$ is infinite-dimensional and the spanning set $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ is linearly independent. That is, $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ is a basis for $\F[x]$.
-        \end{enumerate}
+        Notice that $f\in \F^\infty$ is a polynomial if there exists $a_0, a_1, \ldots, a_n\in \F$ with $a_n\neq 0$ such that
+        \begin{equation*}
+            f = a_0 1+ a_1x+ a_2x^2 + \cdots + a_nx^n,
+        \end{equation*}
+        for some $n\in \N\cup\left\lbrace 0 \right\rbrace $.
+    \end{remark}
+
+    \begin{remark}
+        $\F[x]\subsetneq \F^\infty$. Moreover, $\F[x]$ is infinite-dimensional and the spanning set $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ is linearly independent. That is, $\left\lbrace 1, x, x^2, \ldots \right\rbrace$ is a basis for $\F[x]$.
     \end{remark}
 
     \begin{definition}{Degree}{of a Polynomial}
@@ -117,7 +125,7 @@
         \begin{equation*}
             f = a_0 1 + a_1x + a_2x^2 + \cdots.
         \end{equation*}
-        If $n\in \N$ is the largest element such that $a_n\neq 0$, we say $n$ is the \emph{degree} of $f$ and denote as $\deg(f) = n$.
+        If $n\in \N$ is the largest element such that $a_n\neq 0$ (which clearly is unique), we say $n$ is the \emph{degree} of $f$ and denote as $\deg(f) = n$.
     \end{definition}
 
     \begin{remark}
@@ -169,10 +177,6 @@
         \end{equation*}
     \end{proof}
 
-    \begin{remark}
-        (1) of Proposition 1.2 shows that $\F[x]$ is an integral domain. That is, $\F[x]$ has a cancellative property.
-    \end{remark}
-
     \begin{cor}{$\F[x]$ Is Commutative and Unital}
         $\F[x]$ is a commutative, unital algebra.
     \end{cor}	
@@ -187,6 +191,10 @@
             fg = \sum^n_{i=0}\sum^m_{j=0} a_ib_jx^{i+j} = \sum^{n+m}_{p=0} \left( \sum^p_{l=0} a_lb_{p-l}x^p \right) = gf. \eqedsym
         \end{equation*}
     \end{proof}
+
+    \begin{remark}
+        (1) of Proposition 1.2 and Corollary 1.2.1 shows that $\F[x]$ (as a ring) is an integral domain. That is, $\F[x]$ is unital, commutative, and cancellative.
+    \end{remark}
 
     \begin{remark}
         Let $\alg$ be a unital algebra over $\F$. Let $f\in \F[x]$. We evaluate $f$ on an element $\alpha\in \alg$ as follows. Denote
@@ -204,7 +212,7 @@
     \end{remark}
 
     \begin{prop}{Properties of Evaluating Polynomials on $\alpha\in\alg$}
-        Let $f,g\in \F[x]$ and let $\alg$ be a unital linear algebra over $\F$. Let $\alpha\in \alg$ and $c\in\F$. Then the following hold.
+        Let $f,g\in \F[x]$ and let $\alg$ be a unital linear algebra over $\F$. Let $\alpha\in \alg$ and $c\in\F$.
         \begin{enumerate}
             \item $(cf+g)(\alpha) = cf(\alpha)+g(\alpha)$.
             \item $(fg)(\alpha) = f(\alpha)g(\alpha)$.
@@ -224,41 +232,43 @@
 
     \section{Lagrange Interpolation}
 
+    \begin{remark}
+        Let $n\in\N$. Throughout this section, we shall assume that $\F$ is a field with at least $n+1$ distinct elements $t_0,t_1,\ldots,t_n\in\F$. Moreover, we shall denote the subspace of $\F[x]$ containing polynomials of degree less than or equal to $n$, together with $0\in\F[x]$, by
+        \begin{equation*}
+            \F_n[x] = \left\lbrace f\in\F[x]:\deg(f)\leq n\lor f=0 \right\rbrace.
+        \end{equation*}
+    \end{remark}
+
+    \begin{recall}{Linear Functional}{on a Vector Space}
+        Let $V$ be a vector space over $\F$. A \emph{linear functional} (or \emph{linear form}) is a linear transformation $T:V\to \F$ from $V$ to its field of scalars $\F$.
+    \end{recall}
+
+    \continued{Remark}
+    \noindent Define a function $L_i:\F_n[x]\to\F$ by
+    \begin{equation*}
+        f\mapsto f\left( t_i \right) 
+    \end{equation*}
+    for all $i\in\left\lbrace 0,1,\ldots,n \right\rbrace$. Then each $L_i$ is a linear functional on $\F_n[x]$. Now, what we intend to show here is that $\gamma = \left\lbrace L_0,L_1,\ldots,L_n \right\rbrace$ is a basis for $\F_n[x]^{*}$, the dual space of $\F_n[x]$. Of course, it is sufficient to show that there exists a basis $\beta = \left\lbrace p_0,p_1,\ldots,p_n \right\rbrace$ for $\F_n[x]^{*}$ such that $\gamma = \beta^{*}$. If such basis exists, then it is characterized by the fact that
+    \begin{equation*}
+        L_j\left( p_i \right) = p_i\left( t_j \right) = \delta_{ij}
+    \end{equation*}
+    for all $i\in\left\lbrace 0,1,\ldots,n \right\rbrace$. A way to construct such polynomials is by
+    \begin{equation*}
+        p_i = \prod^{n}_{j=0,j\neq i} \left( \frac{x-t_j}{t_i-t_j} \right) \in\F_n[x].
+    \end{equation*}
+    In particular, if $f\in\F_n[x]$ is $\sum^{n}_{i=0} c_ip_i$ for some $c_0,c_1,\ldots,c_n\in\F$, then for each $j\in\left\lbrace 0,1,\ldots,n \right\rbrace$,
+    \begin{equation*}
+        f\left( t_j \right) = \sum^{n}_{i=0} c_ip_i\left( t_j \right) = c_j.
+    \end{equation*}
+    This shows that $p_0,p_1,\ldots,p_n$ are linearly independent, since $0\in\F_n[x]$ has the property that $0(t)=0$ for any $t\in\F$. That is, if $f=0$, then $c_0=c_1=\cdots=c_n=0$. Clearly, $\left\lbrace 1,x,\ldots,x^n \right\rbrace$ is a basis for $\F_n[x]$, so $\dim\left( \F_n[x] \right) = n+1$. Thus $\beta$ is a basis for $\F_n[x]$, and, accordingly, $\gamma=\beta^{*}$ is also a basis for $\F_n[x]^{*}$.
+
     \begin{theorem}{Lagrange Interpolation}
-        Let $F_n[x]$ be the vector space spanned by $\left\lbrace 1, x, x^2, \ldots, x^n \right\rbrace$ over a field $\F$ with at least $n+1$ elements. Let $t_0, t_1, \ldots, t_n\in \F$ be distinct. Define linear $L_j: \F_n[x]\to \F$ by
+        Let $t_0,t_1,\ldots,t_n\in\F$ be distinct. Define
         \begin{equation*}
             L_j(f) = f(t_j)
         \end{equation*}
         for each $j\in \left\lbrace 0, 1, \ldots, n \right\rbrace$. Then $\left\lbrace L_0, L_1, \ldots, L_n \right\rbrace$ is a basis for $\F_n[x]^*$.
     \end{theorem}
-
-    \begin{proof}
-        We proceed to show that $\left\lbrace L_0, L_1, \ldots, L_n \right\rbrace$ is the dual of a basis for $\F_n[x]$. For each $j\in \left\lbrace 0, 1, \ldots, n \right\rbrace$, define $p_i\in F_n[x]$ by
-        \begin{equation*}
-            p_i = \prod^n_{j=0,j\neq i} \frac{x-t_j}{t_i-t_j}.
-        \end{equation*}
-        This is well-defined since each $t_j$ is distinct. Then,
-        \begin{equation*}
-            p_i(t_j) = \delta_{ij}
-        \end{equation*}
-        by construction. Let $f = \sum^n_{i=0} c_ip_i\in \spn \left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$. Then,
-        \begin{equation*}
-            f(t_j) = \left( \sum^n_{i=0} c_ip_i \right)(t_j) = \sum^n_{i=0} c_ip_i(t_j) = \sum^n_{i=0} c_i\delta_{ij} = c_j.
-        \end{equation*}
-        Since $0\in \F_n[x]$ has the property
-        \begin{equation*}
-            \forall c\in \F \left[ 0(t) = 0 \right], 
-        \end{equation*}
-        it follows that $\left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$ is linearly independent. Moreover, since
-        \begin{equation*}
-            \left| \left\lbrace p_0, p_1, \ldots, p_n \right\rbrace  \right| = n+1 = \dim \left( \F_n[x] \right), 
-        \end{equation*}
-        $\left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$ is a basis for $\F_n[x]$. Notice that
-        \begin{equation*}
-            L_j(p_i) = p_i(t_j) = \delta_{ij}
-        \end{equation*}
-        by construction. That is, $\left\lbrace L_0, L_1, \ldots, L_n \right\rbrace$ is the dual of $\left\lbrace p_0, p_1, \ldots, p_n \right\rbrace$, as desired.
-    \end{proof}
 
     \begin{cor}{Characterization of a Polynomial}
         Let $c_0, c_1, \ldots, c_n\in \F$. Then there exists a unique polynomial $f\in \F_n[x]$ such that
@@ -268,14 +278,29 @@
     \end{cor}	
 
     \begin{cor}{Lagrange's Interpolation Formula}
-        Let $\F$ be a field with at least $n+1$ distinct elements and suppose we have constructed $P_0, P_1, \ldots, P_n$ as described in Theorem 1.4. Then for each $f\in \F[x]$,
+        Let $\F$ be a field with at least $n+1$ distinct elements and suppose we have constructed $p_0, p_1, \ldots, p_n$ as described in Remark 1.8. Then for each $f\in \F[x]$,
         \begin{equation*}
-            f = \sum^{n}_{i=0} f(t_i)P_i.
+            f = \sum^{n}_{i=0} f(t_i)p_i.
         \end{equation*}
     \end{cor}	
 
+    \begin{proof}
+        Suppose
+        \begin{equation*}
+            f = \sum^{n}_{i=0} c_ip_i.
+        \end{equation*}
+        Then by Remark 1.8, $f\left( t_j \right) = c_j$. Thus
+        \begin{equation*}
+            f = \sum^{n}_{i=0} f(t_i)p_i. \eqedsym
+        \end{equation*}
+    \end{proof}
+
     \begin{definition}{Polynomial Function}{}
-        Let $f\in \F[x]$ be a polynomial. We define a \emph{polynomial function} $\tilde{f}:\F\to\F$ by the mapping $t\mapsto f(t)$, where $f(t)$ is the evaluation of the polynomial $f$ at $t$.
+        Let $f\in \F[x]$ be a polynomial. We define a \emph{polynomial function} $\tilde{f}:\F\to\F$ by the mapping 
+        \begin{equation*}
+            t\mapsto f(t), 
+        \end{equation*}
+        where $f(t)$ is the evaluation of the polynomial $f$ at $t$.
     \end{definition}
 
     \begin{remark}
@@ -296,10 +321,17 @@
 
     \section{Polynomial Ideals}
 
-    \clearpage
-    \begin{lemma}{}
+    \begin{theorem}{Division Algorithm}
+        Let $f,d\in \F[x]$ with $d\neq 0$. Then there exist unique polynomials $q,r\in \F[x]$ such that
+        \begin{equation*}
+            f = dq+r
+        \end{equation*}
+        where $r = 0$ or $\deg(r)<\deg(d)$.
+    \end{theorem}
+
+    \begin{lemma_inside}{}
         Let $f,d\in \F[x]$ be nonzero such that $\deg(f)\geq\deg(d)$. Then there exists $g\in \F[x]$ such that $f-dg = 0$ or $\deg(f-dg) < \deg(f)$.
-    \end{lemma}
+    \end{lemma_inside}
 
     \begin{proof}
         Write
@@ -317,20 +349,13 @@
         by construction, so $\deg(f-dg) < \deg(f)$. 
     \end{proof}
 
-    \begin{theorem}{Division Algorithm}
-        Let $f,d\in \F[x]$ with $d\neq 0$. Then there exist unique polynomials $q,r\in \F[x]$ such that
-        \begin{equation*}
-            f = dq+r
-        \end{equation*}
-        where $r = 0$ or $\deg(r)<\deg(d)$.
-    \end{theorem}
-
+    \ruleline{Proof of Theorem \thechapter.\thestcounter\ Begins Here}
     \begin{proof}
         When $\deg(f) < \deg(d)$, we have $q=0, r=f$ and their uniqueness is trivial. So suppose $\deg(f)\geq\deg(d)$. We verify the existence of $q, r\in \F[x]$ with $\deg(r)<\deg(d)$ or $r=0$ such that
         \begin{equation*}
             f = dq+r
         \end{equation*}
-        first. By Lemma 1.5, there exists $q_1\in \F[x]$ such that
+        first. By Lemma 1.5.1, there exists $q_1\in \F[x]$ such that
         \begin{equation*}
             \deg(f) > \deg(f-dq_1).
         \end{equation*}
@@ -362,7 +387,7 @@
     \end{proof}
 
     \begin{definition}{Divisor, Quotient, Remainder}{}
-        Let $f, d, q, r\in F[x]$ satisfy conditions listed in Theorem 1.6. Then we call $d\neq 0$ the \emph{divisor}, $q$ the \emph{quotient}, and $r$ the \emph{remainder}.
+        Let $f, d, q, r\in F[x]$ satisfy conditions listed in Theorem 1.5. Then we call $d\neq 0$ the \emph{divisor}, $q$ the \emph{quotient}, and $r$ the \emph{remainder}.
     \end{definition}
 
     \begin{definition}{Divides}{}
@@ -370,8 +395,11 @@
         \begin{equation*}
             f = dq.
         \end{equation*}
-        By Theorem 1.6, the existence of such $q$ guarantees its uniqueness. 
     \end{definition}
+
+    \begin{remark}
+        Let $f\in\F[x]$ and suppose $d\mid f$ for some $d\in\F[x]$. Then Theorem 1.5 guarantees the existence and uniqueness of $q\in\F[x]$ such that $f = dq$.
+    \end{remark}
 
     \begin{cor}{Remainder Theorem}
         Let $f\in \F[x]$ and $c\in \F$. Then
@@ -396,8 +424,9 @@
         Let $f\in \F[x]$. We say $c\in \F$ is a \emph{root} of $f$ if $f(c) = 0$.
     \end{definition}
 
+    \clearpage
     \begin{cor}{Nonzero $f$ Has at Most $\deg(f)$ Roots}
-        Let $f\in F[x]$ be nonzero and let $n=\deg(f)$.Then $f$ has at most $n$ roots.
+        Let $f\in F[x]$ be nonzero and let $n=\deg(f)$. Then $f$ has at most $n$ roots.
     \end{cor}
 
     \begin{proof}
@@ -417,19 +446,15 @@
     \end{remark}
 
     \begin{definition}{Algebraically Closed}{Field}
-        Let $\F$ be a field. We say $\F$ is \emph{algebraically closed} if
-        \begin{equation*}
-            \forall f\in \left\lbrace p\in\F[x]: \deg(p)\geq 1 \right\rbrace \left[ \exists c\in \F, f(c) = 0 \right]. 
-        \end{equation*}
-        In other words, every polynomial of nonzero degree always have a root when it is defined over an algebraically closed field.
+        Let $\F$ be a field. We say $\F$ is \emph{algebraically closed} if every polynomial $f\in\F[x]$ over $\F$ has a root.
     \end{definition}
 
-    \begin{definition}{Formal Differentiation}{}
-        The linear operator $D: \F[x]\to \F[x]$ defined as
+    \begin{definition}{Formal Derivative}{of a Polynomial}
+        Define linear operator $D: \F[x]\to \F[x]$ by
         \begin{equation*}
-            D \left[ \sum^n_{i=0} a_ix^i \right] := \sum^n_{i=1} ia_ix^{i-1} 
+            \sum^n_{i=0} a_ix^i\mapsto \sum^n_{i=1} ia_ix^{i-1} 
         \end{equation*}
-        is called the \emph{formal differentiation}.
+        For any $f\in\F[x]$, we call $Df$ the \emph{formal derivative} of $f$.
     \end{definition}
 
     \begin{theorem}{Binomial Theorem}
@@ -493,11 +518,8 @@
         Let $f\in \F[x]$ and $c\in \F$. We say $m\in \N$ is the \emph{multiplicity} of $c$ provided that $(x-c)^m\mid f$ and $(x-c)^{m+1}\nmid f$.
     \end{definition}
 
-    \begin{prop}{Characterization of Multiplicity}
-        Let $\F$ be a field with characteristic zero and $f\in \F[x]$. Then $c\in \F$ is a root with multiplicity $r$ if and only if
-        \begin{equation*}
-            \left[ \forall i\in \left\lbrace 0, 1, \ldots, r-1 \right\rbrace \left[ D^if(c) = 0 \right]  \right] \land \left[ D^rf(c) \neq 0 \right].  
-        \end{equation*}
+    \begin{prop}{}
+        Let $\F$ be a field with characteristic zero and $f\in \F[x]$. Then $c\in \F$ is a root with multiplicity $r$ if and only if $D^if(c)=0$ for each $i\in\left\lbrace 0,1,\ldots,r-1 \right\rbrace$ and $D^rf=0$.
     \end{prop}
 
     \begin{proof}
@@ -547,7 +569,7 @@
         For any polynomial space $\F[x]$, $\left\lbrace 0 \right\rbrace$ is an ideal, which we call the \emph{trivial ideal}.
     \end{definition}
 
-    \begin{prop}{Every Nontrivial Ideal Is Principal and Generated by a Monic Polynomial}
+    \begin{prop}{$\F[x]$ Is a Principal Idean Domain}
         Let $M\subseteq \F[x]$ be a nontrivial ideal. Then $M = \left<d\right>$ for some monic $d\in \F[x]$.
     \end{prop}
 
@@ -607,7 +629,7 @@
     \end{remark}
 
     \begin{prop}{Alternative Definition of Prime}
-        Let $f,g,h\in \F[x]$ and $f$ be prime. Then $f\mid gh \implies f\mid g \lor f\mid h$.
+        Let $f,g,h\in \F[x]$. If $f$ is prime and $f\mid gh$, then $f\mid g$ or $f\mid h$.
     \end{prop}
 
     \begin{proof}
@@ -630,7 +652,8 @@
         If $f\mid p_{m+1}$, then $k=m+1$ and we are done. If $f\mid\prod^n_{i=1} p_i$, then the result follows by the induction hypothesis.
     \end{proof}
 
-    \begin{theorem}{Primary Decomposition of a Monic Polynomial}
+    \clearpage
+    \begin{theorem}{Unique Factorization of Monic Polynomials}
         Let $f\in \F[x]$ be nonscalar and monic. Then there exist unique monic, prime $p_1, p_2, \ldots, p_n\in \F[x]$ such that $f = \prod^n_{i=1} p_i$.
     \end{theorem}
 
@@ -647,6 +670,46 @@
         as desired.
     \end{proof}
 
+    \begin{remark}
+        Let $f\in\F[x]$ be a nonscalar monic polynomial. Then Theorem 1.14 guarantees a unique representation of $f$ in terms of products of monic prime polynomials, some of which may be repeated. In other words, if $p_1,p_2,\ldots,p_k\in F[x]$ are the distinct primes which occur in the factorization of $f$, then
+        \begin{equation*}
+            f = \prod^{k}_{i=1} p_i^{n_i}
+        \end{equation*}
+        for some $n_1,n_2,\ldots,n_k\in\N$. 
+    \end{remark}
+
+    \begin{definition}{Primary Decomposition}{of a Monic Polynomial}
+        Consider Remark 1.14. We call
+        \begin{equation*}
+            f = \prod^{k}_{i=1} p_i^{n_i}
+        \end{equation*}
+        the \emph{primary decomposition} of $f$.
+    \end{definition}
+
+    \begin{prop}{}
+        Let $f\in\F[x]$ be a nonscalar monic polynomial and let
+        \begin{equation*}
+            f = \prod^{k}_{i=1} p_i^{n_i}
+        \end{equation*}
+        be the primary decomposition of $f$. For each $j\in\left\lbrace 1,2,\ldots,k \right\rbrace$, let
+        \begin{equation*}
+            f_j = \frac{f}{p_j^{n_j}} = \prod^{k}_{i=1,i\neq j} p_i^{n_i} .
+        \end{equation*}
+        Then $f_1,f_2,\ldots,f_n$ are coprime.
+    \end{prop}
+
+    \begin{proof}
+        For the sake of contradiction, suppose that there exists prime $p\in\F[x]$ such that
+        \begin{equation*}
+            p\mid f_i
+        \end{equation*}
+        for each $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. It is clear that $p=p_j$ for some $j\in\left\lbrace 1,2,\ldots,k \right\rbrace$ by Theorem 1.14. But this is a contradiction, since clearly
+        \begin{equation*}
+            p_j\nmid f_j. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \clearpage
     \begin{prop}{$f$ Is a Product of Distinct Primes If and Only If $f$ and $Df$ Are Coprime}
         Let $f\in \F[x]$. Then $f$ is a product of distinct primes if and only if $\gcd(f, Df) = 1$.
     \end{prop}
@@ -671,41 +734,13 @@
         Let $\F$ be a field. Then the following are equivalent.
         \begin{enumerate}
             \item $\F$ is algebraically closed.
-            \item For each $f\in \F[x]$, $f = c(x-c_1)^{p_1} (x-c_2)^{p_2} \cdots (x-c_n)^{p_n}$ for some $c_1, c_2, \ldots, c_n\in \F$ and $p_1, p_2, \ldots, p_n\in \N$.
+            \item For each $f\in \F[x]$, 
+                \begin{equation*}
+                    f = c\prod^{n}_{i=1} \left( x-c_i \right) ^{p_i}
+                \end{equation*}
+                for some $c, c_1, c_2, \ldots, c_n\in \F$ and $p_1, p_2, \ldots, p_n\in \N$.
             \item Every prime polynomial of $\F[x]$ has degree 1.
         \end{enumerate}
     \end{prop}
-
-    \ruleline{Exercises}
-
-    \begin{exercise}
-        Verify the existence of the formal differentiation $D: \F[x]\to \F[x]$.
-    \end{exercise}
-
-    \begin{exercise}
-        Verify the formula
-        \begin{equation*}
-            \sum_{i,j} f_ig_jx^{i+j} = \left( \sum^n_{i=0}f_ix^i \right) \left( \sum^m_{i=1} g_jx^j \right).
-        \end{equation*}
-    \end{exercise}
-
-    \begin{exercise}
-        For any $c\in \F$, verify $\left\lbrace 1, (x-c), (x-c)^2, \ldots, (x-c)^k \right\rbrace$ is a basis for $\F_n[x]$.
-    \end{exercise}
-
-    \begin{exercise}
-        Let $V$ be a $n$-dimensional vector space over $\F$, $\beta$ be an ordered basis for $V$, and $T:V\to V$ be a linear operator. Verify that
-        \begin{equation*}
-            \left[ f(T) \right]_\beta = f \left( \left[ T \right]_\beta \right).         
-        \end{equation*}
-    \end{exercise}
-
-    \begin{exercise}
-        Let $d_1, d_2, \ldots, d_n\in \F[x]$. Verify that $\left<d_1, d_2, \ldots, d_n\right>$ is an ideal of $\F[x]$
-    \end{exercise}
-
-    \begin{exercise}
-        Verify that $f = x^2 + 1\in \R[x]$ is prime.
-    \end{exercise}
 
 \end{document}

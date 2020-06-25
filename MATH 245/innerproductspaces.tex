@@ -178,15 +178,15 @@
     \begin{remark}
         We no turn into some general observation about inner products on a complex vector space. Let $V$ be a vector space over $\CC$ with an inner product $\left\langle \cdot, \cdot\right\rangle $. Then for all $v,u\in V$,
         \begin{equation*}
-            \left\langle v, u\right\rangle = \re\left\langle v, u\right\rangle + i\imaginary\left\langle v, u\right\rangle .
+            \left\langle v, u\right\rangle = \re\left\langle v, u\right\rangle + i\im\left\langle v, u\right\rangle .
         \end{equation*}
-        where $\re\left\langle v, u\right\rangle$ and $\imaginary\left\langle v, u\right\rangle$ are the real and imaginary parts of $\left\langle v, u\right\rangle $, respectively. Observe that for any $z\in\CC$,
+        where $\re\left\langle v, u\right\rangle$ and $\im\left\langle v, u\right\rangle$ are the real and imaginary parts of $\left\langle v, u\right\rangle $, respectively. Observe that for any $z\in\CC$,
         \begin{equation*}
-            \imaginary(z) = \re(-iz).
+            \im(z) = \re(-iz).
         \end{equation*}
         It follows that
         \begin{equation*}
-            \imaginary\left\langle v, u\right\rangle = \re\left( -i\left\langle v, u\right\rangle  \right) = \re\left\langle v, -iu\right\rangle .
+            \im\left\langle v, u\right\rangle = \re\left( -i\left\langle v, u\right\rangle  \right) = \re\left\langle v, -iu\right\rangle .
         \end{equation*}
         Thus the inner product $\left\langle v,u \right\rangle$ is completely determined by the its real part, such that
         \begin{equation*}
@@ -629,7 +629,7 @@
         Let $W\subseteq V$ be a subspace of an inner product space $V$ and let $P:V\to V$ be the orthogonal projection of $V$ on $W$. Then the following holds.
         \begin{enumerate}
             \item $P$ is an idempotent linear operator.
-            \item $\im(P) = W$ and $\ker(P) = W_\perp$.
+            \item $\image(P) = W$ and $\ker(P) = W_\perp$.
             \item $V = W\oplus W_\perp$.
         \end{enumerate}
     \end{prop}
@@ -639,7 +639,7 @@
         \begin{equation*}
             cPv + Pu = c\sum^{}_{i} \frac{\left\langle v, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i + \sum^{\left\langle u, w_i\right\rangle }_{\left\lVert w_i\right\rVert } w_i = \sum^{}_{i} \frac{c\left\langle v, w_i\right\rangle + \left\langle u, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} \frac{\left\langle cv+u, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = P\left( cv+u \right) 
         \end{equation*}
-        by Theorem 5.4, provided that $\left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ is an orthonormal basis for $W$. To prove that $P$ is idempotent, first notice that $\im(P) = W$ by definition. Then, for any $w\in W$, it is clear that $w$ is the best approximation. To see this algebraically, notice that
+        by Theorem 5.4, provided that $\left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ is an orthonormal basis for $W$. To prove that $P$ is idempotent, first notice that $\image(P) = W$ by definition. Then, for any $w\in W$, it is clear that $w$ is the best approximation. To see this algebraically, notice that
         \begin{equation*}
             P\sum^{}_{j} c_jw_j = \sum^{}_{i} \frac{\left\langle \sum^{}_{j} c_jw_j, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} \frac{\sum^{}_{j} c_j\left\langle w_j, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} \frac{c_i\left\langle w_i, w_i\right\rangle }{\left\lVert w_i\right\rVert ^2}w_i = \sum^{}_{i} c_iw_i 
         \end{equation*}
@@ -1013,24 +1013,334 @@
     \section{Unitary Operators}
     
     \begin{remark}
-        In this section we consider the concept of isomorphisms between two inner product spaces. Recall that an isomorphism between two algebraic structures of the same type (e.g. group, ring, vector space, ...) is a bijective function which preserves the operations defined on the structures.
+        In this section we consider the concept of isomorphisms between two inner product spaces. Recall that an isomorphism between two algebraic structures of the same type (e.g. group, ring, vector space, ...) is a bijective function which preserves the operations defined on the structures. That being said, an isomorphism between inner product spaces is a vector space isomorphism with and additional property that it preserves inner products.
     \end{remark}
 
+    \begin{definition}{Isometry}{}
+        Let $\left( V, \left\langle \cdot, \cdot\right\rangle _V \right), \left( W,\left\langle \cdot, \cdot\right\rangle  \right)$ be inner product spaces over $\K$. We say function $\varphi:V\to W$ is an \emph{isometry} if $\varphi$ is a vector space isomorphism which preserves inner products. That is,
+        \begin{equation*}
+            \left\langle Tv, Tu\right\rangle _W = \left\langle v, u\right\rangle _V
+        \end{equation*}
+        for all $v,u\in V$.
+    \end{definition}
 
+    \begin{remark}
+        Let $V$ and $W$ be inner product spaces over $\K$. If a linear transformation $T:V\to W$ preserves inner products, then it must be the case that
+        \begin{equation*}
+            \left\lVert Tv\right\rVert = \left\lVert v\right\rVert ,
+        \end{equation*}
+        which means $T$ is invertible (i.e. bijective).
+    \end{remark}
 
+    \begin{remark}
+        If $T:V\to W$ is an isometry, then $T^{-1}:W\to V$ is an isometry, since
+        \begin{equation*}
+            \left\lVert T^{-1}v\right\rVert = \left\lVert TT^{-1}v\right\rVert = \left\lVert v\right\rVert.
+        \end{equation*}
+        That is, if $V$ is isometric to $W$, then $W$ is isometric to $V$, and vice versa. So an isometry is an equivalence relation.
+    \end{remark}
 
+    \begin{prop}{Alternative Definitions of Isometry}
+        Let $V,W$ be finite-dimensional inner product spaces over $\K$ satisfying $\dim(V)=\dim(W)$. If $T:V\to W$ is linear, then the following are equivalent.
+        \begin{enumerate}
+            \item $T$ preserves inner products.
+            \item $T$ is an isometry.
+            \item $T$ carries some orthonormal basis for $V$ onto an orthonormal basis for $W$.
+            \item $T$ carries every orthonormal basis for $V$ onto an orthonormal basis for $W$.
+        \end{enumerate}
+    \end{prop}
 
+    \begin{proof}
+        We shall proceed in the order (a)$\implies$(b)$\implies$(d)$\implies$(c)$\implies$(a). Notice that (a)$\implies$(b) is supplied by Remark 5.39. For (b)$\implies$(d), let $\beta=\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be an orthonormal basis for $V$. Then for any $i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace$,
+        \begin{equation*}
+            \left\langle Tv_i, Tv_j\right\rangle = \left\langle v_i, v_j\right\rangle = \delta_{ij}
+        \end{equation*}
+        which verifies that $T\beta = \left\lbrace Tv_1,Tv_2,\ldots,Tv_n \right\rbrace$ is an orthonormal basis for $W$. (d)$\implies$(c) requires no comment. For (c)$\implies$(a), suppose $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ is an orthonormal basis for $V$ such that $T\beta$ is an orthonormal basis for $W$. Then for any $i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace$,
+        \begin{equation*}
+            \left\langle Tv_i, Tv_j\right\rangle = \left\langle v_i, v_j\right\rangle = \delta_{ij}.
+        \end{equation*}
+        Let $x=\sum^{n}_{i=1} x_iv_i, y=\sum^{n}_{i=1} y_iv_i\in V$ for some $x_1,x_2,\ldots,x_n,y_1,\ldots,y_n\in\K$. Then
+        \begin{equation*}
+            \left\langle x, y\right\rangle = \sum^{}_{i} x_i\overline{y_i} 
+        \end{equation*}
+        and
+        \begin{equation*}
+            \left\langle Tx, Ty\right\rangle = \left\langle \sum^{}_{i} x_iv_i, \sum^{}_{j} y_jTv_j\right\rangle = \sum^{}_{i} x_i\overline{y_i} 
+        \end{equation*}
+        by Remark 5.22.
+    \end{proof}
 
+    \begin{cor}{}
+        Let $V$ and $W$ be finite-dimensional inner product spaces over $|K$. Then $V$ and $W$ are isometry if and only if $\dim(V) = \dim(W)$.
+    \end{cor}	
 
+    \begin{proof}
+        The forward direction easily follows from the fact that if $V$ and $W$ are isometric, then they are vector space isomorphic. For the reverse direction, we may find orthonormal bases $\beta_V = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ for $V$ and $\beta_W = \left\lbrace w_1,w_1,\ldots,w_n \right\rbrace$ for $W$ by a slight variant of the Gram-Schmidt process. Then if we define a linear transformation $T:V\to W$ by
+        \begin{equation*}
+            v_i\mapsto w_i,
+        \end{equation*}
+        $T$ is an isometry by Proposition 5.10.
+    \end{proof}
 
+    \begin{example}
+        If $V$ is an $n$-dimensional inner product space, then each orthonormal ordered basis $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ determines an isometry $T:V\to\K^n$ with the standard inner product. The isometry is simply
+        \begin{equation*}
+            T\left( \sum^{}_{i} x_iv_i \right) = \sum^{}_{i} x_i.
+        \end{equation*}
+    \end{example}
 
+    \begin{prop}{$T$ Preserves Inner Products If and Only If $T$ Preservew Norms}
+        Let $V$ and $W$ be inner product spaces over $\K$ and let $T:V\to W$ be a linear transformation. Then $T$ preserves inner products if and only if $T$ preserves norms.
+    \end{prop}
 
+    \begin{proof}
+        The forward direction is supplied by Remark 5.39. FOr the reverse direction, suppose
+        \begin{equation*}
+            \left\lVert Tv\right\rVert = \left\lVert v\right\rVert 
+        \end{equation*}
+        for all $v\in V$. Then
+        \begin{equation*}
+            \left\lVert Tv\right\rVert ^2 = \left\lVert v\right\rVert ^2
+        \end{equation*}
+        so by using the appropirate polarization identity, one may show that $\left\langle Tv, Tu\right\rangle = \left\langle v, u\right\rangle $ for all $v,u\in V$.
+    \end{proof}
 
+    \begin{definition}{Unitary}{Operator}
+        Let $V$ be an inner product space. We say a linear operator $T:V\to V$ is \emph{unitary} if $T$ is an isometry.
+    \end{definition}
 
+    \begin{remark}
+        Let $V$ be an inner product space. If $T_1,T_2:V\to V$ are unitary operators then $T_1T_2$ and $T_2T_1$ are unitary, since
+        \begin{equation*}
+            \left\lVert T_1T_2v\right\rVert = \left\lVert T_2v\right\rVert = \left\lVert v\right\rVert - \left\lVert T_1v\right\rVert = \left\lVert T_2T_1v\right\rVert 
+        \end{equation*}
+        by Proposition 5.11. It is also clear that $I:V\to V$ is unitary, and we also have that, if $T:V\to V$ is unitary, then $T^{-1}:V\to V$ is unitary by Remark 5.40. Thus
+        \begin{equation*}
+            \left\lbrace T\in\lin(V) : T\text{ is an isometry} \right\rbrace 
+        \end{equation*}
+        is a group under the usual composition.
+    \end{remark}
 
+    \begin{remark}
+        If $V$ is a finite-dimensional inner product space and $T:V\to V$ is linear, then $T$ is uintary if and only if
+        \begin{enumerate}
+            \item $\left\langle Tv, Tu\right\rangle = \left\langle v, u\right\rangle$ for all $v,u\in V$ or
+            \item there exists an orthonormal basis $\beta$ for $V$ such that $T\beta$ is an orthonormal basis for $V$.
+        \end{enumerate}
+    \end{remark}
 
+    \begin{prop}{}
+        Let $V$ be an inner product space. Then a linear operator $T:V\to V$ is unitary if and only if there exists the adjoint $T^*:V\to V$ of $T$ which satisfies $TT^* = I$.
+    \end{prop}
 
+    \begin{proof}
+        For the forward direction, observe that if $T$ is unitary, tehn $T$ is invertible and so
+        \begin{equation*}
+            \left\langle Tv, u\right\rangle = \left\langle Tv, TT^{-1}u\right\rangle = \left\langle v, T^{-1}u\right\rangle
+        \end{equation*}
+        for any $v,u\in V$, which means $T^{-1} = T^*$. For the reverse direction, if $TT^* = I$, then $T^*=T^{-1}$ so $T$ is invertible. Moreover,
+        \begin{equation*}
+            \left\langle Tv, Tu\right\rangle = \left\langle v, T^*Tu\right\rangle = \left\langle v, T^{-1}Tu\right\rangle = \left\langle v, u\right\rangle 
+        \end{equation*}
+        for any $v,u\in V$, which means $T$ is unitary.
+    \end{proof}
 
+    \begin{example}
+        Let $\left( M_{n\times 1}(\CC) , \left\langle \cdot, \cdot\right\rangle  \right)$ be an inner product space with
+        \begin{equation*}
+            \left\langle X, Y\right\rangle = Y^*X
+        \end{equation*}
+        for all $X,Y\in M_{n\times 1}(\CC)$. Let $A\in M_{n\times n}(\CC)$ and let $T:M_{n\times 1}(\CC)\mapsto M_{n\times 1}(\CC)$ be the left multiplication operator of $A$. Then
+        \begin{equation*}
+            \left\langle TX, TY\right\rangle = \left( AY \right) ^*\left( AX \right) = Y^*A^*AX
+        \end{equation*}
+        for all $X,Y\in M_{n\times 1}(\CC)$. That is, $T$ is unitary if and only if $A^*A=I$.
+    \end{example}
 
+    \begin{definition}{Unitary}{Matrix}
+        Let $A\in M_{n\times n}(\K)$. We say $A$ is \emph{unitary} if $AA^*=I$.
+    \end{definition}
 
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a linear operator. Then $T$ is unitary if and only if there exists an ordered basis $\beta$ for $V$ such that $\left[ T \right] _\beta$ is unitary.
+    \end{prop}
+
+    \begin{proof}
+        Let $\beta$ be an orthonormal basis for $V$. Then it is clear that $TT^*=I$ if and only if $\left[ T \right] _\beta\left[ T \right] _\beta^* = I$ by a slight modification of Example 5.44. The rest of the proof is completely supplied by the proof of Proposition 5.12 above.
+    \end{proof}
+
+    \begin{remark}
+        Let $A\in M_{n\times n}(\K)$. The statement that $A$ is unitary merely means
+        \begin{equation*}
+            \left( A^*A \right) _{ij} = \sum^{}_{k} A^*_{ik}A_{kj} = \sum^{}_{k} \overline{A_{ki}} A_{kj} = \delta_{ij}.
+        \end{equation*}
+        In other words, the columns of $A$ form an orthonormal set of column matrics, with respect to the standard inner product
+        \begin{equation*}
+            \left\langle X, Y\right\rangle = Y^*X
+        \end{equation*}
+        of $M_{n\times 1}(\K)$. Since $A^*A=I$ if and only if $AA^*=I$ we also see that $A$ is unitary if and only if the rows of $A$ form an orthonormal set with respect to the standard inner product. In conclusion, $A\in M_{n\times n}(\K)$ is unitary if and only if the rows and columns of $A$ form orthonormal sets. In particular, in case which $\K=\R$, we see that $AA^*=I$ if and only if $AA^T=I$ if and only if the rows and columns of $A$ form orthonormal sets.
+    \end{remark}
+
+    \begin{definition}{Orthogonal}{Matrix}
+        Let $A\in M_{n\times n}(\K)$. We say $A$ is \emph{orthogonal} if $AA^T=I$.
+    \end{definition}
+
+    \begin{remark}
+        If $A\in M_{n\times n}(\R)$ is orthogonal, then it is unitary. A $B\in M_{n\times n}(\K)$ is unitary if and only if each $B_{ij}\in\R$.
+    \end{remark}
+
+    \begin{example}
+        The relations between trigonometric functions show that the matrix
+        \begin{equation*}
+            A =
+            \begin{bmatrix}
+                \cos(\theta) & -\sin(\theta) \\
+                \sin(\theta) & \cos(\theta) \\
+            \end{bmatrix}
+        \end{equation*}
+        is orthogonal. If $\theta\in\R$, $A$ is the matrix representation of the rotation operator $T:\R^2\to\R^2$ through angle $\theta$ in the standard ordered basis for $\R^2$. Since $A$ is orthogonal $A$ is unitary and preserves the standard inner product of $\R^2$ (i.e. the dot product).
+    \end{example}
+
+    \begin{remark}
+        Recall that the set of unitary operators on an inner product space $V$,
+        \begin{equation*}
+            \left\lbrace T:V\to V\mid T\text{ is unitary} \right\rbrace 
+        \end{equation*}
+        is a group under the usual composition. So by Proposition 6.13, we also see that
+        \note{We shall consistently use $U(n)$ to denote the following group from now on.}
+        \begin{equation*}
+            U(n) = \left\lbrace U\in M_{n\times n}(\CC): U\text{ is unitary} \right\rbrace 
+        \end{equation*}
+        is a group under the usual composition. The Gram-Schmidt process in $\CC^n$ has an interesting consequence for $U(n)$.
+    \end{remark}
+
+    \clearpage
+    \begin{prop}{}
+        Let $A\in M_{n\times n}(\CC)$ be invertible. Then there exists a unique lower triangular $M\in M_{n\times n}(\CC)$ with positive entries on the main diagonal such that $MA$ is unitary.
+    \end{prop}
+
+    \begin{proof}
+        Write
+        \begin{equation*}
+            A =
+            \begin{bmatrix}
+                A_1 & A_2 & \cdots & A_n
+            \end{bmatrix},
+        \end{equation*}
+        where each $A_i\in\CC^n$ is the $i$th column of $A$. Since $A$ is invertible, $\left\lbrace A_1,A_2,\ldots,A_n \right\rbrace$ is a basis for $\CC^n$. Then by Gram-Schmidt process, we may obtain an orthogonal basis $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ for $\CC^n$ such that
+        \begin{equation*}
+            \spn\left\lbrace A_1,A_2,\ldots,A_n \right\rbrace = \spn\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace
+        \end{equation*}
+        for any $k\in\left\lbrace 1,2,\ldots,n \right\rbrace$, where
+        \begin{equation*}
+            v_i = A_i - \sum^{i-1}_{j=1} \frac{\left\langle A_i, v_j\right\rangle }{\left\lVert v_j\right\rVert ^2}v_j.
+        \end{equation*}
+        By some calculations, we may show that each $v_i$ is a linear combination of $A_1,A_2,\ldots,A_i$. Since $\left\lbrace A_1,A_2,\ldots,A_i \right\rbrace$ is linearly independent, there exist unique $c_{i1}, c_{i2}, \ldots, c_{ii}\in\K$ such that
+        \begin{equation*}
+            v_i = \sum^{i}_{j=1} c_{ij}A_j = A_i - \sum^{i-1}_{j=1} c_{ij}A_j.
+        \end{equation*}
+        Let $M\in M_{n\times n}(\CC)$ be defined by
+        \begin{equation*}
+            M_{ij} = 
+            \begin{cases} 
+                - \frac{1}{\left\lVert v_i\right\rVert }c_{ij} & \text{ if } j<i \\
+                \frac{1}{\left\lVert v_i\right\rVert } & \text{ if } j=i \\
+                0 & \text{ otherwise } \\
+            \end{cases},
+        \end{equation*}
+        then $M$ is lower triangular and each $M_{ii} > 0$ by definition. Moreover,
+        \begin{equation*}
+            \sum^{i}_{j=1} M_{ij}A_j = \frac{A_i}{\left\lVert v_i\right\rVert } + \sum^{i-1}_{j=1} M_{ij}A_j = \frac{A_i + \sum^{i-1}_{j=1} \left\lVert v_i\right\rVert M_{ij}A_j}{\left\lVert v_i\right\rVert } = \frac{A_i-\sum^{i-1}_{j=1} c_{ij}A_j}{\left\lVert v_i\right\rVert } = \frac{v_i}{\left\lVert v_i\right\rVert },
+        \end{equation*}
+        which exactly means
+        \begin{equation*}
+            MA =
+            \begin{bmatrix}
+                \frac{v_1}{\left\lVert v_1\right\rVert } & \frac{v_2}{\left\lVert v_2\right\rVert } & \cdots & \frac{v_n}{\left\lVert v_n\right\rVert }
+            \end{bmatrix}
+        \end{equation*}
+        which clearly is unitary. To verify the uniqueness, we first claim that
+        \note{We shall consistently use $T(n)^+$ to denote the following group from now on.}
+        \begin{equation*}
+            T(n)^+ = \left\lbrace B\in M_{n\times n}(\CC): \forall i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace \left[ i<j\implies B_{ij=0}\land B_{ii} > 0 \right]  \right\rbrace ,
+        \end{equation*}
+        the set of lower triangular matrices with positive entries on the main diagonal, is a group under the usual composition. To verify this, observe that $I\in T(n)^+$. Moreover, for any $B,C\in T(n)^+$, it is clear that $BC$ is lower triangular and
+        \begin{equation*}
+            (BC)_{ii} = \sum^{n}_{j=1} B_{ij}C_{ji} = B_{ii}C_{ii} > 0.
+        \end{equation*}
+        Lastly, if $B\in T(n)^+$, then $B$ is invertible, since $B$ is triangular and every entry on the main diagonal is nonzero, and $B^{-1}\in T(n)^+$, since $BB^{-1} = I$ and so
+        \begin{equation*}
+            \left( BB^{-1} \right) _{ii} = I_{ii} = 1 > 0 \implies B^{-1}_{ii} > 0
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, and it is clear that $B^{-1}$ is lower triangular as well. Since
+        \begin{equation*}
+            U(n) = \left\lbrace U\in M_{n\times n}(\CC): U\text{ is unitary} \right\rbrace 
+        \end{equation*}
+        is also a group under usual composition, if there exists $N\in T(n)^+$ such that $NA$ is unitary, then $(MA)(NA)^{-1}\in U(n)$ and so
+        \begin{equation*}
+            (MA)(NA)^{-1} = MAA^{-1}N^{-1} = MN^{-1} \in U(n).
+        \end{equation*}
+        That is, $MN^{-1}$ satisfies
+        \begin{equation*}
+            \left( MN^{-1} \right) ^{-1} = \left( MN^{-1} \right) ^*.
+        \end{equation*}
+        But $\left( MN^{-1} \right) ^{-1}\in T(n)^+$ is upper triangular by definition, so it follows that $\left( MN^{-1} \right) ^{-1}$, or, $MN^{-1}$ is simultaneously upper and lower triangular, which means $MN^{-1}$ is diagonal. But a diagonal matrix is unitary if and only if every entry on the main diagonal is $1$ or $-1$. But $MN^{-1}\in T(n)^+$ so $\left( MN^{-1} \right) _{ii} = 1$ for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$. Thus $MN^{-1} = i$ and $M=N$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        Observe that Proposition 5.14 is about the following group of matrices:
+        \begin{equation*}
+            GL(n) = \left\lbrace A\in M_{n\times n}(\CC): A\text{ is invertible} \right\rbrace .
+        \end{equation*}
+        It can be easily shown that $GL(n)$ is a group under the usual composition. For, $I\in GL(n)$, $AB$ is invertible whenever $A$ and $B$ are invertible, and $A^{-1}$ is invertible whenever $A$ is invertible.
+    \end{remark}
+
+    \begin{definition}{General Linear Group}{}
+        The group of $n\times n$ complex invertible matrices, denoted by $GL(n)$, is called a \emph{general linear group}.
+    \end{definition}
+
+    \begin{cor}{$LU$ Decomposition}
+        For each $A\in GL(n)$, there exist unique $L\in T^+(n)$ and $U\in U(n)$ such that $A=LU$.
+    \end{cor}	
+
+    \begin{proof}
+        By Proposition 5.14, there exists unique $M\in T(n)^+$ such that $MB\in U(n)$. Let $U=MA$ and $L=M^{-1}$. Then it is clear that
+        \begin{equation*}
+            LU = M^{-1}MA = A.
+        \end{equation*}
+        Observe that the uniqueness of $U$ and $L$ easily follows from the uniqueness of $M$.
+    \end{proof}
+
+    \begin{remark}
+        Let us consider briefly the change of basis in an inner product space. Let $V$ be a finite dimensional inner product space and let $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ and $\gamma=\left\lbrace u_1,u_2,\ldots,u_n \right\rbrace$ be orthonormal ordered bases for $V$. Then there exists a uniqe inveritible $P\in M_{n\times n}(\K)$ such that
+        \begin{equation*}
+            \left[ v \right] _\gamma = P^{-1}\left[ v \right] _\beta
+        \end{equation*}
+        for all $v\in V$. If $U:V\to V$ is defined by
+        \begin{equation*}
+            v_i\mapsto u_i,
+        \end{equation*}
+        then $\left[ u \right] _\beta = P$, since
+        \begin{equation*}
+            u_i = \sum^{}_{j} P_{ji}v_j.
+        \end{equation*}
+        Since $\beta$ and $\gamma$ are orthonormal bases, $P$ and $U$ are unitary by Proposition 5.10. Then for any linear operator $T:V\to V$,
+        \begin{equation*}
+            \left[ T \right] _\gamma = P^{-1}\left[ T \right] _\beta P = P^*\left[ T \right] _\beta P.
+        \end{equation*}
+        This motivates the followind definition.
+    \end{remark}
+
+    \begin{definition}{Unitarily Equivalent, Orthogonally Equivalent}{Matrices}
+        We say $A,B\in M_{n\times n}(\K)$ are \emph{unitarily equivalent} if there exists a unitary $P\in M_{n\times n}(\K)$ such that
+        \begin{equation*}
+            A = P^{-1}BP = P^*BP
+        \end{equation*}
+        and say \emph{orthogonally equivalent} if there exists an orthogoanl $Q\in M_{n\times n}(\K)$ such that
+        \begin{equation*}
+            A = Q^{-1}BQ = Q^TBQ.
+        \end{equation*}
+    \end{definition}
+
+    
 \end{document}

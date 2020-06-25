@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.9.18)  12 JUN 2020 21:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.9.18)  24 JUN 2020 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1305,14 +1305,14 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 9.
 Package marginnote Info: Margin note 6.1 is on absolute page 6
-(marginnote)              on input line 44.
-Package marginnote Info: right page because not two side mode on input line 44.
+(marginnote)              on input line 51.
+Package marginnote Info: right page because not two side mode on input line 51.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 44.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 51.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 44.
+(marginnote)             \marginnoteleftadjust ignored on input line 51.
 
-Overfull \hbox (0.15678pt too wide) detected at line 64
+Overfull \hbox (0.15678pt too wide) detected at line 71
 [][] \OT1/ztmcm/m/n/10.95 = [][] \OML/ztmcm/m/it/10.95 f[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 g \OT1/ztmcm/m/n/10.95 + \OML/ztmcm/m/it/10.95 h\OT1/ztmcm/m/n/10.95 )[] = [][] \OML/ztmcm/m/it/10.95 f[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 g[] \OT1/ztmcm/m/n/10.95 + \OML/ztmcm/m/it/10.95 h[]\OT1/ztmcm/m/n/10.95 ) = [][] \OML/ztmcm/m/it/10.95 f[]g[] \OT1/ztmcm/m/n/10.95 + [][] \OML/ztmcm/m/it/10.95 f[]h[] \OT1/ztmcm/m/n/10.95 = (\OML/ztmcm/m/it/10.95 fg\OT1/ztmcm/m/n/10.95 )[] + (\OML/ztmcm/m/it/10.95 fh\OT1/ztmcm/m/n/10.95 )[]\OML/ztmcm/m/it/10.95 :
  []
 
@@ -1326,7 +1326,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Package mdframed Info: Not enough space on this page on input line 133.
+Package mdframed Info: Not enough space on this page on input line 129.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1335,23 +1335,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
-Package mdframed Info: Not enough space on this page on input line 133.
+Package mdframed Info: Not enough space on this page on input line 129.
 Package marginnote Info: Margin note 8.1 is on absolute page 8
-(marginnote)              on input line 139.
-Package marginnote Info: right page because not two side mode on input line 139.
+(marginnote)              on input line 147.
+Package marginnote Info: right page because not two side mode on input line 147.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 139.
+(marginnote)             \marginnoteleftadjust ignored on input line 147.
 Package marginnote Info: Margin note 8.2 is on absolute page 8
-(marginnote)              on input line 176.
-Package marginnote Info: right page because not two side mode on input line 176.
+(marginnote)              on input line 180.
+Package marginnote Info: right page because not two side mode on input line 180.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 176.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 176.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 176.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 176.
+(marginnote)             \marginnoteleftadjust ignored on input line 180.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1361,16 +1361,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 Package marginnote Info: Margin note 9.1 is on absolute page 9
-(marginnote)              on input line 206.
-Package marginnote Info: right page because not two side mode on input line 206.
+(marginnote)              on input line 214.
+Package marginnote Info: right page because not two side mode on input line 214.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 206.
-Package marginnote Info: Margin note 9.2 is on absolute page 9
-(marginnote)              on input line 227.
-Package marginnote Info: right page because not two side mode on input line 227.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 227.
+(marginnote)             \marginnoteleftadjust ignored on input line 214.
 
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 244.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 244.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1378,17 +1383,41 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
-Package marginnote Info: Margin note 10.1 is on absolute page 10
-(marginnote)              on input line 263.
-Package marginnote Info: right page because not two side mode on input line 263.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 263.
-Package marginnote Info: Margin note 10.2 is on absolute page 10
-(marginnote)              on input line 270.
-Package marginnote Info: right page because not two side mode on input line 270.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 270.
 
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 244.
+
+Package marginnote Info: Margin note 10.1 is on absolute page 10
+(marginnote)              on input line 247.
+Package marginnote Info: right page because not two side mode on input line 247.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 247.
+Package marginnote Info: Margin note 10.2 is on absolute page 10
+(marginnote)              on input line 265.
+Package marginnote Info: right page because not two side mode on input line 265.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 265.
+Package marginnote Info: Margin note 10.3 is on absolute page 10
+(marginnote)              on input line 273.
+Package marginnote Info: right page because not two side mode on input line 273.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 273.
+Package marginnote Info: Margin note 10.4 is on absolute page 10
+(marginnote)              on input line 280.
+Package marginnote Info: right page because not two side mode on input line 280.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 280.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 304.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 304.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1396,39 +1425,38 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-Package marginnote Info: Margin note 11.1 is on absolute page 11
-(marginnote)              on input line 300.
-Package marginnote Info: right page because not two side mode on input line 300.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 300.
-Package marginnote Info: Margin note 11.2 is on absolute page 11
-(marginnote)              on input line 320.
-Package marginnote Info: right page because not two side mode on input line 320.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 320.
-Package mdframed Info: Not enough space on this page on input line 366.
 
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 304.
+
+Package marginnote Info: Margin note 11.1 is on absolute page 11
+(marginnote)              on input line 324.
+Package marginnote Info: right page because not two side mode on input line 324.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 324.
+Package marginnote Info: Margin note 11.2 is on absolute page 11
+(marginnote)              on input line 332.
+Package marginnote Info: right page because not two side mode on input line 332.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 332.
+Package marginnote Info: Margin note 11.3 is on absolute page 11
+(marginnote)              on input line 352.
+Package marginnote Info: right page because not two side mode on input line 352.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 352.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9
-
-]
-Package mdframed Info: Not enough space on this page on input line 366.
+[9]
 Package marginnote Info: Margin note 12.1 is on absolute page 12
-(marginnote)              on input line 376.
-Package marginnote Info: right page because not two side mode on input line 376.
+(marginnote)              on input line 404.
+Package marginnote Info: right page because not two side mode on input line 404.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 376.
-Package marginnote Info: Margin note 12.2 is on absolute page 12
-(marginnote)              on input line 399.
-Package marginnote Info: right page because not two side mode on input line 399.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 399.
-Package mdframed Info: Not enough space on this page on input line 433.
+(marginnote)             \marginnoteleftadjust ignored on input line 404.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1437,21 +1465,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10]
-Package mdframed Info: Not enough space on this page on input line 433.
 Package marginnote Info: Margin note 13.1 is on absolute page 13
-(marginnote)              on input line 435.
-Package marginnote Info: right page because not two side mode on input line 435.
+(marginnote)              on input line 428.
+Package marginnote Info: right page because not two side mode on input line 428.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 435.
+(marginnote)             \marginnoteleftadjust ignored on input line 428.
 Package marginnote Info: Margin note 13.2 is on absolute page 13
-(marginnote)              on input line 470.
-Package marginnote Info: right page because not two side mode on input line 470.
+(marginnote)              on input line 460.
+Package marginnote Info: right page because not two side mode on input line 460.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 470.
-
-Overfull \hbox (16.76337pt too wide) detected at line 483
-[]
- []
+(marginnote)             \marginnoteleftadjust ignored on input line 460.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1459,23 +1482,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11]
-Package marginnote Info: Margin note 14.1 is on absolute page 14
-(marginnote)              on input line 496.
-Package marginnote Info: right page because not two side mode on input line 496.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 496.
-Package marginnote Info: Margin note 14.2 is on absolute page 14
-(marginnote)              on input line 526.
-Package marginnote Info: right page because not two side mode on input line 526.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 526.
+[11
 
-Overfull \hbox (18.53262pt too wide) in paragraph at lines 538--540
-\T1/ptm/m/n/10.95 For such case, we say $\OML/ztmcm/m/it/10.95 M$ \T1/ptm/m/n/10.95 is the ideal []\T1/ptm/b/it/10.95 gen-er-ated[] \T1/ptm/m/n/10.95 by $[]$ and we of-ten de-note $\OML/ztmcm/m/it/10.95 M$ \T1/ptm/m/n/10.95 by $[]$. 
+]
+Package marginnote Info: Margin note 14.1 is on absolute page 14
+(marginnote)              on input line 495.
+Package marginnote Info: right page because not two side mode on input line 495.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 495.
+
+Overfull \hbox (16.76337pt too wide) detected at line 508
+[]
  []
 
-Package mdframed Info: Not enough space on this page on input line 540.
+Package marginnote Info: Margin note 14.2 is on absolute page 14
+(marginnote)              on input line 521.
+Package marginnote Info: right page because not two side mode on input line 521.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 521.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1483,19 +1507,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12]
-Package mdframed Info: Not enough space on this page on input line 540.
+Package mdframed Info: Not enough space on this page on input line 546.
 Package marginnote Info: Margin note 15.1 is on absolute page 15
-(marginnote)              on input line 550.
-Package marginnote Info: right page because not two side mode on input line 550.
+(marginnote)              on input line 548.
+Package marginnote Info: right page because not two side mode on input line 548.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 550.
-Package marginnote Info: Margin note 15.2 is on absolute page 15
-(marginnote)              on input line 562.
-Package marginnote Info: right page because not two side mode on input line 562.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 562.
-Package mdframed Info: Not enough space on this page on input line 586.
+(marginnote)             \marginnoteleftadjust ignored on input line 548.
 
+Overfull \hbox (18.53262pt too wide) in paragraph at lines 560--562
+\T1/ptm/m/n/10.95 For such case, we say $\OML/ztmcm/m/it/10.95 M$ \T1/ptm/m/n/10.95 is the ideal []\T1/ptm/b/it/10.95 gen-er-ated[] \T1/ptm/m/n/10.95 by $[]$ and we of-ten de-note $\OML/ztmcm/m/it/10.95 M$ \T1/ptm/m/n/10.95 by $[]$. 
+ []
+
+Package marginnote Info: Margin note 15.2 is on absolute page 15
+(marginnote)              on input line 572.
+Package marginnote Info: right page because not two side mode on input line 572.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 572.
+Package marginnote Info: Margin note 15.3 is on absolute page 15
+(marginnote)              on input line 584.
+Package marginnote Info: right page because not two side mode on input line 584.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 584.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1503,32 +1535,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [13]
-Package mdframed Info: Not enough space on this page on input line 586.
+Package mdframed Info: Not enough space on this page on input line 604.
 Package marginnote Info: Margin note 16.1 is on absolute page 16
-(marginnote)              on input line 588.
-Package marginnote Info: right page because not two side mode on input line 588.
+(marginnote)              on input line 610.
+Package marginnote Info: right page because not two side mode on input line 610.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 588.
+(marginnote)             \marginnoteleftadjust ignored on input line 610.
 Package marginnote Info: Margin note 16.2 is on absolute page 16
-(marginnote)              on input line 597.
-Package marginnote Info: right page because not two side mode on input line 597.
+(marginnote)              on input line 619.
+Package marginnote Info: right page because not two side mode on input line 619.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 597.
+(marginnote)             \marginnoteleftadjust ignored on input line 619.
 Package marginnote Info: Margin note 16.3 is on absolute page 16
-(marginnote)              on input line 609.
-Package marginnote Info: right page because not two side mode on input line 609.
+(marginnote)              on input line 631.
+Package marginnote Info: right page because not two side mode on input line 631.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 609.
+(marginnote)             \marginnoteleftadjust ignored on input line 631.
 Package marginnote Info: Margin note 16.4 is on absolute page 16
-(marginnote)              on input line 621.
-Package marginnote Info: right page because not two side mode on input line 621.
+(marginnote)              on input line 643.
+Package marginnote Info: right page because not two side mode on input line 643.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 621.
-Package marginnote Info: Margin note 16.5 is on absolute page 16
-(marginnote)              on input line 633.
-Package marginnote Info: right page because not two side mode on input line 633.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 633.
+(marginnote)             \marginnoteleftadjust ignored on input line 643.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1538,39 +1565,45 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 Package marginnote Info: Margin note 17.1 is on absolute page 17
-(marginnote)              on input line 650.
-Package marginnote Info: right page because not two side mode on input line 650.
+(marginnote)              on input line 656.
+Package marginnote Info: right page because not two side mode on input line 656.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 650.
+(marginnote)             \marginnoteleftadjust ignored on input line 656.
 Package marginnote Info: Margin note 17.2 is on absolute page 17
-(marginnote)              on input line 670.
-Package marginnote Info: right page because not two side mode on input line 670.
+(marginnote)              on input line 689.
+Package marginnote Info: right page because not two side mode on input line 689.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 670.
+(marginnote)             \marginnoteleftadjust ignored on input line 689.
 
-Overfull \hbox (22.00323pt too wide) in paragraph at lines 674--675
-[]\T1/ptm/m/it/10.95 For each $\OML/ztmcm/m/it/10.95 f \OMS/ztmcm/m/n/10.95 2 []\OT1/ztmcm/m/n/10.95 [\OML/ztmcm/m/it/10.95 x\OT1/ztmcm/m/n/10.95 ]$\T1/ptm/m/it/10.95 , $\OML/ztmcm/m/it/10.95 f \OT1/ztmcm/m/n/10.95 = \OML/ztmcm/m/it/10.95 c\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 x \OMS/ztmcm/m/n/10.95 ^^@ \OML/ztmcm/m/it/10.95 c[]\OT1/ztmcm/m/n/10.95 )[](\OML/ztmcm/m/it/10.95 x \OMS/ztmcm/m/n/10.95 ^^@ \OML/ztmcm/m/it/10.95 c[]\OT1/ztmcm/m/n/10.95 )[] [] (\OML/ztmcm/m/it/10.95 x \OMS/ztmcm/m/n/10.95 ^^@ \OML/ztmcm/m/it/10.95 c[]\OT1/ztmcm/m/n/10.95 )[]$ \T1/ptm/m/it/10.95 for some $\OML/ztmcm/m/it/10.95 c[]; c[]; [] ; c[] \OMS/ztmcm/m/n/10.95 2 []$ \T1/ptm/m/it/10.95 and $\OML/ztmcm/m/it/10.95 p[]; p[]; [] ; p[] \OMS/ztmcm/m/n/10.95 2
- []
-
-Package marginnote Info: Margin note 17.3 is on absolute page 17
-(marginnote)              on input line 679.
-Package marginnote Info: right page because not two side mode on input line 679.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 679.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15]) (./elementarycanonicalforms.tex
+[15
+
+]
+Package marginnote Info: Margin note 18.1 is on absolute page 18
+(marginnote)              on input line 713.
+Package marginnote Info: right page because not two side mode on input line 713.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 713.
+Package marginnote Info: Margin note 18.2 is on absolute page 18
+(marginnote)              on input line 733.
+Package marginnote Info: right page because not two side mode on input line 733.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 733.
+) (./elementarycanonicalforms.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16]
+[16
+
+]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: <default>
@@ -1610,25 +1643,25 @@ Chapter 2.
 
 ]
 Package marginnote Info: Margin note 20.1 is on absolute page 20
-(marginnote)              on input line 13.
-Package marginnote Info: right page because not two side mode on input line 13.
+(marginnote)              on input line 17.
+Package marginnote Info: right page because not two side mode on input line 17.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 13.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
+(marginnote)             \marginnoteleftadjust ignored on input line 17.
 Package marginnote Info: Margin note 20.2 is on absolute page 20
-(marginnote)              on input line 33.
-Package marginnote Info: right page because not two side mode on input line 33.
+(marginnote)              on input line 28.
+Package marginnote Info: right page because not two side mode on input line 28.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 33.
-Package marginnote Info: Margin note 20.3 is on absolute page 20
-(marginnote)              on input line 51.
-Package marginnote Info: right page because not two side mode on input line 51.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 51.
+(marginnote)             \marginnoteleftadjust ignored on input line 28.
 
+Overfull \hbox (8.75124pt too wide) in paragraph at lines 29--30
+[]\T1/ptm/m/it/10.95 Let $\OML/ztmcm/m/it/10.95 T \OT1/ztmcm/m/n/10.95 : \OML/ztmcm/m/it/10.95 V \OMS/ztmcm/m/n/10.95 ! \OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/it/10.95 be a lin-ear op-er-a-tor. Let $\OML/ztmcm/m/it/10.95 c[]; c[]; [] ; c[] \OMS/ztmcm/m/n/10.95 2 []$ \T1/ptm/m/it/10.95 be dis-tinct eigen-val-ues of $\OML/ztmcm/m/it/10.95 T$ \T1/ptm/m/it/10.95 and let $\OML/ztmcm/m/it/10.95 W[]; W[]; [] ; W[]$
+ []
+
+Package marginnote Info: Margin note 20.3 is on absolute page 20
+(marginnote)              on input line 44.
+Package marginnote Info: right page because not two side mode on input line 44.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 44.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1640,20 +1673,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Package marginnote Info: Margin note 21.1 is on absolute page 21
-(marginnote)              on input line 63.
-Package marginnote Info: right page because not two side mode on input line 63.
+(marginnote)              on input line 71.
+Package marginnote Info: right page because not two side mode on input line 71.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 63.
-Package marginnote Info: Margin note 21.2 is on absolute page 21
-(marginnote)              on input line 79.
-Package marginnote Info: right page because not two side mode on input line 79.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 79.
-Package marginnote Info: Margin note 21.3 is on absolute page 21
-(marginnote)              on input line 100.
-Package marginnote Info: right page because not two side mode on input line 100.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 100.
+(marginnote)             \marginnoteleftadjust ignored on input line 71.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1661,24 +1684,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19
-
-]
+[19]
 Package marginnote Info: Margin note 22.1 is on absolute page 22
-(marginnote)              on input line 113.
-Package marginnote Info: right page because not two side mode on input line 113.
+(marginnote)              on input line 137.
+Package marginnote Info: right page because not two side mode on input line 137.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 113.
+(marginnote)             \marginnoteleftadjust ignored on input line 137.
 Package marginnote Info: Margin note 22.2 is on absolute page 22
-(marginnote)              on input line 125.
-Package marginnote Info: right page because not two side mode on input line 125.
+(marginnote)              on input line 149.
+Package marginnote Info: right page because not two side mode on input line 149.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 125.
+(marginnote)             \marginnoteleftadjust ignored on input line 149.
 Package marginnote Info: Margin note 22.3 is on absolute page 22
-(marginnote)              on input line 145.
-Package marginnote Info: right page because not two side mode on input line 145.
+(marginnote)              on input line 161.
+Package marginnote Info: right page because not two side mode on input line 161.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 145.
+(marginnote)             \marginnoteleftadjust ignored on input line 161.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1686,15 +1707,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20
+[20]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
 
-]
-Package marginnote Info: Margin note 23.1 is on absolute page 23
-(marginnote)              on input line 206.
-Package marginnote Info: right page because not two side mode on input line 206.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 206.
 
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 220.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 220.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1702,50 +1730,49 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21]
-Package marginnote Info: Margin note 24.1 is on absolute page 24
-(marginnote)              on input line 223.
-Package marginnote Info: right page because not two side mode on input line 223.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 223.
-Package marginnote Info: Margin note 24.2 is on absolute page 24
-(marginnote)              on input line 243.
-Package marginnote Info: right page because not two side mode on input line 243.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 243.
-Package marginnote Info: Margin note 24.3 is on absolute page 24
-(marginnote)              on input line 267.
-Package marginnote Info: right page because not two side mode on input line 267.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 267.
 
-Overfull \hbox (3.93233pt too wide) in paragraph at lines 280--282
-\T1/ptm/m/n/10.95 But this ex-actly means $\OML/ztmcm/m/it/10.95 W[]$ \T1/ptm/m/n/10.95 is $\OML/ztmcm/m/it/10.95 T$\T1/ptm/m/n/10.95 -invariant. So con-tin-u-ing this pro-cess, we have a ba-sis $\OML/ztmcm/m/it/10.95 ^^L \OT1/ztmcm/m/n/10.95 = []$\T1/ptm/m/n/10.95 .
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 220.
+
+
+Overfull \hbox (4.489pt too wide) in paragraph at lines 222--225
+[]\T1/phv/b/n/10 Remark 2.9.[]  \T1/ptm/m/n/10.95 For any lin-ear op-er-a-tor $\OML/ztmcm/m/it/10.95 T \OT1/ztmcm/m/n/10.95 : \OML/ztmcm/m/it/10.95 V \OMS/ztmcm/m/n/10.95 ! \OML/ztmcm/m/it/10.95 V$\T1/ptm/m/n/10.95 , $[]$ and $\OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/n/10.95 are $\OML/ztmcm/m/it/10.95 T$\T1/ptm/m/n/10.95 -invariant. More-over, $[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 ; []\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 ) \OMS/ztmcm/m/n/10.95 ^^R
  []
 
-Package marginnote Info: Margin note 24.4 is on absolute page 25
-(marginnote)              on input line 284.
-Package marginnote Info: right page because not two side mode on input line 284.
+Package marginnote Info: Margin note 24.1 is on absolute page 24
+(marginnote)              on input line 238.
+Package marginnote Info: right page because not two side mode on input line 238.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 284.
+(marginnote)             \marginnoteleftadjust ignored on input line 238.
+Package marginnote Info: Margin note 24.2 is on absolute page 24
+(marginnote)              on input line 266.
+Package marginnote Info: right page because not two side mode on input line 266.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 266.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22
+[22]
+Package mdframed Info: Not enough space on this page on input line 284.
+Package marginnote Info: Margin note 25.1 is on absolute page 25
+(marginnote)              on input line 286.
+Package marginnote Info: right page because not two side mode on input line 286.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 286.
+Package marginnote Info: Margin note 25.2 is on absolute page 25
+(marginnote)              on input line 314.
+Package marginnote Info: right page because not two side mode on input line 314.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 314.
 
-]
+Overfull \hbox (3.93233pt too wide) in paragraph at lines 326--328
+\T1/ptm/m/n/10.95 But this ex-actly means $\OML/ztmcm/m/it/10.95 W[]$ \T1/ptm/m/n/10.95 is $\OML/ztmcm/m/it/10.95 T$\T1/ptm/m/n/10.95 -invariant. So con-tin-u-ing this pro-cess, we have a ba-sis $\OML/ztmcm/m/it/10.95 ^^L \OT1/ztmcm/m/n/10.95 = []$\T1/ptm/m/n/10.95 .
+ []
 
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 326.
-
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 326.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1753,35 +1780,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [23]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 326.
-
 Package marginnote Info: Margin note 26.1 is on absolute page 26
-(marginnote)              on input line 339.
-Package marginnote Info: right page because not two side mode on input line 339.
+(marginnote)              on input line 331.
+Package marginnote Info: right page because not two side mode on input line 331.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 339.
-Package mdframed Info: Not enough space on this page on input line 379.
+(marginnote)             \marginnoteleftadjust ignored on input line 331.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]
-Package mdframed Info: Not enough space on this page on input line 379.
+[24
+
+]
 Package marginnote Info: Margin note 27.1 is on absolute page 27
-(marginnote)              on input line 381.
-Package marginnote Info: right page because not two side mode on input line 381.
+(marginnote)              on input line 396.
+Package marginnote Info: right page because not two side mode on input line 396.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 381.
-Package marginnote Info: Margin note 27.2 is on absolute page 27
-(marginnote)              on input line 393.
-Package marginnote Info: right page because not two side mode on input line 393.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 393.
+(marginnote)             \marginnoteleftadjust ignored on input line 396.
+Package mdframed Info: Not enough space on this page on input line 436.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1790,12 +1809,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25]
+Package mdframed Info: Not enough space on this page on input line 436.
 Package marginnote Info: Margin note 28.1 is on absolute page 28
-(marginnote)              on input line 434.
-Package marginnote Info: right page because not two side mode on input line 434.
+(marginnote)              on input line 438.
+Package marginnote Info: right page because not two side mode on input line 438.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 434.
-Package mdframed Info: Not enough space on this page on input line 487.
+(marginnote)             \marginnoteleftadjust ignored on input line 438.
+Package marginnote Info: Margin note 28.2 is on absolute page 28
+(marginnote)              on input line 450.
+Package marginnote Info: right page because not two side mode on input line 450.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 450.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1803,15 +1827,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26
+[26]
+Package marginnote Info: Margin note 29.1 is on absolute page 29
+(marginnote)              on input line 491.
+Package marginnote Info: right page because not two side mode on input line 491.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 491.
+Package mdframed Info: Not enough space on this page on input line 544.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27
 
 ]
-Package mdframed Info: Not enough space on this page on input line 487.
-Package marginnote Info: Margin note 29.1 is on absolute page 29
-(marginnote)              on input line 513.
-Package marginnote Info: right page because not two side mode on input line 513.
+Package mdframed Info: Not enough space on this page on input line 544.
+Package marginnote Info: Margin note 30.1 is on absolute page 30
+(marginnote)              on input line 568.
+Package marginnote Info: right page because not two side mode on input line 568.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 513.
+(marginnote)             \marginnoteleftadjust ignored on input line 568.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1819,14 +1857,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27]
-Package marginnote Info: Margin note 30.1 is on absolute page 30
-(marginnote)              on input line 554.
-Package marginnote Info: right page because not two side mode on input line 554.
+[28]
+Package marginnote Info: Margin note 31.1 is on absolute page 31
+(marginnote)              on input line 609.
+Package marginnote Info: right page because not two side mode on input line 609.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 554.
+(marginnote)             \marginnoteleftadjust ignored on input line 609.
 
-Overfull \hbox (4.87796pt too wide) in paragraph at lines 567--568
+Overfull \hbox (4.87796pt too wide) in paragraph at lines 618--619
 \T1/ptm/m/it/10.95 Conversely, if there ex-ist $\OML/ztmcm/m/it/10.95 k$ \T1/ptm/m/it/10.95 dis-tinct scalars $\OML/ztmcm/m/it/10.95 c[]; c[]; [] ; c[] \OMS/ztmcm/m/n/10.95 2 []$ \T1/ptm/m/it/10.95 and $\OML/ztmcm/m/it/10.95 k$ \T1/ptm/m/it/10.95 nonzero lin-ear op-er-a-tors $\OML/ztmcm/m/it/10.95 E[]; E[]; [] ; E[] \OT1/ztmcm/m/n/10.95 :
  []
 
@@ -1836,22 +1874,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28
+[29
 
 ]
-Package marginnote Info: Margin note 31.1 is on absolute page 31
-(marginnote)              on input line 646.
-Package marginnote Info: right page because not two side mode on input line 646.
+Package marginnote Info: Margin note 32.1 is on absolute page 32
+(marginnote)              on input line 697.
+Package marginnote Info: right page because not two side mode on input line 697.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 646.
+(marginnote)             \marginnoteleftadjust ignored on input line 697.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[29]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1859,17 +1890,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [30]
-Package marginnote Info: Margin note 33.1 is on absolute page 33
-(marginnote)              on input line 709.
-Package marginnote Info: right page because not two side mode on input line 709.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 709.
-Package marginnote Info: Margin note 33.2 is on absolute page 34
-(marginnote)              on input line 754.
-Package marginnote Info: right page because not two side mode on input line 754.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 754.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1878,10 +1898,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [31]
 Package marginnote Info: Margin note 34.1 is on absolute page 34
-(marginnote)              on input line 798.
-Package marginnote Info: right page because not two side mode on input line 798.
+(marginnote)              on input line 761.
+Package marginnote Info: right page because not two side mode on input line 761.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 798.
+(marginnote)             \marginnoteleftadjust ignored on input line 761.
+Package marginnote Info: Margin note 34.2 is on absolute page 34
+(marginnote)              on input line 806.
+Package marginnote Info: right page because not two side mode on input line 806.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 806.
+Package mdframed Info: Not enough space on this page on input line 816.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1889,20 +1915,35 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32]
+[32
+
+]
+Package mdframed Info: Not enough space on this page on input line 816.
 Package marginnote Info: Margin note 35.1 is on absolute page 35
-(marginnote)              on input line 820.
-Package marginnote Info: right page because not two side mode on input line 820.
+(marginnote)              on input line 846.
+Package marginnote Info: right page because not two side mode on input line 846.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 820.
-) (./therationalandjordanform.tex
+(marginnote)             \marginnoteleftadjust ignored on input line 846.
+Package marginnote Info: Margin note 35.2 is on absolute page 36
+(marginnote)              on input line 868.
+Package marginnote Info: right page because not two side mode on input line 868.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 868.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33]
+[33]) (./therationalandjordanform.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: <default>
@@ -1935,23 +1976,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- [34
+
+Chapter 3.
+[35
 
 
 ]
-Chapter 3.
-[35]
-Package marginnote Info: Margin note 38.1 is on absolute page 38
-(marginnote)              on input line 7.
-Package marginnote Info: right page because not two side mode on input line 7.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 7.
-Package marginnote Info: Margin note 38.2 is on absolute page 38
-(marginnote)              on input line 10.
-Package marginnote Info: right page because not two side mode on input line 10.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 10.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1963,11 +1993,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Package marginnote Info: Margin note 39.1 is on absolute page 39
-(marginnote)              on input line 90.
-Package marginnote Info: right page because not two side mode on input line 90.
+(marginnote)              on input line 89.
+Package marginnote Info: right page because not two side mode on input line 89.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 90.
-Package mdframed Info: Not enough space on this page on input line 125.
+(marginnote)             \marginnoteleftadjust ignored on input line 89.
+Package mdframed Info: Not enough space on this page on input line 124.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1976,7 +2006,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [37]
-Package mdframed Info: Not enough space on this page on input line 125.
+Package mdframed Info: Not enough space on this page on input line 124.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1986,20 +2016,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [38]
 Package marginnote Info: Margin note 41.1 is on absolute page 41
-(marginnote)              on input line 184.
-Package marginnote Info: right page because not two side mode on input line 184.
+(marginnote)              on input line 183.
+Package marginnote Info: right page because not two side mode on input line 183.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 184.
+(marginnote)             \marginnoteleftadjust ignored on input line 183.
 Package marginnote Info: Margin note 41.2 is on absolute page 41
-(marginnote)              on input line 203.
-Package marginnote Info: right page because not two side mode on input line 203.
+(marginnote)              on input line 202.
+Package marginnote Info: right page because not two side mode on input line 202.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 203.
-Package marginnote Info: Margin note 41.3 is on absolute page 41
-(marginnote)              on input line 227.
-Package marginnote Info: right page because not two side mode on input line 227.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 227.
+(marginnote)             \marginnoteleftadjust ignored on input line 202.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2010,12 +2035,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [39
 
 ]
-Package marginnote Info: Margin note 42.1 is on absolute page 42
-(marginnote)              on input line 317.
-Package marginnote Info: right page because not two side mode on input line 317.
-Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 317.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -2031,20 +2050,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [41]
 Package marginnote Info: Margin note 44.1 is on absolute page 44
-(marginnote)              on input line 392.
-Package marginnote Info: right page because not two side mode on input line 392.
+(marginnote)              on input line 387.
+Package marginnote Info: right page because not two side mode on input line 387.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 392.
+(marginnote)             \marginnoteleftadjust ignored on input line 387.
 Package marginnote Info: Margin note 44.2 is on absolute page 44
-(marginnote)              on input line 401.
-Package marginnote Info: right page because not two side mode on input line 401.
+(marginnote)              on input line 396.
+Package marginnote Info: right page because not two side mode on input line 396.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 401.
+(marginnote)             \marginnoteleftadjust ignored on input line 396.
 Package marginnote Info: Margin note 44.3 is on absolute page 45
-(marginnote)              on input line 428.
-Package marginnote Info: right page because not two side mode on input line 428.
+(marginnote)              on input line 423.
+Package marginnote Info: right page because not two side mode on input line 423.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 428.
+(marginnote)             \marginnoteleftadjust ignored on input line 423.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2053,18 +2072,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [42]
-Overfull \hbox (4.98723pt too wide) in paragraph at lines 429--430
+Overfull \hbox (4.98723pt too wide) in paragraph at lines 424--425
 []\T1/ptm/m/it/10.95 Suppose $\OML/ztmcm/m/it/10.95 u[]; u[]; [] ; u[] \OMS/ztmcm/m/n/10.95 2 \OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/it/10.95 are nonzero vec-tors sat-is-fy-ing (a) and (b) of Lemma 3.3.1. Fix $\OML/ztmcm/m/it/10.95 k \OMS/ztmcm/m/n/10.95 2 []$\T1/ptm/m/it/10.95 .
  []
 
 
-Overfull \hbox (5.58156pt too wide) in paragraph at lines 444--446
+Overfull \hbox (5.58156pt too wide) in paragraph at lines 439--441
 \T1/ptm/m/n/10.95 for some $\OML/ztmcm/m/it/10.95 w[] \OMS/ztmcm/m/n/10.95 2 \OML/ztmcm/m/it/10.95 W[]$\T1/ptm/m/n/10.95 , which is true since $\OML/ztmcm/m/it/10.95 W[]$ \T1/ptm/m/n/10.95 is $\OML/ztmcm/m/it/10.95 T$\T1/ptm/m/n/10.95 -admissible. For each $\OML/ztmcm/m/it/10.95 k \OMS/ztmcm/m/n/10.95 2 []$ \T1/ptm/m/n/10.95 and $\OML/ztmcm/m/it/10.95 i \OMS/ztmcm/m/n/10.95 2 []$\T1/ptm/m/n/10.95 ,
- []
-
-
-Overfull \hbox (27.1015pt too wide) detected at line 464
-\OML/ztmcm/m/it/10.95 f\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 w \OT1/ztmcm/m/n/10.95 = \OML/ztmcm/m/it/10.95 f\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 u \OMS/ztmcm/m/n/10.95 ^^@ [][] \OML/ztmcm/m/it/10.95 f\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 h[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 u[] \OT1/ztmcm/m/n/10.95 = \OML/ztmcm/m/it/10.95 u[] \OT1/ztmcm/m/n/10.95 + [][] [] (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 u[] \OMS/ztmcm/m/n/10.95 ^^@ [][] [] \OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 u[] \OT1/ztmcm/m/n/10.95 = \OML/ztmcm/m/it/10.95 u[] \OT1/ztmcm/m/n/10.95 + [][] \OML/ztmcm/m/it/10.95 r[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 u[]:
  []
 
 
@@ -2075,10 +2089,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [43]
 Package marginnote Info: Margin note 46.1 is on absolute page 46
-(marginnote)              on input line 488.
-Package marginnote Info: right page because not two side mode on input line 488.
+(marginnote)              on input line 484.
+Package marginnote Info: right page because not two side mode on input line 484.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 488.
+(marginnote)             \marginnoteleftadjust ignored on input line 484.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2088,10 +2102,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [44]
 Package marginnote Info: Margin note 47.1 is on absolute page 47
-(marginnote)              on input line 546.
-Package marginnote Info: right page because not two side mode on input line 546.
+(marginnote)              on input line 542.
+Package marginnote Info: right page because not two side mode on input line 542.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 546.
+(marginnote)             \marginnoteleftadjust ignored on input line 542.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2101,20 +2115,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [45]
 Package marginnote Info: Margin note 48.1 is on absolute page 48
-(marginnote)              on input line 590.
-Package marginnote Info: right page because not two side mode on input line 590.
+(marginnote)              on input line 586.
+Package marginnote Info: right page because not two side mode on input line 586.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 590.
+(marginnote)             \marginnoteleftadjust ignored on input line 586.
 Package marginnote Info: Margin note 48.2 is on absolute page 48
-(marginnote)              on input line 619.
-Package marginnote Info: right page because not two side mode on input line 619.
+(marginnote)              on input line 615.
+Package marginnote Info: right page because not two side mode on input line 615.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 619.
+(marginnote)             \marginnoteleftadjust ignored on input line 615.
 Package marginnote Info: Margin note 48.3 is on absolute page 48
-(marginnote)              on input line 635.
-Package marginnote Info: right page because not two side mode on input line 635.
+(marginnote)              on input line 631.
+Package marginnote Info: right page because not two side mode on input line 631.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 635.
+(marginnote)             \marginnoteleftadjust ignored on input line 631.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2124,15 +2138,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [46]
 Package marginnote Info: Margin note 49.1 is on absolute page 49
-(marginnote)              on input line 659.
-Package marginnote Info: right page because not two side mode on input line 659.
+(marginnote)              on input line 655.
+Package marginnote Info: right page because not two side mode on input line 655.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 659.
+(marginnote)             \marginnoteleftadjust ignored on input line 655.
 Package marginnote Info: Margin note 49.2 is on absolute page 49
-(marginnote)              on input line 667.
-Package marginnote Info: right page because not two side mode on input line 667.
+(marginnote)              on input line 663.
+Package marginnote Info: right page because not two side mode on input line 663.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 667.
+(marginnote)             \marginnoteleftadjust ignored on input line 663.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2141,15 +2155,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [47]
-Overfull \hbox (2.25679pt too wide) in paragraph at lines 695--697
+Overfull \hbox (2.25679pt too wide) in paragraph at lines 691--693
 \T1/ptm/m/n/10.95 and the min-i-mal and char-ac-ter-is-tic poly-no-mi-als of each $\OML/ztmcm/m/it/10.95 T[]$ \T1/ptm/m/n/10.95 are $\OML/ztmcm/m/it/10.95 p[]$\T1/ptm/m/n/10.95 , the $\OML/ztmcm/m/it/10.95 T$\T1/ptm/m/n/10.95 -annihilator (and thus $\OML/ztmcm/m/it/10.95 T[]$\T1/ptm/m/n/10.95 -annihilator)
  []
 
 Package marginnote Info: Margin note 50.1 is on absolute page 50
-(marginnote)              on input line 719.
-Package marginnote Info: right page because not two side mode on input line 719.
+(marginnote)              on input line 715.
+Package marginnote Info: right page because not two side mode on input line 715.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 719.
+(marginnote)             \marginnoteleftadjust ignored on input line 715.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -2158,14 +2172,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [48]
 Package marginnote Info: Margin note 51.1 is on absolute page 51
-(marginnote)              on input line 764.
-Package marginnote Info: right page because not two side mode on input line 764.
+(marginnote)              on input line 757.
+Package marginnote Info: right page because not two side mode on input line 757.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 764.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 790.
+(marginnote)             \marginnoteleftadjust ignored on input line 757.
 
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 783.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 783.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -2173,6 +2194,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [49]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 783.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -2187,7 +2213,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [51]
-Overfull \hbox (7.108pt too wide) in paragraph at lines 954--956
+Overfull \hbox (7.108pt too wide) in paragraph at lines 947--949
 \T1/ptm/m/n/10.95 and the lin-ear op-er-a-tor $\OML/ztmcm/m/it/10.95 T[] \OT1/ztmcm/m/n/10.95 : \OML/ztmcm/m/it/10.95 W[] \OMS/ztmcm/m/n/10.95 ! \OML/ztmcm/m/it/10.95 W[]$ \T1/ptm/m/n/10.95 in-duced by $\OML/ztmcm/m/it/10.95 T$ \T1/ptm/m/n/10.95 has min-i-mal poly-no-mial $[][]$ for each $\OML/ztmcm/m/it/10.95 i \OMS/ztmcm/m/n/10.95 2 []$\T1/ptm/m/n/10.95 .
  []
 
@@ -2199,10 +2225,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [52]
 Package marginnote Info: Margin note 55.1 is on absolute page 55
-(marginnote)              on input line 988.
-Package marginnote Info: right page because not two side mode on input line 988.
+(marginnote)              on input line 982.
+Package marginnote Info: right page because not two side mode on input line 982.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 988.
+(marginnote)             \marginnoteleftadjust ignored on input line 982.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2212,10 +2238,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [53]
 Package marginnote Info: Margin note 56.1 is on absolute page 56
-(marginnote)              on input line 1016.
-Package marginnote Info: right page because not two side mode on input line 1016.
+(marginnote)              on input line 1010.
+Package marginnote Info: right page because not two side mode on input line 1010.
 Package marginnote Info: xpos seems to be 128.0374pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 1016.
+(marginnote)             \marginnoteleftadjust ignored on input line 1010.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2786,11 +2812,7 @@ Package marginnote Info: Margin note 95.1 is on absolute page 95
 Package marginnote Info: right page because not two side mode on input line 1002.
 Package marginnote Info: xpos seems to be 128.0374pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 1002.
-)
 
-Package etoc Warning: Please load `tocloft' /before/ `etoc'! on input line 32.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -2798,18 +2820,492 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [93]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
+Package marginnote Info: Margin note 96.1 is on absolute page 96
+(marginnote)              on input line 1043.
+Package marginnote Info: right page because not two side mode on input line 1043.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1043.
+Package marginnote Info: Margin note 96.2 is on absolute page 96
+(marginnote)              on input line 1073.
+Package marginnote Info: right page because not two side mode on input line 1073.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1073.
+Package marginnote Info: Margin note 96.3 is on absolute page 97
+(marginnote)              on input line 1092.
+Package marginnote Info: right page because not two side mode on input line 1092.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1092.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[94]
+Package marginnote Info: Margin note 97.1 is on absolute page 97
+(marginnote)              on input line 1132.
+Package marginnote Info: right page because not two side mode on input line 1132.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1132.
+Package mdframed Info: Not enough space on this page on input line 1162.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[95]
+Package mdframed Info: Not enough space on this page on input line 1162.
+Package marginnote Info: Margin note 98.1 is on absolute page 98
+(marginnote)              on input line 1164.
+Package marginnote Info: right page because not two side mode on input line 1164.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1164.
+Package marginnote Info: Margin note 98.2 is on absolute page 98
+(marginnote)              on input line 1211.
+Package marginnote Info: right page because not two side mode on input line 1211.
+Package marginnote Info: xpos seems to be 481.5106pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1211.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[96]
+Package marginnote Info: Margin note 99.1 is on absolute page 99
+(marginnote)              on input line 1218.
+Package marginnote Info: right page because not two side mode on input line 1218.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1218.
+
+Overfull \hbox (19.75645pt too wide) in paragraph at lines 1237--1239
+\T1/ptm/m/n/10.95 By some cal-cu-la-tions, we may show that each $\OML/ztmcm/m/it/10.95 v[]$ \T1/ptm/m/n/10.95 is a lin-ear com-bi-na-tion of $\OML/ztmcm/m/it/10.95 A[]; A[]; [] ; A[]$\T1/ptm/m/n/10.95 . Since $[]$
+ []
+
+Package marginnote Info: Margin note 99.2 is on absolute page 99
+(marginnote)              on input line 1264.
+Package marginnote Info: right page because not two side mode on input line 1264.
+Package marginnote Info: xpos seems to be 431.06409pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1264.
+
+Overfull \hbox (16.02823pt too wide) in paragraph at lines 1278--1280
+\T1/ptm/m/n/10.95 is also a group un-der usual com-po-si-tion, if there ex-ists $\OML/ztmcm/m/it/10.95 N \OMS/ztmcm/m/n/10.95 2 \OML/ztmcm/m/it/10.95 T\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 n\OT1/ztmcm/m/n/10.95 )[]$ \T1/ptm/m/n/10.95 such that $\OML/ztmcm/m/it/10.95 NA$ \T1/ptm/m/n/10.95 is uni-tary, then $\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 MA\OT1/ztmcm/m/n/10.95 )(\OML/ztmcm/m/it/10.95 NA\OT1/ztmcm/m/n/10.95 )[] \OMS/ztmcm/m/n/10.95 2
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[97
+
+]
+Package marginnote Info: Margin note 100.1 is on absolute page 100
+(marginnote)              on input line 1302.
+Package marginnote Info: right page because not two side mode on input line 1302.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1302.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 1343.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1343.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[98]) (./innerproductspaces2.tex
+Package marginnote Info: Margin note 101.1 is on absolute page 101
+(marginnote)              on input line 47.
+Package marginnote Info: right page because not two side mode on input line 47.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 47.
+Package marginnote Info: Margin note 101.2 is on absolute page 101
+(marginnote)              on input line 49.
+Package marginnote Info: right page because not two side mode on input line 49.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 49.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[99]
+Package marginnote Info: Margin note 102.1 is on absolute page 102
+(marginnote)              on input line 69.
+Package marginnote Info: right page because not two side mode on input line 69.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 69.
+Package marginnote Info: Margin note 102.2 is on absolute page 102
+(marginnote)              on input line 86.
+Package marginnote Info: right page because not two side mode on input line 86.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 86.
+Package marginnote Info: Margin note 102.3 is on absolute page 102
+(marginnote)              on input line 102.
+Package marginnote Info: right page because not two side mode on input line 102.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 102.
+Package marginnote Info: Margin note 102.4 is on absolute page 103
+(marginnote)              on input line 110.
+Package marginnote Info: right page because not two side mode on input line 110.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 110.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[100]
+Package marginnote Info: Margin note 103.1 is on absolute page 103
+(marginnote)              on input line 134.
+Package marginnote Info: right page because not two side mode on input line 134.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 134.
+Package marginnote Info: Margin note 103.2 is on absolute page 103
+(marginnote)              on input line 158.
+Package marginnote Info: right page because not two side mode on input line 158.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 158.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[101]
+Package marginnote Info: Margin note 104.1 is on absolute page 104
+(marginnote)              on input line 186.
+Package marginnote Info: right page because not two side mode on input line 186.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 186.
+Package marginnote Info: Margin note 104.2 is on absolute page 104
+(marginnote)              on input line 194.
+Package marginnote Info: right page because not two side mode on input line 194.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 194.
+Package marginnote Info: Margin note 104.3 is on absolute page 104
+(marginnote)              on input line 206.
+Package marginnote Info: right page because not two side mode on input line 206.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 206.
+Package marginnote Info: Margin note 104.4 is on absolute page 104
+(marginnote)              on input line 214.
+Package marginnote Info: right page because not two side mode on input line 214.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 214.
+Package marginnote Info: Margin note 104.5 is on absolute page 105
+(marginnote)              on input line 224.
+Package marginnote Info: right page because not two side mode on input line 224.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 224.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[102]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 270.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 270.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[103]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 270.
+
+Package marginnote Info: Margin note 106.1 is on absolute page 106
+(marginnote)              on input line 280.
+Package marginnote Info: right page because not two side mode on input line 280.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 280.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[104]
+Package mdframed Info: Not enough space on this page on input line 346.
+Package marginnote Info: Margin note 107.1 is on absolute page 107
+(marginnote)              on input line 348.
+Package marginnote Info: right page because not two side mode on input line 348.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 348.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[105]
+Package marginnote Info: Margin note 108.1 is on absolute page 108
+(marginnote)              on input line 408.
+Package marginnote Info: right page because not two side mode on input line 408.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 408.
+Package marginnote Info: Margin note 108.2 is on absolute page 108
+(marginnote)              on input line 438.
+Package marginnote Info: right page because not two side mode on input line 438.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 438.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[106]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[107]
+Package marginnote Info: Margin note 110.1 is on absolute page 110
+(marginnote)              on input line 511.
+Package marginnote Info: right page because not two side mode on input line 511.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 511.
+Package marginnote Info: Margin note 110.2 is on absolute page 110
+(marginnote)              on input line 542.
+Package marginnote Info: right page because not two side mode on input line 542.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 542.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[108
+
+]
+Package marginnote Info: Margin note 111.1 is on absolute page 111
+(marginnote)              on input line 594.
+Package marginnote Info: right page because not two side mode on input line 594.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 594.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[109]
+Package marginnote Info: Margin note 112.1 is on absolute page 112
+(marginnote)              on input line 622.
+Package marginnote Info: right page because not two side mode on input line 622.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 622.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[110]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[111]
+Package marginnote Info: Margin note 114.1 is on absolute page 114
+(marginnote)              on input line 721.
+Package marginnote Info: right page because not two side mode on input line 721.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 721.
+Package marginnote Info: Margin note 114.2 is on absolute page 114
+(marginnote)              on input line 735.
+Package marginnote Info: right page because not two side mode on input line 735.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 735.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[112
+
+]
+Package marginnote Info: Margin note 115.1 is on absolute page 115
+(marginnote)              on input line 785.
+Package marginnote Info: right page because not two side mode on input line 785.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 785.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[113]
+Package marginnote Info: Margin note 116.1 is on absolute page 116
+(marginnote)              on input line 855.
+Package marginnote Info: right page because not two side mode on input line 855.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 855.
+
+Overfull \hbox (1.6406pt too wide) in paragraph at lines 856--857
+[]\T1/ptm/m/it/10.95 Let $\OML/ztmcm/m/it/10.95 T \OT1/ztmcm/m/n/10.95 : \OML/ztmcm/m/it/10.95 V \OMS/ztmcm/m/n/10.95 ! \OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/it/10.95 be a nor-mal op-er-a-tor on a finite-dimensional in-ner prod-uct space $\OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/it/10.95 and let $\OML/ztmcm/m/it/10.95 W[]; W[]; [] ; W[][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[114]
+Package marginnote Info: Margin note 117.1 is on absolute page 117
+(marginnote)              on input line 899.
+Package marginnote Info: right page because not two side mode on input line 899.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 899.
+Package marginnote Info: Margin note 117.2 is on absolute page 117
+(marginnote)              on input line 920.
+Package marginnote Info: right page because not two side mode on input line 920.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 920.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[115]
+Package marginnote Info: Margin note 118.1 is on absolute page 118
+(marginnote)              on input line 959.
+Package marginnote Info: right page because not two side mode on input line 959.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 959.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[116]
+Package marginnote Info: Margin note 119.1 is on absolute page 119
+(marginnote)              on input line 1007.
+Package marginnote Info: right page because not two side mode on input line 1007.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1007.
+Package marginnote Info: Margin note 119.2 is on absolute page 119
+(marginnote)              on input line 1031.
+Package marginnote Info: right page because not two side mode on input line 1031.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1031.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[117]
+Package marginnote Info: Margin note 120.1 is on absolute page 120
+(marginnote)              on input line 1075.
+Package marginnote Info: right page because not two side mode on input line 1075.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1075.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[118]
+Package marginnote Info: Margin note 121.1 is on absolute page 121
+(marginnote)              on input line 1101.
+Package marginnote Info: right page because not two side mode on input line 1101.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1101.
+Package marginnote Info: Margin note 121.2 is on absolute page 121
+(marginnote)              on input line 1144.
+Package marginnote Info: right page because not two side mode on input line 1144.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 1144.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[119
+
+])
+
+Package etoc Warning: Please load `tocloft' /before/ `etoc'! on input line 34.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[120]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
  (./linearalgebraII.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 32.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 32.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 34.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 24307 strings out of 493007
- 441229 string characters out of 6136719
- 588599 words of memory out of 5000000
- 27950 multiletter control sequences out of 15000+600000
+ 24350 strings out of 493007
+ 441792 string characters out of 6136719
+ 588479 words of memory out of 5000000
+ 27990 multiletter control sequences out of 15000+600000
  590878 words of font info for 129 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 51i,14n,67p,10489b,730s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,14n,67p,10489b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on linearalgebraII.pdf (95 pages).
+Output written on linearalgebraII.pdf (122 pages).

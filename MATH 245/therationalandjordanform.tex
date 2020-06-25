@@ -4,10 +4,9 @@
 
     \chap{The Rational and Jordan Form} 
 
-    \ruleline{Notations}
-    \noindent For simplicity, we shall adapt the following notation for this chapter. Unless otherwise specified, let $V$ denote a finite-dimensional vector space over a field $\F$ and let $T:V\to V$ denote a linear operator on $V$.
-
-    \ruleline{End of Notations}
+    \begin{remark}
+        For simplicity, we shall adapt the following notation for this chapter. Unless otherwise specified, let $V$ denote a finite-dimensional vector space over a field $\F$ and let $T:V\to V$ denote a linear operator on $V$.
+    \end{remark}
 
     \section{Cyclic Subspaces and Annihilators}
 
@@ -186,7 +185,7 @@
     \end{theorem}
 
     \begin{proof}
-        Notice that the forward direction is supplied by Remark 3.8. To prove the reverse direction, suppose that there exists an ordered basis $\beta = \left\lbrace w_1, w_2,\ldots, w_n \right\rbrace $ for $W$ such that
+        Notice that the forward direction is supplied by Remark 3.9. To prove the reverse direction, suppose that there exists an ordered basis $\beta = \left\lbrace w_1, w_2,\ldots, w_n \right\rbrace $ for $W$ such that
         \begin{equation*}
             [U]_\beta =
             \begin{bmatrix}
@@ -224,11 +223,9 @@
         Let $v\in V$. Then the linear operator $U:Z(v;T)\to Z(v;T)$ induced by $T$ on $Z(v;T)$ has a cyclic vector, namely $v$. That is, there exists an ordered basis $\beta$ for $Z(v;T)$ such that $[U]_\beta$ is the companion matrix of $p_v$, the $T$-annihilator of $v$.
     \end{remark}
 
-    \ruleline{Exercises}
-
-    \begin{exercise}
+    \begin{example}
         Suppose $\dim(V)=n$ and let $N:V\to V$ be nilpotent, where $N^{n-1}\neq 0$. Further let $v\in V$ be such that $N^{n-1}v\neq 0$. Prove that $v$ is a cyclic vector of $N$.
-    \end{exercise}
+    \end{example}
 
     \begin{proof}
         For the sake of contradiction, suppose there exists nonzero $\left( c_0, c_1, \ldots, c_{n-1} \right) \in\F^n$ be such that
@@ -242,7 +239,7 @@
         Thus $\left\lbrace v, Nv, \ldots, N^{n-1} \right\rbrace$ is linearly independent, which means $v$ is a cyclic vector of $N$, as desired.
     \end{proof}
 
-    \begin{exercise}
+    \begin{example}
         Suppose that $\dim(v)=n$ and that $T$ is diagonalizable.
         \begin{enumerate}
             \item Prove that if $T$ has a cyclic vector, then $T$ has $n$ distinct eigenvalues.
@@ -252,14 +249,14 @@
                 \end{equation*}
                 is a cyclic vector of $v$.
         \end{enumerate}
-    \end{exercise}
+    \end{example}
 
     \begin{proof}
         To prove (a), let $v\in V$ be a cyclic vector of $T$. Then the minimal polynomial $p\in\F[x]$ of $T$ is of the form
         \begin{equation*}
             p = \prod^{k}_{i=1} (x-c_i)
         \end{equation*}
-        for some $k\leq n$ by Theorem 2.14. Moreover, $p$ is the characteristic polynomial by Remark 3.7, so $k=n$ and $T$ has $n$ distinct eigenvalues. To verify (b), let $c_1, c_2, \ldots, c_n\in\F$ be the eigenvalues corresponding to $v_1, v_2, \ldots, v_n$. Then
+        for some $k\leq n$ by Theorem 2.14. Moreover, $p$ is the characteristic polynomial by Remark 3.8, so $k=n$ and $T$ has $n$ distinct eigenvalues. To verify (b), let $c_1, c_2, \ldots, c_n\in\F$ be the eigenvalues corresponding to $v_1, v_2, \ldots, v_n$. Then
         \begin{equation*}
             T^kv = \sum^{n}_{i=1} c_i^kv_i.
         \end{equation*}
@@ -294,9 +291,9 @@
         However, the rows are linearly independent, since $c_1, c_2, \ldots, c_n$ are distinct. Thus the solution set to the system is $\left\lbrace 0 \right\rbrace$, which is a contradiction.
     \end{proof}
 
-    \begin{exercise}
+    \begin{example}
         Suppose that $T$ has a cyclic vector. Prove that if $U:V\to V$ commutes with $T$, then $U$ is a polynomial in $T$.
-    \end{exercise}
+    \end{example}
 
     \begin{proof}
         Let $v\in V$ be a cyclic vector of $T$. Then by Theorem 3.1, $\left\lbrace v, Tv, \ldots, T^{n-1}v \right\rbrace $ is a basis for $V$, where $n=\dim(V)$. So there exists $f\in\F[x]$ with $\deg(f)\leq n-1$ such that
@@ -314,8 +311,6 @@
         as desired.
     \end{proof}
     
-    \ruleline{Exercises}
-
     \section{Cyclic Decomposition and the Rational Form}
     
     \begin{remark}
@@ -350,7 +345,7 @@
     \end{definition}
 
     \begin{remark}
-        By Remark 3.14, if $W$ is a $T$-invariant and has a complementary subspace, then $W$ is $T$-admissible. One of the consequences of the cyclic decomposition theorem is the converse: the admissibility characterizes those $T$-invariant subspaces with $T$-invariant complements.
+        By Remark 3.15, if $W$ is a $T$-invariant and has a complementary subspace, then $W$ is $T$-admissible. One of the consequences of the cyclic decomposition theorem is the converse: the admissibility characterizes those $T$-invariant subspaces with $T$-invariant complements.
     \end{remark}
 
     \begin{remark}
@@ -454,14 +449,15 @@
         \begin{equation*}
             w = u - \sum^{k-1}_{i=1} h_i(T)u_i\in V,
         \end{equation*}
-        then clearly $w-u = -\sum^{k-1}_{i=1} h_i(T)u_i\in W_{k-1}$. Recall from Remark 3.16 that, this means
+        then clearly $w-u = -\sum^{k-1}_{i=1} h_i(T)u_i\in W_{k-1}$. Recall from Remark 3.17 that, this means
         \begin{equation*}
             s(w;W_{k-1}) = s(u;W_{k-1}) = f.
         \end{equation*}
         Moreover, observe that
-        \begin{equation*}
-            f(T)w = f(T)u - \sum^{k-1}_{i=1} f(T)h_i(T)u_i = u_0 + \sum^{k-1}_{i=1} \left( fh_i+r_i \right) (T)u_i - \sum^{k-1}_{i=1} \left( fh_i \right) (T)u_i = u_0 + \sum^{k-1}_{i=1} r_i(T)u_i.
-        \end{equation*}
+        \begin{align*}
+            f(T)w & = f(T)u - \sum^{k-1}_{i=1} f(T)h_i(T)u_i \\
+                  & = u_0 + \sum^{k-1}_{i=1} \left( fh_i+r_i \right) (T)u_i - \sum^{k-1}_{i=1} \left( fh_i \right) (T)u_i = u_0 + \sum^{k-1}_{i=1} r_i(T)u_i.
+        \end{align*} 
         Since $r_{j+1}, r_{j+2}, \ldots, r_{k-1}=0$,
         \begin{equation*}
             f(T)w = u_0 + \sum^{j}_{i=1} r_i(T)u_i,
@@ -661,7 +657,7 @@
     \end{cor}	
 
     \begin{proof}
-        The forward direction is supplied by Remark 3.7. To verify the reverse direction, suppose that the minimal and characteristic polynomials of $T$ coincide, and let $p$ be the minimal polynomial of $T$. Then by Corollary 3.3.5, there exists $v\in V$ such that the $T$-annihilator of $v$ is $p$. Since $p$ is also the characteristic polynomial, it follows that $\left\lbrace v,Tv, \ldots, T^{n-1}v \right\rbrace$ is a basis for $V$, where $n=\dim(V)$. But this exactly means $v$ is a cyclic vector of $T$.
+        The forward direction is supplied by Remark 3.8. To verify the reverse direction, suppose that the minimal and characteristic polynomials of $T$ coincide, and let $p$ be the minimal polynomial of $T$. Then by Corollary 3.3.5, there exists $v\in V$ such that the $T$-annihilator of $v$ is $p$. Since $p$ is also the characteristic polynomial, it follows that $\left\lbrace v,Tv, \ldots, T^{n-1}v \right\rbrace$ is a basis for $V$, where $n=\dim(V)$. But this exactly means $v$ is a cyclic vector of $T$.
     \end{proof}
 
     \begin{theorem}{Generalized Cayley-Hamilton Theorem}
@@ -741,16 +737,13 @@
         \begin{equation*}
             [T]_\beta = 
             \begin{bmatrix}
-                & & & \\
-                \left[ T_1 \right]_{\beta_1} & & & \\
-                & \left[ T_2 \right]_{\beta_2} & & \\
+                A_1 & & & \\
+                & A_2 & & \\
                 & & \ddots & \\
-                & & & \left[ T_r \right]_{\beta_r}\\
-                & & & \\
-            \end{bmatrix}
-            = \bigoplus^{r}_{i=1} \left[ T_i \right] _{\beta_i}.
+                & & & A_r\\
+            \end{bmatrix},
         \end{equation*}
-        This motivates the following definition.
+        where each $A_i = \left[ T_i \right] _{\beta_i}$. This motivates the following definition.
     \end{remark}
 
     \begin{definition}{Rational Form}{}
@@ -766,7 +759,7 @@
     \end{theorem}
 
     \begin{proof}
-        Let $\beta$ be the standard ordered basis for $\F^n$ and let $T:\F^n\to\F^n$ be the unique linear operator such that $[T]_\beta = B$. By using the construction in Remark 3.17, there exist $v_1,v_2,\ldots,v_r\in\F^n$ and the respective $T$-annihilators $p_1,p_2,\ldots,p_r\in\F[x]$ satisfying $p_i\mid p_{i-1}$ for all $i\in \left\lbrace 2,3,\ldots,r \right\rbrace$ such that
+        Let $\beta$ be the standard ordered basis for $\F^n$ and let $T:\F^n\to\F^n$ be the unique linear operator such that $[T]_\beta = B$. By using the construction in Remark 3.18, there exist $v_1,v_2,\ldots,v_r\in\F^n$ and the respective $T$-annihilators $p_1,p_2,\ldots,p_r\in\F[x]$ satisfying $p_i\mid p_{i-1}$ for all $i\in \left\lbrace 2,3,\ldots,r \right\rbrace$ such that
         \begin{equation*}
             \F^n = \bigoplus^{r}_{i=1} Z\left( v_i;T \right) ,
         \end{equation*}
@@ -940,7 +933,7 @@
     \end{remark}
 
     \begin{remark}
-        Now, we are going to combine the results of Remark 3.22 and the primary decomposition theorem (Theorem 2.20). Suppose that the characteristic polynomial $f\in\F[x]$ factors over $\F$ as
+        Now, we are going to combine the results of Remark 3.23 and the primary decomposition theorem (Theorem 2.20). Suppose that the characteristic polynomial $f\in\F[x]$ factors over $\F$ as
         \begin{equation*}
             f = \prod^{k}_{i=1} \left( x-c_i \right) ^{d_i}
         \end{equation*}
@@ -985,7 +978,8 @@
         an \emph{elementary Jordan matrix} with eigenvalue $c$.
     \end{definition}
 
-    \note{Remark 3.22 is continued here} \noindent Now, if we define
+    \note{Remark \thechapter.\theexcounter is continued here} 
+    \noindent Now, if we define
     \begin{equation*}
         \beta = \left\lbrace \beta_1, \beta_2, \ldots, \beta_k \right\rbrace ,
     \end{equation*}
@@ -1018,7 +1012,7 @@
     \end{prop}
 
     \begin{proof}
-        The existence part is supplied by Remark 3.22. To verify the uniqueness up to reordering, first write
+        The existence part is supplied by Remark 3.23. To verify the uniqueness up to reordering, first write
         \begin{equation*}
             A = \bigoplus^{k}_{i=1} A_i\in M_{d_i\times d_i}(\F) 
         \end{equation*}
