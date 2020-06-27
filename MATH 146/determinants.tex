@@ -1,0 +1,453 @@
+\documentclass[linearalgebraI]{subfiles}
+
+\begin{document}
+
+    \chap{Determinants}
+
+    \section{Determinants}
+
+    \begin{definition}{Determinant, Cofactor, Cofactor Expansion}{}
+        Let $A\in M_{n\times n}(\F)$. We define the \emph{determinant} of $A$, denoted by $\det A$ or $|A|$, as follows.
+        \begin{enumerate}
+            \item If $n=1$, then
+            \begin{equation*}
+                \det(A) = A_{11}.
+            \end{equation*}
+            \item For each $n\in \N\setminus \left\lbrace 1 \right\rbrace$, $\det A$ is defined recursively as
+            \begin{equation*}
+                \det(A) = \sum^{n}_{i=1} (-1)^{1+i} A_{i1} \left( \det \widetilde{A}_{i1} \right), 
+            \end{equation*}
+            where $\widetilde{A}_{ij}$ is the $(n-1)\times (n-1)$ matrix obtained by removing $i$th row and $j$th column.
+        \end{enumerate}
+        The scalar $(-1)^{i+j} \det \left(\widetilde{A}_{ij}\right)$ is called the \emph{cofactor} of the entry of $A$ in row $i$ and column $j$. The above determinant equation is also known as the \emph{cofactor expansion along the first column} of $A$.
+    \end{definition}
+
+    \begin{remark}
+        The expression
+        \begin{equation*}
+            \sum^n_{i=1} (-1)^{j+i}A_{ij} \left( \det \left(\widetilde{A}_{ij}\right) \right)
+        \end{equation*}
+        is called the cofactor expansion along the $j$th column of $A$.
+    \end{remark}
+
+    \begin{remark}
+        For $A\in M_{2\times 2}(\F)$, we have
+        \begin{equation*}
+            \det (A) = A_{11}A_{22} - A_{12}A_{21}.
+        \end{equation*}
+    \end{remark}
+
+    \begin{remark}
+        For simplicity, we are going to write
+        \begin{equation*}
+            A = \begin{bmatrix} A_1, A_2, \ldots, A_n \end{bmatrix}
+        \end{equation*}
+        to denote $A\in M_{n\times n}(\F)$ with rows $A_1, A_2, \ldots, A_n$.
+    \end{remark}
+
+    \begin{prop}{$n$-Linearity of Determinants}
+        Let $A\in M_{n\times n}(\F)$. Then the determinant of $A$ is a linear function of each row, when the remaining rows are held fixed. That is, for each $k\in \left\lbrace 1, \ldots, n \right\rbrace$, we have
+        \begin{equation*}
+            \det 
+            \begin{bmatrix}
+                A_1, \ldots, B_k + \alpha C_k, \ldots, A_n
+            \end{bmatrix}
+            =
+            \det 
+            \begin{bmatrix}
+                A_1, \ldots,  B_k, \ldots, A_n
+            \end{bmatrix}
+            \alpha \det 
+            \begin{bmatrix}
+                A_1, \ldots, C_k, \ldots, A_n
+            \end{bmatrix}.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Write
+        \begin{equation*}
+            A = \begin{bmatrix}
+                A_1, \ldots, B_k+\alpha C_k, \ldots, A_n
+            \end{bmatrix}
+            \ \ B =
+            \begin{bmatrix}
+                A_1, \ldots, B_k, \ldots, A_n
+            \end{bmatrix}
+            \ \ C =  
+            \begin{bmatrix}
+                A_1, \ldots, C_k, \ldots, A_n
+            \end{bmatrix}.
+        \end{equation*}
+        Then by definition,
+        \begin{align*}
+            \det (A) & = \sum^n_{i=1} (-1)^{1+i} A_{i1} \det \left(\widetilde{A}_{i1}\right) \\
+                     & = \sum^n_{i=1, i\neq k} (-1)^{1+i} A_{i1} \det \left(\widetilde{A}_{i1}\right) + (-1)^{1+k} A_{k1} \det \left(\widetilde{A}_{k1}\right).
+        \end{align*}
+        Observe that
+        \begin{equation*}
+            \widetilde{A}_{k1} = \widetilde{B}_{k1} = \widetilde{C}_{k1} \text{\ \ and\ \ } A_{k1} = B_{k1} + \alpha C_{k1}.
+        \end{equation*}
+        For $i\neq k$, the matrices $\widetilde{A}_{i1}, \widetilde{B}_{i1}, \widetilde{C}_{i1}$ have the same rows, except for one row $i_0 = k-1$ if $i<k$ and $i_0 = k$ if $j>k$. Moreover, row $i_0$ of $\widetilde{A}_{i1}, \widetilde{B}_{i1}, \widetilde{C}_{i1}$ is $(B_k + \alpha C_k), B_k, C_k$, respectively. So by induction hypothesis, 
+        \begin{equation*}
+            \det \left(\widetilde{A}_{i1}\right) = \det \left(\widetilde{B}_{i1}\right) + \alpha \det \left(\widetilde{C}_{i1}\right)
+        \end{equation*}
+        and
+        \begin{equation*}
+            A_{i1} = B_{i1} = C_{i1}
+        \end{equation*}
+        for each $i\neq k$. Plugging these equalities into the cofactor expansion along the first column of $A$, we get
+        \begin{align*}
+            \det (A) & = \sum^n_{i=1} (-1)^{1+i} A_{i1} \cdot \det \left(\widetilde{A}_{i1}\right) \\
+                     & = \sum^n_{i=1, i\neq k} (-1)^{1+i} A_{i1} \cdot \det \left(\widetilde{A}_{i1}\right) + (-1)^{1+k} A_{k1} \cdot \det \left(\widetilde{A}_{k1}\right) \\
+                     & = \sum^n_{i=1, i\neq k} (-1)^{1+i} A_{i1} \cdot \left( \det \left(\widetilde{B}_{i1}\right) + \alpha \det \left(\widetilde{C}_{i1}\right) \right) \\
+                     & \hspace{1cm} + (-1)^{1+k} \left(B_{k1} + \alpha C_{k1}\right) \cdot \det \left(\widetilde{A}_{k1}\right) \\
+                     & = \sum^n_{i=1} (-1)^{1+i} B_{i1} \cdot \det \left(\widetilde{B}_{t1}\right) + \alpha \sum^n_{i=1} (-1)^{1+i} C_{i1} \cdot \det \left(\widetilde{C}_{t1}\right) \\
+                     & = \det (B) + \alpha \det (C),
+        \end{align*}
+        which is the desired result.
+    \end{proof}
+
+    \begin{cor}{Determinant Is Zero $A$ If Has a Zero Row}
+        Let $A\in M_{n\times n}(\F)$. If $A$ has a zero row, then $\det(A) = 0$.
+    \end{cor}	
+
+    \begin{proof}
+        Write
+        \begin{equation*}
+            A =
+            \begin{bmatrix}
+                R_1, \ldots, R_k, \ldots, R_n
+            \end{bmatrix}
+        \end{equation*}
+        where $R_k = 0$. Then,
+        \begin{align*}
+            \det A 
+            & = 
+            \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_k, \ldots, R_n
+            \end{bmatrix}
+            =
+            \det
+            \begin{bmatrix}
+                R_1, \ldots, 2R_k, \ldots, R_n
+            \end{bmatrix} \\
+            & =
+            2\det
+            \begin{bmatrix}
+                R_1, \ldots, R_k, \ldots, R_n
+            \end{bmatrix}
+            =2\det(A)
+        \end{align*} 
+        so $\det(A) = 0$.
+    \end{proof}
+
+    \begin{cor}{Determinants after a Type 2 Elementary Row Operation}
+        Let $A\in M_{n\times n}(\F)$ and $Q\in M_{n\times n}(\F)$ be the matrix obtained from $A$ by multiplying a row of $A$ by a scalar $\alpha\in \F$. Then $\det(Q) = \alpha\det(A)$.
+    \end{cor}	
+
+    \begin{proof}
+        Write
+        \begin{equation*}
+            A = 
+            \begin{bmatrix}
+                R_1, \ldots, R_n
+            \end{bmatrix}
+        \end{equation*}
+        and suppose that $Q$ is obtained by multiplying row $k$ of $A$, $R_k$, by $\alpha$. Then
+        \begin{equation*}
+            \det(Q) = 
+            \det 
+            \begin{bmatrix}
+                R_1, \ldots, \alpha R_k, \ldots, R_n
+            \end{bmatrix}
+            = 
+            \alpha \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_k, \ldots, R_n
+            \end{bmatrix}
+            = \alpha \det A,
+        \end{equation*}
+        which is the desired result.
+    \end{proof}
+
+    \begin{lemma}{$\det(A) = 0$ If Two Adjacent Rows Are Equal}
+        Let $A\in M_{n\times n}(\F)$. If two adjacent rows of $A$ are equal, then $\det A = 0$.
+    \end{lemma}
+
+    \begin{proof}
+        We proceed by induction. Let $P(n)$ be the predicate that every $A\in M_{n\times n}(\F)$ that has two equal adjacent rows satisfies $\det A = 0$. For $n=2$, if $A\in M_{n\times n}(\F)$ has two equal adjacent rows, then we may write
+        \begin{equation*}
+            \begin{bmatrix}
+                A_{11} & A_{11} \\ A_{21} & A_{21}
+            \end{bmatrix}
+        \end{equation*}
+        so
+        \begin{equation*}
+            \det(A) = A_{11}A_{21} - A_{11}A_{21} = 0.
+        \end{equation*}
+        Now, suppose $P(k)$ for some $k\in \left\lbrace n\in \N: n>2 \right\rbrace$. Further suppose that $A\in M_{(k+1)\times (k+1)}(\F)$ such that $A$ has two equal adjacent rows, row $p$ and row $p+1$. Then, for each $i\in \left\lbrace 1, \ldots, k+1 \right\rbrace\setminus \left\lbrace p, p+1 \right\rbrace$, $\widetilde{A}_{i1}$ has two equal adjacent rows, so $\det\left( \widetilde{A}_{i1}\right) = 0$ by induction hypothesis. Moreover, $\widetilde{A}_{p1} = \widetilde{A}_{(p+1)1}$, since $\row_p(A) = \row_{p+1}(A)$ and they are adjacent. Thus,
+        \begin{align*}
+            \det(A) & = \sum^{k+1}_{i=1} (-1)^{1+i} A_{i1} \det \left(\widetilde{A}_{i1}\right) \\
+                    & = \sum^{k+1}_{i=1, i\neq p, p+1} (-1)^{1+i} A_{i1} \det \left(\widetilde{A}_{i1}\right) + (-1)^{1+p}A_{p1} \det \left(\widetilde{A}_{p1}\right) \\
+                    & \hspace{1cm} + (-1)^{p+2}A_{(p+1)1} \det \left(\widetilde{A}_{(p+1)1}\right) \\
+                    & = (-1)^{1+p}A_{p1} \det \left(\widetilde{A}_{p1}\right) + (-1)^{p+2}A_{p1} \det \left(\widetilde{A}_{p1}\right) \\
+                    & = \left( (-1)^{1+p} + (-1)^{2+p} \right)  A_{p1} \det \left(\widetilde{A}_{p1}\right) = 0,
+        \end{align*} 
+        since $(-1)^{1+p} + (-1)^{2+p} = 0$ for any $p\in \Z$.
+    \end{proof}
+        
+    \begin{lemma}{$\det(B) = -\det(A)$ If $B$ Is Obtained by Exchanging Two Adjacent Rows of $A$}
+        Let $A\in M_{n\times n}(\F)$ and $B\in M_{n\times n}(\F)$ be the matrix obtained by exchanging row $i$ and row $i+1$ of $A$ for some $i\in \left\lbrace 1, \ldots, n-1 \right\rbrace$. Then $\det(B) = -\det(A)$.
+    \end{lemma}
+
+    \begin{proof}
+        Let $R_1, \ldots, R_n$ be the rows of $A$. Define
+        \begin{equation*}
+            C =
+            \begin{bmatrix}
+                R_1, \cdots, R_i+R_{i+1}, R_i+R_{i+1}, \ldots, R_n
+            \end{bmatrix}
+        \end{equation*}
+        then $\det(C) = 0$ by Lemma 4.2. That is,
+        \begin{align*}
+            \det(C) & = \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_i+R_{i+1}, R_i+R_{i+1}, \ldots, R_n
+            \end{bmatrix} \\
+                    & = \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_i, R_i, \ldots, R_n
+            \end{bmatrix}
+            + \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_{i+1}, R_{i+1}, \ldots, R_n
+            \end{bmatrix} \\
+                    & \hspace{1cm} + \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_i, R_{i+1}, \ldots, R_n    
+            \end{bmatrix}
+            + \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_{i+1}, R_i, \ldots, R_n
+            \end{bmatrix} \\
+            & = \det
+            \begin{bmatrix}
+                R_1, \ldots, R_{i+1}, R_{i+1}, \ldots, R_n
+            \end{bmatrix} 
+            + \det
+            \begin{bmatrix}
+                R_1, \ldots, R_i, R_{i+1}, \ldots, R_n    
+            \end{bmatrix} \\
+            & = 
+            \det(A) + \det(B) = 0,
+        \end{align*} 
+        which exactly means $\det(B) = -\det(A)$.
+    \end{proof}
+
+    \begin{lemma}{Determinant Is Zero If $A$ Has Two Identical Rows}
+        Let $A\in M_{n\times n}(\F)$. If $A$ has two identical rows, then $\det(A) = 0$.
+    \end{lemma}
+
+    \begin{proof}
+        Suppose that $A$ has two identical rows. Then by means of type 1 elementary row operations, $A$ can be transformed into a matrix which has two adjacent identical rows, denote which $A'$. Suppose $n$ type 1 elementary row operations are used. Then by Lemma 4.2 and Lemma 4.3,
+        \begin{equation*}
+            \det(A) = (-1)^n \det (A') = 0. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \clearpage
+    \begin{prop}{Determinants after a Type 1 Elementary Row Operation}
+        Let $A\in M_{n\times n}(\F)$ and suppose that $B\in M_{n\times n}(\F)$ is obtained by exchanging row $i$ and row $j$ of $A$. Then $\det(B) = -\det(A)$.
+    \end{prop}
+
+    \begin{proof}
+        Without loss of generality, suppose $i<k$ and let $R_1, \ldots, R_n$ be the rows of $A$. Define
+        \begin{equation*}
+            C = \begin{bmatrix}
+                R_1, \ldots, R_i+R_j, \ldots, R_i+R_j, \ldots, R_n
+            \end{bmatrix}
+        \end{equation*}
+        then
+        \begin{align*}
+            \det(C) & = \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_i+R_j, \ldots, R_i+R_j, \ldots, R_n
+            \end{bmatrix} \\
+                    & = \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_i, \ldots, R_i, \ldots R_n
+            \end{bmatrix}
+            + \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_j, \ldots, R_j, \ldots, R_n
+            \end{bmatrix} \\
+                    & \hspace{1cm} + \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_i, \ldots, R_j, \ldots, R_n
+            \end{bmatrix}
+            + \det 
+            \begin{bmatrix}
+                R_1, \ldots, R_j, \ldots, R_i, \ldots, R_n
+            \end{bmatrix} \\
+                   & = \det 
+                   \begin{bmatrix}
+                       R_1, \ldots, R_i, \ldots, R_j, \ldots, R_n
+                   \end{bmatrix}
+                   + \det 
+                   \begin{bmatrix}
+                       R_1, \ldots, R_j, \ldots, R_i, \ldots, R_n
+                   \end{bmatrix} \\
+                   & = \det(A) + \det(B) = 0.
+        \end{align*} 
+        Thus $\det(B)=-\det(A)$.
+    \end{proof}
+
+    \begin{prop}{Determinants after a Type 3 Elementary Row Operation}
+        Let $A\in M_{n\times n}(\F)$. Suppose that $B$ is obtained from $A$ by adding scalar multiple of row $j$ to row $i$ of $A$. Then $\det(B) = \det(A)$.
+    \end{prop}
+
+    \begin{proof}
+        Without loss of generality, suppose $i < j$ and let $R_1, \ldots, R_n$ be the rows of $A$. Then
+        \begin{equation*}
+            B = 
+            \begin{bmatrix}
+                R_1, \ldots, R_i + cR_j, \ldots, R_j, \ldots, R_n
+            \end{bmatrix}
+        \end{equation*}
+        for some $c\in \F$. Thus
+        \begin{align*}
+            \det(B) & = \det
+            \begin{bmatrix}
+                R_1, \ldots, R_i+cR_j, \ldots, R_j, \ldots, R_n
+            \end{bmatrix} \\
+                    & = \det
+            \begin{bmatrix}
+                R_1, \ldots, R_i, \ldots, R_j, \ldots, R_n
+            \end{bmatrix}
+            + c \det
+            \begin{bmatrix}
+                R_1, \ldots, R_j, \ldots, R_j, \ldots, R_n
+            \end{bmatrix} \\
+                    & = \det
+            \begin{bmatrix}
+                R_1, \ldots, R_i, \ldots, R_j, \ldots, R_n
+            \end{bmatrix}
+            = \det(A),
+        \end{align*} 
+        which is the desired result.
+    \end{proof}
+
+    \section{Properties of Determinants}
+
+    \begin{theorem}{Characterization of Determinants}
+        As a function of each row, the determinant of a square matrix is a unique function $\F^n\times \F^n\times\cdots\times\F^n\to \F$ that satisfies the following.
+        \begin{enumerate}
+            \item Determinant is a $n$-linear function. In other words, if $A = \begin{bmatrix} A_1, A_2, \ldots, A_n\end{bmatrix}$ 
+                \begin{equation*}
+                    \det (A_1, \ldots, cA_i, \ldots, A_n) = c\det(A_1, \ldots, A_i, \ldots, A_n) = c\det(A)
+                \end{equation*}
+                for each $i\in \left\lbrace 1, 2, \ldots, n \right\rbrace$.
+            \item Whenever there exists $i\in \left\lbrace 1, \ldots, n-1 \right\rbrace$ such that $A_i = A_{i+1}$, $\det(A) = 0$.
+            \item $\det(I) = 1$.
+        \end{enumerate}
+    \end{theorem}
+
+    \clearpage
+    \begin{cor}{Determinant of an Elementary Matrix and Its Transpose}
+        Let $E_i$ be an elementary matrix obtained by type $i$ elementary row operation. Then the following holds.
+        \begin{enumerate}
+            \item $\det(E_1) = -1$.
+            \item $\det(E_2) = c$, where $c\in \R\setminus \left\lbrace 0 \right\rbrace$ is the coefficient multiplied to a row.
+            \item $\det(E_3) = 1$.
+            \item $\det\left(E_i^T\right) = \det \left(E_i\right)$.
+        \end{enumerate}
+    \end{cor}	
+
+    \begin{proof}
+        Observe that (1), (2), and (3) are direct results of Proposition 5, Corollary 1.2, Proposition 6, respectively, with (3) of Proposition 7. For (4), it is sufficient to recall that $E^T$ is an elementary matrix of the same type as $E$, provided that $E$ is an elementary matrix.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $E\in M_{n\times n}(\F)$ be an elementary matrix. Then $\det(E)\neq 0$.
+    \end{cor}	
+
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\F)$ and $E\in M_{n\times n}(\F)$ be an elementary matrix. Then $\det \left( EA \right) = \det(E) \det(A)$.
+    \end{cor}	
+
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\F)$ and $E_1, \ldots, E_p\in M_{n\times n}(\F)$ be elementary matrices. Then 
+        \begin{equation*}
+            \det \left( E_1E_2\cdots E_pA \right) = \det(E_1) \det(E_2) \cdots \det(E_p) \det(A).
+        \end{equation*}
+        In particular,
+        \begin{equation*}
+            \det \left( E_1E_2\cdots E_p \right) = \det(E_1) \det(E_2) \cdots \det(E_p).
+        \end{equation*}
+    \end{cor}	
+
+    \begin{theorem}{Invertible Matrix Theorem V}
+        Let $A\in M_{n\times n}(\F)$. Then $A$ is invertile if and only if $\det(A)\neq 0$.
+    \end{theorem}
+
+    \begin{proof}
+        For the forward direction, suppose that $A$ is invertible. Then there exists elementary matrices $E_1, \ldots, E_p\in M_{n\times n}(\F)$ such that $A = E_1E_2\cdots E_p$, so $\det(A) = \det(E_1) \det(E_2) \cdots \det(E_p) \neq 0$. For the reverse direction, suppose that $\det(A)\neq 0$. Further suppose that $A$ is not invertible for the sake of contradiction. Then there exists elementary matrices $F_1, F_2, \ldots, F_q\in M_{n\times n}(\F)$ such that
+        \begin{equation*}
+            F_1F_2\cdots F_qA = 
+            \begin{bmatrix}
+                I_r & O \\ O & O
+            \end{bmatrix},
+        \end{equation*}
+        where $r = \rank(A) < n$. But $\det \begin{bmatrix} I_r & O \\ O & O \end{bmatrix} = 0$, which is a contradiction, since $\det(A)\neq 0$ by assumption and $F_1, F_2, \ldots, F_q$ are elementary matrices.
+    \end{proof}
+
+    \begin{cor}{Determinant and Rank}
+        Let $A\in M_{n\times n}(\F)$. Then $\det(A) = 0$ if and only if $\rank(A)<n$.
+    \end{cor}	
+
+    \begin{prop}{Determinant of a Matrix Product}
+        Let $A, B\in M_{n\times n}(\F)$. Then $\det(AB) = \det(A)\det(B)$.
+    \end{prop}
+
+    \begin{proof}
+        First suppose that $\det(A) = 0$ or $\det(B) = 0$. Then clearly $\det(AB) = 0$, since $AB$ is not invertible. So suppose that $\det(A), \det(B)\neq 0$. Then $A$ and $B$ are invertible, so there exist elementary $E_1, \ldots, E_p, F_1, \ldots, F_q\in M_{n\times n}(\F)$ such that $A = E_1E_2\cdots E_p$ and $B = F_1F_2 \cdots F_q$. Therefore,
+        \begin{align*}
+            \det (AB) & = \det \left( E_1E_2\cdots E_pF_1F_2\cdots F_q \right) \\
+                      & = \det \left( E_1\det E_2\cdots \det E_p \right) \left( \det F_1\det F_2\cdots \det F_q \right) = \det(A)\det(B),
+        \end{align*} 
+        which is the desired result.
+    \end{proof}
+
+    \begin{prop}{Determinant of a Matrix and Its Transpose}
+        Let $A\in M_{n\times n}(\F)$. Then $\det(A) = \det \left( A^T \right)$.
+    \end{prop}
+
+    \begin{proof}
+        Suppose that $A$ is not invertible. Then so $A^T$ is not, and we have $\det A = 0 = \det A^T$. So suppose that $A$ is invertible. Then there are elementary matrices $E_1, \ldots, E_p\in M_{n\times n}(\F)$ such that
+        \begin{align*}
+           \det(A^T) & = \det \left( E_1E_2\cdots E_p \right)^T = \det \left( E_p^TE_{p-1}^T\cdots E_1^T \right) \\
+                     & = \det \left( E_p^T \right) \det \left(E_{p-1}^T\right) \cdots \det \left( E_1^T \right) \\
+                     & = \det (E_p) \det (E_{p-1}) \cdots \det (E_1) \\
+                     & = \det(E_1) \det(E_2) \cdots \det(E_p) = \det \left( E_1E_2\cdots E_p \right) = \det (A),
+        \end{align*} 
+        as desired.
+    \end{proof}
+
+    \begin{theorem}{Cofactor Expansion Theorem}
+        The determinant of $A$ can be evaluated by cofactor expansion along any column. That is, for any $j\in \left\lbrace 1, \ldots, n \right\rbrace$,
+        \begin{equation*}
+            \det(A) = \sum^n_{i=1} (-1)^{i+j} A_{ij} \det\left( \widetilde{A}_{ij}\right).
+        \end{equation*}
+    \end{theorem}
+
+    \begin{proof}
+        Write $A = \begin{bmatrix} C_1,C_2,\ldots,C_j,\ldots,C_n \end{bmatrix}$. Observe that it takes $(j-1)$ type 1 elementary column operations to transform $A$ into $A' = \begin{bmatrix} C_j, C_1, C_2, \ldots, C_n \end{bmatrix}$. Therefore, $\det(A) = (-1)^{j-1}\det \left( A' \right)$ and by using cofactor expansion,
+        \begin{equation*}
+            (-1)^{j-1}\sum^n_{i=1} (-1)^{1+i} A'_{i1}\det \left(\widetilde{A}'_{i1}\right) = \sum^n_{i=1} (-1)^{i+j} A'_{i1}\det \left(\widetilde{A}'_{i1}\right) = \sum^n_{i=1} (-1)^{i+j} A_{ij}\det \left(\widetilde{A}_{ij}\right),
+        \end{equation*}
+        since $A'_{i1} = A_{ij}$ and $\widetilde{A}'_{i1} = \widetilde{A}_{ij}$ for all $i\in \left\lbrace 1, \ldots, n \right\rbrace$ by construction. A more general result involving cofactor expansion along any row can be shown by taking the transpose of $A$.
+    \end{proof}
+
+\end{document}

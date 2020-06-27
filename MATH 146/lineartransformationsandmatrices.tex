@@ -1,0 +1,757 @@
+\documentclass[linearalgebraI]{subfiles}
+
+\begin{document}
+
+    \chap{Linear Transformations and Matrices}
+
+    \section{Linear Transformations}
+
+    \begin{remark}
+        In previous section, we developed the theory of abstract vector space. It is now natural to consider those functions defined on vector spaces that, in some sense, preserve the structure.
+    \end{remark}
+
+    \begin{definition}{Linear Transformation}{on Vector Spaces}
+        Let $V, W$ be vector spaces over the same field $\F$. We say a function $T:V\to W$ is a \emph{linear transformation} from $V$ to $W$ if $T$ preserves the operations. That is, for any $v\in V$, $w\in W$, and $c\in \F$,
+        \begin{enumerate}
+            \item $T(v+u) = Tv+Tu$ and
+            \item $Tcv = cTv$.
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}{Linear Operator}{on a Vector Space}
+        Let $V$ be a vector space. A linear transformation $T:V\to V$ from $V$ to $V$ is called a \emph{linear operator}.
+    \end{definition}
+
+    \begin{remark}
+        We denote the set of linear transformations from $V$ to $W$ by $\lin(V,W)$,
+        \begin{equation*}
+            \lin\left( V,W \right) = \left\lbrace T:V\to W\mid T\text{ is linear} \right\rbrace 
+        \end{equation*}
+        In case of $V=W$, we write $\lin(V)$ for simplicity.
+    \end{remark}
+
+    \begin{prop}{Properties of Linear Transformations}
+        Let $V, W$ be vector spaces over the same field $\F$ and let $T:V\to W$.
+        \begin{enumerate}
+            \item If $T$ is linear, then $T(0)=0$.
+            \item $T$ is linear if and only if $T(cv+u)=cTv+Tu$ for all $v,u\in V$ and $c\in\F$.
+            \item If $T$ is linear, then $T(v-u)=Tv-Tu$ for all $v,u\in V$.
+            \item $T$ is linear if and only if
+                \begin{equation*}
+                    T\left( \sum^{n}_{i=1} c_iv_i \right) = \sum^{n}_{i=1} c_iTv_i
+                \end{equation*}
+                for all $c_1,c_2,\ldots,c_n\in\F$ and $v_1,v_2,\ldots,v_n\in V$. That is, $T$ preserves linear combinations.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        For (a), let $v\in V$. Observe that $T(0) = T(0v) = 0Tv = 0$. For (b), suppose that $T$ is linear. Then
+        \begin{equation*}
+            T(cv+u) = Tcv + Tu = cTv + Tu.
+        \end{equation*}
+        On the other hand, if $T(cv+u) = cTv+Tu$ for all $v,u\in V$ and $c\in\F$, then for any $x,y\in V$,
+        \begin{equation*}
+            T(x+y) = T(1x+y) = 1Tx+Ty = Tx+Ty
+        \end{equation*}
+        and for any $d\in\F$,
+        \begin{equation*}
+            Tdx = T(dx+0) = dTx + T(0) = dTx
+        \end{equation*}
+        by (a). (c) and (d) are direct consequences of (b).
+    \end{proof}
+
+    \begin{definition}{Null Space (Kernel), Range (Image)}{of a Linear Transformation}
+        Let $V, W$ be vector spaces and let $T:V\to W$ be a linear transformation. We define the \emph{null space} (or \emph{kernel}) of $T$, denoted as $\ker(T)$, by
+        \begin{equation*}
+            \ker(T) = \left\lbrace v\in V: Tv=0 \right\rbrace \subseteq V.
+        \end{equation*}
+        In other words, $\ker(T)$ is the set of vectors in $V$ which are mapped to 0 by $T$. Moreover, we define the \emph{range} (or \emph{image}) of $T$, denoted as $\image(T)$, by
+        \begin{equation*}
+            \image(T) = \left\lbrace w\in W: \exists v\in V\left[ w=Tv \right] \right\rbrace \subseteq W.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        An important property of the null space and range of a linear transformation is that they are subspaces of their respective supersets.
+    \end{remark}
+
+    \begin{prop}{Null Space and Range Are Subspaces}
+        Let $V, W$ be vector spaces and let $T:V\to W$ be linear. Then $\ker(T)\subseteq V$ and $\image(T)\subseteq W$ are subspaces.
+    \end{prop}
+
+    \begin{proof}
+        To verify that $\ker(T)\subseteq V$ is a subspace, first observe that $0\in\ker(T)$, since $T(0)=0$. Moreover, if $v,u\in\ker(T)$ and $c\in\F$, then
+        \begin{equation*}
+            T(cv+u)=cTv+Tu=0
+        \end{equation*}
+        so $cv+u\in\ker(T)$ as well. To verify that $\image(T)\subseteq W$ is a subspace, observe that $T(0) = 0\in\image(T)$. Moreover, if $w,z\in\image(T)$ and $c\in\F$, then there exist $v,u\in V$ such that $w=Tv$ and $z=Tu$. That is,
+        \begin{equation*}
+            cw+z = cTv+Tu = T(cv+u)\in\image(T). \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        The following proposition provides a method for finding a spanning set for the range of a linear transformation.
+    \end{remark}
+
+    \begin{prop}{}
+        Let $V$ and $W$ be vector spaces, and let $T: V\to W$ be linear. If $\beta = \lbrace v_1, v_2, \ldots, v_n \rbrace$ is a basis for $V$, then
+        \begin{equation*}
+            \ker(T) = \spn\left( T\left( \beta \right)  \right) = \spn\left\lbrace Tv_1, Tv_2, \ldots, Tv_n \right\rbrace.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Suppose $\image(T)\neq \spn(T\beta)$. Then there exists $Tv\in \image(T)$ such that
+        \begin{equation*}
+            Tv\neq a_1Tv_1 + a_2Tv_2 + \cdots + a_nTv_n
+        \end{equation*}
+        for any $(a_1, a_2, \ldots, a_n)\in \F^n$. So
+        \begin{equation*}
+            Tv\neq T\sum^n_{i=1}a_iv_i,
+        \end{equation*}
+        which means
+        \begin{equation*}
+            v\neq \sum^n_{i=1}a_iv_i
+        \end{equation*}
+        for any $(a_1, a_2, \ldots, a_n)\in \F^n$. This is a contradiction, since $\beta$ is a basis for $V$.
+    \end{proof}
+
+    \begin{definition}{Nullity, Rank}{of a Linear Transformation}
+        Let $V, W$ be vector spaces and let $T:V\to V$ be linear. We define the \emph{nullity} of $T$, denoted as $\nullity(T)$, by
+        \begin{equation*}
+            \nullity(T) = \dim\left( \ker(T) \right),
+        \end{equation*}
+        if $\ker(T)$ is finite-dimensional. Moreover, we define the \emph{rank} of $T$, denoted as $\rank(T)$, by
+        \begin{equation*}
+            \rank(T) = \dim\left( \image(T) \right),
+        \end{equation*}
+        if $\image(T)$ is finite-dimensional. That is, the nullity and rank of a linear transformation are the dimension of the associated null space and the range.
+    \end{definition}
+
+    \begin{remark}
+        By thinking the definition of null space and kernel, one may find it intuitive to think that, given a linear transformation, larger the nullity, smaller the rank. In other words, more vectors are mapped to 0, the smaller the range. The next theorem address the balance between the rank and nullity of a linear transformation.
+    \end{remark}
+
+    \begin{theorem}{Rank-Nullity Theorem (Dimension Theorem)}
+        Let $V$ and $W$ be vector spaces, and let $T: V\to W$ be linear. If $V$ is finite-dimensional, then
+        \begin{equation*}
+            \nullity(T) + \rank(T) = \dim(V).
+        \end{equation*}
+    \end{theorem}
+
+    \begin{proof}
+        Let $n=\dim(V), k=\nullity(T)\in\N$ for convenience. Let $\beta_N = \lbrace v_1, v_2, \ldots, v_k \rbrace$ be a basis for $\ker(T)$. By basis extension theorem, there exists vectors $v_{k+1}, v_{k+2}, \ldots, v_n\in V$ such that
+        \begin{equation*}
+            \beta = \beta_N \cup \left\lbrace v_{k+1}, v_{k+2}, \ldots, v_n \right\rbrace 
+        \end{equation*}
+        where $\beta$ is a basis for $V$. Now the claim is that $\beta_R = \left\lbrace v_{k+1}, v_{k+2}, \ldots, v_n \right\rbrace $ is a basis for $\image(T)$. To verify this claim, first observe that $\spn\left( T\beta \right)  = \image(T)$ implies that
+        \begin{equation*}
+            \image(T) = \spn\left( T\beta \right) = \spn\left( T\left( \beta\setminus\beta_N \right)  \right) = \spn\left( T\left( \beta_R \right)  \right) ,
+        \end{equation*}
+        since $T(v_i) = 0$ for all $v_i\in \beta_N$. For the linear independence part, consider
+        \begin{equation*}
+            \sum^n_{k+1} c_iTv_i = 0
+        \end{equation*}
+        for some $c_i\in \F$. Since $T$ is linear,
+        \begin{equation*}
+            T\sum^n_{k+1} c_iv_i = 0
+        \end{equation*}
+        so $\sum^n_{k+1} c_iv_i\in \ker(T)$. Therefore, there exist $b_1, b_2, \ldots, b_k\in \F$ such that
+        \begin{equation*}
+            \sum^n_{k+1} c_iv_i = \sum^k_1 b_iv_i
+        \end{equation*}
+        which can be also written as
+        \begin{equation*}
+            \sum^n_{k+1} c_iv_i + \sum^k_1 b_1v_1 = 0.
+        \end{equation*}
+        But since $\beta$ is linearly independent, $(b_1, b_2, \ldots, b_n), (c_1, c_2, \ldots, c_n) = 0$. So $\beta_R$ is linearly independent. Thus
+        \begin{equation*}
+            \dim (\image(T)) = \rank(T) = n-k
+        \end{equation*}
+        as desired.
+    \end{proof}
+
+    \begin{recall}{Injective, Surjective, Bijective}{Function}
+        Let $A, B$ sets and let $f:A\to B$ a function. We say $f$ is \emph{injective} if for all $y\in B$, there exist a unique $x\in A$ such that $f(x)=y$. We say $f$ is \emph{surjective} if there exist $x\in A$ such that $f(x)=y$ for all $y\in B$. We say $f$ is \emph{bijective} if $f$ is injective and surjective.
+    \end{recall}
+
+    \begin{prop}{$T$ Is Surjective If and Only If $T$ Is Injective}
+        Let $V, W$ be vector spaces over $F$ and let $T: V\to W$ be linear. Then $T$ is surjective if and only if $\ker(T) = \left\lbrace 0 \right\rbrace$.
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that $T$ is surjective and let $x\in \ker(T)$ be arbitrary. Then $Tx = 0 = T(0)$, so by definition of surjection, $x=0$. For the reverse direction, suppose $\ker(T) = \left\lbrace 0 \right\rbrace$ and $Tx = Ty$. Then
+        \begin{equation*}
+            Tx - Ty = T(x-y) = 0
+        \end{equation*}
+        so it must be that $x-y\in \left\lbrace 0 \right\rbrace$. That is, $x = y$, which means $T$ is surjective, as desired.
+    \end{proof}
+
+    \clearpage
+    \begin{prop}{}
+        Let $V$ and $W$ be vector spaces over $\F$ of equal finite dimension, and let $T: V\to W$ be linear. Then the following are equivalent.
+        \begin{enumerate}
+            \item $T$ is injective.
+            \item $T$ is surjective.
+            \item $\rank(T)=\dim(V)$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        Proposition 2.5 supplies (a)$\iff$(b). Observe that
+        \begin{equation*}
+            T\text{ is injective } \iff \ker(T)=\left\lbrace 0 \right\rbrace \iff \nullity(T)=0\iff\rank(T)=\dim(V). \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        One of the most important properties of a linear transformation is that it is completely determined by its action on a basis. This result follows from the next theorem and corollary.
+    \end{remark}
+
+    \begin{theorem}{Characterization of a Linear Transformation}
+        Let $V$ and $W$ be vector spaces over $\F$ and let $\left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ be a basis for $V$. Moreover, let $w_1, w_2, \ldots, w_n\in W$. Then there exists a unique linear $T: V\to W$ such that
+        \begin{equation*}
+            Tv_i = w_i
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$.
+    \end{theorem}
+
+    \begin{proof}
+        Define $T:V\to W$ by
+        \begin{equation*}
+            v=\sum^{n}_{i=1} c_iv_i\mapsto \sum^{n}_{i=1} c_iw_i.
+        \end{equation*}
+        We claim that $T$ is the desired linear transformation. To verify this, let $x, y\in V$ and $c\in \F$. Then $x=\sum^{n}_{i=1} a_iv_i$ and $y=\sum^{n}_{j=1} b_iv_i$ for some $a_1,a_2,\ldots,a_n, b_1,\ldots,b_n\in\F$, and 
+        \begin{align*}
+            T(cx+y) & = T \left( c\sum^n_{i=1} a_iv_i + \sum^n_{i=1} b_iv_i \right) = T \sum^n_{i=1} (ca_i+b_i)v_i \\
+                    & = \sum^n_{i=1} (ca_i+b_i)w_i = c\sum^n_{i=1} a_iw_i + \sum^n_{i=1} b_iw_i = cTx+Ty.
+        \end{align*}
+        Moreover, clearly
+        \begin{equation*}
+            Tv_i = w_i.
+        \end{equation*}
+        To verify the uniqueness, let $S: V\to W$ be an arbitrary linear transformation satisfying $Sv_i = w_i$. Then
+        \begin{equation*}
+            Sx = S \sum^n_{i=1} a_iv_i = \sum^n_{i=1} a_i Sv_i = \sum^n_{i=1} a_iw_i = Tx,
+        \end{equation*}
+        as desired.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V, W$ be a finite-dimensional vector spaces, $\left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ be a basis for $V$, and $T,U: V\to W$ be linear transformations satisfying $Tv_i = Uv_i$ for all $i\in \left\lbrace 1, 2, \ldots, n \right\rbrace$. Then $T = U$.
+    \end{cor}	
+
+    \section{Matrix Representations of Linear Transformations}
+
+    \begin{remark}
+        Until now, every linear transformation is described by examining its range and null space. In this section, we begin another yet useful approach to describe linear transformation over a vector space: matrix representation of a linear transformation. In fact, we are going to show that there is a special kind of bijection (called isomorphism) between matrices and linear transformations.
+    \end{remark}
+
+    \begin{definition}{Orderd Basis}{of a Vector Space}
+        Let $V$ be a finite-dimensional vector space. An \emph{ordered basis} for $V$ is a basis for $V$ endowed with a specific order.
+    \end{definition}
+
+    \begin{remark}
+        Given any ordered basis, we may describe any vector in the vector space by using coordinate vectors, $n$-tuples ($n = \dim(V)$) that identify abstract vectors in $V$. For, if $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ is an ordered basis for a vector space $V$ over $\F$, then there exists a unique representation of any $v\in V$ as a linear combination of $v_1,v_2,\ldots,v_n$,
+        \begin{equation*}
+            v = \sum^{n}_{i=1} a_iv_i
+        \end{equation*}
+        for some $a_1,a_2,\ldots,a_n$.
+    \end{remark}
+
+    \begin{definition}{Coordinate Vector}{in an Orderd Basis}
+        Let $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ be an ordered basis for a vector space $V$ over $\F$. A unique $n$-tuple $(a_1, a_2, \ldots, a_n)$ such that
+        \begin{equation*}
+            v = \sum^n_{i=1} a_iv_i
+        \end{equation*}
+        is called the \emph{coordinate vector} of $v$ relative to $\beta$ and denoted by
+        \begin{equation*}
+            \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix} = \left[ v \right]_\beta.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        We shall show later that the function $\left[ \cdot \right] _\beta:V\to\F^n$ for any ordered basis $\beta$ for $V$ is linear.
+    \end{remark}
+
+    \begin{definition}{Matrix}{over a Field}
+        We say an $m\times n$ rectangular array $A$
+        \begin{equation*}
+            \begin{bmatrix}
+                A_{11} & A_{12} & \cdots & A_{1n} \\
+                A_{21} & A_{22} & \cdots & A_{2n} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                A_{m1} & A_{m2} & \cdots & A_{mn}\\
+            \end{bmatrix}
+        \end{equation*}
+        of scalars $A_{ij}\in\F$ a \emph{matrix} over $\F$.
+    \end{definition}
+
+    \begin{remark}
+        We shall consistently denote the set of $m\times n$ matrices over $\F$ by $M_{m\times n}(\F)$ and the entry on $i$th row and $j$th column of a matrix $A\in M_{m\times n}(\F)$ by $A_{ij}$.
+    \end{remark}
+
+    \begin{remark}
+        Similar to how a vector is represented as a coordinate vector in an ordered basis, we may represent a linear transformation as a matrix in an ordered basis. That is, if $V,W$ are finite-dimensional vector spaces with ordered basis $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ and $\gamma = \left\lbrace w_1, w_2, \ldots, w_m \right\rbrace$. Then for each $j\in \left\lbrace 1, 2, \ldots, n \right\rbrace$ there exists unique scalars $a_{ij}\in \F$ such that
+        \begin{equation*}
+            Tv_j = \sum^m_{i=1} a_{ij}w_i.
+        \end{equation*}
+    \end{remark}
+
+    \begin{definition}{Matrix Representation}{of a Linear Transformation}
+        Consider Remark 2.11. We say the matrix $A\in M_{m\times n}(\F)$ defined by $A_{ij}=a_{ij}$ the \emph{matrix representation} of $T$ in the ordered bases $\beta$ and $\gamma$. We denote the matrix representation of $T$ by 
+        \begin{equation*}
+            A = \left[ T \right]^\gamma_\beta.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        When $V=W$ and $\beta = \gamma$, we write
+        \begin{equation*}
+            \left[ T \right]_\beta = \left[ T \right]^\gamma_\beta
+        \end{equation*}
+        for convenience.
+    \end{remark}
+
+    \begin{remark}
+        By Corollary 2.7.1, if $T, U: V\to W$ are linear transformations satisfying $[T]^\gamma_\beta = [U]^\gamma_\beta$ then $T=U$. Moreover, observe that $j$th column of $[T]^\gamma_\beta$ is $\left[ Tv_j \right] _\gamma$, the coordinate vector of $Tv_j$ relative to $\gamma$. In other words,
+        \begin{equation*}
+            [T]^\gamma_\beta = \left[ \left[ Tv_1 \right]_\gamma \left[ Tv_2 \right]_\gamma \cdots \left[ Tv_n \right]_\gamma \right].
+        \end{equation*}
+    \end{remark}
+
+    \begin{remark}
+        Now that we have defined an association from linear transformations to matrices, we are going to prove that 
+        \begin{equation*}
+            \left[ \cdot \right] _\beta^\gamma:\lin(V,W)\to M_{m\times n}(\F) 
+        \end{equation*}
+        for any ordered basis $\beta$ for $V$ and $\gamma$ for $W$ is linear, where $V,W$ are finite-dimensional vector spaces. But to do so, we first show that $\lin(V,W)$ is a vector space under the following operations: Define addition and scalar multiplications such that
+        \begin{equation*}
+            \left( cT+U \right) v = cTv+Uv
+        \end{equation*}
+        for any $T, U\in \lin(V, W)$, $c\in\F$, and $v\in V$. Then it is a routine computation to show that $cT+U:V\to W$ is linear (and hence $\lin(V,W)$ is closed under the provided operations) and that $\lin(V,W)$ is a vector space.
+    \end{remark}
+
+    \begin{prop}{$\left[ \cdot \right] _\beta^\gamma:\lin(V,W)\to M_{m\times n}(\F)$ Is Linear}
+        Let $V, W$ be finite-dimensional vector spaces with ordered bases $\beta$ and $\gamma$, respectively, and let $T,U: V\to W$ be linear. Then
+        \begin{equation*}
+            [cT+U]^\gamma_\beta = c[T]^\gamma_\beta + [U]^\gamma_\beta.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Consider writing $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ and $\gamma = \left\lbrace w_1, w_2, \ldots, w_m \right\rbrace$. Then there exist unique scalars $a_{ij}, b_{ij}$ such that $Tv_j = \sum^m_{i=1} a_{ij}w_i$ and $Uv_j = \sum^m_{i=1} b_{ij}w_i$ for all $j\in \left\lbrace 1, 2, \ldots, n \right\rbrace$. Hence
+        \begin{equation*}
+            (cT+U)v_j = cTv_j + Uv_j = c\sum^m_{i=1} a_{ij}w_i + \sum^m_{i=1} b_{ij}w_i = \sum^m_{i=1} (ca_{ij}+b_{ij})w_i.
+        \end{equation*}
+        Thus for all $i\in \left\lbrace 1, 2, \ldots, m \right\rbrace$ and $j\in \left\lbrace 1, 2, \ldots, n \right\rbrace$,
+        \begin{equation*} \begin{split}
+            \left( \left[ cT+U \right]^\gamma_\beta \right)_{ij} = ca_{ij}+b_{ij} = c\left( \left[ T \right]^\gamma_\beta \right)_{ij} + \left( \left[ U \right]^\gamma_\beta \right)_{ij}.
+        \end{split} \end{equation*}
+        as desired.
+    \end{proof}
+
+    \section{Compositions of Linear Transformations}
+
+    \begin{remark}
+        For simplicity, we shall write $TU$ to denote the composition of linear transformations $T$ and $U$.
+    \end{remark}
+
+    \clearpage
+    \begin{prop}{The Composition of Linear Transformations Is Linear}
+        Let $V, W, Z$ be vector spaces over $\F$ and let $T: V\to W$ and $U: W\to Z$ be linear. Then $UT: V\to Z$ is linear.
+    \end{prop}
+
+    \begin{proof}
+        Let $x,y\in V$ and $c\in \F$ be arbitrary. Then observe that
+        \begin{equation*}
+            UT(cx+y) = U \left( T(cx+y) \right) = U \left( cTx + Ty \right) = cU(Tx) + U(Ty) = cUTx + UTy. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{prop}{Properties of the Composition of Linear Transformations}
+        Let $V$ be a vector space and let $T, U_1, U_2:V\to V$ be linear operators.
+        \begin{enumerate}
+            \item $T\left( U_1+U_2 \right)  = TU_1 + TU_2$ and $(U_1+U_2)T = U_1T + U_2T$.
+            \item $(TU_1)U_2 = T(U_1U_2)$.
+            \item $TI = IT = T$, where $I$ is the identity operator. That is, $Iv = v$ for all $v\in V$.
+            \item $a(U_1U_2) = (aU_1)U_2 = U_1(aU_2)$ for all $a\in \F$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{remark}
+        Although we have stated Proposition 2.10 in terms of linear operators for simplicity, (a), (b), and (d) are valid for any linear transformations $T, U_1, U_2$ such that the provided compositions are well-defined.
+    \end{remark}
+
+    \begin{remark}
+        Aside from the addition of matrices and scalar multiplication, an important operation that is not yet introduced is matrix product. Suppose $T: V\to W$ and $U: W\to Z$ are linear, where $\alpha = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace, \beta = \left\lbrace w_1, w_2, \ldots, w_m \right\rbrace, \gamma = \left\lbrace z_1, z_2, \ldots, z_p \right\rbrace$ are bases of $V, W, Z$, respectively. Given this, the motivation is to define the product of $[T]^\beta_\alpha$ and $[U]^\gamma_\beta$ to be
+        \begin{equation*}
+            [U]^\gamma_\beta [T]^\beta_\alpha = [UT]^\gamma_\alpha.
+        \end{equation*}
+    \end{remark}
+
+    \begin{definition}{Product}{of Matrices}
+        Let $A\in M_{m\times n}(\F)$ and $B\in M_{n\times p}(\F)$. We define the \emph{product} of $A$ and $B$, denoted by $AB$, to be the $m\times p$ matrix with entries
+        \begin{equation*}
+            \left( AB \right) _{ij} = \sum^{n}_{k=1} A_{ik}B_{kj}.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        We verify that the above definition of matrix multiplication is consistent with our motivation. 
+    \end{remark}
+
+    \begin{prop}{}
+        Let $V, W, Z$ be finite-dimensional vector spaces with ordered bases $\alpha, \beta, \gamma$, respectively, and let $T:V\to W$ and $U:W\to Z$ be linear. Then
+        \begin{equation*}
+            \left[ U \right] ^\gamma_\beta \left[ T \right] ^\beta_\alpha = \left[ UT \right] ^\gamma_\alpha.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Write $\alpha=\left\lbrace v_1,v_2,\ldots,v_m \right\rbrace, \beta=\left\lbrace w_1,w_2,\ldots,w_n \right\rbrace, \gamma=\left\lbrace z_1,z_2,\ldots,z_p \right\rbrace$ for convenience. Then
+        \begin{equation*}
+            Tv_i = \sum^{m}_{j=1} \left( \left[ T \right] ^\beta_\alpha \right) _{ji}w_j
+        \end{equation*}
+        and
+        \begin{equation*}
+            Tw_j = \sum^{p}_{k=1} \left( \left[ U \right] ^\gamma_\beta \right) _{kj}z_k
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,m \right\rbrace$ and $j\in\left\lbrace 1,2,\ldots,n \right\rbrace$. That is,
+        \begin{align*}
+            UTv_i & = U\sum^{n}_{j=1} \left( \left[ T \right] ^\beta_\alpha \right) _{ji}w_j = \sum^{n}_{j=1} \left( \left[ T \right] ^\beta_\alpha \right) _{ji} \sum^{p}_{k=1} \left( \left[ U \right] ^\gamma_\beta \right) _{kj} z_k \\ 
+                  & = \sum^{n}_{j=1} \sum^{p}_{k=1} \left( \left[ U \right] ^\gamma_\beta \right) _{kj} \left( \left[ T \right] ^\beta_\alpha \right) _{ji} z_k = \sum^{p}_{k=1} \left( \left[ U \right] ^\gamma_\beta \left[ T \right] ^\beta_\alpha \right) _{ki}z_k
+        \end{align*} 
+        for each $i\in\left\lbrace 1,2,\ldots,m \right\rbrace$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        Matrix multiplication is not commutative nor cancellative. That is, given $A,B\in M_{n\times n}(\F)$, it need not be the case which $AB=BA$, and there exist some nonzero $C\in M_{m\times n}(\F)$ and $D\in M_{n\times p}(\F)$ such that $CD=0$, the $m\times p$ zero matrix.   
+    \end{remark}
+
+    \begin{definition}{Transpose}{of a Matrix}
+        Let $A\in M_{m\times n}(\F)$. We define the \emph{transpose} of $A$, denoted as $A^{T}\in M_{n\times m}(\F)$, by
+        \begin{equation*}
+            A^{T} _{ij} = A_{ji}.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        Here are some remarks about the transpose operation. Let $A, B\in M_{m\times n}(\F)$ and $c\in\F$. Then
+        \begin{equation*}
+            \left( cA+B \right) ^{T} _{ij} = \left( cA+B \right) _{ji} = cA_{ji}+B_{ji} = cA^{T} _{ij}+B^{T} _{ij}. 
+        \end{equation*}
+        That is,
+        \begin{equation*}
+            \left( cA+B \right) ^{T} = cA^{T} + B^{T} .
+        \end{equation*}
+        Moreover, let $C\in M_{m\times n}(\F)$ and $D\in M_{n\times p}(\F)$. Then observe that
+        \begin{equation*}
+            \left( CD \right) ^{T} _{ij} = CD_{ji} = \sum^{n}_{k=1} C_{jk}D_{ki} = \sum^{n}_{k=1} D_{ki}C_{jk} = \sum^{n}_{k=1} D^{T} _{ik}C^{T} _{kj} = \left( D^{T} C^{T}  \right) _{ij}.
+        \end{equation*}
+        That is, $\left( CD \right) ^{T} = D^{T} C^{T}$.
+    \end{remark}
+
+    \begin{definition}{Kronecker Delta}{}
+        The \emph{Kronecker delta} $\delta_{ij}$ is defined as
+        \begin{equation*}
+            \delta_{ij} = \begin{cases} 1 &\text{ if } i=j \\ 0 &\text{ otherwise } \end{cases}.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        We have a natural analogue of an identity operator. That is, if we define $I\in M_{n\times n}(\F)$ by
+        \begin{equation*}
+            I_{ij} = \delta_{ij},
+        \end{equation*}
+        then it is an easy computation to verify that
+        \begin{equation*}
+            IA = AI = A
+        \end{equation*}
+        for any $A\in M_{n\times n}(\F)$.
+    \end{remark}
+
+    \begin{prop}{Properties of Matrix Product}
+        Let $A\in M_{m\times n}(\F), B,C\in M_{n\times p}(\F)$, and $D,E\in M_{q\times m}(\F)$.
+        \begin{enumerate}
+            \item $A\left( B+C \right) = AB+AC$ and $\left( D+E \right) A = DA+EA$.
+            \item $a\left( AB \right) = \left( aA \right) B = A\left( aB \right)$ for any $a\in\F$.
+            \item $I_mA = AI_n = A$, where $I_k\in M_{k\times k}(\F)$ is the $k\times k$ identity matrix. 
+            \item Let $V$ be a finite-dimensional vector space, $I:V\to V$ be the identity operator, and let $\beta$ be an orderd basis for $V$. Then $\left[ I \right] _\beta = I$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{prop}{}
+        Let $V$ and $W$ be vector spaces with ordered bases $\beta$ and $\gamma$, respectively, and let $T:V\to W$ be linear. Then,
+        \begin{equation*}
+            \left[ Tv \right] _\gamma = \left[ T \right] ^\gamma_\beta \left[ v \right] _\beta.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Write $\beta=\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ and $\gamma=\left\lbrace w_1,w_2,\ldots,w_m \right\rbrace$. Let
+        \begin{equation*}
+            v = \sum^{n}_{i=1} a_iv_i
+        \end{equation*}
+        for some $a_1,a_2,\ldots,a_n\in\F$. Then $\left( \left[ v \right] _\beta \right) _i = a_i$ and 
+        \begin{align*}
+            Tv & = T\sum^{n}_{i=1} a_iv_i = \sum^{n}_{i=1} \left( \left[ v \right] _\beta \right) _i\sum^{m}_{j=1} \left( \left[ T \right] ^\gamma_\beta \right) w_j \\
+               & = \sum^{m}_{j=1} \sum^{n}_{i=1} \left( \left[ T \right] ^\gamma_\beta \right) _{ji}\left( \left[ v \right] _\beta \right) _i w_j = \sum^{m}_{j=1} \left( \left[ T \right] ^\gamma_\beta \left[ v \right] _\beta \right) _jw_j,
+        \end{align*} 
+        as desired.
+    \end{proof}
+
+    \begin{remark}
+        Let $A\in M_{m\times n}(\F)$. Then Proposition 2.13 suggests that there exist a function $L_A:\F^n\to\F^m$ defined by
+        \begin{equation*}
+            v\mapsto Av.
+        \end{equation*}
+    \end{remark}
+
+    \begin{definition}{Left Multiplication Transformation}{of a Matrix}
+        Consider Remark 2.22. We say $L_A$ the \emph{left multiplication transformation} of $A$.
+    \end{definition}
+
+    \begin{remark}
+        We shall consistentely write $L_A$ to denote the left multiplication transformation of $A\in M_{m\times n}(\F)$. 
+    \end{remark}
+
+    \begin{prop}{}
+        Let $A\in M_{m\times n}(\F)$ and $L_A:\F^n\to\F^m$ be the left multiplication transformation of $A$. Then $L_A$ is linear. Moreover, let $B\in M_{m\times n}(\F)$ and let $L_B:\F^n\to\F^m$.  
+        \begin{enumerate}
+            \item $\left[ L_A \right] _\beta = A$.
+            \item $L_A = L_B$ if and only if $A=B$.
+            \item $L_{A+B} = L_A+L_B$ and $L_{aA} = aL_A$ for all $a\in\F$.
+            \item If $T:\F^n\to\F^m$ is linear, then there exists a unique $C\in M_{m\times n}(\F)$ such that $T=L_C$. In fact, $C=\left[ T \right] ^\gamma_\beta$. 
+            \item If $E\in M_{n\times p}(\F)$, then $L_{AE} = L_AL_E$.
+            \item $L_I = I$.
+        \end{enumerate}
+        Here, $\beta$ and $\gamma$ denotes the standard ordered bases for $\F^n$ and $\F^m$, respectively.
+    \end{prop}
+
+    \clearpage
+    \begin{prop}{Matrix Multiplication Is Associative}
+        Let $A, B, C$ be matrices such that $A(BC)$ is defined. Then $(AB)C$ is also defined and $A(BC) = (AB)C$. That is, matrix product is associative.
+    \end{prop}
+
+    \begin{proof}
+        Let $A\in M_{m\times n}(\F)$ then for $A(BC)$ to be defined, $(BC)\in M_{n\times q}(\F)$. That is, $B\in M_{n\times p}(\F)$ and $C\in M_{p\times q}(\F)$. So $AB$ is defined, and $AB\in M_{m\times p}$, so $(AB)C$ is defined as well. From (e) of Proposition 2.14,
+        \begin{equation*}
+            L_A(L_{BC}) = L_A(L_BL_C) = (L_AL_B)L_C = (L_{AB})L_C.
+        \end{equation*}
+        Then the result follows from (b) of Proposition 2.14.
+    \end{proof}
+
+    \section{Invertibility and Isomorphisms}
+
+    \begin{remark}
+        By utilizing invertibility of functions, we may investigate inverse of a matrix by using linear transformation $L_A = A$. In particular, if $T$ is linear, then $T^{-1}$ is linear, so $L_A^{-1}$ can be used to determine properties of $A^{-1}$. It turns out that the concept of isomorphism is related to invertibility, which is discussed in this section as well. Consider the following definition.
+    \end{remark}
+
+    \begin{definition}{Inverse}{of a Linear Transformation}
+        Let $V, W$ be vector spaces and let $T:V\to W$ be linear. We say a function $U:W\to V$ is the \emph{inverse} of $T$ if $TU=I:W\to W$ and $UT=I:V\to V$. If such $U$ exists, then we say $T$ is \emph{invertible}, and denote $U$ by $T^{-1} $.
+    \end{definition}
+
+    \begin{remark}
+        Suppose that $f$ and $g$ are invertible functions such that $fg$ is well-defined. Then
+        \begin{enumerate}
+            \item $\left( fg \right) ^{-1} = g^{-1} f^{-1} $ and
+            \item $\left( f^{-1}  \right) ^{-1} = f$. In particular, $f^{-1} $ is invertible.
+        \end{enumerate}
+        An important property of invertible function is that $f$ is invertible if and only if $f$ is bijective. Combining this with Proposition 2.6 shows that, a linear transformation $T:V\to W$ is invertible if and only if $\dim(V)=\rank(T)$, where $V, W$ are some vector spaces. Moreover, it turns out that $T^{-1}:W\to V$ is linear as well.
+    \end{remark}
+
+    \begin{prop}{$T^{-1}$ Is Linear}
+        Let $V, W$ be vector spaces and let $T:V\to W$ be linear. Then $T^{-1} : W\to V$ is linear.
+    \end{prop}
+
+    \begin{proof}
+        Let $v, u\in V$ and $c\in \F$ be arbitrary. Then
+        \begin{equation*}
+            T^{-1}(cTv + Tu) = T^{-1}(T(cv+u)) = cv+u = cT^{-1}(Tv)+T^{-1}(Tu). \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        We also have a natural matrix analogue of the inverse of a linear transformation.
+    \end{remark}
+
+    \begin{definition}{Inverse}{of a Matrix}
+        Let $A\in M_{n\times n}(\F)$. Then $A$ is \emph{invertible} if there exists $B\in M_{n\times n}(\F)$ such that $AB+BA=I$. Such $B$ is unique and we denote $B=A^{-1}$.  
+    \end{definition}
+
+    \begin{prop}{}
+        Let $V, W$ be finite-dimensional vector spaces. Then there exists an invertible $T:V\to W$ if and only if $\dim(V)=\dim(W)$.
+    \end{prop}
+
+    \begin{proof}
+        From Remark 2.25, $T$ is invertible if and only if $\dim(V)=\rank(T)$. But by Proposition 2.6, $T$ is invertible if and only if $T$ is surjective, which exactly means $\rank(T)=\dim(W)$. For the reverse direction, if $\dim(V)=\dim(W)$, and $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ and $\left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ are bases for $V$ and $W$ respectively, then $T:V\to W$ defined by
+        \begin{equation*}
+            v_i\mapsto w_i
+        \end{equation*}
+        is clearly invertible.
+    \end{proof}
+
+    \begin{prop}{$T$ Is Invetible If and Only If $\left[ T \right] ^\gamma_\beta$ Is Invertible}
+        Let $V, W$ be finite-dimensional vector spaces with ordered bases $\beta$ and $\gamma$, respectively. Let $T: V\to W$ be linear. Then $T$ is invertible if and only if $[T]^\gamma_\beta$ is invertible. Furthermore, $[T^{-1}]^\beta_\gamma = \left( [T]^\gamma_\beta \right)^{-1}$.
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that $T$ is invertible. Then by Proposition 2.17, $\dim(V) = \dim(W) = n$, so $[T]^\gamma_\beta \in M_{n\times n}(\F)$. Since $T^{-1}: W\to V$ satisfies $TT^{-1} = I: W\to W$,
+        \begin{equation*}
+            [T]^\gamma_\beta [T^{-1}]^\beta_\gamma = [TT^{-1}]^\gamma_\gamma = [I]^\gamma_\gamma
+        \end{equation*}
+        so $[T]^\gamma_\beta$ is invertible and $\left( [T]^\gamma_\beta \right)^{-1} = \left[ T^{-1} \right] ^\beta_\gamma$. For the reverse direction, suppose $A = \left( [T]^\gamma_\beta \right)$ is invertible. Then there is $B\in M_{n\times n}(\F)$ such that $AB = BA = I$. Then there exists a unique $U:W\to V$ such that
+        \begin{equation*}
+            Uw_j = \sum^{n}_{i=1} B_{ij}v_i,
+        \end{equation*}
+        for all $j\in\left\lbrace 1,2,\ldots,n \right\rbrace$, where $\gamma = \left\lbrace w_1, w_2, \ldots, w_n \right\rbrace$ and $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$. By definition, $B = [U]^\beta_\gamma$, and
+        \begin{equation*}
+            [UT]^\beta_\beta = [U]^\beta_\gamma [T]^\gamma_\beta = BA = I = [I]^\beta_\beta
+        \end{equation*}
+        so $UT = I$ and, similarly, $TU = I$.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\F)$. Then $A$ is invertible if and only if $L_A$ is invertible. Furthermore, $L_A^{-1} = L_{A^{-1}}$.
+    \end{cor}	
+
+    \begin{definition}{Isomorphism}{on Vector Spaces}
+        Let $V, W$ be vector spaces. We say $T:V\to W$ is an \emph{isomorphism} if $T$ is linear and invertible. If such $T$ exists, then we say that $V$ and $W$ are \emph{isomorphic}, denoted as
+        \begin{equation*}
+            V\iso W.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        Isomorphism is an equivalence relation.
+    \end{remark}
+
+    \begin{prop}{$V\iso W$ If and Only If $\dim(V)=\dim(W)$}
+        Let $V, W$ be finite-dimensional vector spaces. Then $V$ and $W$ are isomorphic to each other if and only if $\dim V = \dim W$.
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that $T: V\to W$ is an isomorphism. Then $\nullity(T) = 0$ so by rank-nullity theorem,
+        \begin{equation*}
+            \dim(V)=\rank(T)=\dim(W).
+        \end{equation*}
+        For the reverse direction, suppose $\dim(V) = \dim(W)$. Then there exists a linear transformation $T: V\to W$ that satisfies
+        \begin{equation*}
+            Tv_i = w_i,
+        \end{equation*}
+        where $\left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ and $\left\lbrace w_1, w_2, \ldots, w_n \right\rbrace$ are bases of $V$ and $W$, respectively. Then $T$ is an isormorphism, since
+        \begin{equation*}
+            \image(T) = \spn \left\lbrace w_1, w_2, \ldots, w_n \right\rbrace = W. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V$ be a finite-dimensional vector space over $\F$. Then $V\iso\F^n$ if and only if $\dim(V)=n$.
+    \end{cor}	
+
+    \begin{remark}
+        We proceed to discuss the natural isomorphism between $\lin(V,W)$ and $M_{m\times n}(\F)$, where $\dim(V)=n$ and $\dim(W)=m$, as mentioned in Remark 2.7.
+    \end{remark}
+
+    \begin{theorem}{$\lin(V,W)\iso M_{m\times n}(\F)$}
+        Let $V$ and $W$ be fintie dimensional vector spaces with $\dim(V) = n$ and $\dim(W) = m$, and let $\beta$ and $\gamma$ be ordered bases for $V$ and $W$, respectively. Then the function $\left[ \cdot \right] ^\gamma_\beta:\lin(V,W)\to M_{m\times n}(\F)$ is an isomorphism.
+    \end{theorem}
+
+    \begin{proof}
+        The linearity of $\left[ \cdot \right] ^\gamma_\beta$ is supplied by Proposition 2.8. Now the claim is that $\left[ \cdot \right] ^\gamma_\beta$ is surjective. To verify this, let $A\in M_{m\times n}(\F)$ be arbitrary. Then there exists a (unique) linear $T:V\to W$ such that
+        \begin{equation*}
+            Tv_j = \sum^{m}_{i=1} A_{ij}w_i
+        \end{equation*}
+        for all $j\in\left\lbrace 1,2,\ldots,n \right\rbrace$. It follows from Proposition 2.6 that $\left[ \cdot \right] ^\gamma_\beta$ is bijective.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V, W$ be finite-dimensional vector spaces with $\dim(V)=n$ and $\dim(W)=m$. Then
+        \begin{equation*}
+            \dim\left( \lin(V,W) \right) = mn.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{remark}
+        Similar to how we define a natural isomorphism in terms of ordered bases, $\left[ \cdot \right] _\beta:V\to\F^n$ for any ordered basis $\beta$ for a finite-dimensional vector space $V$ is also an isomorphism. The linearity of $\left[ \cdot \right] _\beta$ follows immediately from the definition of the coordinate vector, and $\left[ \cdot \right] _\beta$ is surjective, since for any $\left( c_1,c_2,\ldots,c_n \right) \in\F$,
+        \begin{equation*}
+            v = \sum^{n}_{i=1} c_iv_i\in V
+        \end{equation*}
+        is the unique representation of $v$ as a linear combination of vectors in an ordered basis $\beta=\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ for $V$.
+    \end{remark}
+
+    \begin{definition}{Standard Representation}{of a Vector Space}
+        Let $V$ be a $n$-dimensional vector space and let $\beta$ be an ordered basis for $V$. The \emph{standard representation} of $V$ with respect to $\beta$ is the isomorphism $\left[ \cdot \right] _\beta:V\to\F^n$.
+    \end{definition}
+
+    \begin{remark}
+        By using standard representation, we may restate Proposition 2.13 as follows.
+    \end{remark}
+
+    \begin{prop}{}
+        Let $V, W$ be finite-dimensional vector spaces with $\dim(V)=n$ and $\dim(W)=m$, and let $\beta$ and $\gamma$ be ordered bases for $V$ and $W$, respectively. Let $T:V\to W$ be linear and let $A=\left[ T \right] ^\gamma_\beta$. Then
+        \begin{equation*}
+            L_A\left[ \cdot \right] _\beta = \left[ \cdot \right] _\gamma T.
+        \end{equation*}
+    \end{prop}
+
+    \clearpage
+    \section{The Change of Basis}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional vector space and let $\beta$ and $\gamma$ be ordered bases for $V$. Let $Q=\left[ I \right] ^\beta_\gamma$. Then $Q$ is invertible, and
+        \begin{equation*}
+            \left[ v \right] _\beta = Q\left[ v \right] _\gamma
+        \end{equation*}
+        for all $v\in V$.
+    \end{prop}
+
+    \begin{proof}
+        The invertibility of $Q$ is a direct consequence of the invertibility of $I:V\to V$. Moreover, by Proposition 2.13,
+        \begin{equation*}
+            \left[ v \right] _\beta = \left[ Iv \right] _\beta = \left[ I \right] ^\beta_\gamma\left[ v \right] _\gamma = Q\left[ v \right] _\gamma.\eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{definition}{Change of Basis Matrix}{}
+        Consider Proposition 2.22. We call $Q$ the \emph{change of basis matrix} from $\gamma$ to $\beta$.
+    \end{definition}
+
+    \begin{remark}
+        Let $V$ be a finite-dimensional vector space and let $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ and $\gamma = \left\lbrace u_1,u_2,\ldots,u+n \right\rbrace$ be ordered bases for $V$. Let $Q\in M_{n\times n}(\F)$ be the change of basis matrix from $\gamma$ to $\beta$. Then
+        \begin{equation*}
+            u_j = \sum^{n}_{i=1} Q_{ij}v_i
+        \end{equation*}
+        for all $j\in \left\lbrace 1,2,\ldots,n \right\rbrace$. That is, the $j$th column of of $Q$ is $\left[ u_j \right] _\beta$. Moreover $Q^{-1} $ is the change of basis matrix from $\beta$ to $\gamma$
+    \end{remark}
+
+    \begin{prop}{}
+        Let $T$ be a linear operator on $V$ and $\beta$ and $\gamma$ be ordered bases for $V$. Suppose that $Q$ is the change of basis matrix from $\gamma$ to $\beta$. Then,
+        \begin{equation*}
+            [T]_{\gamma} = Q^{-1} [T]_\beta Q.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Observe that
+        \begin{equation*}
+            Q\left[ T \right] _\gamma = \left[ I \right] ^\beta_\gamma\left[ T \right] _\gamma = \left[ IT \right] ^\beta_\gamma = \left[ TI \right] ^\beta_\gamma = \left[ T \right] _\beta\left[ T \right] ^\beta_\gamma = \left[ T \right]_\beta Q.
+        \end{equation*}
+        That is, $[T]_{\gamma} = Q^{-1} [T]_\beta Q$.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\F)$ and $\gamma$ be an ordered basis for $\F^n$. Then $[L_A]_\gamma = Q^{-1} AQ$, where $Q$ is the matrix whose $j$th column is the $j$th vector of $\gamma$.
+    \end{cor}
+
+    \begin{remark}
+        Proposition 2.23 and Corollary 2.23.1 motivates the following definition.
+    \end{remark}
+
+    \begin{definition}{Similar}{Matrices}
+        Let $A,B\in M_{n\times n}(\F)$. We say $A$ and $B$ are \emph{similar} if there exists an invertible $P\in M_{n\times n}(\F)$ such that $B=P^{-1} AP$.
+    \end{definition}
+
+\end{document}

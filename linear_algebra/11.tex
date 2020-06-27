@@ -1,0 +1,1204 @@
+\documentclass[linearalgebra]{subfiles}
+
+\begin{document}
+
+    \section{Normal Operators}
+    
+    \begin{remark}
+        The main purpose of this section is to find out under which conditions a linear operator $T:V\to V$ in a finite-dimensional inner product space satisfies that, there exists an orthogonal ordered basis $\beta$ such that $\left[ T \right] _\beta$ is diagonal. In other words, we wish to find out the sufficient conditions on $T$ such that there exist $n=\dim(V)$ linearly independent eigenvectors $v_1,v_2,\ldots,v_n\in V$ with $\left\langle v_i, v_j\right\rangle = 0$ whenever $i\neq j$ and $\left\lVert v_i\right\rVert = 1$ for all $i,j\in\left\lbrace 1,2,\ldots,n \right\rbrace$. Then, there exist $c_1,c_2,\ldots,c_n\in\K$ such that
+        \begin{equation*}
+            Tv_i = c_iv_i
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, and we have
+        \begin{equation*}
+            \left[ T \right] _\beta = 
+            \begin{bmatrix}
+                c_1 & & & \\
+                & c_2 & & \\
+                & & \ddots & \\
+                & & & c_n \\
+            \end{bmatrix}.
+        \end{equation*}
+        Then, the adjoint operator $T^*:V\to V$ of $T$ is represented by
+        \begin{equation*}
+            \left[ T^* \right] _\beta = = \left[ T \right] _\beta^*
+            \begin{bmatrix}
+                \overline{c_1} & & & \\
+                & \overline{c_2} & & \\
+                & & \ddots& \\
+                & & & \overline{c_n} \\
+            \end{bmatrix}.
+        \end{equation*}
+        That is, if $c_1,c_2,\ldots,c_n\in\R$, then $\left[ T \right] _\beta = \left[ T^* \right] _\beta$, which means $T$ is Hermitian. If some $c_i\notin\R$, then $T$ is not Hermitian, but it still satisfies the property that
+        \begin{equation*}
+            TT^* = T^*T,
+        \end{equation*}
+        since any diagonal matrices commute. It is, however, a remarkable fact that the above condition implies the existence of an orthonormal ordrered basis in which $T$ is represented by a diagonal matrix.
+    \end{remark}
+
+    \begin{definition}{Normal}{Linear Operator}
+        Let $T:V\to V$ be a linear operator. We say $T$ is \emph{normal} if $T$ commutes with the adjoint operator $T^*:V\to V$,
+        \begin{equation*}
+            TT^* = T^*T.
+        \end{equation*}
+    \end{definition}
+
+    \continued{Remark}
+    \noindent Any Hermitian or unitary operator is normal. However, sums and products of normal operators need not be normal. Although it is by no means necessary, we shall begin our discussions normal operators by considering Hermitian operators.
+
+    \begin{prop}{}
+        Let $V$ be an inner product space and let $T:V\to V$ be Hermitian. Then every eigenvalue of $T$ is real, and if $v,u\in V$ are eigenvectors corresponding to distinct eigenvalues, then $v$ and $u$ are orthogonal.
+    \end{prop}
+
+    \begin{proof}
+        Suppose that $c\in\K$ is an eigenvalue of $T$ and let $v\in V$ be an eigenvalue corresponding to $c$. Then
+        \begin{equation*}
+            c\left\langle v, v\right\rangle = \left\langle cv, v\right\rangle = \left\langle Tv, v\right\rangle = \left\langle v, Tv\right\rangle = \left\langle v, cv\right\rangle = \overline{c} \left\langle v, v\right\rangle ,
+        \end{equation*}
+        which exactly means $c=\overline{c}$, or, equivalently, $c\in\R$. Now, suppose that $d\in\K$ with $d\neq c$ is also an eigenvalue of $T$ and $u\in V$ is a corresponding eigenvector. Then,
+        \begin{equation*}
+            c\left\langle v, u\right\rangle = \left\langle cv, u\right\rangle = \left\langle Tv, u\right\rangle = \left\langle v, Tu\right\rangle = \left\langle v, du\right\rangle = \overline{d} \left\langle v, u\right\rangle .
+        \end{equation*}
+        But $c\neq d=\overline{d}$, so it follows that $\left\langle v, u\right\rangle = 0$.
+    \end{proof}
+
+    \begin{remark}
+        It should be pointed out that Proposition 10.15 does not provide any information about the existence of eigenvalues of a Hermitian operator.
+    \end{remark}
+
+    \begin{prop}{Every Hermitian Operators on a Finite-Dimensional Inner Product Space Has an Eigenvalue}
+        Let $V$ be a finite-dimensional inner product space over $\K$. Then every Hermitian $T:V\to V$ has an eigenvalue.
+    \end{prop}
+
+    \begin{proof}
+        Let $f\in\K[x]$ be the characteristic polynomial of $T$. If $\K=\CC$, then by the fundamental theorem of algebra, there exists $c\in\CC$ such that $f(c)=0$. But $T$ is Hermitian, so Propostion 10.15 implies that $c\in\R$. This means $c$ is also an eigenvalue of $T$ when $\K=\R$.
+    \end{proof}
+
+    \begin{remark}
+        Here are few things we wish to point out about Proposition 10.16:
+        \begin{enumerate}
+            \item In case of $\K=\CC$, the fundamental theorem of algebra is sufficient to show that $T$ has an eigenvalue. But when $\K=\R$, the self-adjointness of $T$ is used very heavily.
+            \item The proof of Propositionn 10.16 above shows that the characteristic polynomial of any Hermitian operator has real coefficients, although the matrix representation of $T$ in an ordered basis almost always has a complex entry.
+            \item The assumption that $V$ is finite-dimensional is necessary. That is, a Hermitian operator over an infinite-dimensional inner product space need not have an eigenvalue.
+        \end{enumerate}
+    \end{remark}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be linear. Let $W\subseteq V$ be a $T$-invariant subspace. Then the orthogonal complement $W_\perp\subseteq V$ of $W$ is $T^*$-invariant.
+    \end{prop}
+
+    \begin{proof}
+        Let $w\in W$ and $w_\perp\in W_\perp$. Then,
+        \begin{equation*}
+            \left\langle w, T^*w_\perp\right\rangle = \left\langle Tw, w_\perp\right\rangle .
+        \end{equation*}
+        But $Tw\in W$ by the $T$-invariance of $W$, so it follows that
+        \begin{equation*}
+            \left\langle w, T^*w_\perp\right\rangle = \left\langle Tw, w_\perp\right\rangle = 0,
+        \end{equation*}
+        which exactly means that $w$ and $T^*w_\perp$ are orthogonal, or, equivalently, that $W_\perp$ is $T^*$-invariant.
+    \end{proof}
+
+    \begin{theorem}{Every Hermitian Operator Has an Orthonormal Eigenbasis}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a Hermitian operator. Then there exists an orthonormal eigenbasis for $V$.
+    \end{theorem}
+
+    \begin{proof}
+        We proceed inductively. First, assume $n=\dim(V)\neq 0$ without loss of generality. In case of $n=1$, Proposition 10.16 provides an eigenvector $v\in V$ of $T$, so $\left\lbrace \frac{v}{\left\lVert v\right\rVert } \right\rbrace$ is the desired basis. Now suppose the result for all $n\in\left\lbrace 1,2,\ldots,k-1 \right\rbrace$ for some $k\in\N$. Select an eigenvector $u_1\in V$ of $T$ by Proposition 10.16 and let $W = \spn\left( u_1 \right)$. Then $v_1 = \frac{u_1}{\left\lVert u_1\right\rVert }$ also spans $W$. Let $W_\perp\in V$ be the orthogonal complement of $W$. Then $W_\perp$ is $T^*$-invariant by Proposition 10.17. But $T$ is Hermitian, so $T=T^*$ and $W_\perp$ is $T$-invariant. So we may define the linear operator $T_\perp: W_\perp\to W_\perp$, the restriction of $T$ on $W_\perp$. By the induction hypothesis, there exists an orthonormal eigenbasis $\left\lbrace v_2,v_3,\ldots,v_k \right\rbrace$ for $W_\perp$. Since $V=W\oplus W_\perp$, and clearly $v_1$ is orthogonal to $v_i$ for all $i\in\left\lbrace 2,3,\ldots,k \right\rbrace$, it follows that $\left\lbrace v_1,v_2,\ldots,v_k \right\rbrace$ is the desired basis.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\K)$ be Hermitian. Then there exists a unitary $P\in M_{n\times n}(\K)$ such that $P^{-1}AP$ is diagonal.
+    \end{cor}	
+
+    \begin{proof}
+        By Theorem 10.18, there exists an orthonormal eigenbasis $\beta$ for $V$. So if $T:\K^n\to\K^n$ is the left multiplication operator of $A$, then $\left[ T \right] _\beta$ is diagonal, and there exists and invertible $P\in M_{n\times n}(\K)$ such that 
+        \begin{equation*}
+            \left[ T \right] _\beta = P^{-1}AP.
+        \end{equation*}
+        We claim that $P$ preserves the standard inner product of $\K^n$. To verigy this, observe that $P$ is characterized by
+        \begin{equation*}
+            Pe_i = v_i
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, where $\left\lbrace e_1,e_2,\ldots,e_n \right\rbrace$ is the standard ordered basis for $\K^n$ and $\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace = \beta$. But $\left\lbrace e_1,e_2,\ldots,e_n \right\rbrace$ is an orthonormal basis, so $P$ preserves the standard inner product by Proposition 10.10. Thus $P$ is unitary, as required.
+    \end{proof}
+
+    \begin{remark}
+        Together with Remark 10.52, Theorem 10.18 shows that a linear operator $T:V\to V$ on a real finite-dimensional inner product space $V$ has an orthonormal eigenbasis for $V$ if and only if $T$ is Hermitian. This, however, is false when $V$ is over $\CC$.
+    \end{remark}
+
+    \begin{remark}
+        We now return to the study of normal operators in general. In particular, we shal prove a result for normal operators analogous to Theorem 10.18, in the complex case.
+    \end{remark}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be normal. Then $v\in V$ is an eigenvector of $T$ corresponding to $c\in\K$ if and only if $v$ is an eigenvector of $T^*$ corresponding to $\overline{c}$.
+    \end{prop}
+
+    \begin{proof}
+        We claim that any normal $U:V\to V$ satisfies $\left\lVert Uv\right\rVert = \left\lVert U^*v\right\rVert$ for all $v\in V$. To verify this, observe that
+        \begin{equation*}
+            \left\lVert Uv\right\rVert ^2 = \left\langle Uv, Uv\right\rangle = \left\langle v, U^*Uv\right\rangle = \left\langle U^*v, U^*v\right\rangle = \left\lVert U^*v\right\rVert ^2.
+        \end{equation*}
+        Moreover, for any $d\in\K$, $T-dI$ is normal. For $TT^* = T^*T$. Thus,
+        \begin{equation*}
+            \left\lVert \left( T-cI \right) v\right\rVert = \left\lVert \left( T^*-\overline{c} I \right) v\right\rVert 
+        \end{equation*}
+        which implies the result.
+    \end{proof}
+
+    \begin{definition}{Normal}{Matrix}
+        Let $A\in M_{n\times n}(\K)$. We say $A$ is \emph{normal} if $AA^* = A^*A$.
+    \end{definition}
+
+    \begin{remark}
+        It is not so obvious what normality of linear operators or matrices really means. However, it might be helpful to find that a triangular matrix is normal if and only if it is diagonal.
+    \end{remark}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T$ be linear. If $\beta$ is an orthonormal basis for $V$ such that $\left[ T \right] _\beta$ is upper triangular, then $\left[ T \right] _\beta$ is diagonal if and only if $T$ is normal.
+    \end{prop}
+
+    \begin{proof}
+        The forwaard direction is clear, since any diagonal matrix commutes with its adjoint. For the reverse direction, suppose that $T$ is normal and that $\left[ T \right] _\beta$ is upper triangular, and for convenience, write $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$. Then
+        \begin{equation*}
+            Tv_1 = \sum^{n}_{i=1} \left( \left[ T \right] _\beta \right) _{i1}v_1= \left( \left[ T \right] _\beta \right) _{11}v_1.
+        \end{equation*}
+        This means $v_1$ is an eigenvector of $T$ corresponding to $\left( \left[ T \right] _\beta \right) _{11}$, so by Proposition 10.19,
+        \begin{equation*}
+            T^*v_1 = \left( \left[ T \right] _\beta \right) _{11} = \left( \left[ T \right] ^*_\beta \right) _{11}.
+        \end{equation*}
+        But we also know that
+        \begin{equation*}
+            T^*v_1 = \sum^{n}_{i=1} \left( \left[ T \right] _\beta^* \right) _{i1}v_i.
+        \end{equation*}
+        That is,
+        \begin{equation*}
+            \left( \left[ T \right] _\beta^* \right) _{21} = \left( \left[ T \right] _\beta^* \right) _{31} = \cdots = \left( \left[ T \right] _\beta^* \right) _{n1} = 0.
+        \end{equation*}
+        And in particular,
+        \begin{equation*}
+            Tv_2 = \left( \left[ T \right] _\beta \right) _{22}v_2.
+        \end{equation*}
+        Thus by continuing this for $v_2,v_3,\ldots,v_n$, we have the desired result.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space over $\CC$ and let $T:V\to V$ be linear. Then there exists an orthonormal basis for $V$ such that $\left[ T \right] _\beta$ is upper triangular.
+    \end{prop}
+
+    \begin{proof}
+        We proceed inductively. The result is trivial for 1-dimensional inner product spaces. Now suppose that the result holds for all $k$-dimensional inner product space, and suppose $\dim\left( V \right) = k+1$. Since $V$ is finite-dimensional and is over $\CC$, there exists an eigenvector $v\in V$ of $T^*$ corresponding to some $c\in\CC$. Let $W$ be the orthogonal complement of $\spn(v)$. Then by Proposition 10.17, $W$ is $T$-invariant, so we may define the restriction operator $T_W:W\to W$. By the inductive hypothesis, there exists an orthonormal baiss $\beta_W = \left\lbrace v_2,v_3,\ldots,v_{k+1} \right\rbrace$ for $W$ such that $\left[ T \right] _{\beta_W}$ is upper triangular. Thus it follows that $\beta = \left\lbrace \frac{v}{\left\lVert v\right\rVert }, v_2, \ldots, v_{k+1} \right\rbrace$ is the desired basis.
+    \end{proof}
+
+    \begin{cor}{}
+        For every $A\in M_{n\times n}(\CC)$ there exists a unitary $U\in M_{n\times n}(\CC)$ such that $U^{-1}AU$ is upper triangular.
+    \end{cor}	
+
+    \begin{remark}
+        A possible proof of Corollary 10.21.1 is very similar to the proof of Corollary 10.18.1.
+    \end{remark}
+
+    \begin{remark}
+        Combining Proposition 10.20 and 10.21 provides the following result.
+    \end{remark}
+
+    \begin{theorem}{}
+        Let $V$ be a finite-dimensional inner product space over $\CC$ and let $T:V\to V$ be normal. Then there exists an orthonormal eigenbasis for $V$.
+    \end{theorem}
+
+    \begin{proof}
+        This is a direct consequence of Proposition 10.20 and 10.21.
+    \end{proof}
+
+    \begin{cor}{}
+        For every normal $A\in M_{n\times n}(\CC)$ there exists a unitary $U\in M_{n\times n}(\CC)$ such that $U^{-1}AU$ is diagonal.
+    \end{cor}	
+
+    \section{Spectral Theory}
+    
+    \begin{remark}
+        In this section, we persue the implications of Theorem 10.18 and 10.22 concerning the diagonalization of Hermitian and normal operators. One may find it helpful to read Elementary Canonical Forms (Chapter 2), especially the parts concerning eigendecomposition or projections.
+    \end{remark}
+
+    \begin{theorem}{Spectral Theorem}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be Hermitian if $V$ is over $\R$ or normal if $V$ is over $\CC$. Let $c_1,c_2,\ldots,c_k\in\K$ be the distinct eigenvalues of $T$, let $W_1,W_2,\ldots,W_k\subseteq V$ be the associated eigenspaces, and let $E_1,E_2,\ldots,E_k:V\to V$ be the orthogonal projections of $V$ on $W_1,W_2,\ldots,W_k$. Then the following holds.
+        \begin{enumerate}
+            \item For all $i,j\in\left\lbrace 1,2,\ldots,k \right\rbrace$, $W_i$ and $W_j$ are orthogonal whenever $i\neq j$.
+            \item $V = \bigoplus^{k}_{i=1} W_i$.
+            \item $T = \sum^{k}_{i=1} c_iE_i$.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        For (a), let $w_i\in W_i$ and let $w_j\in W_j$, where $i\neq j$. If $V$ is over $\R$, then
+        \begin{equation*}
+            c_i\left\langle w_i, w_j\right\rangle = \left\langle c_iw_i, w_j\right\rangle = \left\langle Tw_i, w_j\right\rangle = \left\langle w_i, Tw_j\right\rangle = \left\langle w_i, c_jw_j\right\rangle = c_j\left\langle w_i, w_j\right\rangle 
+        \end{equation*}
+        since $T$ is Hermitian. But $c_i\neq c_j$, so $\left\langle w_i, w_j\right\rangle = 0$. Furthermore, if $V$ is over $\CC$, then
+        \begin{equation*}
+            c_i\left\langle w_i, w_j\right\rangle = \left\langle c_iw_i, w_j\right\rangle = \left\langle Tw_i, w_j\right\rangle = \left\langle w_i, T^*w_j\right\rangle = \left\langle w_i, \overline{c_j} w_j\right\rangle = c_j\left\langle w_i, w_j\right\rangle 
+        \end{equation*}
+        by the normality of $T$, so $\left\langle w_i, w_j\right\rangle = 0$. For (b) and (c), first notice that $V = \sum^{k}_{i=1} W_i$, since Theorem 10.18 and 10.22 provide an eigenbasis for $V$. Now suppose that
+        \begin{equation*}
+            v = \sum^{k}_{j=1} v_j = 0
+        \end{equation*}
+        for some $v_1\in W_1, v_2\in W_2, \ldots, v_k\in W_k$. Then
+        \begin{equation*}
+            \left\lVert v_i\right\rVert ^2 = \left\langle v_i, v_i\right\rangle = \sum^{}_{j} \left\langle v_i, v_j\right\rangle = \left\langle v_i, \sum^{}_{j} v_j\right\rangle = \left\langle v_i, v\right\rangle = 0,
+        \end{equation*}
+        for each $i\in \left\lbrace 1,2,\ldots,k \right\rbrace$, so $v_1=v_2=\cdots=v_k=0$, which means $V = \bigoplus^{k}_{i=1} W_i$. Thus
+        \begin{equation*}
+            I = \sum^{}_{i} E_i
+        \end{equation*}
+        and
+        \begin{equation*}
+            T = \sum^{}_{i} TE_i = \sum^{}_{i} c_iE_i. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{definition}{Spectral Resolution, Spectrum}{of a Linear Operator}
+        Suppose the conditions of Theorem 10.23. We call the decomposition
+        \begin{equation*}
+            T = \sum^{}_{i} c_iE_i
+        \end{equation*}
+        the \emph{spectral resolution} of $T$. Moreover, we call
+        \begin{equation*}
+            \left\lbrace c_1,c_2,\ldots,c_k \right\rbrace ,
+        \end{equation*}
+        the set of eigenvalues of $T$, the \emph{spectrum} of $T$.
+    \end{definition}
+
+    \begin{remark}
+        Let $T:V\to V$ be a linear operator on a finite-dimensional inner product space and consider
+        \begin{equation*}
+            T = \sum^{k}_{i=1} c_iE_i,
+        \end{equation*}
+        the spectral resolutoin of $T$. The next result shows that the linear operators $E_1,E_2,\ldots,E_k$ satisfying the above equation are canonically associated with $T$. In fact, they are polynomials in $T$.
+    \end{remark}
+
+    \begin{cor}{Uniqueness of Spectral Resolution of a Linear Operator}
+        Consider the case in Remark 10.60. Then each $E_i:V\to V$ is such that
+        \begin{equation*}
+            E_i = \prod^{k}_{j=1, j\neq i} \frac{T-c_i}{c_j-c_i}.
+        \end{equation*}
+        In other words, if we define each
+        \begin{equation*}
+            e_i = \prod^{k}_{j=1, j\neq i} \frac{x-c_i}{c_j-c_i}\in\K[x],
+        \end{equation*}
+        then $e_i(T) = E_i$.
+    \end{cor}	
+
+    \begin{proof}
+        Notice that $E_iE_j\neq 0$ whenever $i\neq j$. So, for any $n\in\N\cup\left\lbrace 0 \right\rbrace$, 
+        \begin{equation*}
+            T^n = \left( \sum^{k}_{i=1} c_iE_i \right) ^n = \sum^{k}_{i=1} c_i^n E_i^n = \sum^{k}_{i=1} c_i^nE_i.
+        \end{equation*}
+        Therefore, for any $f\in \sum^{p}_{i=0} d_ix^i\in\K[x]$, where $p\in\N$ and $d_1,d_2,\ldots,d_p\in\K$,
+        \begin{align*}
+            f(T) & = \sum^{p}_{i=0} d_iT^i = \sum^{p}_{i=0} d_i \sum^{k}_{j=1} c_j^iE_j \\
+                 & = \sum^{p}_{i=0} \sum^{k}_{j=1} d_ic_j^iE_j = \sum^{k}_{j=1} \left( \sum^{p}_{i=0} d_ic_j^i \right) E_j = \sum^{k}_{j=1} f\left( c_j \right) E_j.
+        \end{align*} 
+        Since $e_i$ is a polynomial such that $e_i\left( c_j \right) = \delta_{ij}$, it follows that
+        \begin{equation*}
+            e_i(T) = \sum^{k}_{j=1} e_i\left( c_j \right) E_j = \sum^{k}_{j=1} \delta_{ij}E_j = E_i. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        If
+        \begin{equation*}
+            T = \sum^{k}_{i=1} c_iE_i
+        \end{equation*}
+        is the spectral resolution of $T$, a linear operator on a finite-dimensional inner product space, then
+        \begin{equation*}
+            I = \sum^{k}_{i=1} E_i.
+        \end{equation*}
+        The fact that $E_1,E_2,\ldots,E_k$ are canonically associated with $T$ motivates the following definition.
+    \end{remark}
+
+    \begin{definition}{Resolution of the Identity Operator}{by a Linear Operator}
+        Consider Remark 10.61. We say the decomposition
+        \begin{equation*}
+            I = \sum^{k}_{i=1} E_i
+        \end{equation*}
+        the \emph{resolution of the identity} by $T$.
+    \end{definition}
+
+    \begin{remark}
+        The proof of the spectral theorem (Theorem 10.23) provided here is derived from the diagonalization of Hermitian and normal operators (Theorem 10.18 and 10.22). We shall give a more algebraic proof utilizing the primary decomposition theorem later.
+    \end{remark}
+
+    \begin{definition}{Function}{in a Linear Operator}
+        Let $T:V\to V$ be a diagonalizable normal operator on a finite-dimensional inner product space and let $S$ be the spectrum of $T$. If $f:\domain(f)\to\K$ is such that
+        \begin{equation*}
+            S\subseteq \domain(f),
+        \end{equation*}
+        then we define $f(T)$, the \emph{function} $f$ in $T$, by
+        \begin{equation*}
+            f(T) = \sum^{k}_{i=1} f\left( c_i \right) E_i,
+        \end{equation*}
+        provided that 
+        \begin{equation*}
+            T = \sum^{k}_{i=1} c_iE_i
+        \end{equation*}
+        is the spectral resolution of $T$.
+    \end{definition}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a diagonalizable normal operator with spectrum $S\subseteq\K$. If $f:\domain(f)\to\K$ satisfies
+        \begin{equation*}
+            S\subseteq \domain(f),
+        \end{equation*}
+        then $f(T):V\to V$ is a diagonalizable normal operator with spectrum $f(S)$. 
+    \end{prop}
+
+    \begin{proof}
+        It is clear that $f(T)$ is diagonalizable, since if $v\in V$ is an eigenvector of $T$ corresponding to $c_i$, then
+        \begin{equation*}
+            f(T)v = \sum^{k}_{i=1} f\left( c_i \right) E_iv = f\left( c_i \right) v,
+        \end{equation*}
+        and $f(T)v$ is normal as well, since every diagonalizable operator is normal. Now let $P$ be the spectrum of $f(T)$. For any $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, 
+        \begin{equation*}
+            f(T)E_iv = f\left( c_i \right) E_iv
+        \end{equation*}
+        for all $v\in V$. But any eigenvector of $T$ is of the form $E_iv$ for some $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, so it follows that $f\left( c_i \right)\in P$ whenever $c_i$ is an eigenvalue of $T$. On the other hand, suppose $v\in V$ is an eigenvector of $f(T)$ corresponding to $d\in P$,
+        \begin{equation*}
+            f(T)v = dv.
+        \end{equation*}
+        Since $v = \sum^{k}_{i=1} E_iv$,
+        \begin{equation*}
+            f(T)v = f(T) \sum^{k}_{i=1} E_iv = \sum^{k}_{i=1} f(T)E_iv = \sum^{k}_{i=1} f\left( c_i \right) E_iv.
+        \end{equation*}
+        But
+        \begin{equation*}
+            f(T)v = dv = \sum^{k}_{i=1} dE_iv,
+        \end{equation*}
+        so it follows that 
+        \begin{equation*}
+            \sum^{k}_{i=1} \left( f\left( c_i \right) -d \right) E_iv = 0,
+        \end{equation*}
+        which means $f\left( c_i \right) - d = 0$ or $E_iv = 0$ for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. But since $v$ is an eigenvector of $f(T)$, $v\neq 0$, so it follows that there must exist $E_iv\neq 0$ for some $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, which exactly means $d = c_i$. Thus $P = f(S)$ is the spectrum of $f(T)$, as desired. 
+    \end{proof}
+
+    \begin{remark}
+        Consider Proposition 10.24. We may find the spectral resolution of $f(T)$ as follows. We have shown that
+        \begin{equation*}
+            f(S) = \left\lbrace d_1,d_2,\ldots,d_r \right\rbrace \subseteq\K
+        \end{equation*}
+        is the spectrum of $f(T)$, where, obviously, $r\leq k$. Let $X_j$ be the set of $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$ such that $f\left( c_i \right) =d_j$,
+        \begin{equation*}
+            X_j = \left\lbrace i\in\left\lbrace 1,2,\ldots,k \right\rbrace : f\left( c_i \right) = d_j \right\rbrace .
+        \end{equation*}
+        Moreover, define
+        \begin{equation*}
+            P_j = \sum^{}_{i\in X_j} E_i :V\to V.
+        \end{equation*}
+        Then $P_j$ is the orthogonal projection of $V$ onto the eigenspace corresponding to $d_j$. Thus,
+        \begin{equation*}
+            f(T) = \sum^{r}_{j=1} d_jP_j
+        \end{equation*}
+        is the spectral resolution of $f(T)$.
+    \end{remark}
+
+    \begin{definition}{Unitary}{Transformation}
+        Let $V, V'$ be inner product spaces over $\K$ and let $T:V\to V'$ be a linear transformation. We say $T$ is \emph{unitary} if $T$ preserves inner products.
+    \end{definition}
+
+    \begin{prop}{}
+        Let $V,V'$ be finite-dimensional inner product spaces and let $T:V\to V$ be a diagonalizable normal operator. Let $U:V\to V'$ be a unitary transformation and let $T' = UTU^{-1}$. Then $S$ is the spectrum of $T'$ and
+        \begin{equation*}
+            f\left( T' \right) = Uf(T)U^{-1}.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Let $v\in V$. Observe that the equation
+        \begin{equation*}
+            Tv = cv
+        \end{equation*}
+        for some $c\in\K$ holds if and only if
+        \begin{equation*}
+            T'Uv = UTv = Ucv = cUv,
+        \end{equation*}
+        which exactly means $v\in V$ is an eigenvector of $T$ corresponding to $c\in\K$ if and only if $Uv\in V'$ is an eigenvector of $T'$ corresponding to $c$. Thus $S$ is the spectrum of $T'$, and $U$ maps each eigenspace of $T$ onto the corresponding eigenspace of $T$. In fact, for each $i\in\left\lbrace 1,2,\ldots,k \right\rbrace $,
+        \begin{equation*}
+            E_i' = UE_iU^{-1}
+        \end{equation*}
+        is the orthogonal projection of $V'$ onto the eigenspace corresponding to $c_i$, and hence
+        \begin{equation*}
+            T' = \sum^{k}_{i=1} c_iE_i' = \sum^{k}_{i=1} c_iUE_iU^{-1}
+        \end{equation*}
+        is the spectral resolution of $T'$. Thus
+        \begin{equation*}
+            f\left( T' \right) = \sum^{k}_{i=1} f\left( c_i \right) UE_iU^{-1} = U \left( \sum^{k}_{i=1} f\left( c_i \right) E_i \right) U^{-1} = Uf(T)U^{-1}.\eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a diagonalizable normal operator such that
+        \begin{equation*}
+            \left[ T \right] _\beta = 
+            \begin{bmatrix}
+                d_{11}& & & \\
+                & d_{22} & & \\
+                & & \ddots& \\
+                & & & d_{nn}\\
+            \end{bmatrix}
+        \end{equation*}
+        for some $d_{11}, d_{22}, \ldots, d_{nn}\in\K$, where $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ is an ordered basis for $V$. Then, if $f:\domain(f)\to\K$ is such that
+        \begin{equation*}
+            S\subseteq\domain(f),
+        \end{equation*}
+        where $S$ is the spectrum of $T$, then
+        \begin{equation*}
+            \left[ f(T) \right] _\beta = 
+            \begin{bmatrix}
+                f\left( d_{11} \right) & & & \\
+                & f\left( d_{22} \right) & & \\
+                & & \ddots& \\
+                & & & f\left( d_{nn} \right) \\
+            \end{bmatrix}.
+        \end{equation*}
+        If $\gamma = \left\lbrace u_1,u_2,\ldots,u_n \right\rbrace$ is an ordered basis for $V$ and $P\in M_{n\times n}(\K)$ is the change of coordinate matrix defined by
+        \begin{equation*}
+            u_j = \sum^{}_{i} P_{ij}v_i,
+        \end{equation*}
+        then $P^{-1}\left[ f(T) \right] _\beta P = \left[ f(T) \right] _\gamma$.
+    \end{cor}	
+
+    \begin{proof}
+        Let $c_1,c_2,\ldots,c_k\in\K$ be the distinct eigenvalues of $T$ and let $E_1,E_2,\ldots,E_k:V\to V$ be the orthogonal projections of $V$ onto the associated eigenspace, respectively. Then for each $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, there exists a unique $j\in\left\lbrace 1,2,\ldots,k \right\rbrace$ such that $v_i\in E_j(V)$ and $d_{ii} = c_j$. Thus $f(T)v_i = f\left( d_{ii} \right) v_i$ for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$ and
+        \begin{align*}
+            f(T)u_j & = f(T)\sum^{}_{i} P_{ij}v_i = \sum^{}_{i} P_{ij}f(T)v_i = \sum^{}_{i} d_{ii}P_{ij}v_i = \sum^{}_{i} \left( \left[ T \right] _\beta P \right) _{ij}v_i \\
+                    & = \sum^{}_{i} \left( \left[ T \right] _\beta P \right)_{ij} \sum^{}_{k} P^{-1}_{ki}u_k = \sum^{}_{k} \left( P^{-1}\left[ T \right] _\beta P \right) _{kj}u_k,
+        \end{align*} 
+        which exactly means
+        \begin{equation*}
+            P^{-1}\left[ f(T) \right] _\beta P = \left[ f(T) \right] _\gamma. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        It follows from Corollary 10.24.1 that one can define a function in a normal matrix. For, if $A\in M_{n\times n}(\K)$ is normal, then there exists an invertible, in fact unitary, $P\in M_{n\times n}(\K)$ such that $D = PAP^{-1}$ is diagonal. Then for any $f:\domain(f)\to\K$ such that
+        \begin{equation*}
+            \left\lbrace D_{11},D_{22},\ldots,D_{nn} \right\rbrace \subseteq\domain(f),
+        \end{equation*}
+        we may define $f(D)$ by
+        \begin{equation*}
+            f(D) = 
+            \begin{bmatrix}
+                f\left( D_{11} \right) & & & \\
+                & f\left( D_{22} \right) & & \\
+                & & \ddots& \\
+                & & & f\left( D_{nn} \right) \\
+            \end{bmatrix}.
+        \end{equation*}
+    \end{remark}
+
+    \begin{definition}{Function}{in a Matrix}
+        Let $A\in M_{n\times n}(\K)$ be normal and diagonalizable and let $P\in M_{n\times n}(\K)$ be unitary such that $PAP^{-1}$ is diagonal. Then we define $f(A)$, the function in $A$, by
+        \begin{equation*}
+            f(A) = P^{-1}f\left( PAP^{-1} \right) P^{-1}.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        The matrix $f(A)$, where $A$ is diagonalizable and normal and the domain of $f$ contains the set of eigenvalues of $A$, can be characterized in a different way. In doing so, we first state a matrix analogue of the spectral theorem (Theorem 10.23) and Corollay 10.23.1 without a proof.
+    \end{remark}
+
+    \clearpage
+    \begin{prop}{}
+        Let $A\in M_{n\times n}(\K)$ be a diagonalizable normal matrix and let $c_1,c_2,\ldots,c_k\in\K$ be distinct eigenvalues of $A$. Let
+        \begin{equation*}
+            e_i = \prod^{k}_{j=1,j\neq i} \frac{x-c_j}{c_i-c_j}
+        \end{equation*}
+        and let $E_i = e_i(A)$ for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. Then the following holds.
+        \begin{enumerate}
+            \item $E_iE_j = 0$ whenever $i\neq j$, $i,j\in\left\lbrace 1,2,\ldots,k \right\rbrace$.
+            \item $E_i^2 = E_i$ for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$.
+            \item $I = \sum^{k}_{i=1} E_i$.
+            \item If $f:\domain(f)\to\K$ satisfies $\left\lbrace c_1,c_2,\ldots,c_k \right\rbrace\subseteq\domain(f)$, then
+                \begin{equation*}
+                    f(A) = \sum^{k}_{i=1} f\left( c_i \right) E_i.
+                \end{equation*}
+                In particular,
+                \begin{equation*}
+                    A = \sum^{k}_{i=1} c_iE_i.
+                \end{equation*}
+        \end{enumerate}
+    \end{prop}
+
+    \begin{definition}{Positive, Nonnegative, Negative, Nonpositive}{Linear Operator}
+        Let $V$ be an inner product space and let $T:V\to V$ be a linear operator. We say $T$ is
+        \begin{enumerate}
+            \item \emph{positive} if $\left\langle Tv, v\right\rangle > 0$ for all nonzero $v\in V$,
+            \item \emph{nonnegative} if $\left\langle Tv, v\right\rangle \geq 0$ for all $v\in V$,
+            \item \emph{negative} if $\left\langle Tv, v\right\rangle < 0$ for all nonzero $v\in V$, and
+            \item \emph{nonpositive} if $\left\langle Tv, v\right\rangle \leq 0$ for all $v\in V$.
+        \end{enumerate}
+    \end{definition}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a diagonalizable normal operator. Let $c_1,c_2,\ldots,c_k\in\K$ be distinct eigenvalues. Then the following holds.
+        \begin{enumerate}
+            \item $T$ is Hermitian if and only if $c_1,c_2,\ldots,c_k\in\R$.
+            \item $T$ is nonnegative if and only if $c_1,c_2,\ldots,c_k\geq 0$.
+            \item $T$ is unitary if and only if $\left| c_1 \right| = \left| c_2 \right| =\cdots= \left| c_k \right| = 1$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        Let $E_1,E_2,\ldots,E_k:V\to V$ be such that
+        \begin{equation*}
+            T = \sum^{k}_{i=1} c_iE_i
+        \end{equation*}
+        is the spectral resolution of $T$. Then by the normality of $T$,
+        \begin{equation*}
+            T^* = \sum^{k}_{i=1} \overline{c_i} E_i
+        \end{equation*}
+        is the spectral resolution of $T^*$. If $T$ is Hermitian, then $T = T^*$, and
+        \begin{equation*}
+            T - T^* = \sum^{k}_{i=1} \left( c_i - \overline{c_i}  \right) E_i = 0,
+        \end{equation*}
+        which means $c_i = \overline{c_i} \in\R$ for each $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. The converse is trivial. If $T$ is nonnegative, then for any eigenvector $v\in V$ corresponding to $c_i$ for some $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$,
+        \begin{equation*}
+            c_i\left\langle v, v\right\rangle = \left\langle c_iv, v\right\rangle = \left\langle Tv, v\right\rangle \geq 0
+        \end{equation*}
+        so by the positive definiteness of $\left\langle \cdot, \cdot\right\rangle$, $c_i\geq 0$ for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace $. Conversely, if $c_1,c_2,\ldots,c_k\geq 0$, then for any $v\in V$,
+        \begin{equation*}
+            \left\langle Tv, v\right\rangle = \left\langle \sum^{k}_{i=1} c_iE_iv, \sum^{k}_{j=1} E_jv\right\rangle = \sum^{k}_{i=1} \sum^{k}_{j=1} c_i\left\langle E_iv, E_jv\right\rangle = \sum^{k}_{i=1} c_i \left\langle E_iv, E_iv\right\rangle \geq 0,
+        \end{equation*}
+        where the last inequality holds by the positive definiteness of $\left\langle \cdot, \cdot\right\rangle$. If $T$ is unitary, then $TT^* = I$ and so
+        \begin{equation*}
+            \sum^{k}_{i=1} E_i = I = TT^* = \sum^{k}_{i=1} c_iE_i\sum^{k}_{j=1} \overline{c_j} E_j = \sum^{k}_{i=1} \left| c_i \right| ^2E_i,
+        \end{equation*}
+        which exactly means
+        \begin{equation*}
+            \sum^{k}_{i=1} \left( \left| c_i \right| ^2-1 \right) E_i = 0,
+        \end{equation*}
+        so $\left| c_1 \right| = \left| c_2 \right| = \cdots = \left| c_k \right| = 1$. The converse is clear as well.
+    \end{proof}
+
+    \begin{remark}
+        A result like Proposition 10.27 serves to strengthen the analogy between the adjoint operation on linear operators and the conjugate operation on $\CC$. A $z\in\CC$ is real if and only if $z=\overline{z}$ and is of absolute value 1 if and only if $z\overline{z} =1$. Analogously, eigenvalues of a diagonalizable normal operator $T:V\to V$ on a finite-dimensional inner product space are real if and only if $T=T^*$ and are of absolute value 1 if and only if $TT^* = I$. We shall also prove two propositions, which are analogous to the following statements.
+        \begin{enumerate}
+            \item For all nonnegative $a\in\R$, there exists a unique nonnegative $b\in\R$ such that $a=b^2$ (i.e. $\sqrt{a}=b$).
+            \item For all $z\in\CC$, there exist nonnegiave $r\in\R$ and $u\in\CC$ of absolute value $\left| u \right| =1$ such that $z=ru$. This is the polar decomposition of complex numbers,
+                \begin{equation*}
+                    z = re^{i\theta}.
+                \end{equation*}
+        \end{enumerate}
+    \end{remark}
+
+    \begin{prop}{Square Root of a Nonnegative Operator}
+        Let $V$ be an inner product space and let $T:V\to V$ be a nonnegative operator. Then there exists a unique nonnegative operator $N:V\to V$ such that $T=N^2$.
+    \end{prop}
+
+    \begin{proof}
+        Let $E_1,E_2,\ldots,E_k:V\to V$ and $c_1,c_2,\ldots,c_k\in\K$ be such that
+        \begin{equation*}
+            T = \sum^{k}_{i=1} c_iE_i
+        \end{equation*}
+        is the spectral resolution of $T$. Then by Proposition 10.27, $c_1,c_2,\ldots,c_k\geq 0$. Since $\domain\left( \sqrt{\cdot} \right) = [0,\infty)$, $\sqrt{c_1}, \sqrt{c_2}, \ldots, \sqrt{c_k}\in\R$ are well-defined, and so
+        \begin{equation*}
+            N = \sqrt{T} = \sum^{k}_{i=1} \sqrt{c_i}E_i
+        \end{equation*}
+        is well-defined as well. It is clear from the definition that $N$ is nonnegative. Moreover,
+        \begin{equation*}
+            N^2 = \sum^{k}_{i=1} \left( \sqrt{c_i} \right) ^2E_i = \sum^{k}_{i=1} c_iE_i = T.
+        \end{equation*}
+        Now suppose that there exist a nonnegative $M:V\to V$ with spectral resolution
+        \begin{equation*}
+            M = \sum^{r}_{j=1} d_jF_j
+        \end{equation*}
+        satisfies $M^2=T$. But this means $M^2 = T = N^2$, so
+        \begin{equation*}
+            \sum^{r}_{j=1} d_j^2F_j = \sum^{k}_{i=1} \left( \sqrt{c_i} \right) ^2E_i.
+        \end{equation*}
+        Thus by the uniqueness of the spectral resolution of $T$, $r=k$ and for each $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, there exists unique $j\in\left\lbrace 1,2,\ldots,k \right\rbrace$ such that $d_j = \sqrt{c_i}$ and $F_j = E_i$, which exactly means $M=N$.
+    \end{proof}
+
+    \begin{theorem}{Polar Decomposition}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be linear. Then there exist a unitary $U:V\to V$ and a nonnegative $N:V\to V$ such that $T = UN$. Moreover, $N$ is unique, and if $T$ is invertible, then $U$ is unique.
+    \end{theorem}
+
+    \begin{proof}
+        Observe that $T^*T:V\to V$ is nonnegative, since
+        \begin{equation*}
+            \left\langle T^*Tv, v\right\rangle = \left\langle Tv, Tv\right\rangle \geq 0
+        \end{equation*}
+        for all $v\in V$ by the positive definiteness of $\left\langle \cdot, \cdot\right\rangle$. We first consider the case which $T$ is invertible. By Proposition 10.28, let $N:V\to V$ be the unique nonnegative operator such that $T^*T = N^2$. We see that $N$ is invertible, since
+        \begin{equation*}
+            \left\langle Nv, Nv\right\rangle = \left\langle N^*Nv, v\right\rangle = \left\langle N^2v, v\right\rangle = \left\langle T^*Tv, v\right\rangle = \left\langle Tv, Tv\right\rangle ,
+        \end{equation*}
+        so $Tv = 0$ if and only if $Nv = 0$. Moreover, define $U:V\to V$ by
+        \begin{equation*}
+            U = TN^{-1}.
+        \end{equation*}
+        It can easily shown that $U$ is unitary. For,
+        \begin{align*}
+            UU^* & = TN^{-1}\left( N^{-1} \right)^*T^* = \left( \left( TN^{-1}\left( N^{-1} \right) ^*T^* \right) ^{-1} \right) ^{-1} = \left( \left( T^* \right) ^{-1}N^*NT^{-1} \right) ^{-1} \\
+                 & = \left( \left( T^* \right) ^{-1}N^2T^{-1} \right) ^{-1} = \left( \left( T^* \right)^{-1}T^*TT^{-1} \right) ^{-1} = I^{-1} = I.
+        \end{align*} 
+        To show the uniqueness of $N$ and $U$, suppose $T=QM$ for some unitary $Q:V\to V$ and nonnegative $M:V\to V$. Then
+        \begin{equation*}
+            T^*T = M^*Q^*QM = M^{2}
+        \end{equation*}
+        so it follows $N=M$ by the uniqueness of the square root of $T^*T$. Thus $Q=TM^{-1}=TN^{-1} = U$ as well. We now consider the case which $T$ is singular. As before, let $N:V\to V$ be the unique nonnegative operator such that $T^*T = N^2$. We construct $U$ as follows. First, define $U_1$ be such that $\domain\left( U_1 \right) = \image(N)$. In particular, let $U_1$ be defined by
+        \begin{equation*}
+            w\mapsto Tv
+        \end{equation*}
+        provided that $v\in V$ is such that $w=Nv\in\image(N)$. The motivation for this is that one of the desired properties of $U$ is 
+        \begin{equation*}
+            UNv = Tv
+        \end{equation*}
+        for all $v\in V$. We see that $U_1$ is well-defined, since $Tv=0$ if and only if $Nv = 0$. Therefore, for any $v,v'\in V$ such that $Nv = Nv'$,
+        \begin{equation*}
+            Nv = Nv' \iff N\left( v-v' \right) = 0 \iff T\left(  v-v' \right) = 0 \iff Tv = Tv',
+        \end{equation*}
+        which exactly means that $Uw = UNv = Tv$ is well-defined. $U$ is clearly linear as well. Moreover, let $W, Z\subseteq V$ be the orthogonal complements of $\image(N)$ and $\image(T)$, respectively. Then $\dim(W) = \nullity(N)$ and $\dim(Z) = \nullity(T)$ by the rank-nullity theorem, where $\nullity(N)=\nullity(T)$ by the fact that $\ker(N)=\ker(T)$. Thus $W\iso Z$, and there exists an isometry $U_2:W\to Z$. We then define $U:V\to V$ by the direct sum of $U_1$ and $U_2$,
+        \begin{equation*}
+            U = U_1\oplus U_2,
+        \end{equation*}
+        since
+        \begin{equation*}
+            V = \image(N)\oplus W = \image(T)\oplus Z
+        \end{equation*}
+        by definition. In other words, if $v\in V$, then there exist unique $y\in V$ (so that $Ny\in \image(N)$) and $w\in W$ such that
+        \begin{equation*}
+            v = Ny + w
+        \end{equation*}
+        by the direct sum decomposition above, and we define
+        \begin{equation*}
+            Uv = Ty + U_2w.
+        \end{equation*}
+        This $U$ is clearly linear, for $U_1$ and $U_2$ are linear, and we also verified that $U$ is well-defined as well. Furthermore,
+        \begin{align*}
+            \left\langle Uv, Uv\right\rangle & = \left\langle Ty+U_2w, Ty+U_2w\right\rangle = \left\langle Ty, Ty\right\rangle + \left\langle U_2w, U_2w\right\rangle \\
+                                             & = \left\langle Ny, Ny\right\rangle + \left\langle w, w\right\rangle = \left\langle Ny+w, Ny+w\right\rangle = \left\langle v, v\right\rangle 
+        \end{align*} 
+        so $U$ is unitary, and by definition
+        \begin{equation*}
+            UNv = Tv
+        \end{equation*}
+        for all $v\in V$, as desired.
+    \end{proof}
+
+    \begin{definition}{Polar Decomposition}{of a Linear Operator}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a linear operator. Then by Theorem 10.29 there exist unitary $U:V\to V$ and nonnegative $N:V\to V$ such that
+        \begin{equation*}
+            T = UN,
+        \end{equation*}
+        which we call a \emph{polar decomposition} of $T$.
+    \end{definition}
+
+    \begin{remark}
+        Let $T:V\to V$ an invertible linear operator on a finite-dimensional inner product space and suppose
+        \begin{equation*}
+            T = UN
+        \end{equation*}
+        is the unique polar decomposition of $T$. It turns out that $U$ and $N$ commute if and only if $T$ is normal. For, if $T$ is normal, then
+        \begin{equation*}
+            UN^2U^{*} = UNN^{*} U^{*} = TT^{*} = T^{*} T = N^2,
+        \end{equation*}
+        so
+        \begin{equation*}
+            UN^2U = UN^2U^{*} \left( U^2 \right) = N^2U^2 = \left( NU \right) ^2,
+        \end{equation*}
+        which means $NU = UN$. Conversely, if $NU=UN$, then
+        \begin{equation*}
+            TT^* = (NU)(NU)^{*} = NUU^{*} N^{*} = N^{2} = T^{*} T
+        \end{equation*}
+        so $T$ is normal.
+    \end{remark}
+
+    \begin{remark}
+        We now proceed to prove a stronger result of the primary decomposition theorem for normal operators.
+    \end{remark}
+
+    \clearpage
+    \begin{theorem}{Primary Decomposition Theorem for Normal Operators}
+        Let $V$ be a finite-dimensional inner product space and let $N:V\to V$ be a normal operator. Let $p\in\K[x]$ be the minimal polynomial of $N$ and let $p_1,p_2,\ldots,p_k\in\K[x]$ be the distinct prime factors of $p$. Then
+        \begin{equation*}
+            p = \prod^{k}_{i=1} p_i
+        \end{equation*}
+        Let $W_i=\ker\left( p_i(N) \right)$ for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. Then the following hold.
+        \begin{enumerate}
+            \item $W_i$ and $W_j$ are orthogonal whenever $i\neq j$, $i,j\in\left\lbrace 1,2,\ldots,k \right\rbrace$.
+            \item $V = \bigoplus^{k}_{i=1} W_i$.
+            \item $W_i$ is $N$-invariant and $p_i$ is the minimal polynomial of the restriction of $N$ to $W_i$ for each $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$.
+            \item There exists $e_i\in\K[x]$ such that $e_i(N)$ is the orthogonal projection of $V$ onto $W_i$.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{lemma_inside}{}
+        Let $V$ be an inner product space and let $N:V\to V$ be normal. Then the following hold.
+        \begin{enumerate}
+            \item $\ker(N)$ is the orthogonal complement of $\image(N)$.
+            \item If $v\in V$ is such that $N^pv = 0$, then $Nv = 0$.
+            \item For any $f\in\K[x]$, $f(N):V\to V$ is normal.
+            \item If $f,g\in\K[x]$ are coprime, then for any $v,u\in V$ such that $f(N)v=0$ and $g(N)u=0$, $\left\langle v, u\right\rangle =0$.
+        \end{enumerate}
+    \end{lemma_inside}
+
+    \begin{proof}
+        For (a), suppose $v\in V$ is such that $v$ is orthogonal to every vector in $\image(N)$. Then for any $u\in V$, $\left\langle v, Nu\right\rangle =0$ and so
+        \begin{equation*}
+            \left\langle N^{*} v, u\right\rangle = \left\langle v, Nu\right\rangle = 0,
+        \end{equation*}
+        which means $N^{*} v = 0$. So $v$ is an eigenvector of $N^{*} $ corresponding to $0$, so by the normality of $N$, $v$ is an eigenvector of $N$ corresponding to $\overline{0} =0$. This exactly means $Nv = 0$. Conversely, if $v\in\ker(N)$, then for any $Nu\in\image(N)$,
+        \begin{equation*}
+            \left\langle v, Nu\right\rangle = \left\langle N^{*} v, u\right\rangle = \left\langle Nv, u\right\rangle = 0. 
+        \end{equation*}
+        For (b), suppose that $N^pv = 0$. observe that $N^{p-1}v=NN^{p-2}v\in\image(N)$ and since $N^{p}v = NN^{p-1}v = 0$, $N^{p-1}v\in\ker(N)$ as well. So by (a), $N^{p-1}v = 0$. So by an induction argument, $Nv = 0$. For (c), let
+        \begin{equation*}
+            f = \sum^{k}_{i=0} c_ix^i\in\K[x]
+        \end{equation*}
+        for some $c_1,c_2,\ldots,c_k\in\K$. Then
+        \begin{equation*}
+            f(N) = \sum^{k}_{i=0} c_iN^i
+        \end{equation*}
+        and
+        \begin{equation*}
+            f(N)^* = \left( \sum^{k}_{i=0} c_iN^i \right) ^{*} = \sum^{k}_{i=0} c_i\left( N^{*} \right) ^i.
+        \end{equation*}
+        So $f(N)$ and $f(N)^{*} $ commute since $N$ and $N^{*} $ commute. For (d), let $f,g\in\K[x]$ be coprime and let $v,u\in V$ such that $f(N)v = 0$ and $g(N)u=0$. Then there exist $\alpha,\beta\in\K[x]$ such that
+        \begin{equation*}
+            \alpha f = \beta g = 1.
+        \end{equation*}
+        Therefore,
+        \begin{equation*}
+            \alpha(N)f(N) + \beta(N)f(N) = I,
+        \end{equation*}
+        so
+        \begin{equation*}
+            v = Iv = \alpha(N)f(N)v + \beta(N)g(N)v = \beta(N)g(N)v.
+        \end{equation*}
+        It follows that
+        \begin{equation*}
+            \left\langle v, u\right\rangle = \left\langle \beta(N)g(N)v, u\right\rangle = \left\langle g(N)\beta(N)v, u\right\rangle = \left\langle \beta(N)v, g(N)^{*} u\right\rangle .
+        \end{equation*}
+        Since $g(N)u = 0$, the normality of $g(N)$ by (c) implies that $g(N)^{*} = 0$ as well. Thus $\left\langle v, u\right\rangle = 0$.
+    \end{proof}
+
+    \ruleline{Proof of Theorem \thechapter.\thestcounter\ Begins Here}
+
+    \begin{proof}[Proof of Theorem \thechapter.\thestcounter]
+        We first verify that
+        \begin{equation*}
+            p = \prod^{k}_{i=1} p_i.
+        \end{equation*}
+        Suppose, for the sake of contraduction, there exists $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$ such that
+        \begin{equation*}
+            p_i^s \mid p
+        \end{equation*}
+        for some $s\in\N$, $s\geq 2$. Then there exists $g\in\K[x]$ such that
+        \begin{equation*}
+            p = p_i^sg,
+        \end{equation*}
+        and for all $v\in V$,
+        \begin{equation*}
+            p(N)v = p_i^s(N)g(N)v = 0.
+        \end{equation*}
+        By (c) of Lemma 10.30.1, $p_i^s(N)$ is normal. Thus by (b) of Lemma 10.30.1, 
+        \begin{equation*}
+            p_i(N)g(N)v = 0,
+        \end{equation*}
+        which clearly is a contradiction., since the minimality of $p$ is violated. Thus
+        \begin{equation*}
+            p = \prod^{k}_{i=1} p_i.
+        \end{equation*}
+        Of course, $\deg\left( p_i \right) \leq 2$ for each $i\in\left\lbrace 1,2,..,k \right\rbrace$. For (a), observe that (d) of Lemma 10.30.4 is equivalent to the result that, if $f,g\in\K[x]$ are coporime, then $\ker\left( f(T) \right)$ and $\ker\left( g(T) \right)$ are orthogonal, whenever $T:V\to V$ is normal. But since $p_1,p_2,\ldots,p_k$ are distinct prime polynomials, $p_i$ and $p_j$ are coprime whenever $i\neq j$. So $W_i = \ker\left( p_i(N) \right) $ and $W_j = \ker\left( p_j(N) \right) $ are orthogoanl. For (b), let
+        \begin{equation*}
+            f_i = \prod^{k}_{j=1, j\neq i} p_j\in\K[x]
+        \end{equation*}
+        then $f_1,f_2,\ldots,f_k$ are coprime by construction, so there exist $g_1,g_2,\ldots,g_k\in\K[x]$ such that
+        \begin{equation*}
+            \sum^{k}_{i=1} f_ig_i = 1.
+        \end{equation*}
+        So for any $v\in V$,
+        \begin{equation*}
+            v = Iv = \left( \sum^{k}_{i=1} f_i(N)g_i(N) \right) v = \sum^{k}_{i=1} f_i(N)g_i(N)v.
+        \end{equation*}
+        But $p = p_if_i$ for any $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, so $p_i(N)f_i(N) = p(N) = 0$. It follows that
+        \begin{equation*}
+            p_i(N)f_i(N)g_i(N)v = 0,
+        \end{equation*}
+        so $f_i(N)g_i(N)v\in\ker\left( p_i(N) \right) = W_i$ for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, $v\in V$. But (a) provides that $W_1,W_2,\ldots,w_k$ are independent, so
+        \begin{equation*}
+            V = \bigoplus^{k}_{i=1} W_i.
+        \end{equation*}
+        For (c), let $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, let $N_i:W_i\to W_i$ be the restriction of $N$ to $W_i$, and let $w_i\in W_i$. Then $p_i(N)w_i = 0$ and so
+        \begin{equation*}
+            p_i(N)Nw_i = Np_i(N)w_i = 0,
+        \end{equation*}
+        so $W_i$ is $N$-invariant. Moreover, since $p_i\left( N_i \right) = p_i(N) = 0$ on $W_i$ by definition, $p_i$ divides the minimal polynomial of $N_i$. But $p_i$ is prime, so $p_i$ is the minimal polynomial of $N_i$. For (d), let $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$ and let $e_i=f_ig_i\in\K[x]$. Then for any $v\in V$, $e_i(N)v = f_i(N)g_i(N)v \in W_i$ and
+        \begin{equation*}
+            v = \sum^{k}_{j=1} f_j(N)g_j(N) v = \sum^{k}_{j=1} e_j(N)v
+        \end{equation*}
+        which exactly means
+        \begin{equation*}
+            v - e_i(N)v = \sum^{k}_{j=1,j\neq i} e_j(N)v.
+        \end{equation*}
+        But $W_j$ is orthogonal to $W_i$ whenever $i\neq j$, $j\in\left\lbrace 1,2,\ldots,k \right\rbrace$, so
+        \begin{equation*}
+            v-e_i(N)v - \sum^{k}_{j=1,j\neq i} e_j(N)v\in W_{i\perp},
+        \end{equation*}
+        where $W_{i\perp}$ is the orthogonal complement of $W_i$. Thus it follows Corollary 10.4.1 that $e_i(N)$ is the projection of $V$ on $W_i$.
+    \end{proof}
+
+    \begin{definition}{Primary Component}{of an Inner Product Space under a Normal Operator}
+        Consider Theorem 10.30. We call $W_1,W_2,\ldots,W_k\subseteq V$ the \emph{primary component} of $V$ under $T$.
+    \end{definition}
+
+    \begin{cor}{}
+        Let $T:V\to V$ be a normal operator on a finite-dimensional inner product space $V$ and let $W_1,W_2,\ldots,W_k\\\subseteq V$ be the primary components of $W$ under $T$. Suppose $W\subseteq V$ is a $T$-invariant subspace. Then
+        \begin{equation*}
+            W = \sum^{k}_{i=1} W\cap W_i.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{proof}
+        It is clear that each $W\cap W_i\subseteq W$ so $\sum^{k}_{i=1} W\cap W_i\subseteq W$. To show that $W\subseteq \sum^{k}_{i=1} W\cap W_i$, observe that $W$ is invariant under any polynomial in $T$, and, in particular, $W$ is invariant under each $e_i(T)$, the projection of $V$ on $W_i$. Since
+        \begin{equation*}
+            w = \sum^{k}_{i=1} e_i(T)w
+        \end{equation*}
+        for any $w\in W$, where each $e_i(T)w\in W\cap W_i$, it follows that $W\subseteq\sum^{k}_{i=1} W\cap W_i$. Thus $W = \sum^{k}_{i=1} W\cap W_i$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        Theorem 10.30 shows that every normal operator $T:V\to V$ on a finite-dimensional inner product space is canonically associated with normal operators $T_1, T_2, \ldots, T_k$ on $W_1,W_2,\ldots,W_k\subseteq V$, the primary components of $V$ under $T$. Moreover, the minimal polynomial $p_i\in\K[x]$ for $W_i$ is prime over $\K$. To complete our understanding of normal operators, it is necessary to study normal operators of this particular type. A normal operator whose minimal polynomial is of degree 1 is clearly a scalar multiple of the identity operator (indeed, any operator is a scalar multiple of the identity if its minimal polynomial is of degree 1). On the other hand, when the minimal polynomial of a normal operator is of degree 2, the situation is more complicated.
+    \end{remark}
+
+    \begin{example}
+        Let $r\in\R$ be positive and let $\theta\in\R$ be such that $\theta\neq k\pi$ for any $k\in\Z$. Let $T:\R^2\to\R^2$ be such that
+        \begin{equation*}
+            \left[ T \right] _\beta = r 
+            \begin{bmatrix}
+                \cos(\theta) & - \sin(\theta) \\
+                \sin(\theta) & \cos(\theta) \\
+            \end{bmatrix},
+        \end{equation*}
+        where $\beta$ is the standard ordered basis for $\R^2$. Then $T$ is orthogonal, and, hence, normal. Let $p\in\R[x]$ be the characteristic polynomial of $T$. Then
+        \begin{align*}
+            p(x) & = \det\left( xI-\left[ T \right] _\beta \right) = \det\begin{bmatrix} x-r\cos(\theta) & r\sin(\theta) \\ -r\sin(\theta) & x-r\cos(\theta) \end{bmatrix} = \left( x-r\cos(\theta) \right) ^2 + r^{2} \sin^{2} (\theta) \\
+            & = x^2 - 2r\cos(\theta)x + r^{2} \cos^{2} (\theta) + r^{2}\sin^2(\theta) = x^2-2r\cos(\theta)x+r^2.
+        \end{align*} 
+        Let $a=r\cos(\theta)$, $b=r\sin(\theta)$, and $c=a+bi$. Then $b=r\sin(\theta)\neq 0$ since $\theta\neq k\pi$ for any $k\in\Z$, $c=re^{i\theta}\in\CC$, and
+        \begin{equation*}
+            \left[ T \right] _\beta = 
+            \begin{bmatrix}
+                a & -b\\
+                b & a\\
+            \end{bmatrix}.
+        \end{equation*}
+        Moreover, $p=(x-c)(x-\overline{c} )$, so $p$ is prime over $\R$. Since $p$ is divisible by the minimal polynomial, it follows that $p$ is the minimal polynomial of $T$ as well.
+    \end{example}
+
+    \begin{prop}{}
+        Let $T:V\to V$ be a normal operator on a finite-dimensional inner product space $V$ over $\R$ and let $p\in\R[x]$ be the minimal polynomial of $T$. Suppose
+        \begin{equation*}
+            p = (x-a)^2 + b^2
+        \end{equation*}
+        for some $a,b\in\R$, $b\neq 0$. Then there exists $k\in\N$ such that $p^k\in\R[x]$ is the characteristic polynomial for $T$. Moreover, there exists subspaces $W_1,W_2,\ldots,W_k\in V$ such that
+        \begin{enumerate}
+            \item $W_i$ and $W_j$ are orthogonal whenever $i\neq j$, $i,j\in\left\lbrace 1,2,\ldots,k \right\rbrace$,
+            \item $V=\bigoplus^{k}_{i=1} W_i$, and
+            \item each $W_i$ has an orthonormal basis $\left\lbrace v_i,w_i \right\rbrace$ such that
+                \begin{equation*}
+                    \begin{cases} 
+                        Tv_i & = av_i + bw_i \\
+                        Tw_i & = -bv_i + aw_i \\
+                        T^{*} v_i & = av_i - bw_i \\
+                        T^{*} w_i & = bv_i + aw_i \\
+                    \end{cases}.
+                \end{equation*}
+        \end{enumerate}
+    \end{prop}
+
+    \begin{lemma_inside}{}
+        Let $V$ be an inner product space over $\R$ and let $T:V\to V$ be a normal operator such that $T^2+I = 0$. Let $v\in V$ be arbitrary and let $w=Tv\in\image(T)$. Then
+        \begin{equation*}
+            \begin{cases} 
+                T^{*} v & = -w \\
+                T^{*} w & = v
+            \end{cases},
+        \end{equation*}
+        $\left\langle v, w\right\rangle = 0$, and $\left\lVert v\right\rVert = \left\lVert w\right\rVert$.
+    \end{lemma_inside}
+
+    \begin{proof}
+        Observe that
+        \begin{equation*}
+            T^{2} v = T^{2} v - \left( T^{2} +I \right) v = -v
+        \end{equation*}
+        and $Tv = w$ by definition. So $\left\lVert Tv-w\right\rVert  = \left\lVert T^{2} v+v\right\rVert = \left\lVert Tw+v\right\rVert = 0$, and so
+        \begin{align*}
+            0 & = \left\lVert Tv-w\right\rVert ^{2} + \left\lVert Tw+v\right\rVert ^{2} = \left\langle Tv-w, Tv-w\right\rangle + \left\langle Tw+v, Tw+v\right\rangle \\
+              & = \left\lVert Tv\right\rVert ^{2} - 2\left\langle Tv, w\right\rangle + \left\lVert w\right\rVert ^{2} + \left\lVert Tw\right\rVert ^{2} + \left\langle Tw,v \right\rangle + \left\lVert v\right\rVert ^{2} .
+        \end{align*} 
+        Since $T$ is normal, $\left\lVert Tz\right\rVert ^{2} = \left\lVert Tdaj\right\rVert z  ^{2}$ and $\left\langle Ty, z\right\rangle = \left\langle z, Ty\right\rangle = \left\langle T^{*} z, y\right\rangle$ for any $y,z\in V$, and so
+        \begin{align*}
+              0 & = \left\lVert Tv\right\rVert ^{2} - 2\left\langle Tv, w\right\rangle + \left\lVert w\right\rVert ^{2} + \left\lVert Tw\right\rVert ^{2} + \left\langle Tw,v \right\rangle + \left\lVert v\right\rVert ^{2} \\
+                & = \left\lVert T^{*} v\right\rVert ^{2} - 2\left\langle T^{*} w, v\right\rangle + \left\lVert w\right\rVert ^{2} + \left\lVert T^{*} w\right\rVert ^{2} + \left\langle T^{*} v,w \right\rangle + \left\lVert v\right\rVert ^{2} \\
+                & = \left\lVert T^{*} v\right\rVert ^{2} + 2\left\langle T^{*} v, w\right\rangle + \left\lVert w\right\rVert ^{2} + \left\lVert T^{*} w\right\rVert ^{2} - \left\langle T^{*} w,v \right\rangle + \left\lVert v\right\rVert ^{2} \\
+                & = \left\lVert T^{*} v+w\right\rVert ^{2} + \left\lVert T^{*} w-v\right\rVert ^{2} .
+        \end{align*} 
+        So $T^{*} v = -w$ and $T^{*} w = v$. Moreover,
+        \begin{equation*}
+            \left\langle v, w\right\rangle = \left\langle T^{*} w, w\right\rangle = \left\langle w, Tw\right\rangle = \left\langle w, T^{2} v\right\rangle = \left\langle w, -v\right\rangle = \left\langle -v, w\right\rangle = -\left\langle v, w\right\rangle ,
+        \end{equation*}
+        which exactly means $\left\langle v, w\right\rangle = 0$. Similarly,
+        \begin{equation*}
+            \left\lVert v\right\rVert ^{2} = \left\langle v, v\right\rangle= \left\langle T^{*} w, v\right\rangle = \left\langle w, Tv\right\rangle = \left\langle w, w\right\rangle = \left\lVert w\right\rVert ^{2} , 
+        \end{equation*}
+        as desired.
+    \end{proof}
+
+    \ruleline{Proof of Proposition \thechapter.\thestcounter\ Begins Here}
+
+    \begin{proof}[Proof of Proposition \thechapter.\thestcounter]
+        Let $W_1,W_2,\ldots,W_k\in\subseteq V$ be subspaces such that $k\in\N$ is the maximum number of subspaces satisfying (a) and (c). Let $W = \bigoplus^{k}_{i=1} w_i$. We claim that $W= V$. To verify this, suppose $W\subsetneq V$ for the sake of contradiction. Then $W_\perp\neq\left\lbrace 0 \right\rbrace$, the orthogonal complement of $W$. Moreover, (c) implies that $W$ is invariant under $T$ and $T^{*}$, $W_\perp$ is invariant under $T^{*}$ and $\left( T^{*}  \right) ^{*}  = T$. Now, let
+        \begin{equation*}
+            S = \frac{1}{b}\left( T-aI \right) : V\to V.
+        \end{equation*}
+        Then $S^{*} = \frac{1}{b}\left( T^{*} - aI \right)$, $S$ is normal, and $W_\perp$ is invariant under $S$ and $S^{*}$. Since $p(T) = \left( T-aI \right) ^{2} + b^2I = 0$, it follows that
+        \begin{equation*}
+            S^2+I = \frac{1}{b^2} \left( T-aI \right) ^2 + I = \frac{1}{b} \left( \left( T-aI \right)^2 + bI \right) = 0.
+        \end{equation*}
+        Let $v\in W_\perp$ be any unit vector (i.e. $\left\lVert v\right\rVert = 1$) and let $w=Sv$. Then $w\in W_\perp$ and $Sw = -v$. Since
+        \begin{equation*}
+            aI + bS = aI + b\left( \frac{1}{b}\left( T-Ai \right)  \right) = T,
+        \end{equation*}
+        we have
+        \begin{equation*}
+            \begin{cases} 
+                Tv & = \left( aI+bS \right) v = av+bw \\
+                Tw & = \left( aI+bS \right) w = aw-bv = -bv+aw
+            \end{cases}.
+        \end{equation*}
+        By Lemma 10.31.1, $S^{*} v = -w$, $S^{*} w = v$, $\left\langle v, w\right\rangle = 0$ and $\left\lVert w\right\rVert =\left\lVert v\right\rVert = 1$> But $T^{*}  = aI + bS^{*}$, it follows that
+        \begin{equation*}
+            \begin{cases} 
+                T^{*} v & = av - bw \\
+                T^{*} w & = bv + aw \\
+            \end{cases}.
+        \end{equation*}
+        However, this means $Z = \spn\left\lbrace v,w \right\rbrace$ is a subspace which satisfies (a) and (c). This violates the maximality of $k$, so we have a contradiction. Thus,
+        \begin{equation*}
+            V = W = \bigoplus^{k}_{i=1} W_i,
+        \end{equation*}
+        and it is clear that each $T_i:W_i\to W_i$, the restriction of $T$ on $W_i$, has characteristic polynomial $p_i = p = \left( x-a \right) ^{2} + b^{2}$. Thus it follows from the above direct sum decomposition that
+        \begin{equation*}
+            \det\left( xI-T \right) = \left( \left( x-a \right) ^{2} +b^{2}  \right) ^k
+        \end{equation*}
+        is the characteristic polynomial of $T$.
+    \end{proof}
+
+    \begin{remark}
+        Consider Propositoin 10.31. Another way to state the proposition is that, if $r,\theta\in\R$ are such that $r=\sqrt{a^{2} +b^{2} }$, $a=r\cos(\theta)$, and $b=r\sin(\theta)$, then $V$ is a direct sum
+        \begin{equation*}
+            V = \bigoplus^{k}_{i=1} W_i
+        \end{equation*}
+        of orthogonal 2-dimensional subspaces $W_i$, and on each $W_i$ $T$ acts as \textit{$r$ times rotation through the angle $\theta$}.
+    \end{remark}
+
+    \begin{cor}{}
+        Consider Proposition 10.31. Then $T$ is invertible and
+        \begin{equation*}
+            T^{*} = \left( a^{2} + b^{2}  \right) T^{-1} .
+        \end{equation*}
+    \end{cor}	
+
+    \begin{proof}
+        Observe that
+        \begin{equation*}
+            \begin{bmatrix}
+                a & -b \\ b & a
+            \end{bmatrix}
+            \begin{bmatrix}
+                a & b \\ -b & a
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                a^{2} + b^{2} & 0 \\ 0 & a^{2} + b^{2} 
+            \end{bmatrix}.
+        \end{equation*}
+        So by (c) of Proposition 10.31, $TT^{*} = \left( a^{2} + b^{2}  \right) I$. Thus $T$ is invertible and $T^{*} =\left( a^{2} +b^{2}  \right)T^{-1}$.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a normal operator. 
+        \begin{enumerate}
+            \item Any linear $S:V\to V$ commutes with $T$ commutes with $T^{*}$.
+            \item Any $T$-invariant subspace $W\subseteq V$ is also $T^{*}$-invariant.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        For (a), let $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$, $W_i\subseteq V$ be a primary component of $V$ under $T$, and $E_i:W_i\to W_i$ be the orthogonal projection of $V$ on $W_i$. Then $E_i$ is a polynomial in $T$, so $S$ commutes with $E_i$. Therefore,
+        \begin{equation*}
+            E_iSE_i = SE_i^{2} = SE_i,
+        \end{equation*}
+        which means $W_i$ is $S$-invariant. Let $T_i, S_i:W_i\to W_i$ be the restrictions of $T$ and $S$ on $W_i$, respectively. Then $S_i$ commutes with $T_i$. By Theorem 10.30, the minimal polynomial $p_i\in\K[x]$ of $T_i$ is of degree 1 or 2. If $\deg\left( p_i \right) = 1$, then $T_i=c_iI$ for some $c_i\in\K$ and clearly $S_i$ commutes with $T_i^{*} = \overline{c_i}I$. So suppose $\deg\left( p_i \right) = 2$. Then by Corollary 10.31.2, there exist $a_i,b_i\in\K$ such that
+        \begin{equation*}
+            T_i^{*} = \left( a_i^{2} + b_i^{2}  \right) T_i^{-1} .
+        \end{equation*}
+        Since $S_i$ commutes with $T_i$ if and only if $S_i$ commutes with $T_i^{-1}$, it follows that $S_i$ commutes with $T_i^{-1}$ as well. So in conclusion, $S_i$ commutes with $T_i$ regardless of $\deg\left( p_i \right)$. Also, $T_i^{*}$ commutes with $E_i$, and so
+        \begin{equation*}
+            E_iT_i^{*}E_i = T_i^{*} E_i^2 = T_i^{*} E_i, 
+        \end{equation*}
+        which means $W_i$ is a $T_i^{*}$-invariant. Moreover, for any $v_i,w_i\in W_i$,
+        \begin{equation*}
+            \left\langle T_iv_i, w_i\right\rangle = \left\langle Tv_i, w_i\right\rangle = \left\langle v_i, T^{*} w_i\right\rangle = \left\langle v_i, T_i^{*} w_i\right\rangle ,
+        \end{equation*}
+        so $T_i^{*} : W_i\to W_i$ is the restriction of $T^{*}$ on $W_i$. Thus,
+        \begin{equation*}
+            ST^{*} w_i = S_iT_i^{*} w_i = T_i^{*}S_iw_i = T^{*} Sw_i
+        \end{equation*}
+        for any $w_i\in W_i$. But $V=\bigoplus^{k}_{i=1} W_i$, so
+        \begin{equation*}
+            ST^{*} v = T^{*} Sv
+        \end{equation*}
+        for any $v\in V$. So $U$ commutes with $T^{*}$. For (b), suppose that $W\subseteq V$ is a $T$-invariant subspace and let $Z_i = W\cap W_i$ for each $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. Then $Z_i$ is $T_i$-invariant. Moreover, by Corollary 10.30.2, $W = \sum^{k}_{i=1} Z_i$, so it is sufficient to verify that each $Z_i$ is $T_i^{*}$-invariant. If $\deg\left( p_i \right) = 1$, then $T_i = c_iI$ for some $c_i\in\K$, and clearly $Z_i$ is invariant under $T_i^{*} = \overline{c_i}I$. On the other hand, if $\deg\left( p_i \right) = 2$, then $T_i$ is invertible and
+        \begin{equation*}
+            T_i^{*}  = \left( a_i^{2} +b_i^{2}  \right) T_i^{-1} 
+        \end{equation*}
+        for some $a_i,b_i\in\K$. But by the invertibility of $T_i$ and $T_i$-invariance of $Z_i$, $Z_i$ is $T_i^{-1}$-invariant, and hence $T^{*}$-invariant as well.
+    \end{proof}
+
+    \begin{remark}
+        Suppose $T:V\to V$ is a normal operator on a finite-dimensional inner product space $V$ and let $W\subseteq V$ be a $T$-invariant subspace. Then (b) of Proposition 10.32 shows that $W$ is invariant under $T^{*}$, and that $W_\perp\subseteq V$, the orthogonal complement of $W$, is invariant under $T^{*}$ and $T^{**} = T$. One can use this fact to provide a stronger version of the cyclic decomposition theorem of normal operators.
+    \end{remark}
+
+    \begin{theorem}{Cyclic Decomposition Theorem for Normal Operators}
+        Let $V$ be a finite-dimensional inner product space and let $T:V\to V$ be a normal operator. Then there exists nonzero $v_1,v_2,\ldots,v_k\in V$ and respective $T$-annihilators $e_1,e_2,\ldots,e_k\in\K[x]$ for some $k\in\N$ such that the following holds.
+        \begin{enumerate}
+            \item $V=\bigoplus^{k}_{i=1} Z\left( v_i;T \right)$.
+            \item For each $i\in\left\lbrace 2,3,\ldots,k \right\rbrace$, $e_{i+1}\mid e_i$.
+            \item $Z\left( v_i;T \right)$ is orthogonal to $Z\left( v_j;T \right)$ whenever $i\neq j$.
+            \item The integer $k$ and the $T$-annihilators $e_1,e_2,\ldots,e_k$ are uniquely determined by (a), (b), and the fact that every $v_i$ is nonzero.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        Let $p\in\K[x]$ be the minimal polynomial of $T$. Then the cyclic decomposition theorem provides that there exists $v_1\in V$ such that $e_1=p_1$ is the $T$-annihilator of $v_1$. Since $Z\left( v_1;T \right)$ is $T$-invariant, it is also $T^{*} $-invariant. Moreover, Remark 10.71 provides that $W$, the orthogonal complement of $Z\left( v_1;T \right)$, is also invariant under $T$ and $T^{*}$, and $T_W:W\to W$, the restriction of $T$ on $W$, is normal. Then the cyclic decomposition theorem provides again that there exists $v_2\in W$ such that the minimal polynomial $p_2\in\K[x]$ of $T_W$ is such that $e_2=p_2$ is the $T_W$-annihilator of $v_2$. Since $p_1$ annihilates $T$, it annihilates $T_W$ as well, so $p_2\mid p_1$. Furthermore, $Z\left( v_1;T \right)$ and $Z\left( v_2;T \right) = Z\left( v_2;T_W \right)$ are orthogonal by construction. Thus by continuing this process, we get
+        \begin{equation*}
+            V = \bigoplus^{k}_{i=1} Z\left( v_i;T \right)
+        \end{equation*}
+        which satisfies (b) and (c). Moreover, (d) is provided by the cyclic decomposition theorem.
+    \end{proof}
+
+    \begin{definition}{Unitarily Equivalent}{Linear Operators}
+        Let $V$ and $V'$ be inner product spaces over $\K$ and let $T:V\to V$ and $T':V'\to V'$ be linear. We say $T$ and $T'$ are \emph{unitarily equivalent} if there exists a unitary transformation $U:V\to V'$ such that
+        \begin{equation*}
+            UTU^{-1} = T'.
+        \end{equation*}
+    \end{definition}
+
+    \clearpage
+    \begin{prop}{}
+        Let $V$ and $V'$ be finite-dimensional inner product spaces over $\K$ and let $T:V\to V$, $T':V'\to V'$ be linear. Then $T$ is unitarily equivalent to $T'$ if and only if there exist orthonormal bases $\beta$ and $\beta'$ for $V$ and $V'$, respectively, such that
+        \begin{equation*}
+            \left[ T \right] _\beta = \left[ T' \right] _{\beta'}.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that there exists a unitary transformation $U:V\to V$ such that
+        \begin{equation*}
+            UTU^{-1} = T'.
+        \end{equation*}
+        Let $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be any orthonormal basis for $V$ and let
+        \begin{equation*}
+            \beta' = \left\lbrace v_1', v_2', \ldots, v_n' \right\rbrace = U\beta = \left\lbrace Uv_1, Uv_2, \ldots, Uv_n \right\rbrace .
+        \end{equation*}
+        Since $U$ is unitary, $\beta'$ is an orthonormal basis for $V'$. Moreover, $\left[ T \right] _\beta$ is characterized by the fact that
+        \begin{equation*}
+            Tv_i = \sum^{n}_{j=1} \left( \left[ T \right] _\beta \right) _{ji}v_j
+        \end{equation*}
+        for all $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$. But
+        \begin{equation*}
+            T'v_i' = UTU^{-1} v_i = U\sum^{n}_{j=1} \left( \left[ T \right] _\beta \right) _{ji}v_j = \sum^{n}_{j=1} \left( \left[ T \right] _\beta \right)_{ji}Uv_j = \sum^{n}_{j=1} \left( \left[ T \right] _\beta \right) _{ji}v_j' ,
+        \end{equation*}
+        so $\left[ T \right] _\beta = \left[ T' \right] _{\beta'}$. For the reverse direction, let $\beta=\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ and $\beta' = \left\lbrace v_1',v_2',\ldots,v_n' \right\rbrace$ be orthonormal bases for $V$ and $V'$, respectively, such that
+        \begin{equation*}
+            \left[ T \right] _\beta = \left[ T' \right] _{\beta'}.
+        \end{equation*}
+        Define $U:V\to V'$ by
+        \begin{equation*}
+            v_i\mapsto v_i'
+        \end{equation*}
+        for each $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$. Then
+        \begin{equation*}
+            UTU^{-1} v_i' = UTv_i = U\sum^{n}_{j=1} \left( \left[ T \right] _\beta \right) _{ji}v_j = \sum^{n}_{j=1} \left( \left[ T \right] _\beta \right) _{ji}Uv_j = \sum^{n}_{j=1} \left( \left[ T \right] _\beta \right) _{ji}v_j'.
+        \end{equation*}
+        But $\left[ T \right] _\beta = \left[ T' \right] _{\beta'}$, so it follows that $T'=UTU^{-1}$, as desired.
+    \end{proof}
+
+    \begin{remark}
+        An immediate consequence of Proposition 10.34 is that unitarily equivalent operators on finite-dimensional inner product spaces have the same characteristic polynomial. For normal unitarily equivalent operators, the converse is also true.
+    \end{remark}
+
+    \begin{theorem}{}
+        Let $V$ and $V'$ be finite-dimensional inner product spaces over $\K$ and let $T:V\to V$ and $T':V'\to V'$ be normal operators. Then $T$ and $T'$ are unitarily equivalent if and only if $T$ and $T'$ have the same characteristic polynomials.
+    \end{theorem}
+
+    \begin{proof}
+        Observe that the forward direction is supplied by Remark 10.73. To verify the reverse direction, suppose that $T$ and $T'$ have the same characteristic polynomial $f\in\K[x]$. Let $W_1,W_2,\ldots,W_k\subseteq V$ be the primary components of $V$ under $T$ and $T_1,T_2,\ldots,T_k$ be the restriction of $T$ on $W_1,W_2,\ldots,W_k$. Then
+        \begin{equation*}
+            f = \prod^{k}_{i=1} \det\left( xI_i-T_i \right) ,
+        \end{equation*}
+        where each $I_i$ is the identity operator on $W_i$. Let $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$ and $p_i\in\K[x]$ be the minimal polynomial for $T_i$. If $\deg\left( p_i \right) =1$, then it is clear that
+        \begin{equation*}
+            \det\left( xI_i-T_i \right) = p_i^{s_i} = \left( x-c_i \right) ^{s_i}
+        \end{equation*}
+        for some $c_i\in\K$ and $s_i=\dim\left( W_i \right)$. If $\deg\left( p_i \right) = 2$, then $p_i = \left( x-c_i \right) ^{2} + b_i^{2}$ for some $a_i,b_i\in\R\subseteq\K$, $b_i\neq 0$, and
+        \begin{equation*}
+            \det\left( xI_i-T_i \right) = \left( \left( x-a_i \right) ^2 b_i^2\right) ^{s_i},
+        \end{equation*}
+        where $s_i=\frac{1}{2}\dim\left( W_i \right) \in\N$. Therefore,
+        \begin{equation*}
+            f = \prod^{k}_{i=1} p_i^{s_i}.
+        \end{equation*}
+        But we may also calculate $f$ by the same method using the primary components of $V'$ under $T'$. Since $p_1,p_2,\ldots,p_k$ are distinct prime polynomials, the uniqueness of prime factorization of polynomials implies that there exist $k$ primary components $W_1', W_2', \ldots, W_k'\subseteq V'$ of $V'$ under $T'$, and by reordering, they can be indexed such that $p_i'=p_i$ is the minimal polynomial for $T_i'$, the restriction of $T'$ on $W_i'$, for all $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$. Let $i\in\left\lbrace 1,2,\ldots,k \right\rbrace$ be arbitrary. If $\deg\left( p_i \right) = 1$, then $p=x-c_i$ for some $c_i\in\K$, and it is clear that
+        \begin{equation*}
+            T_i' = c_iI_i'
+        \end{equation*}
+        and
+        \begin{equation*}
+            T_i = c_iI_i
+        \end{equation*}
+        are unitarily equivalent, where $I_1,I_2,\ldots,I_k$ are the identity operators on $W_1,W_2,\ldots,W_k$, respectively. On the other hand, if $\deg\left( p_i \right) = 2$, then $p_i = \left( x-a_i \right) ^{2} +b_i^{2}$ for some $a_i,b_i\in\R\subseteq\K$, $b_i\neq 0$. But (c) of Proposition 10.31 guarantees the existence of orthonormal bases $\beta_i$ and $\beta_i'$ for $W_i$ and $W_i'$, respectively, such that
+        \begin{equation*}
+            \left[ T_i \right] _{\beta_i} = \left[ T_i' \right] _{\beta_i'}.
+        \end{equation*}
+        But this exactly means
+        \begin{equation*}
+            \left[ T \right] _\beta = \bigoplus^{k}_{i=1} \left[ T_i \right] _{\beta_i} = \bigoplus^{k}_{i=1} \left[ T_i \right] _{\beta_i'} = \left[ T' \right] _{\beta'},
+        \end{equation*}
+        where $\beta = \left\lbrace \beta_1,\beta_2,\ldots,\beta_k \right\rbrace$ and $\beta' = \left\lbrace \beta_1', \beta_2', \ldots, \beta_k' \right\rbrace$. 
+    \end{proof}
+
+    \begin{remark}
+        Another way to show that $T$ and $T'$ are unitarily equivalent is to construct $U:V\to V'$ by mappings
+        \begin{align*}
+            v_i&\mapsto v_i' \\
+            w_i&\mapsto w_i'
+        \end{align*} 
+        provided that $\beta_i = \left\lbrace v_i,w_i \right\rbrace$ and $\beta_i'=\left\lbrace v_i',w_i' \right\rbrace$ satisfying
+        \begin{equation*}
+            \left[ T_i \right] _{\beta_i} = \left[ T_i' \right] _{\beta_i'}.
+        \end{equation*}
+    \end{remark}
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,286 @@
+\documentclass[linearalgebraI]{subfiles}
+
+\begin{document}
+
+    \chap{Diagonalization} 
+
+    \section{Eigenvectors and Eigenvalues}
+    
+    \begin{definition}{Eigenvector, Eigenvalue, Eigenspace}{of a Matrix}
+        Let $A\in M_{n\times n}(\F)$. A nonzero $v\in \F^n$ is callend an \emph{eigenvector} of $A$ if there exists $c\in \F$ such that
+        \begin{equation*}
+            Av = c v.
+        \end{equation*}
+        Such $c$ is called the \emph{eigenvalue} corresponding to $v$. For any eigenvalue $c\in\F^n$ of $A$, the set
+        \begin{equation*}
+            E_c = \left\lbrace u\in\F^n: Au = c u \right\rbrace \cup \left\lbrace 0 \right\rbrace
+        \end{equation*}
+        is a subspace of $\F^n$ and called the \emph{eigenspace} corresponding to $c$.
+    \end{definition}
+
+    \begin{remark}
+        Let $A\in M_{n\times n}(\F)$ and suppose $c\in\F$ is an eigenvalue of $A$. Then the eigenspace corresponding to $c$ is the null space of $cI-A$, $\ker(cI-A)$. For, any eigenvector $v\in\F^n$ of $A$ corresponding to $c$ satisfies $Av = cv$, which exactly means $\left( cI-A \right) v = 0$.
+    \end{remark}
+
+    \begin{prop}{$c$ Is an Eigenvalue If and Only If $\det \left( cI-A \right) =0$}
+        Let $A\in M_{n\times n}(\F)$. Then $c\in\F$ is an eigenvalue of $A$ if and only if $\det \left( cI-A \right) = 0$.
+    \end{prop}
+    
+    \begin{proof}
+        The forward direction is follows easily from Remark 5.1. For the reverse direction, if $\det\left( cI-A \right) = 0$, then $cI-A$ is not invertible, so there exists some $v\in\F^n$ such that
+        \begin{equation*}
+            \left( cI-A \right) v = 0.
+        \end{equation*}
+        But this exactly means $Av = c v$, so $c$ is an eigenvalue of $A$.
+    \end{proof}
+
+    \begin{remark}
+        Proposition 5.1 motivates the following.
+    \end{remark}
+
+    \begin{definition}{Characteristic Polynomial}{of a Matrix}
+        Let $A\in M_{n\times n}(\F)$. The $n$th degree polynomial $\det \left( xI-A \right)$ in the indeterminate $x$ is called the \emph{characteristic polynomial} of $A$.
+    \end{definition}
+
+    \begin{prop}{Properties of Characteristic Polynomials}
+        Let $A\in M_{n\times n}(\F)$ and let $f\in\F[x]$ be the characteristic polynomial of $A$. 
+        \begin{enumerate}
+            \item $f$ is a monic polynomial of $\deg(f)=n$.
+            \item $A$ has at most $n$ eigenvalues.
+            \item If $B\in M_{n\times n}(\F)$ is similar to $A$, then the characteristic polynomial of $B$ is $f$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        For (a), use thee cofactor expansion along any row or column. (b) is a direct consequence of a property of polynomials, that a polynomial of degree $n$ has at most $n$ roots. For (c), since $B = QAQ^{-1}$ for some invertible $A\in M_{n\times n}(\F)$,
+        \begin{align*}
+            \det \left( cI-B \right) & = \det \left( cI-QAQ^{-1} \right) = \det \left( QcIQ^{-1} - QAQ^{-1} \right) = \det \left( Q \left( cI-A \right) Q^{-1} \right) \\
+                                            & = \det (Q) \det (cI-A) \det \left( Q^{-1} \right) = \det (cI-A),
+        \end{align*} 
+        as desired.
+    \end{proof}
+
+    \begin{remark}
+        Let $V$ be a finite-dimensional vector space. Observe that (c) of Proposition 5.2 enables us to define an eigenvalue and eigenvector of a linear operator $T:V\to V$ as an eigenvalue and eigenvector of its matrix representation $\left[ T \right] _\beta$ for any ordered basis $\beta$ for $V$.
+    \end{remark}
+
+    \begin{definition}{Eigenvalue, Eigenvector}{of a Linear Operator}
+        Let $T: V\to V$ be a linear operator on $V$. A scalar $c\in\F$ is called an \emph{eigenvalue} of the linear operator $T$ if there exists a nonzero $v\in  V$ such that $Tv = c v$. Such vector $v$ is called an \emph{eigenvector} of $T$ corresponding to $c$.
+    \end{definition}
+
+    \begin{definition}{Characteristic Polynomial}{of a Linear Operator}
+        Let $T:V\to V$ be a linear operator on $V$. We define the \emph{characteristic polynomial} of $T$ to be the characteristic polynomial of any matrix representation $\left[ T \right] _\beta$ of $T$, where $\beta$ is an ordered basis for $V$. 
+    \end{definition}
+
+    \begin{remark}
+        We see that the uniqueness of characteristic polynomial of a linear operator $T:V\to V$ on a finite-dimensional vector space $V$ is guaranteed by (c) of Proposition 5.2. For, if $\beta$ and $\gamma$ are ordered bases for $V$, then $\left[ T \right]_\beta$ and $\left[ T \right] _\gamma$ are similar. 
+    \end{remark}
+
+    \begin{prop}{}
+        Let $T:V\to V$ be a linear operator on $V$. 
+        \begin{enumerate}
+            \item A scalar $c\in\F$ is an eigenvalue of $T$ if and only if $cI-T$ is not invertible.
+            \item Let $c$ be an eigenvalue of $T$. A vector $v\in V$ is an eigenvector of $T$ corresponding to $c$ if and only if $v\neq 0$ and $v\in \ker(cI-T)$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        (a) follows easily from Proposition 5.1. For (b), if $v$ is an eigenvector corresponding to $c$, then $Tv=c v$ or $\left( cI-T \right) v = 0$. Conversely, for any nonzero $v\in\ker\left( cI-T \right)$, we have $Tv = cv$.
+    \end{proof}
+
+    \section{Diagonalization}
+
+    \begin{definition}{Diagonalizable}{Linear Operator}
+        Let $V$ be a finite-dimensional vector space. A linear opeartor $T:V\to V$ is called \emph{diagonalizable} if there is an ordered basis $\beta$ for $V$ such that $[T]_\beta$ is an diagonal matrix. Moreover $A\in M_{n\times n}(\F)$ is called \emph{diagonalizable} if its left multiplication operator $L_A:\F^n\to\F^b$ is diagonalizable.
+    \end{definition}
+
+    \begin{remark}
+        Another way to state the diagonalizability of a (square) matrix is that $A\in M_{n\times n}(\F)$ is diagonalizable if and only if $A$ is similar to a diagonal $B$ over $\F$.
+    \end{remark}
+
+    \begin{prop}{$T:V\to V$ Is Diagonalizable If and Only If a Eigenbasis for $V$ Exists}
+        Let $T:V\to V$ be a linear operator on an $n$-dimensional vector space $V$. Then $T$ is diagonalizable if and only if there exists an ordered basis $\beta$ for $V$ consisting of eigenvectors of $T$.
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that $T$ is diagonalizable. Then there exists ordered basis $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ such that $\left[ T \right]_\beta$ is diagonal. So $\left( \left[ T \right]_\beta \right)_{ii} = c_i$ for some $c_i\in \F$, and $\left( \left[ T \right]_\beta \right)_{ij} = 0$ whenever $i\neq j$. That is,
+        \begin{equation*}
+            Tv_i = c_iv_i
+        \end{equation*}
+        so $v_i$ is an eigenvector of $T$ for each $i\in \left\lbrace 1, 2, \ldots, n \right\rbrace$. For the reverse direction, suppose that $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ is consisting of eigenvectors. Then $Tv_i = c_iv_i$ for some $c_i\in \F$, which exactly means
+        \begin{equation*}
+            [T]_\beta = 
+            \begin{bmatrix}
+                c_1 & 0 & \cdots & 0 \\ 0 & c_2 & \cdots & 0 \\ \vdots & \vdots & & \vdots \\ 0 & 0 & \cdots & c_n
+            \end{bmatrix}. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \clearpage
+    \begin{cor}{}
+        Let $A\in M_{n\times n}(\F)$. Then $A$ is diagonalizable if and only if there is an ordered basis for $\F^n$ consisting of eigenvectors of $A$.
+    \end{cor}	
+
+    \begin{prop}{Eigenvectors Corresponding to Distinct Eigenvalues Are Linearly Independent}
+        Let $T:V\to V$ be a linear opeartor where $\dim(V) = n$. Let $c_1, c_2, \ldots, c_m$ be distinct eigenvalues of $T$. If $v_1, v_2, \ldots, v_m$ are eigenvectors of $T$ corresponding to $c_1, c_2, \ldots, c_m$, then $\left\lbrace v_1, v_2, \ldots, v_m \right\rbrace$ is linearly independent.
+    \end{prop}
+
+    \begin{proof}
+        We proceed by induction on $m$. When $m=1$, observe that $\left\lbrace v_1 \right\rbrace$ is linearly independent, since any eigenvector is nonzero. Moreover, suppose that $\left\lbrace v_1, v_2, \ldots, v_k \right\rbrace$ is linearly independent for some $k\leq m-1$. For the sake of contradiction, further suppose that $\left\lbrace v_1, v_2, \ldots, v_{k+1} \right\rbrace$ is linearly dependent. Then there exists $(a_1, \ldots, a_k)\in \F^k$ such that
+        \begin{equation*}
+            v_{k+1} = \sum^k_{i=1} a_iv_i.
+        \end{equation*}
+        Then
+        \begin{equation*}
+            c_{k+1}v_{k+1} = Tv_{k+1} = T \sum^k_{i=1} a_iv_i = \sum^k_{i=1} a_iTv_i = \sum^k_{i=1} a_ic_iv_i,
+        \end{equation*}
+        so
+        \begin{equation*}
+            v_{k+1} = \sum^k_{i=1} a_i \frac{c_i}{c_{k+1}} v_i,
+        \end{equation*}
+        where each $\frac{c_i}{c_{k+1}}\neq 1$ since each eigenvalue is distinct, so we have two different representation of $v_{k+1}$ as a linear combination of $v_1, v_2, \ldots, v_k$, which contradicts the linear independence of $v_1, v_2, \ldots, v_k$. Thus $\left\lbrace v_1, v_2, \ldots, v_m \right\rbrace$ is linearly independent.
+    \end{proof}
+
+    \begin{cor}{Diagonalizable If $n=\dim(V)$ Distinct Eigenvalues}
+        Let $T:V\to V$ be a linear operator where $\dim(V) = n$. If $T$ has $n$ distinct eigenvalues, then $T$ is diagonalizable.
+    \end{cor}
+
+    \begin{proof}
+        Let $c_1, c_2, \ldots, c_n$ be distinct eigenvalues of $T$ and $v_1, v_2, \ldots, v_n$ be the corresponding eigenvectors. Then $\left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$ is linearly independent by Proposition 5.7, so is a basis for $V$, which exactly means $T$ is diagonalizable by Corollary 5.5.1.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $V$ be a finite-dimensional vector space and let $T:V\to V$ be diagonalizable. Then the characteristic polynomial of $T$ can be written as a product of linear polynomials in $\F$.
+    \end{prop}
+
+    \begin{proof}
+        Observe that there exists and ordered basis $\beta$ for $V$ such that $[T]_\beta$ is diagonal with $\left( \left[ T \right] _\beta \right) _{ii} = c_i$ for some $c_1,c_2,\ldots,c_n\in\F$. That is,
+        \begin{equation*}
+            \prod^{n}_{i=1} \left( x-c_i \right) 
+        \end{equation*}
+        is the characteristic polynomial of $T$.
+    \end{proof}
+
+    \begin{definition}{Algebraic Multiplicity, Geometric Multiplicity}{of an Eigenvalue}
+        Let $c$ be an eigenvalue of a linear operator $T:V\to V$ on an $n$-dimensional vector space $V$ and let $p(t)$ be the characteristic polynomial of $T$. The \emph{algebraic multiplicity} of $c$ is the largest $k\in \N$ such that $(t-c)^k|p(t)$. Moreover, the \emph{geometric multiplicity} is $\dim \left( E_c \right)$, the dimension of the eigenspace corresponding to $c$.
+    \end{definition}
+
+    \clearpage
+    \begin{prop}{}
+        Let $T:V\to V$ be a linear operator where $\dim(V) = n$ and let $c$ be an eigenvalue of $T$ having algebraic multiplicity $m$. Let $E_c\subseteq V$ be the eigenspace corresponding to $c$. Then
+        \begin{equation*}
+            1\leq \dim \left( E_c \right)\leq m.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        For convenience, let $k = \dim \left( E_c \right)$ and let $\left\lbrace v_1, v_2, \ldots, v_k \right\rbrace$ be a basis for $E_c$. By the basis extansion theorem, add $v_{k+1}, v_{k+2}, \ldots, v_n$ to form $\beta = \left\lbrace v_1, v_2, \ldots, v_n \right\rbrace$, an ordered basis for $V$. Then,
+        \begin{equation*}
+            [T]_\beta =
+            \begin{bmatrix}
+                cI & B \\ 0 & C
+            \end{bmatrix}
+        \end{equation*}
+        for some $B\in M_{k\times (n-k)}(\F)$ and $C\in M_{(n-k)(n-k)}(\F)$, since $Tv_i = c v_i$ for each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$. Therefore
+        \begin{equation*}
+            f = \det \left( xI-\left[ T \right] _\beta \right) = \det \begin{bmatrix} (x-c)I & B \\ 0 & xI-C \end{bmatrix} = \det \left( (x-c)I \right)\det \left( xI-C \right) = (x-c)^k \det \left( xI-C \right)
+        \end{equation*}
+        is the characteristic polynomial of $T$. Thus $(x-c)^k|f$, which exactly means $k\leq m$, as desired.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $T$ be a linear operator and let $c_1, c_2, \ldots, c_n$ be distinct eigenvalues of $T$. For each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$, let $v_i$ be an eigenvector corresponding to $c_i$. If
+        \begin{equation*}
+            \sum^k_{i=1} v_i = 0
+        \end{equation*}
+        then $v_i=0$ for all $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$.
+    \end{prop}
+
+    \begin{proof}
+        It is clear that $v_1, v_2, \ldots, v_k$ are linearly independent. Thus, if
+        \begin{equation*}
+            \sum^k_{i=1}v_i = 0,
+        \end{equation*}
+        then it must be the case that $v_i = 0\in E_{c_i}$ for each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$, which is the desired result.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $T:V\to V$ be a linear opeartor and let $c_1, c_2, \ldots, c_k$ be distinct eigenvalues of $T$. For each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$, let $S_i$ be a finite linearly independent subset of the eigenspace $E_{c_i}$. Then
+        \begin{equation*}
+            S = \bigcup^{k}_{i=1} S_i
+        \end{equation*}
+        is linearly independent.
+    \end{prop}
+
+    \begin{proof}
+        Let $n_i = |S_i|$ and write $S_i = \left\lbrace S_{i1}, S_{i2}, \ldots, S_{in_i} \right\rbrace$ for convenience. Then
+        \begin{equation*}
+            S = \left\lbrace S_{ij}: 1\leq i\leq k, 1\leq j\leq n_i \right\rbrace.
+        \end{equation*}
+        For the sake of contradiction, suppose that $S$ is linearly dependent. That is, there exist nonzero $a_{ij}\in\F$ such that
+        \begin{equation*}
+            \sum^k_{i=1} \sum^{n_i}_{j=1} a_{ij}S_{ij} = 0.
+        \end{equation*}
+        Define $v_i = \sum^{n_i}_{j=1} a_{ij}S_{ij}$ then
+        \begin{equation*}
+            T \left( v_i \right) = T \left( \sum^{n_i}_{j=1} a_{ij}S_{ij} \right) = \sum^{n_i}_{j=1} a_{ij} T \left( S_{ij} \right) = \sum^{n_i}_{j=1} a_{ij}c_iS_{ij} = c_i \sum^{n_i}_{j=1} a_{ij}S_{ij} = c_iv_i,
+        \end{equation*}
+        so each $v_i$ is an eigenvector corresponding to $c_i$, and $\left\lbrace v_1, v_2, \ldots, v_k \right\rbrace$ is linearly independent. But this means
+        \begin{equation*}
+            \sum^k_{i=1} v_i = \sum^k_{i=1} \sum^{n_1}_{j=1} a_{ij}S_{ij} \neq 0,
+        \end{equation*}
+        which is a contradiction. Thus $S$ is linearly independent, as desired.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $T:V\to V$ be a linear operator such that the characteristic polynomial $f$ of $T$ is a product of linear polynomials over $\F$ and $\dim(V) = n$. Let $c_1, c_2, \ldots, c_k$ be all distinct eigenvalues of $T$.
+
+        \begin{enumerate}
+            \item $T$ is diagonalizable if and only if the algebraic multiplicity of $c_i$ is equal to the geometric multiplicity of $c_i$ for all $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$.
+            \item If $T$ is diagonalizable and each $\beta_i$ is an ordered basis for the eigenspace corresponding to $c_i$, then $\beta = \beta_1\cup\beta_2\cup\cdots\cup\beta_k$ is an eigenbasis for $V$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        Write
+        \begin{equation*}
+            f = \prod^{k}_{i=1} \left( x-c_i \right) ^{m_i}
+        \end{equation*}
+        where $\sum^k_{i=1} m_i = \deg(f) = n$ by the assumption. For the forward direction of (a), suppose that $T$ is diagonalizable. Let $\beta$ be an ordered basis for $V$ and let each $E_i\subseteq V$ be the eigenspace corresponding to $c_i$. Define $\beta_i = \beta \cap E_i$ then $\left| \beta_i \right|\leq \dim \left( E_i \right)$, since $\beta_i$ is linearly independent. Moreover, $\dim \left( E_i \right)\leq m_i$ by the previous proposition. So we have
+        \begin{equation*}
+            \sum^k_{i=1} \left| \beta_i \right|\leq \sum^k_{i=1}\dim \left( E_i \right)\leq \sum^k_{i=1} m_i = n,
+        \end{equation*}
+        but clearly $\sum^k_{i=1} \left| \beta_i \right| = n$ as well, since $\beta_i\cap\beta_j = \emptyset$ whenever $i\neq j$. Therefore
+        \begin{equation*}
+            \sum^k_{i=1} \left[ m_i-\dim \left( E_i \right) \right] = 0,
+        \end{equation*}
+        but since $m_i\geq \dim \left( E_i \right)$ for each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$, it must be the case that $m_i = \dim \left( E_i \right)$. For the reverse direction of (a), suppose $m_i = \dim \left( E_i \right)$ for each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$. We simultaneously show that $T$ is diagonalizable and prove (b). For each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$, let $\beta_i$ be an ordered basis for
+        $E_i$, and let $\beta = \beta_1\cup\beta_2\cup\cdots\cup\beta_k$. Then $\beta$ is linearly independent by Proposition 5.11. Furthermore, since $\dim \left\lbrace E_i \right\rbrace = \left| \beta_i \right| = m_i$ for each $i\in \left\lbrace 1, 2, \ldots, k \right\rbrace$,
+        \begin{equation*}
+            \left| \beta \right| = \sum^k_{i=1} \left| \beta_i \right| = \sum^k_{i=1} m_i = n.
+        \end{equation*}
+        Therefore $\beta$ is an ordered basis for $V$ containing eigenvectors of $T$, which means $T$ is diagonalizable.
+    \end{proof}
+
+    \begin{remark}
+        Proposition 5.10 provides the following way of checking whether a linear operator $T:V\to V$ is diagonalizable or not.
+    \end{remark}
+
+    \begin{prop}{Diagonalizability Test}
+        Let $T:V\to V$ is diagonalizable if and only if the following conditions hold.
+        \begin{enumerate}
+            \item The characteristic polynomial of $T$ is a product of linear factors.
+            \item For each eigenvalue $c$ of $T$, the algebraic multiplicity of $c$ equals $\dim(V)-\rank(cI-T)$.
+        \end{enumerate}
+    \end{prop}
+
+    \clearpage
+    \begin{prop}{Eigendecomposition}
+        Let $A\in M_{n\times n}(\F)$ be diagonalizable, $c_1, c_2, \ldots, c_k$ be all distinct eigenvalues, and $\beta_1, \beta_2, \ldots, \beta_k$ be bases for the corresponding eigenspaces $E_1, E_2, \ldots, E_n$. Let
+        \begin{equation*}
+            \beta = \beta_1\cup\beta_2\cup\cdots\cup\beta_k,
+        \end{equation*}
+        let $P\in M_{n\times n}(\F)$ be such that $\col_j(P)\in \beta$ for each $j\in \left\lbrace 1, 2, \ldots, n \right\rbrace$ and $\col_j(P)\neq \col_k(P)$ whenever $j\neq k$, and let $D\in M_{n\times n}(\F)$ be a diagonal matrix whoe diagonal entries are eigenvalues corresponding to the columns of $P$. Then $A = PDP^{-1}$.
+    \end{prop}
+
+\end{document}

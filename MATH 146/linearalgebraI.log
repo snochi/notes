@@ -1,0 +1,2431 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.9.18)  27 JUN 2020 01:03
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**linearalgebraI.tex
+(./linearalgebraI.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/home/nanachi/texmf/tex/latex/commonstuff/solpack.sty
+Package: solpack 2020/04/29 Sol's Package for Math and Physics
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count100
+\c@@ppsavesec=\count101
+\c@@ppsaveapp=\count102
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks19
+\labelindent=\skip46
+\enit@outerparindent=\dimen112
+\enit@toks=\toks20
+\enit@inbox=\box28
+\enitdp@description=\count103
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footers
+\f@nch@headwidth=\skip47
+\f@nch@O@elh=\skip48
+\f@nch@O@erh=\skip49
+\f@nch@O@olh=\skip50
+\f@nch@O@orh=\skip51
+\f@nch@O@elf=\skip52
+\f@nch@O@erf=\skip53
+\f@nch@O@olf=\skip54
+\f@nch@O@orf=\skip55
+) (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2018/02/21 L3 programming layer (loader) 
+ (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2018/02/21 L3 programming layer (code)
+\c_max_int=\count104
+\l_tmpa_int=\count105
+\l_tmpb_int=\count106
+\g_tmpa_int=\count107
+\g_tmpb_int=\count108
+\g__intarray_font_int=\count109
+\g__prg_map_int=\count110
+\c_log_iow=\count111
+\l_iow_line_count_int=\count112
+\l__iow_line_target_int=\count113
+\l__iow_one_indent_int=\count114
+\l__iow_indent_int=\count115
+\c_zero_dim=\dimen113
+\c_max_dim=\dimen114
+\l_tmpa_dim=\dimen115
+\l_tmpb_dim=\dimen116
+\g_tmpa_dim=\dimen117
+\g_tmpb_dim=\dimen118
+\c_zero_skip=\skip56
+\c_max_skip=\skip57
+\l_tmpa_skip=\skip58
+\l_tmpb_skip=\skip59
+\g_tmpa_skip=\skip60
+\g_tmpb_skip=\skip61
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count116
+\c__fp_leading_shift_int=\count117
+\c__fp_middle_shift_int=\count118
+\c__fp_trailing_shift_int=\count119
+\c__fp_big_leading_shift_int=\count120
+\c__fp_big_middle_shift_int=\count121
+\c__fp_big_trailing_shift_int=\count122
+\c__fp_Bigg_leading_shift_int=\count123
+\c__fp_Bigg_middle_shift_int=\count124
+\c__fp_Bigg_trailing_shift_int=\count125
+\l__sort_length_int=\count126
+\l__sort_min_int=\count127
+\l__sort_top_int=\count128
+\l__sort_max_int=\count129
+\l__sort_true_max_int=\count130
+\l__sort_block_int=\count131
+\l__sort_begin_int=\count132
+\l__sort_end_int=\count133
+\l__sort_A_int=\count134
+\l__sort_B_int=\count135
+\l__sort_C_int=\count136
+\l__tl_build_start_index_int=\count137
+\l__tl_build_index_int=\count138
+\l__tl_analysis_normal_int=\count139
+\l__tl_analysis_index_int=\count140
+\l__tl_analysis_nesting_int=\count141
+\l__tl_analysis_type_int=\count142
+\l__regex_internal_a_int=\count143
+\l__regex_internal_b_int=\count144
+\l__regex_internal_c_int=\count145
+\l__regex_balance_int=\count146
+\l__regex_group_level_int=\count147
+\l__regex_mode_int=\count148
+\c__regex_cs_in_class_mode_int=\count149
+\c__regex_cs_mode_int=\count150
+\l__regex_catcodes_int=\count151
+\l__regex_default_catcodes_int=\count152
+\c__regex_catcode_L_int=\count153
+\c__regex_catcode_O_int=\count154
+\c__regex_catcode_A_int=\count155
+\c__regex_all_catcodes_int=\count156
+\l__regex_show_lines_int=\count157
+\l__regex_min_state_int=\count158
+\l__regex_max_state_int=\count159
+\l__regex_left_state_int=\count160
+\l__regex_right_state_int=\count161
+\l__regex_capturing_group_int=\count162
+\l__regex_min_pos_int=\count163
+\l__regex_max_pos_int=\count164
+\l__regex_curr_pos_int=\count165
+\l__regex_start_pos_int=\count166
+\l__regex_success_pos_int=\count167
+\l__regex_curr_char_int=\count168
+\l__regex_curr_catcode_int=\count169
+\l__regex_last_char_int=\count170
+\l__regex_case_changed_char_int=\count171
+\l__regex_curr_state_int=\count172
+\l__regex_step_int=\count173
+\l__regex_min_active_int=\count174
+\l__regex_max_active_int=\count175
+\l__regex_replacement_csnames_int=\count176
+\l__regex_match_count_int=\count177
+\l__regex_min_submatch_int=\count178
+\l__regex_submatch_int=\count179
+\l__regex_zeroth_submatch_int=\count180
+\g__regex_trace_regex_int=\count181
+\c_empty_box=\box29
+\l_tmpa_box=\box30
+\l_tmpb_box=\box31
+\g_tmpa_box=\box32
+\g_tmpb_box=\box33
+\l__box_top_dim=\dimen119
+\l__box_bottom_dim=\dimen120
+\l__box_left_dim=\dimen121
+\l__box_right_dim=\dimen122
+\l__box_top_new_dim=\dimen123
+\l__box_bottom_new_dim=\dimen124
+\l__box_left_new_dim=\dimen125
+\l__box_right_new_dim=\dimen126
+\l__box_internal_box=\box34
+\l__coffin_internal_box=\box35
+\l__coffin_internal_dim=\dimen127
+\l__coffin_offset_x_dim=\dimen128
+\l__coffin_offset_y_dim=\dimen129
+\l__coffin_x_dim=\dimen130
+\l__coffin_y_dim=\dimen131
+\l__coffin_x_prime_dim=\dimen132
+\l__coffin_y_prime_dim=\dimen133
+\c_empty_coffin=\box36
+\l__coffin_aligned_coffin=\box37
+\l__coffin_aligned_internal_coffin=\box38
+\l_tmpa_coffin=\box39
+\l_tmpb_coffin=\box40
+\l__coffin_display_coffin=\box41
+\l__coffin_display_coord_coffin=\box42
+\l__coffin_display_pole_coffin=\box43
+\l__coffin_display_offset_dim=\dimen134
+\l__coffin_display_x_dim=\dimen135
+\l__coffin_display_y_dim=\dimen136
+\l__coffin_bounding_shift_dim=\dimen137
+\l__coffin_left_corner_dim=\dimen138
+\l__coffin_right_corner_dim=\dimen139
+\l__coffin_bottom_corner_dim=\dimen140
+\l__coffin_top_corner_dim=\dimen141
+\l__coffin_scaled_total_height_dim=\dimen142
+\l__coffin_scaled_width_dim=\dimen143
+) (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2017/03/18 v L3 Experimental driver: xdvipdfmx
+\g__driver_image_int=\count182
+\l__driver_tmp_box=\box44
+))
+Package: xparse 2018/02/21 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count183
+\g__xparse_grabber_int=\count184
+\l__xparse_m_args_int=\count185
+\l__xparse_mandatory_args_int=\count186
+\l__xparse_v_nesting_int=\count187
+)
+Package: fontspec 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count188
+\l__fontspec_language_int=\count189
+\l__fontspec_strnum_int=\count190
+\l__fontspec_tmp_int=\count191
+\l__fontspec_em_int=\count192
+\l__fontspec_emdef_int=\count193
+\l__fontspec_strong_int=\count194
+\l__fontspec_strongdef_int=\count195
+\l__fontspec_tmpa_dim=\dimen144
+\l__fontspec_tmpb_dim=\dimen145
+\l__fontspec_tmpc_dim=\dimen146
+\g__file_internal_ior=\read1
+ (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+ (/usr/share/texlive/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'O{}mO{}' on line 542.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'O{}mO{}' on line 546.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'O{}mO{}' on line 550.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'O{}mO{}' on line 554.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'O{}mO{}' on line 558.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'O{}mO{}' on line 562.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'O{}mO{}' on line 566.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'O{}mO{}' on line 570.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setromanfont with sig. 'O{}mO{}' on line 574.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mO{}mO{}' on line 578.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mO{}mO{}' on line 582.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 586.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 590.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeature with sig. 'm' on line 594.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 598.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 602.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 606.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newICUfeature with sig. 'mmm' on line 610.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 614.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 618.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 622.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 626.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 630.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 634.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCommand with sig. 'mO{}m' on line 3632.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingAccent with sig. 'mm' on line 3638.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingSymbol with sig. 'mm' on line 3644.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingComposite with sig. 'mmm' on line 3650.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3656.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3681.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareSymbol with sig. 'm' on line 3687.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareAccent with sig. 'm' on line 3693.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareCommand with sig. 'm' on line 3699.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareComposite with sig. 'mm' on line 3706.
+.................................................
+ (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 3891.
+LaTeX Info: Redefining \slshape on input line 3896.
+LaTeX Info: Redefining \scshape on input line 3901.
+LaTeX Info: Redefining \upshape on input line 3906.
+LaTeX Info: Redefining \em on input line 3936.
+LaTeX Info: Redefining \emph on input line 3961.
+LaTeX Info: Redefining \- on input line 4015.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 4110.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 4114.
+.................................................
+)) (/usr/share/texlive/texmf-dist/tex/generic/mathdots/mathdots.sty
+Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in math.
+\MDo@unit=\dimen147
+\MDo@dotsbox=\box45
+\MDoprekern=\muskip17
+\MDopostkern=\muskip18
+\MDodotkern=\muskip19
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+) (/home/nanachi/texmf/tex/latex/commonstuff/solex.sty (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texlive/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count196
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2016/05/21 v2.26 Module abspage for zref (HO)
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2016/05/21 v2.26 Module base for zref (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+)
+\c@abspage=\count197
+Package zref Info: New property: abspage on input line 62.
+) (/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip62
+\c@mdf@globalstyle@cnt=\count198
+\mdf@skipabove@length=\skip63
+\mdf@skipbelow@length=\skip64
+\mdf@leftmargin@length=\skip65
+\mdf@rightmargin@length=\skip66
+\mdf@innerleftmargin@length=\skip67
+\mdf@innerrightmargin@length=\skip68
+\mdf@innertopmargin@length=\skip69
+\mdf@innerbottommargin@length=\skip70
+\mdf@splittopskip@length=\skip71
+\mdf@splitbottomskip@length=\skip72
+\mdf@outermargin@length=\skip73
+\mdf@innermargin@length=\skip74
+\mdf@linewidth@length=\skip75
+\mdf@innerlinewidth@length=\skip76
+\mdf@middlelinewidth@length=\skip77
+\mdf@outerlinewidth@length=\skip78
+\mdf@roundcorner@length=\skip79
+\mdf@footenotedistance@length=\skip80
+\mdf@userdefinedwidth@length=\skip81
+\mdf@needspace@length=\skip82
+\mdf@frametitleaboveskip@length=\skip83
+\mdf@frametitlebelowskip@length=\skip84
+\mdf@frametitlerulewidth@length=\skip85
+\mdf@frametitleleftmargin@length=\skip86
+\mdf@frametitlerightmargin@length=\skip87
+\mdf@shadowsize@length=\skip88
+\mdf@extratopheight@length=\skip89
+\mdf@subtitleabovelinewidth@length=\skip90
+\mdf@subtitlebelowlinewidth@length=\skip91
+\mdf@subtitleaboveskip@length=\skip92
+\mdf@subtitlebelowskip@length=\skip93
+\mdf@subtitleinneraboveskip@length=\skip94
+\mdf@subtitleinnerbelowskip@length=\skip95
+\mdf@subsubtitleabovelinewidth@length=\skip96
+\mdf@subsubtitlebelowlinewidth@length=\skip97
+\mdf@subsubtitleaboveskip@length=\skip98
+\mdf@subsubtitlebelowskip@length=\skip99
+\mdf@subsubtitleinneraboveskip@length=\skip100
+\mdf@subsubtitleinnerbelowskip@length=\skip101
+ (/usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box46
+\mdf@footnotebox=\box47
+\mdf@splitbox@one=\box48
+\mdf@splitbox@two=\box49
+\mdf@splitbox@save=\box50
+\mdfsplitboxwidth=\skip102
+\mdfsplitboxtotalwidth=\skip103
+\mdfsplitboxheight=\skip104
+\mdfsplitboxdepth=\skip105
+\mdfsplitboxtotalheight=\skip106
+\mdfframetitleboxwidth=\skip107
+\mdfframetitleboxtotalwidth=\skip108
+\mdfframetitleboxheight=\skip109
+\mdfframetitleboxdepth=\skip110
+\mdfframetitleboxtotalheight=\skip111
+\mdffootnoteboxwidth=\skip112
+\mdffootnoteboxtotalwidth=\skip113
+\mdffootnoteboxheight=\skip114
+\mdffootnoteboxdepth=\skip115
+\mdffootnoteboxtotalheight=\skip116
+\mdftotallinewidth=\skip117
+\mdfboundingboxwidth=\skip118
+\mdfboundingboxtotalwidth=\skip119
+\mdfboundingboxheight=\skip120
+\mdfboundingboxdepth=\skip121
+\mdfboundingboxtotalheight=\skip122
+\mdf@freevspace@length=\skip123
+\mdf@horizontalwidthofbox@length=\skip124
+\mdf@verticalmarginwhole@length=\skip125
+\mdf@horizontalspaceofbox=\skip126
+\mdfsubtitleheight=\skip127
+\mdfsubsubtitleheight=\skip128
+\c@mdfcountframes=\count199
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newmdtheoremenv with sig. 'O{} m o m o ' on line 601.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
+.................................................
+\mdf@envdepth=\count266
+\c@mdf@env@i=\count267
+\c@mdf@env@ii=\count268
+\c@mdf@zref@counter=\count269
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+\c@excounter=\count270
+) (/home/nanachi/texmf/tex/latex/commonstuff/solity.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks22
+\AP@partial=\box51
+\AP@footins=\box52
+) (/usr/share/texlive/texmf-dist/tex/latex/emptypage/emptypage.sty
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty pages
+) (/usr/share/texlive/texmf-dist/tex/latex/etoc/etoc.sty
+Package: etoc 2018/02/23 v1.08n Completely customisable TOCs (JFB)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count271
+\mult@box=\box53
+\multicol@leftmargin=\dimen148
+\c@unbalance=\count272
+\c@collectmore=\count273
+\doublecol@number=\count274
+\multicoltolerance=\count275
+\multicolpretolerance=\count276
+\full@width=\dimen149
+\page@free=\dimen150
+\premulticols=\dimen151
+\postmulticols=\dimen152
+\multicolsep=\skip129
+\multicolbaselineskip=\skip130
+\partial@page=\box54
+\last@line=\box55
+\maxbalancingoverflow=\dimen153
+\mult@rightbox=\box56
+\mult@grightbox=\box57
+\mult@gfirstbox=\box58
+\mult@firstbox=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\c@columnbadness=\count277
+\c@finalcolumnbadness=\count278
+\last@try=\dimen154
+\multicolovershoot=\dimen155
+\multicolundershoot=\dimen156
+\mult@nat@firstbox=\box77
+\colbreak@box=\box78
+\mc@col@check@num=\count279
+)
+\Etoc@toctoks=\toks23
+\c@etoc@tocid=\count280
+\c@etoc@tocdepth=\count281
+\etoc@framed@titlebox=\box79
+\etoc@framed@contentsbox=\box80
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+)
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\@linkdim=\dimen159
+\Hy@linkcounter=\count282
+\Hy@pagecounter=\count283
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count284
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count285
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip20
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen160
+\Fld@menulength=\count286
+\Field@Width=\dimen161
+\Fld@charsize=\dimen162
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count287
+\c@Item=\count288
+\c@Hfootnote=\count289
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2018/02/06 v6.86b Hyperref driver for XeTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO)
+)
+\pdfm@box=\box81
+\c@Hy@AnnotLevel=\count290
+\HyField@AnnotCount=\count291
+\Fld@listcount=\count292
+\c@bookmark@seq@number=\count293
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
+(rerunfilecheck)             (e.g. pdfTeX or LuaTeX with package `pdftexcmds').
+(rerunfilecheck)             Therefore file contents cannot be checked efficiently
+(rerunfilecheck)             and the loading of the package is aborted.
+)
+\Hy@SectionHShift=\skip131
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box82
+\beforetitleunit=\skip132
+\aftertitleunit=\skip133
+\ttl@plus=\dimen163
+\ttl@minus=\dimen164
+\ttl@toksa=\toks24
+\titlewidth=\dimen165
+\titlewidthlast=\dimen166
+\titlewidthfirst=\dimen167
+) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip134
+\cftbeforetoctitleskip=\skip135
+\cftaftertoctitleskip=\skip136
+\cftbeforepartskip=\skip137
+\cftpartnumwidth=\skip138
+\cftpartindent=\skip139
+\cftbeforechapskip=\skip140
+\cftchapindent=\skip141
+\cftchapnumwidth=\skip142
+\cftbeforesecskip=\skip143
+\cftsecindent=\skip144
+\cftsecnumwidth=\skip145
+\cftbeforesubsecskip=\skip146
+\cftsubsecindent=\skip147
+\cftsubsecnumwidth=\skip148
+\cftbeforesubsubsecskip=\skip149
+\cftsubsubsecindent=\skip150
+\cftsubsubsecnumwidth=\skip151
+\cftbeforeparaskip=\skip152
+\cftparaindent=\skip153
+\cftparanumwidth=\skip154
+\cftbeforesubparaskip=\skip155
+\cftsubparaindent=\skip156
+\cftsubparanumwidth=\skip157
+\cftbeforeloftitleskip=\skip158
+\cftafterloftitleskip=\skip159
+\cftbeforefigskip=\skip160
+\cftfigindent=\skip161
+\cftfignumwidth=\skip162
+\c@lofdepth=\count294
+\c@lotdepth=\count295
+\cftbeforelottitleskip=\skip163
+\cftafterlottitleskip=\skip164
+\cftbeforetabskip=\skip165
+\cfttabindent=\skip166
+\cfttabnumwidth=\skip167
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+Package: datetime 2015/03/20 v2.60 Date Time Package
+ (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fmtcount 2017/12/24 v3.05
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
+)
+\XKV@depth=\count296
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fcprefix 2012/09/28
+ (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fcnumparser 2017/06/15
+\fc@digit@counter=\count297
+))
+\c@padzeroesN=\count298
+\fc@tmpcatcode=\count299
+\@DT@modctr=\count300
+\@ordinalctr=\count301
+\@orgargctr=\count302
+\@strctr=\count303
+\@tmpstrctr=\count304
+\@DT@loopN=\count305
+\@DT@X=\count306
+) (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty
+Package: datetime-defaults 2013/09/10
+)
+\@day=\count307
+\@month=\count308
+\@year=\count309
+\c@HOUR=\count310
+\c@HOURXII=\count311
+\c@MINUTE=\count312
+\c@TOHOUR=\count313
+\c@TOMINUTE=\count314
+\c@SECOND=\count315
+\currenthour=\count316
+\currentminute=\count317
+\currentsecond=\count318
+Package datetime Info: No datetime.cfg file found, using default settings on input line 308.
+\@dtctr=\count319
+\dayofyear=\count320
+\dayofweek=\count321
+LaTeX Info: Redefining \today on input line 736.
+\dt@a=\toks27
+\dt@b=\toks28
+)
+\c@leccounter=\count322
+) (/home/nanachi/texmf/tex/latex/commonstuff/solmathsym.sty (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))) (/home/nanachi/texmf/tex/latex/commonstuff/solphyssym.sty) (/home/nanachi/texmf/tex/latex/commonstuff/solthm.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count323
+\calc@Bcount=\count324
+\calc@Adimen=\dimen168
+\calc@Bdimen=\dimen169
+\calc@Askip=\skip168
+\calc@Bskip=\skip169
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count325
+\calc@Cskip=\skip170
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count326
+\Gm@cntv=\count327
+\c@Gm@tempcnt=\count328
+\Gm@bindingoffset=\dimen170
+\Gm@wd@mp=\dimen171
+\Gm@odd@mp=\dimen172
+\Gm@even@mp=\dimen173
+\Gm@layoutwidth=\dimen174
+\Gm@layoutheight=\dimen175
+\Gm@layouthoffset=\dimen176
+\Gm@layoutvoffset=\dimen177
+\Gm@dimlist=\toks29
+) (/usr/share/texlive/texmf-dist/tex/latex/marginnote/marginnote.sty
+Package: marginnote 2017/04/22 v1.2b non floating margin notes for LaTeX
+\c@mn@abspage=\count329
+)
+\c@stcounter=\count330
+\c@corcounter=\count331
+\c@axcounter=\count332
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\g__fontspec_family_SerifaStd_int=\count333
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SerifaStd(0)' created for font 'Serifa Std' with options [].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"Serifa
+. Std/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.: <->"Serifa
+. Std/B/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.: <->"Serifa
+. Std/I/OT:script=latn;language=DFLT;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.: <->"Serifa
+. Std/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+\symXcmex=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 95.
+LaTeX Info: Redefining \emph on input line 113.
+) (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2012/05/23 Federico Garcia
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks30
+\verbatim@line=\toks31
+\verbatim@in@stream=\read2
+)) (./linearalgebraI.aux)
+\openout1 = `linearalgebraI.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 19.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+\AtBeginShipoutBox=\box83
+\Etoc@tf=\read3
+
+
+Package etoc Warning: Package `tocloft' was loaded after `etoc'!
+**** to prevent it from overwriting \tableofcontents, it will be tricked
+**** into believing to have been loaded with option `titles'. For better
+**** compatibility, please load `tocloft' before `etoc' on input line 19.
+
+Package hyperref Info: Link coloring OFF on input line 19.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count334
+)
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
+ (./linearalgebraI.out) (./linearalgebraI.out)
+\@outlinefile=\write3
+\openout3 = `linearalgebraI.out'.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+File: fc-english.def 2016/01/12
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(128.0374pt, 457.80486pt, 28.45274pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=457.80486pt
+* \textheight=681.15898pt
+* \oddsidemargin=55.76741pt
+* \evensidemargin=55.76741pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package marginnote Info: \pdfoutput not 0 or unimportant and
+(marginnote)             \pdflastxpos or \lastxpos available.
+(marginnote)             Extended position detection mode activated.
+(./titleandtoc.tex
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+File: /home/nanachi/LaTeX/cube.png Graphic file (type bmp)
+</home/nanachi/LaTeX/cube.png>
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+) [1
+
+
+
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 15.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 15.
+ [2
+
+]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\tf@toc=\write4
+\openout4 = `linearalgebraI.toc'.
+
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 18.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
+ [1
+
+
+]) (./vectorspaces.tex
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ [2
+
+
+
+]
+Chapter 1.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 5.
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [3]
+LaTeX Font Info:    Try loading font information for T1+phv on input line 9.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 9.
+Package marginnote Info: Margin note 6.1 is on absolute page 6
+(marginnote)              on input line 58.
+Package marginnote Info: right page because not two side mode on input line 58.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 58.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 58.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4
+
+
+]
+Package marginnote Info: Margin note 7.1 is on absolute page 7
+(marginnote)              on input line 80.
+Package marginnote Info: right page because not two side mode on input line 80.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 80.
+Package marginnote Info: Margin note 7.2 is on absolute page 7
+(marginnote)              on input line 97.
+Package marginnote Info: right page because not two side mode on input line 97.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 97.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5]
+Package marginnote Info: Margin note 8.1 is on absolute page 8
+(marginnote)              on input line 123.
+Package marginnote Info: right page because not two side mode on input line 123.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 123.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6
+
+]
+Package marginnote Info: Margin note 9.1 is on absolute page 9
+(marginnote)              on input line 174.
+Package marginnote Info: right page because not two side mode on input line 174.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 174.
+Package marginnote Info: Margin note 9.2 is on absolute page 9
+(marginnote)              on input line 190.
+Package marginnote Info: right page because not two side mode on input line 190.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 190.
+Package marginnote Info: Margin note 9.3 is on absolute page 9
+(marginnote)              on input line 202.
+Package marginnote Info: right page because not two side mode on input line 202.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 202.
+
+Overfull \hbox (3.59344pt too wide) in paragraph at lines 214--216
+\T1/ptm/m/n/10.95 so $\OML/ztmcm/m/it/10.95 v \OMS/ztmcm/m/n/10.95 2 [] []$\T1/ptm/m/n/10.95 . For the re-verse di-rec-tion, sup-pose that $\OML/ztmcm/m/it/10.95 v \OMS/ztmcm/m/n/10.95 2 []\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 S\OT1/ztmcm/m/n/10.95 )$\T1/ptm/m/n/10.95 . Then there ex-ists $\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 a[]; [] ; a[]\OT1/ztmcm/m/n/10.95 ) \OMS/ztmcm/m/n/10.95 2
+ []
+
+Package mdframed Info: Not enough space on this page on input line 233.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7
+
+]
+Package mdframed Info: Not enough space on this page on input line 233.
+Package marginnote Info: Margin note 10.1 is on absolute page 10
+(marginnote)              on input line 239.
+Package marginnote Info: right page because not two side mode on input line 239.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 239.
+Package marginnote Info: Margin note 10.2 is on absolute page 10
+(marginnote)              on input line 263.
+Package marginnote Info: right page because not two side mode on input line 263.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 263.
+Package marginnote Info: Margin note 10.3 is on absolute page 10
+(marginnote)              on input line 271.
+Package marginnote Info: right page because not two side mode on input line 271.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 271.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Package marginnote Info: Margin note 11.1 is on absolute page 11
+(marginnote)              on input line 291.
+Package marginnote Info: right page because not two side mode on input line 291.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 291.
+Package marginnote Info: Margin note 11.2 is on absolute page 11
+(marginnote)              on input line 323.
+Package marginnote Info: right page because not two side mode on input line 323.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 323.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 333.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 333.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 333.
+
+Package marginnote Info: Margin note 12.1 is on absolute page 12
+(marginnote)              on input line 335.
+Package marginnote Info: right page because not two side mode on input line 335.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 335.
+Package marginnote Info: Margin note 12.2 is on absolute page 12
+(marginnote)              on input line 348.
+Package marginnote Info: right page because not two side mode on input line 348.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 348.
+
+Overfull \hbox (2.50516pt too wide) in paragraph at lines 349--350
+[]\T1/ptm/m/it/10.95 Let $\OML/ztmcm/m/it/10.95 W$ \T1/ptm/m/it/10.95 be a sub-space of a finite-dimensional vec-tor space $\OML/ztmcm/m/it/10.95 V$\T1/ptm/m/it/10.95 . Then $\OML/ztmcm/m/it/10.95 W$ \T1/ptm/m/it/10.95 is finite-dimensional and $[]\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 W\OT1/ztmcm/m/n/10.95 ) \OMS/ztmcm/m/n/10.95 ^^T
+ []
+
+Package marginnote Info: Margin note 12.3 is on absolute page 12
+(marginnote)              on input line 360.
+Package marginnote Info: right page because not two side mode on input line 360.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 360.
+) (./lineartransformationsandmatrices.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Chapter 2.
+[11
+
+
+]
+Package marginnote Info: Margin note 14.1 is on absolute page 14
+(marginnote)              on input line 33.
+Package marginnote Info: right page because not two side mode on input line 33.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 33.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 72.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12
+
+
+]
+Package marginnote Info: Margin note 15.1 is on absolute page 15
+(marginnote)              on input line 78.
+Package marginnote Info: right page because not two side mode on input line 78.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 78.
+Package marginnote Info: Margin note 15.2 is on absolute page 15
+(marginnote)              on input line 97.
+Package marginnote Info: right page because not two side mode on input line 97.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 97.
+Package marginnote Info: Margin note 15.3 is on absolute page 16
+(marginnote)              on input line 136.
+Package marginnote Info: right page because not two side mode on input line 136.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 136.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+Package marginnote Info: Margin note 16.1 is on absolute page 16
+(marginnote)              on input line 179.
+Package marginnote Info: right page because not two side mode on input line 179.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 179.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+Package marginnote Info: Margin note 17.1 is on absolute page 17
+(marginnote)              on input line 192.
+Package marginnote Info: right page because not two side mode on input line 192.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 192.
+Package marginnote Info: Margin note 17.2 is on absolute page 17
+(marginnote)              on input line 212.
+Package marginnote Info: right page because not two side mode on input line 212.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 212.
+
+Overfull \hbox (12.19722pt too wide) in paragraph at lines 213--214
+[]\T1/ptm/m/it/10.95 Let $\OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/it/10.95 and $\OML/ztmcm/m/it/10.95 W$ \T1/ptm/m/it/10.95 be vec-tor spaces over $[]$ and let $[]$ be a ba-sis for $\OML/ztmcm/m/it/10.95 V$\T1/ptm/m/it/10.95 . More-over, let $\OML/ztmcm/m/it/10.95 w[]; w[]; [] ; w[] \OMS/ztmcm/m/n/10.95 2
+ []
+
+Package marginnote Info: Margin note 17.3 is on absolute page 17
+(marginnote)              on input line 241.
+Package marginnote Info: right page because not two side mode on input line 241.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 241.
+Package mdframed Info: Not enough space on this page on input line 253.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15
+
+]
+Package mdframed Info: Not enough space on this page on input line 253.
+
+Overfull \hbox (3.13054pt too wide) in paragraph at lines 263--265
+\T1/ptm/m/n/10.95 Let $\OML/ztmcm/m/it/10.95 ^^L \OT1/ztmcm/m/n/10.95 = []$ \T1/ptm/m/n/10.95 be an or-dered ba-sis for a vec-tor space $\OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/n/10.95 over $[]$. A unique $\OML/ztmcm/m/it/10.95 n$\T1/ptm/m/n/10.95 -tuple $\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 a[]; a[]; [] ; a[]\OT1/ztmcm/m/n/10.95 )$
+ []
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 307.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+Package marginnote Info: Margin note 19.1 is on absolute page 19
+(marginnote)              on input line 336.
+Package marginnote Info: right page because not two side mode on input line 336.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 336.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+Package marginnote Info: Margin note 20.1 is on absolute page 20
+(marginnote)              on input line 362.
+Package marginnote Info: right page because not two side mode on input line 362.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 362.
+Package marginnote Info: Margin note 20.2 is on absolute page 20
+(marginnote)              on input line 373.
+Package marginnote Info: right page because not two side mode on input line 373.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 373.
+Package marginnote Info: Margin note 20.3 is on absolute page 20
+(marginnote)              on input line 405.
+Package marginnote Info: right page because not two side mode on input line 405.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 405.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18
+
+]
+Package marginnote Info: Margin note 21.1 is on absolute page 21
+(marginnote)              on input line 475.
+Package marginnote Info: right page because not two side mode on input line 475.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 475.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 483.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 483.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+Package marginnote Info: Margin note 22.1 is on absolute page 22
+(marginnote)              on input line 485.
+Package marginnote Info: right page because not two side mode on input line 485.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 485.
+Package marginnote Info: Margin note 22.2 is on absolute page 22
+(marginnote)              on input line 520.
+Package marginnote Info: right page because not two side mode on input line 520.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 520.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+Package marginnote Info: Margin note 23.1 is on absolute page 23
+(marginnote)              on input line 534.
+Package marginnote Info: right page because not two side mode on input line 534.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 534.
+Package marginnote Info: Margin note 23.2 is on absolute page 23
+(marginnote)              on input line 565.
+Package marginnote Info: right page because not two side mode on input line 565.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 565.
+Package marginnote Info: Margin note 23.3 is on absolute page 23
+(marginnote)              on input line 584.
+Package marginnote Info: right page because not two side mode on input line 584.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 584.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21
+
+]
+Package marginnote Info: Margin note 24.1 is on absolute page 24
+(marginnote)              on input line 596.
+Package marginnote Info: right page because not two side mode on input line 596.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 596.
+Package marginnote Info: Margin note 24.2 is on absolute page 24
+(marginnote)              on input line 616.
+Package marginnote Info: right page because not two side mode on input line 616.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 616.
+Package marginnote Info: Margin note 24.3 is on absolute page 24
+(marginnote)              on input line 631.
+Package marginnote Info: right page because not two side mode on input line 631.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 631.
+Package marginnote Info: Margin note 24.4 is on absolute page 25
+(marginnote)              on input line 650.
+Package marginnote Info: right page because not two side mode on input line 650.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 650.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]
+Package marginnote Info: Margin note 25.1 is on absolute page 25
+(marginnote)              on input line 658.
+Package marginnote Info: right page because not two side mode on input line 658.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 658.
+Package marginnote Info: Margin note 25.2 is on absolute page 25
+(marginnote)              on input line 670.
+Package marginnote Info: right page because not two side mode on input line 670.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 670.
+Package marginnote Info: Margin note 25.3 is on absolute page 25
+(marginnote)              on input line 693.
+Package marginnote Info: right page because not two side mode on input line 693.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 693.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
+Package marginnote Info: Margin note 26.1 is on absolute page 26
+(marginnote)              on input line 703.
+Package marginnote Info: right page because not two side mode on input line 703.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 703.
+
+Overfull \hbox (24.0984pt too wide) in paragraph at lines 722--724
+[]\T1/phv/b/n/10 Remark 2.31.[]  \T1/ptm/m/n/10.95 Let $\OML/ztmcm/m/it/10.95 V$ \T1/ptm/m/n/10.95 be a finite-dimensional vec-tor space and let $\OML/ztmcm/m/it/10.95 ^^L \OT1/ztmcm/m/n/10.95 = []$ \T1/ptm/m/n/10.95 and $\OML/ztmcm/m/it/10.95 ^^M \OT1/ztmcm/m/n/10.95 = []$
+ []
+
+Package marginnote Info: Margin note 26.2 is on absolute page 26
+(marginnote)              on input line 730.
+Package marginnote Info: right page because not two side mode on input line 730.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 730.
+Package marginnote Info: Margin note 26.3 is on absolute page 26
+(marginnote)              on input line 745.
+Package marginnote Info: right page because not two side mode on input line 745.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 745.
+) (./linearequations.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24
+
+]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Chapter 3.
+[25
+
+
+]
+Package marginnote Info: Margin note 28.1 is on absolute page 28
+(marginnote)              on input line 32.
+Package marginnote Info: right page because not two side mode on input line 32.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 32.
+Package marginnote Info: Margin note 28.2 is on absolute page 28
+(marginnote)              on input line 37.
+Package marginnote Info: right page because not two side mode on input line 37.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 37.
+Package marginnote Info: Margin note 28.3 is on absolute page 28
+(marginnote)              on input line 51.
+Package marginnote Info: right page because not two side mode on input line 51.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 51.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 58.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26
+
+
+]
+Package marginnote Info: Margin note 29.1 is on absolute page 29
+(marginnote)              on input line 68.
+Package marginnote Info: right page because not two side mode on input line 68.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 68.
+Package marginnote Info: Margin note 29.2 is on absolute page 29
+(marginnote)              on input line 75.
+Package marginnote Info: right page because not two side mode on input line 75.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 75.
+Package marginnote Info: Margin note 29.3 is on absolute page 29
+(marginnote)              on input line 83.
+Package marginnote Info: right page because not two side mode on input line 83.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 83.
+Package marginnote Info: Margin note 29.4 is on absolute page 29
+(marginnote)              on input line 100.
+Package marginnote Info: right page because not two side mode on input line 100.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 100.
+Package marginnote Info: Margin note 29.5 is on absolute page 30
+(marginnote)              on input line 120.
+Package marginnote Info: right page because not two side mode on input line 120.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 120.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
+Package marginnote Info: Margin note 30.1 is on absolute page 30
+(marginnote)              on input line 129.
+Package marginnote Info: right page because not two side mode on input line 129.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 129.
+Package marginnote Info: Margin note 30.2 is on absolute page 30
+(marginnote)              on input line 146.
+Package marginnote Info: right page because not two side mode on input line 146.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 146.
+Package marginnote Info: Margin note 30.3 is on absolute page 30
+(marginnote)              on input line 162.
+Package marginnote Info: right page because not two side mode on input line 162.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 162.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+Package marginnote Info: Margin note 31.1 is on absolute page 31
+(marginnote)              on input line 203.
+Package marginnote Info: right page because not two side mode on input line 203.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 203.
+
+Overfull \hbox (3.86234pt too wide) detected at line 222
+[]\OT1/ztmcm/m/n/10.95 ([][]) = []([](\OML/ztmcm/m/it/10.95 L[]\OT1/ztmcm/m/n/10.95 )) + []([](\OML/ztmcm/m/it/10.95 L[]\OT1/ztmcm/m/n/10.95 )) = [](\OML/ztmcm/m/it/10.95 A\OT1/ztmcm/m/n/10.95 ) + []([](\OML/ztmcm/m/it/10.95 A\OT1/ztmcm/m/n/10.95 )) = [] [] + []([](\OML/ztmcm/m/it/10.95 A\OT1/ztmcm/m/n/10.95 ))\OML/ztmcm/m/it/10.95 ;
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]
+Package marginnote Info: Margin note 32.1 is on absolute page 32
+(marginnote)              on input line 235.
+Package marginnote Info: right page because not two side mode on input line 235.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 235.
+Package marginnote Info: Margin note 32.2 is on absolute page 32
+(marginnote)              on input line 259.
+Package marginnote Info: right page because not two side mode on input line 259.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 259.
+Package mdframed Info: Not enough space on this page on input line 303.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30
+
+]
+Package mdframed Info: Not enough space on this page on input line 303.
+Package marginnote Info: Margin note 33.1 is on absolute page 33
+(marginnote)              on input line 328.
+Package marginnote Info: right page because not two side mode on input line 328.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 328.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+Package marginnote Info: Margin note 34.1 is on absolute page 34
+(marginnote)              on input line 355.
+Package marginnote Info: right page because not two side mode on input line 355.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 355.
+Package marginnote Info: Margin note 34.2 is on absolute page 34
+(marginnote)              on input line 368.
+Package marginnote Info: right page because not two side mode on input line 368.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 368.
+Package marginnote Info: Margin note 34.3 is on absolute page 34
+(marginnote)              on input line 390.
+Package marginnote Info: right page because not two side mode on input line 390.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 390.
+Package marginnote Info: Margin note 34.4 is on absolute page 34
+(marginnote)              on input line 410.
+Package marginnote Info: right page because not two side mode on input line 410.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 410.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32
+
+]
+Package marginnote Info: Margin note 35.1 is on absolute page 35
+(marginnote)              on input line 431.
+Package marginnote Info: right page because not two side mode on input line 431.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 431.
+Package marginnote Info: Margin note 35.2 is on absolute page 35
+(marginnote)              on input line 447.
+Package marginnote Info: right page because not two side mode on input line 447.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 447.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33]
+Package marginnote Info: Margin note 36.1 is on absolute page 36
+(marginnote)              on input line 477.
+Package marginnote Info: right page because not two side mode on input line 477.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 477.
+Package marginnote Info: Margin note 36.2 is on absolute page 36
+(marginnote)              on input line 485.
+Package marginnote Info: right page because not two side mode on input line 485.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 485.
+Package mdframed Info: Not enough space on this page on input line 521.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+Package mdframed Info: Not enough space on this page on input line 521.
+Package marginnote Info: Margin note 37.1 is on absolute page 37
+(marginnote)              on input line 523.
+Package marginnote Info: right page because not two side mode on input line 523.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 523.
+) (./determinants.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ [36
+
+
+]
+Chapter 4.
+[37]
+Package marginnote Info: Margin note 40.1 is on absolute page 40
+(marginnote)              on input line 48.
+Package marginnote Info: right page because not two side mode on input line 48.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 48.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38
+
+
+]
+Package marginnote Info: Margin note 41.1 is on absolute page 41
+(marginnote)              on input line 111.
+Package marginnote Info: right page because not two side mode on input line 111.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 111.
+Package marginnote Info: Margin note 41.2 is on absolute page 41
+(marginnote)              on input line 146.
+Package marginnote Info: right page because not two side mode on input line 146.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 146.
+Package marginnote Info: Margin note 41.3 is on absolute page 41
+(marginnote)              on input line 175.
+Package marginnote Info: right page because not two side mode on input line 175.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 175.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39]
+Package marginnote Info: Margin note 42.1 is on absolute page 42
+(marginnote)              on input line 201.
+Package marginnote Info: right page because not two side mode on input line 201.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 201.
+Package marginnote Info: Margin note 42.2 is on absolute page 42
+(marginnote)              on input line 249.
+Package marginnote Info: right page because not two side mode on input line 249.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 249.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40]
+Package marginnote Info: Margin note 43.1 is on absolute page 43
+(marginnote)              on input line 261.
+Package marginnote Info: right page because not two side mode on input line 261.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 261.
+Package marginnote Info: Margin note 43.2 is on absolute page 43
+(marginnote)              on input line 307.
+Package marginnote Info: right page because not two side mode on input line 307.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 307.
+Package marginnote Info: Margin note 43.3 is on absolute page 43
+(marginnote)              on input line 344.
+Package marginnote Info: right page because not two side mode on input line 344.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 344.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41
+
+]
+Package marginnote Info: Margin note 44.1 is on absolute page 44
+(marginnote)              on input line 358.
+Package marginnote Info: right page because not two side mode on input line 358.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 358.
+Package marginnote Info: Margin note 44.2 is on absolute page 44
+(marginnote)              on input line 372.
+Package marginnote Info: right page because not two side mode on input line 372.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 372.
+Package marginnote Info: Margin note 44.3 is on absolute page 44
+(marginnote)              on input line 376.
+Package marginnote Info: right page because not two side mode on input line 376.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 376.
+Package marginnote Info: Margin note 44.4 is on absolute page 44
+(marginnote)              on input line 380.
+Package marginnote Info: right page because not two side mode on input line 380.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 380.
+Package marginnote Info: Margin note 44.5 is on absolute page 44
+(marginnote)              on input line 391.
+Package marginnote Info: right page because not two side mode on input line 391.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 391.
+Package marginnote Info: Margin note 44.6 is on absolute page 44
+(marginnote)              on input line 406.
+Package marginnote Info: right page because not two side mode on input line 406.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 406.
+Package marginnote Info: Margin note 44.7 is on absolute page 44
+(marginnote)              on input line 410.
+Package marginnote Info: right page because not two side mode on input line 410.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 410.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42
+
+]
+Package marginnote Info: Margin note 45.1 is on absolute page 45
+(marginnote)              on input line 423.
+Package marginnote Info: right page because not two side mode on input line 423.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 423.
+Package marginnote Info: Margin note 45.2 is on absolute page 45
+(marginnote)              on input line 438.
+Package marginnote Info: right page because not two side mode on input line 438.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 438.
+) (./diagonalization.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-47.23828pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=93.89418pt
+* \marginparsep=5.69046pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ [44
+
+
+]
+Chapter 5.
+[45]
+Package marginnote Info: Margin note 48.1 is on absolute page 48
+(marginnote)              on input line 25.
+Package marginnote Info: right page because not two side mode on input line 25.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 25.
+Package marginnote Info: Margin note 48.2 is on absolute page 48
+(marginnote)              on input line 45.
+Package marginnote Info: right page because not two side mode on input line 45.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 45.
+Package mdframed Info: Not enough space on this page on input line 69.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46
+
+
+]
+Package mdframed Info: Not enough space on this page on input line 69.
+Package marginnote Info: Margin note 49.1 is on absolute page 49
+(marginnote)              on input line 79.
+Package marginnote Info: right page because not two side mode on input line 79.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 79.
+Package marginnote Info: Margin note 49.2 is on absolute page 49
+(marginnote)              on input line 101.
+Package marginnote Info: right page because not two side mode on input line 101.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 101.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47]
+Package marginnote Info: Margin note 50.1 is on absolute page 50
+(marginnote)              on input line 120.
+Package marginnote Info: right page because not two side mode on input line 120.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 120.
+Package marginnote Info: Margin note 50.2 is on absolute page 50
+(marginnote)              on input line 124.
+Package marginnote Info: right page because not two side mode on input line 124.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 124.
+Package marginnote Info: Margin note 50.3 is on absolute page 50
+(marginnote)              on input line 144.
+Package marginnote Info: right page because not two side mode on input line 144.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 144.
+Package marginnote Info: Margin note 50.4 is on absolute page 50
+(marginnote)              on input line 152.
+Package marginnote Info: right page because not two side mode on input line 152.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 152.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48
+
+]
+Package marginnote Info: Margin note 51.1 is on absolute page 51
+(marginnote)              on input line 169.
+Package marginnote Info: right page because not two side mode on input line 169.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 169.
+Package marginnote Info: Margin note 51.2 is on absolute page 51
+(marginnote)              on input line 191.
+Package marginnote Info: right page because not two side mode on input line 191.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 191.
+Package marginnote Info: Margin note 51.3 is on absolute page 51
+(marginnote)              on input line 207.
+Package marginnote Info: right page because not two side mode on input line 207.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 207.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[49
+
+]
+Package marginnote Info: Margin note 52.1 is on absolute page 52
+(marginnote)              on input line 235.
+Package marginnote Info: right page because not two side mode on input line 235.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 235.
+Package marginnote Info: Margin note 52.2 is on absolute page 52
+(marginnote)              on input line 269.
+Package marginnote Info: right page because not two side mode on input line 269.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 269.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[50]
+Package marginnote Info: Margin note 53.1 is on absolute page 53
+(marginnote)              on input line 278.
+Package marginnote Info: right page because not two side mode on input line 278.
+Package marginnote Info: xpos seems to be 128.0374pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 278.
+)
+
+Package etoc Warning: Please load `tocloft' /before/ `etoc'! on input line 33.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[51
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
+ (./linearalgebraI.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 33.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 33.
+ ) 
+Here is how much of TeX's memory you used:
+ 24238 strings out of 493007
+ 439960 string characters out of 6136719
+ 585304 words of memory out of 5000000
+ 27889 multiletter control sequences out of 15000+600000
+ 586059 words of font info for 113 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 51i,16n,67p,10488b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on linearalgebraI.pdf (53 pages).

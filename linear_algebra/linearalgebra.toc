@@ -1,0 +1,62 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Vector Spaces}{3}{chapter.1}
+\etoc@startlocaltoc {2}
+\contentsline {section}{\numberline {1.1}Vector Spaces}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Subspaces}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Linear Combinations and Span}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Linear Independence}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}Bases and Dimension}{7}{section.1.5}
+\contentsline {chapter}{\numberline {2}Linear Transformations and Matrices}{11}{chapter.2}
+\etoc@startlocaltoc {3}
+\contentsline {section}{\numberline {2.1}Linear Transformations}{12}{section.2.1}
+\contentsline {section}{\numberline {2.2}Matrix Representations of Linear Transformations}{15}{section.2.2}
+\contentsline {section}{\numberline {2.3}Compositions of Linear Transformations}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}Invertibility and Isomorphisms}{21}{section.2.4}
+\contentsline {section}{\numberline {2.5}The Change of Basis}{24}{section.2.5}
+\contentsline {chapter}{\numberline {3}Linear Equations}{25}{chapter.3}
+\etoc@startlocaltoc {4}
+\contentsline {section}{\numberline {3.1}Elementary Matrix Operations and Elementary Matrices}{26}{section.3.1}
+\contentsline {section}{\numberline {3.2}The Rank and Inverse of a Matrix}{26}{section.3.2}
+\contentsline {section}{\numberline {3.3}Four Fundamental Subspaces of a Matrix}{29}{section.3.3}
+\contentsline {section}{\numberline {3.4}Systems of Linear Equations}{30}{section.3.4}
+\contentsline {chapter}{\numberline {4}Determinants}{37}{chapter.4}
+\etoc@startlocaltoc {5}
+\contentsline {section}{\numberline {4.1}Determinants}{38}{section.4.1}
+\contentsline {section}{\numberline {4.2}Properties of Determinants}{41}{section.4.2}
+\contentsline {chapter}{\numberline {5}Polynomials}{45}{chapter.5}
+\etoc@startlocaltoc {6}
+\contentsline {section}{\numberline {5.1}Algebras}{46}{section.5.1}
+\contentsline {section}{\numberline {5.2}Algebra of Polynomials}{47}{section.5.2}
+\contentsline {section}{\numberline {5.3}Lagrange Interpolation}{49}{section.5.3}
+\contentsline {section}{\numberline {5.4}Polynomial Ideals}{51}{section.5.4}
+\contentsline {chapter}{\numberline {6}Diagonalization}{59}{chapter.6}
+\etoc@startlocaltoc {7}
+\contentsline {section}{\numberline {6.1}Eigenvectors and Eigenvalues}{60}{section.6.1}
+\contentsline {section}{\numberline {6.2}Diagonalization}{61}{section.6.2}
+\contentsline {chapter}{\numberline {7}Elementary Canonical Forms}{67}{chapter.7}
+\etoc@startlocaltoc {8}
+\contentsline {section}{\numberline {7.1}Eigenvalues}{68}{section.7.1}
+\contentsline {section}{\numberline {7.2}Annihilating Polynomials}{69}{section.7.2}
+\contentsline {section}{\numberline {7.3}Triangulation and Diagonalization}{71}{section.7.3}
+\contentsline {section}{\numberline {7.4}Direct Sum Decompositions}{74}{section.7.4}
+\contentsline {section}{\numberline {7.5}Invariant Direct Sum}{77}{section.7.5}
+\contentsline {section}{\numberline {7.6}Primary Decomposition Theorem}{81}{section.7.6}
+\contentsline {chapter}{\numberline {8}The Rational and Jordan Form}{85}{chapter.8}
+\etoc@startlocaltoc {9}
+\contentsline {section}{\numberline {8.1}Cyclic Subspaces and Annihilators}{86}{section.8.1}
+\contentsline {section}{\numberline {8.2}Cyclic Decomposition and the Rational Form}{91}{section.8.2}
+\contentsline {section}{\numberline {8.3}Jordan Form}{101}{section.8.3}
+\contentsline {chapter}{\numberline {9}Bilinear Forms}{107}{chapter.9}
+\etoc@startlocaltoc {10}
+\contentsline {section}{\numberline {9.1}Bilinear Forms}{108}{section.9.1}
+\contentsline {section}{\numberline {9.2}Symmetric Bilienar Form}{114}{section.9.2}
+\contentsline {section}{\numberline {9.3}Skew-Symmetric Bilinear Form}{120}{section.9.3}
+\contentsline {section}{\numberline {9.4}Groups Preserving Bilnear Forms}{123}{section.9.4}
+\contentsline {chapter}{\numberline {10}Inner Product Spaces}{125}{chapter.10}
+\etoc@startlocaltoc {11}
+\contentsline {section}{\numberline {10.1}Inner Products}{126}{section.10.1}
+\contentsline {section}{\numberline {10.2}Inner Product Spaces}{130}{section.10.2}
+\contentsline {section}{\numberline {10.3}Linear Functionals and Adjoints}{138}{section.10.3}
+\contentsline {section}{\numberline {10.4}Unitary Operators}{143}{section.10.4}
+\contentsline {section}{\numberline {10.5}Normal Operators}{149}{section.10.5}
+\contentsline {section}{\numberline {10.6}Spectral Theory}{153}{section.10.6}

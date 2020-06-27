@@ -1,0 +1,372 @@
+\documentclass[linearalgebraI]{subfiles}
+
+\begin{document}
+
+    \chap{Vector Spaces}
+
+    \section{Vector Spaces}
+
+    \begin{definition}{Vector Space}{over a Field}
+        A \emph{vector space} over a field $\F$ is a set with two binary operations, addition $V\times V\to V$ and scalar multiplication $\F\times V\to V$ such that the following holds. Let $x,y,z\in V$ and $a,b,c\in\F$.
+        \begin{enumerate}
+            \item Commutativity of addition: 
+                \begin{equation*}
+                    x+y=y+x.
+                \end{equation*}
+            \item Associativity of addition: 
+                \begin{equation*}
+                    (x+y)+z=x+(y+z).
+                \end{equation*}
+            \item Existence of additive identity: There exists $0\in V$ such that 
+                \begin{equation*}
+                    0+v=v+0=v 
+                \end{equation*}
+                for all $v\in V$.
+            \item Existence of additive inverse: There exists $-v\in V$ such that 
+                \begin{equation*}
+                    -v+v=v+(-v)=0 
+                \end{equation*}
+                for all $v\in V$.
+            \item Existence of identity of scalar multiplication: 
+                \begin{equation*}
+                    1x=x, 
+                \end{equation*}
+                where $1\in\F$ is the unity of $\F$.
+            \item Compatibility of scalar multiplication with field multiplication: 
+                \begin{equation*}
+                    a(bx)=(ab)x.
+                \end{equation*}
+            \item Distributivity of scalar multiplication with respect to addition: 
+                \begin{equation*}
+                    a(x+y)=ax+ay.
+                \end{equation*}
+            \item Distributivity of scalar multiplication with respect to field addition: 
+                \begin{equation*}
+                    (a+b)x=ax+bx.
+                \end{equation*}
+        \end{enumerate}
+    \end{definition}
+
+    \begin{remark}
+        For convenience, we shall consistently use $\F$ to denote an arbitrary field. Moreover, unless otherwise specified, $\F$ is the underlying field of any vector space that we are going to discuss.
+    \end{remark}
+
+    \begin{definition}{Vector, Scalar}{}
+        Let $V$ be a vector space over $\F$. We call an element $v\in V$ a \emph{vector} and $c\in\F$ a \emph{scalar}.
+    \end{definition}
+
+    \begin{prop}{Cancellative Property of Vector Addition}
+        Let $V$ be a vector space and $x, y, z\in V$. Suppose $x+z = y+z$. Then $x=y$.
+    \end{prop}
+
+    \begin{proof}
+        By definition, there exists $v\in V$ such that $z+v=0$, the additive inverse of $z$. Thus,
+        \begin{equation*}
+            x = x+0 = x + (z+v) = (x+z) + v = (y+z) + v = y + (z+v) = y. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+
+    \section{Subspaces}
+
+    \begin{remark}
+        In study of algebraic structure, often times it is of interest to examine subsets that possess the same structure as its superset. 
+    \end{remark}
+
+    \begin{definition}{Subspace}{of a Vector Space}
+        Let $V$ be a vector space over $\F$. We say a subset $W\subseteq V$ is a \emph{subspace} of $V$ if $W$ is a vector space over the same field $\F$ with operations on $V$.
+    \end{definition}
+
+    \begin{prop}{Subspace Test}
+        Let $V$ be a vector space and $W$ be a subset of $V$. Then $W$ is a subspace of $V$ if and only if the following hold.
+        \begin{enumerate}
+            \item $0\in W$.
+            \item $x+y\in W$ whenever $x\in W$ and $y\in W$.
+            \item $cx\in W$ whenever $c\in \F$ and $x\in W$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose $W$ is a subspace of $V$. But this means that the operations on $W$ are closed, so (2) and (3) hold. Furthermore, there is $0'\in W$ such that for every $x\in W$, $x+0 = x$. But since $V$ is a vector space, there is $0\in V$, so $0'+0 = 0 = 0'$, proving (1). Moreover, for the reverse direction, suppose (1), (2), and (3) hold. Then we only have to ensure that the existance of additive inverse for each element. But clearly,
+        \begin{equation*}
+            (-1)x = -x\in W
+        \end{equation*}
+        whenever $x\in W$ by (3).
+    \end{proof}
+
+    \begin{prop}{Intersection of Subspaces Is a Subspace}
+        Any intersection of subspaces of a vector space $V$ is a subspace of $V$.
+    \end{prop}
+
+    \begin{proof}
+        Let $C$ be the set of some arbitrary subspaces of $V$ and $W$ be the intersection of the subspaces in $C$. Since every subspace has $0$, $0\in W$. Moreover, let $x, y\in W$ and $a\in \F$. Since every subspace is closed under addition and scalar multiplication, every subspace has $x+y$ and $ax$, so $(x+y), ax\in W$.
+    \end{proof}
+
+    \section{Linear Combinations and Span}
+
+    \begin{definition}{Linear Combination}{of Vectors}
+        Let $V$ be a vector space and let $v_1,v_2,\ldots,v_n\in V$. We say $v\in V$ is a \emph{linear combination} of $v_1,v_2,\ldots,v_n$ if there exists some $c_1,c_2,\ldots,c_n\in\F$ such that
+        \begin{equation*}
+            v = \sum^{n}_{i=1} c_iv_i.
+        \end{equation*}
+    \end{definition}
+
+    \begin{remark}
+        From the definition, it is implicitly stated that any linear combination involves only finite number of vectors.
+    \end{remark}
+
+    \begin{definition}{Span}{of a Set of Vectors}
+        Let $V$ be a vector space and let $S\subseteq V$ be a nonempty subset. We define the \emph{span} of $S$, denoted as $\spn(S)$, to be the set of linear combinations of vectors in $S$.
+    \end{definition}
+
+    \clearpage
+    \begin{prop}{$\spn(S)$ Is a Subspace}
+        Let $V$ be a vector space and let $S\subseteq V$ be a subset. Then $\spn(S)\subseteq V$ is a subspace and any subspace $W\subseteq V$ with $S\subseteq W$ also satisfies $\spn(S)\subseteq W$.
+    \end{prop}
+
+    \begin{proof}
+        Notice that the result is trivial for $S=\emptyset$, since $\spn(\emptyset) = \lbrace 0 \rbrace$, which is a subspace for any vector space. So suppose that $S\neq \emptyset$. First notice that
+       \begin{equation*}
+           0\in \spn(S), 
+       \end{equation*}
+       since $0v$ for any $v\in S$ is a linear combination of $v$. Moreover, let $x,y\in \spn(S)$ and $c$ be any scalar. Since $x$ and $y$ are linear combinations of vectors in $S$, clearly $x+y$ and $cx$ are both linear combinations of vectors in $S$ as well. So $\spn(S)$ is a subspace of $V$. For the second part of the proposition, suppose $W$ is a subspace of $V$ which contains $S$. For the sake of contradiction, further assume that $W$ does not contain $\spn(S)$. Then,
+       for some vectors $s_1, s_2, \ldots, s_n\in S$ and scalars $a_1, a_2, \ldots, a_n\in \F$,
+       \begin{equation*}
+           a_1s_1 + a_2s_2 + \cdots + a_ns_n \notin W.
+       \end{equation*}
+       But clearly each $a_is_i\in W$, since $W$ contains $S$ and $W$ is closed under scalar multiplication. So $a_1s_1 + a_2s_2 + \cdots + a_ns_n\in W$, which is a contradiction. Thus $\spn(S)\subseteq W$, as desired.
+    \end{proof}
+    
+    \section{Linear Independence}
+
+    \begin{remark}
+        Let $V$ be a vector space and suppose that $S\subseteq V$ is a spanning set of $V$. Then, we have some number of expression to describe vectors in $V$. For instance, if $S$ has $n$ elements $s_1, s_2, \ldots, s_n\in S$, then for any $v\in V$, 
+        \begin{equation*}
+            v = \sum^{n}_{i=1} c_is_i
+        \end{equation*}
+        for some $c_1,c_2,\ldots,c_n\in\F$. But the question is, is $S$ the minimal spanning subset of $V$? That is, we are interested to find out if there is a subset of $V$ which has less than $n$ elements and spans $V$. To answer this question, we introduce the following definition.
+    \end{remark}
+
+    \begin{definition}{Linearly Independent, Linearly Dependent}{Vectors}
+        Let $V$ be a vector space. We say $v_1,v_2,\ldots,v_n\in V$ are \emph{linearly dependent} if there exist nonzero $\left( c_1,c_2,\ldots,c_n \right)\in\F^n$ ($\F^n$ is the set of $n$-tuples where each entry is an element of $\F$; we say $x\in\F^n$ is zero if every entry of $x$ is zero) such that
+        \begin{equation*}
+            \sum^{n}_{i=1} c_iv_i = 0.
+        \end{equation*}
+        We say $v_1,v_2,\ldots,v_n$ are \emph{linearly independent} otherwise.
+    \end{definition}
+
+    \begin{remark}
+        We also say that a subset $S\subseteq V$ is linearly dependent if there exist finite number of elements $s_1,s_2,\ldots,s_n\in S$ such that
+        \begin{equation*}
+            \sum^{n}_{i=1} c_is_i = 0
+        \end{equation*}
+        for some nonzero $\left( c_1,c_2,\ldots,c_n \right) \in\F$. Of course, $S$ is linearly independent if no such elements exist.
+    \end{remark}
+
+    \begin{remark}
+        Another way to think linear independence is the following. Let $v_1,v_2,\ldots,v_n\in V$ for some vector space $V$. Then $v_1,v_2,\ldots,v_n$ are linearly independent if and only if the only linear combination of $v_1,v_2,\ldots,v_n$ equal to 0 is the trivial representation. That is,
+        \begin{equation*}
+            \sum^{n}_{i=1} 0v_i = 0.
+        \end{equation*}
+    \end{remark}
+
+    \clearpage
+    \begin{prop}{}
+        Let $V$ be a vector space. If $S_1\subseteq S_2\subseteq V$ and $S_1$ is linearly dependent, then $S_2$ is linearly dependent.
+    \end{prop}
+
+    \begin{proof}
+        Suppose $S_1 = \left\lbrace v_1, \ldots, v_n \right\rbrace \in V$ be linearly dependent. Then there is a nonzero $(a_1, \ldots, a_n)\in \F^n$ such that
+        \begin{equation*}
+            \sum^n_{i=1} a_iv_i = 0.
+        \end{equation*}
+        Therefore, if we define $a_{n+1}=a_{n+2}=\cdots=a_m=0$, where $m=\left| S_2 \right|\in\N$, then
+        \begin{equation*}
+            \sum^{m}_{i=1} a_iv_i = \sum^{n}_{i=1} a_iv_i = 0,
+        \end{equation*}
+        which is not the trivial representation.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $V$ be a vector space. If $S_1\subseteq S_2\subseteq V$ and $S_2$ is linearly independent, then $S_1$ is linearly independent.
+    \end{cor}	
+
+    \begin{remark}
+        Now suppose $S_n\subseteq V$ is a subset of $V$ containing $n$ elements and spans $V$. If $S_n$ is linearly dependent, then there must be a vector $s_n$ which can be written as a linear combination of other vectors in $S_n$. So it turns out that
+        \begin{equation*}
+            \spn \left( S_{n-1} \right)  = \spn\left( S_n \right)  = V,
+        \end{equation*}
+        where $S_{n-1} = S_n\setminus \lbrace s_n \rbrace$. We may continue this process until $S_k$ is independent. But once we hit here, there is no way $\spn \left( S_{k-1} \right)  = \spn\left( S_k \right) $. Thus it turns out that the smallest spanning set of $V$ must be independent. This idea can be written alternatively as the following proposition.
+    \end{remark}
+
+    \begin{prop}{}
+        Let $S$ be linearly independent subset of a vector space $V$, and let $v\in V$ with $v\notin S$. Then $S\cup \lbrace v \rbrace$ is linearly dependent if and only if $v\in \spn S$.
+    \end{prop}
+
+    \begin{proof}
+        First, write $S = \left\lbrace v_1, \ldots, v_n \right\rbrace \subseteq S$ for convenience. For the forward direction, suppose that $S\cup \left\lbrace v \right\rbrace$ is linearly dependent. Then there must exist nonzero $(a_1, \ldots, a_{n+1})\in \F^{n+1}$ such that
+        \begin{equation*}
+            \sum^{n}_{i=1} a_iv_i + a_{n+1}v = 0.
+        \end{equation*}
+        But this means
+        \begin{equation*}
+            -a_{n+1}v = \sum^n_{i=1} a_iv_i \iff v = \sum^n_{i=1} -\frac{a_i}{a_{n+1}}v_i
+        \end{equation*}
+        so $v\in \spn \left\lbrace v_1, \ldots, v_n \right\rbrace$. For the reverse direction, suppose that $v\in \spn(S)$. Then there exists $(a_1, \ldots, a_n)\in \F^n$ such that
+        \begin{equation*}
+            v = \sum^n_{i=1} a_iv_i,
+        \end{equation*}
+        so we have nontrivial representation of zero
+        \begin{equation*}
+            \sum^n_{i=1} a_iv_i + 1v = 0. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \section{Bases and Dimension}
+
+    \begin{remark}
+        From the last section, we have seen that the smallest spanning set of any vector space must be linearly independent. Indeed, there are many pleasurable behaviors of linearly independent spanning sets that would be discussed in this section. 
+    \end{remark}
+
+    \begin{definition}{Basis}{for a Vector Space}
+        Let $V$ be a vector space and $\beta\subseteq V$. We say $\beta$ is a \emph{basis} for $V$ if $\beta$ is linearly dependent and spans $V$. We also say vectors of $\beta$ form a basis for $V$.
+    \end{definition}
+
+    \begin{remark}
+        One important property of basis $\beta$ for a vector space $V$ is that any $v\in V$ can be uniquely written as a linear combination of vectors in $\beta$.
+    \end{remark}
+
+    \begin{prop}{Unique Representation of a Vector}
+        Let $V$ be a vector space and $\beta = \lbrace v_1, v_2, \ldots, v_n \rbrace\subseteq V$. Then $\beta$ is a basis for $V$ if and only if there exists unique scalars $c_1, c_2, \ldots, c_n\in \F$ such that
+        \begin{equation*}
+            v = c_1v_1 + c_2v_2 + \cdots + c_nv_n
+        \end{equation*}
+        for all $v\in V$.
+    \end{prop}
+
+    \begin{proof}
+        For the forward direction, suppose that $\beta$ is a basis for $V$, and for the sake of contradiction, suppose that there exist $d_1,d_2,\ldots,d_n\in\F$ such that
+        \begin{equation*}
+            v = \sum^{n}_{i=1} d_iv_i
+        \end{equation*}
+        and $d_j\neq c_j$ for some $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$. But this means 
+        \begin{equation*}
+            \sum^{n}_{i=1} \left( d_i-c_i \right) v_i = v - v = 0
+        \end{equation*}
+        where $d_j-c_j\neq 0$, so we have a contradiction. For the reverse direction, suppose that we have unique representation of each vector in $V$ by $\beta$. Then $\spn(\beta)=V$, and $\beta$ is linearly independent, since
+        \begin{equation*}
+            \sum^{n}_{i=1} 0v_i = 0
+        \end{equation*}
+        is the unique representation of $0\in V$.
+    \end{proof}
+
+    \begin{prop}{Maximal Linearly Independent Subset}
+        Let $V$ be a vector space. If $\beta\subseteq V$ is a maximal linearly independent subset, then $\beta$ is a basis for $V$.
+    \end{prop}
+
+    \begin{proof}
+        For the sake of contradiction, suppose that $\spn\left( \beta \right)\subsetneq V$. Then there exists $v\in V\setminus\spn\left( \beta \right)$. But this means $\beta\cup\left\lbrace v \right\rbrace$ is linearly independent, which violates the maximality of $\beta$, so we have a contradiction.
+    \end{proof}
+
+    \begin{theorem}{Existence of Basis}
+        Let $V$ be a vector space. Then there exists a basis $\beta$ for $V$.
+    \end{theorem}
+
+    \begin{proof}
+        Let $S\subseteq\power(V)$ be the set of every linearly independent subsets of $V$. Then $S$ is nonempty, since $\emptyset\in S$. Moreover, $\left( S,\po \right)$ is a partially ordered set. Let $C\subseteq S$ be a chain and let
+        \begin{equation*}
+            u = \bigcup^{}_{c\in C} c.
+        \end{equation*}
+        We claim that $u$ is an upper bound for $C$. To verify this, we have to show that $c\in u$ for any $c\in C$ (which is clear from the definition) and that $u\in S$. So for the sake of contradiction, suppose that $u\notin S$, which means $u$ is linearly dependent. Then there exist $v_1,v_2,\ldots,v_n\in u$ such that
+        \begin{equation*}
+            \sum^{n}_{i=1} a_iv_i = 0
+        \end{equation*}
+        for some nonzero $\left( a_1,a_2,\ldots,a_n \right) \in\F^n$. But for each $i\in\left\lbrace 1,2,\ldots,n \right\rbrace$, there exist $c_i\in C$ such that
+        \begin{equation*}
+            v_i\in c_i.
+        \end{equation*}
+        Since $C$ is a chain, there must exist $c\in C$ which contains $c_1,c_2,\ldots,c_n$. But $c\in C\subseteq S$, so $c$ is linearly independent, and we have a contradiction. Thus by Zorn's lemma, there exists a maximal $\beta\in S$, which is a maximal linearly independent subset of $V$. By Proposition 1.8, $\beta$ is a basis for $V$.
+    \end{proof}
+
+    \begin{theorem}{Replacement Theorem}
+        Let $V$ be a vector space. Suppose $G\subseteq V$ with $\left| G \right| = n\in\N$ is a spanning set and let $L\subseteq V$ be a linearly independent subset with $\left| L \right| = m\in\N$. Then $m\leq n$ and there exists $H\subseteq G$ with $\left| H \right| = n-m$ such that $\spn\left( L\cup H \right) = V$.
+    \end{theorem}
+
+    \begin{proof}
+        Write $G = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ and let $L = \left\lbrace u_1,u_2,\ldots,u_m \right\rbrace$. For the sake of contradiction, suppose $n<m$. Since $G$ is a spanning set, there exist $a_1,a_2,\ldots,a_n\in\F$ such that
+        \begin{equation*}
+            u_1 = \sum^{n}_{i=1} a_iv_i.
+        \end{equation*}
+        Since $u_1\neq 0$, some $a_i\neq 0$. Without loss of generality, suppose $a_1\neq 0$. Then
+        \begin{equation*}
+            v_1 = \frac{\sum^{n}_{i=2} a_iv_i-u_1}{-a_1},
+        \end{equation*}
+        which means $\left\lbrace u_1,v_2,v_3,\ldots,v_n \right\rbrace$ spans $V$. Then, for $u_2$, there exist $b_1,b_2,\ldots,b_n\in\F$ such that
+        \begin{equation*}
+            u_2 = \sum^{n}_{i=2} b_iv_i + b_1u_1
+        \end{equation*}
+        where $b_i\neq 0$ for some $i\in\left\lbrace 2,3,\ldots,n \right\rbrace$, since $u_1$ and $u_2$ are linearly independent and $u_2\neq 0$. So suppose $b_2\neq 0$ without loss of generality. Then again, $\left\lbrace u_1,u_2,v_3,v_4,\ldots,v_n \right\rbrace$ spans $V$. By continuing this process, we obtain $\left\lbrace u_1,u_2,\ldots,u_n \right\rbrace$ as a spanning set for $V$. But this means there exist $c_1,c_2,\ldots,c_n\in\F$ such that
+        \begin{equation*}
+            \sum^{n}_{i=1} c_iu_i = u_{n+1},
+        \end{equation*}
+        which is a contradiction, since $L$ is linearly independent. So $m\leq n$. Observe that $H$ can be found in an analogous way. For, we may obtain a spanning set
+        \begin{equation*}
+            \left\lbrace u_1,u_2,\ldots,u_m,v_{m+1}, \ldots,v_n \right\rbrace 
+        \end{equation*}
+        for any $m\leq n$.
+    \end{proof}
+
+    \begin{definition}{Finite-Dimensional, Infinite-Dimensional}{Vector Space}
+        Let $V$ be a vector space. We say $V$ is \emph{finite-dimensional} if there exists a finite spanning set for $V$. We say $V$ is \emph{infinite-dimensional} otherwise.
+    \end{definition}
+
+    \begin{cor}{}
+        Let $V$ be finite-dimensional. Then every basis for $V$ has the same number of vectors.
+    \end{cor}	
+
+    \begin{remark}
+        Corollary 1.10.1 enables the following definition.
+    \end{remark}
+
+    \begin{definition}{Dimension}{of a Finite-Dimensional Vector Space}
+        Let $V$ be a finite-dimensional vector space. Then the unique number of elements $n\in\N$ of any basis for $V$, denoted as $\dim(V)$, is called the \emph{dimension} of $V$.
+    \end{definition}
+
+    \begin{prop}{Properties of Finite-Dimensional Vector Space}
+        Let $V$ be a vector space with dimension $n$. Then the following holds.
+        \begin{enumerate}
+            \item Any finite generating set for $V$ contains at least $n$ vectors, and a generating set for $V$ containing $n$ vectors is a basis of $V$.
+            \item Any linearly independent subset of $V$ that contains exactly $n$ vectors is a basis for $V$.
+            \item Every linearly independent subset of $V$ can be extended to a basis for $V$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        The result follows immediately from replacement theorem (Theorem 1.10), Corollary 1.10.1, and the definition of basis.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $W$ be a subspace of a finite-dimensional vector space $V$. Then $W$ is finite-dimensional and $\dim(W)\leq \dim(V)$. Moreover, if $\dim(W) = \dim(V)$, then $V=W$.
+    \end{prop}
+
+    \begin{proof}
+        Let $\beta=\left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ be a basis for $V$. Since the result is clear when $W=\left\lbrace 0 \right\rbrace $, assume that $W\neq \left\lbrace 0 \right\rbrace$. Then there exist some $v_i$ such that $v_i\in W$. Without loss of generality, suppose $v_1,v_2,\ldots,v_m\in W$ for some $m\leq n$. We claim that $\alpha=\left\lbrace v_1,v_2,\ldots,v_m \right\rbrace$ is a basis for $W$. To verify this, observe that $\alpha$ is linearly independent. Moreover, for the sake of contradiction, suppose there exists $w\in W$ such that $w$ cannot be expressed as a linear combination of $v_1,v_2,\ldots,v_m$. Since $w\in V$, there exist $c_1,c_2,\ldots,c_n\in\F$ such that
+        \begin{equation*}
+            \sum^{n}_{i=1} c_iv_i = w,
+        \end{equation*}
+        and there exists $i\in\left\lbrace m+1,\ldots,n \right\rbrace$ such that $c_i\neq 0$ by assumption. But this means $v_i\in W$, which is a contradiction. Thus $\spn\left( \alpha \right) = W$, so $\dim(W)\leq\dim(V)$. If $\dim(W)=\dim(V)$, then given a basis $\alpha = \left\lbrace w_1,w_2,\ldots,w_n \right\rbrace$ for $W$ and $\beta = \left\lbrace v_1,v_2,\ldots,v_n \right\rbrace$ for $V$, we may replace each $w_i\in\alpha$ with $v_i\in\beta$. That is, $\spn\left( \beta \right) = V = W$.
+    \end{proof}
+
+    \begin{theorem}{Basis Extension Theorem}
+        If $W$ is a subspace of finite-dimensional vector space $V$, then any basis for $W$ can be extended to a basis for $V$.
+    \end{theorem}
+
+    \begin{proof}
+        This is a direct result of the replacement theorem (Theorem 1.10). For, if $\alpha$ is a basis for $W$, then $\alpha$ is a linearly independent subset of $V$. Thus, for any basis $\beta$ for $V$, we may find a set $\gamma\subseteq\beta$ with $\left| \gamma \right| = \dim\left( V \right) - \dim\left( W \right)$ vectors such that $\alpha\cup\gamma$ is a basis for $V$.
+    \end{proof}
+
+
+
+
+
+\end{document}

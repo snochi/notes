@@ -1,0 +1,551 @@
+\documentclass[linearalgebra]{subfiles}
+
+\begin{document}
+
+    \chap{Linear Equations} 
+
+    \section{Elementary Matrix Operations and Elementary Matrices}
+
+    \begin{definition}{Elementary Operations}{on Matrix}
+        Let $A\in M_{m\times n}(\F)$. We define the three \emph{elementary row operations} on $A$ as follows.
+
+        \begin{enumerate}
+            \item Interchange any two rows of $A$.
+            \item Multiply any row of $A$ by a nonzero scalar $c\in \F$.
+            \item Add a scalar multiple of any row of $A$ to another row of $A$.
+        \end{enumerate}
+        We say (a) is a \emph{type 1} operation, (b) is a \emph{type 2} operation, and (c) is a \emph{type 3} operation.
+    \end{definition}
+
+    \begin{remark}
+        We have an analogous definition for the three elementary column operations.
+    \end{remark}
+
+    \begin{definition}{Elementary Matrix}{}
+        We say a matrix $E\in M_{n\times n}(\F)$ is an \emph{elementary matrix} if $E$ is obtained by applying any elementary operation on $I$. Depending on which type of operation is used, we call that $E$ is a \emph{type 1}, \emph{type 2}, or \emph{type 3} elementary matrix, respectively.
+    \end{definition}
+    
+    \begin{remark}
+        Any elementary matrix can be obtained by at least two ways. That is, if $E\in M_{n\times n}(\F)$ is obtained by applying an elementary row operation on $I$, then there is an elementary column operation of the same type by applying which $E$ is obtained from $I$.
+    \end{remark}
+
+    \begin{theorem}{}
+        Let $A\in M_{m\times n}(\F)$, and suppose that $B$ is obtained from $A$ by performing an elementary column [row] operation on $A$. Then there exists an $n\times n$ [$m\times m$] elementary matrix $E$ such that $B=AE$ [$B=EA$]. In fact, $E$ is obtained from $I$ by performing the same elementary column [row] operation. Conversely, for any $n\times n$ [$m\times m$] elementary matrix $E$, $B=AE$ [$B=EA$] is the matrix obtained by performing an elementary column [row]
+        operation on $I$ to obtain $E$.
+    \end{theorem}
+
+    \begin{prop}{Invertibility of Elementary Matrices}
+        Let $E\in M_{n\times n}(\F)$ be elementary. Then $E$ is invertible and $E^{-1}$ is an elementary matrix of the same type.
+    \end{prop}
+
+    \begin{proof}
+        Let $E\in M_{n\times n}(\F)$ be invertible. Then $E$ can be obtained from $I$ by performing elementary operations, so $I$ can be obtained from $E$ by reversing the operations. Then by Theorem 3.1, there exists an $E'\in M_{n\times n}(\F)$ such that $EE'=E'E=I$. Therefore $E$ is invertible and $E' = E^{-1}$.
+    \end{proof}
+
+    \section{The Rank and Inverse of a Matrix}
+    
+    \begin{definition}{Rank}{of a Matrix}
+        Let $A\in M_{n\times n}(\F)$. We define the \emph{rank} of $A$, denoted by $\rank(A)$, to be the rank of the left multiplication transformation $L_A: \F^n\to \F^m$.
+    \end{definition}
+
+    \begin{theorem}{Invertible Matrix Theorem I}
+        Let $A\in M_{m\times n}(\F)$, and let $P\in M_{m\times m}(\F), Q\in M_{n\times n}(\F)$ be invertible. 
+        \begin{enumerate}
+            \item $\rank(AQ) = \rank(A)$. 
+            \item $\rank(PA) = \rank(A)$. 
+            \item $\rank(PAQ) = \rank(A)$.
+        \end{enumerate}
+    \end{theorem}
+    
+    \begin{proof}
+        For (a), observe that 
+        \begin{equation*}
+            \rank(AQ) = \rank(L_{AQ}) = \rank(L_AL_Q) = \dim (L_AL_Q(\F^n)) = \dim(L_A(\F^n)) = \rank(A),
+        \end{equation*}
+        since $Q$ is an invertible matrix so $L_Q$ is an isomorphism and $L_Q(\F^n) = \image(L_Q) = \F^n$. Similar argument can be used for (b). Observe that (c) is an immediate consequence of (a) and (b).
+    \end{proof}
+
+    \begin{cor}{}
+        Let $A\in M_{m\times n}(\F)$. Then, for all elementary $E\in M_{n\times n}, F\in M_{m\times m}$,
+        \begin{equation*}
+            \rank(A) = \rank(AE) = \rank(AF).
+        \end{equation*}
+    \end{cor}	
+
+    \begin{theorem}{Invertible Matrix Theorem II}
+        Let $A\in M_{n\times n}(\F)$. Then $A$ is invertible if and only if $\rank(A) = n$.
+    \end{theorem}
+    
+    \begin{proof}
+        For the forward direction, suppose that $A$ is invertible. Then $L_A$ is an isomorphism, so $\rank(A) = \rank(L_A) = \dim (\F^n) = n$. For the reverse direction, suppose $\rank (A) = n$ then $\rank (A) = n = \dim( \F^n)$ so $L_A: \F^n\to \F^n$ is an isomorpshism, and thus $A$ is invertible.
+    \end{proof}
+
+    \begin{prop}{Rank of a Matrix Is the Maximal Number of Independent Columns}
+        Let $A\in M_{m\times n}(\F)$. Then $\rank(A)$ is equal to the maximal number of independent columns.
+    \end{prop}
+
+    \begin{proof}
+        Write $A = [A_1\ A_2\ \cdots \ A_n]$ and let $\alpha = \left\lbrace A_1, A_2, \ldots, A_n \right\rbrace$, the set of columns of $A$. Moreover, let $\beta = \left\lbrace e_1, e_2, \ldots, e_n \right\rbrace$ be the standard basis for $\F^n$. Then
+        \begin{align*}
+            \rank(A) & = \rank(L_A) = \dim (\image(L_A)) = \dim (L_A(\F^n)) = \dim \left(\spn \left(L_A(\beta)\right)\right) \\
+                    & = \dim \left( \spn \left\lbrace Ae_1, Ae_2, \ldots, Ae_n \right\rbrace \right) = \dim \left( \spn \left\lbrace A_1, A_2, \ldots, A_n \right\rbrace \right) = \dim ( \spn(\alpha) ). 
+        \end{align*}
+        But $\dim(\spn(\alpha))$ is the maximal number of independent vectors of $\alpha$, which is the desired result.
+    \end{proof}
+
+    \begin{remark}
+        An important restatement of Proposition 3.5 is that, for any $A\in M_{m\times n}(\F)$, $\rank(A)$ is the dimension of the subspace of $\F^m$ that the columns of $A$ span.
+    \end{remark}
+
+    \begin{theorem}{Matrix Elimination}
+            Let $A=M_{m\times n}(\F)$. Then by finite number of elementary operations $E_1, E_2, \ldots, E_p$ on $A$, $A$ can be transformed into
+            \begin{equation*}
+                E_pE_{p-1}\cdots A\cdots E_2E_1 = \begin{bmatrix} I_r & O_1 \\ O_2 & O_3 \end{bmatrix}, 
+            \end{equation*}
+            where $O_1, O_2, O_3$ are zero matrices and $0\leq r = \rank(A) \leq \min(m,n)$.
+    \end{theorem}
+
+    \begin{proof}
+        Consider spliting the theorem into two cases. First suppose that $A=0$ then the proof is done. So suppose that $A\neq 0$. Then there must be a nonzero entry, by type 1 operations which can be moved to $(1,1)$ position. Then, by a type 2 operation, it can be turned into $1$, and all $(n,1)$ entries can be made zero by type 3 operations. Observe that we have made a matrix of the form
+        \begin{equation*}
+            \begin{bmatrix} I_1 & O \\ O & A' \end{bmatrix}.
+        \end{equation*}
+        So by proceeding on $A'$ inductively, at most $\min(m, n)$ times, we have the desired result. Moreover, since the number of inductive process is finite, we also observe that the number of elementary operations that are used to obtain a matrix of the desired form is finite. Lastly,
+        \begin{equation*}
+            \rank(A) = \rank(I_r) = r 
+        \end{equation*}
+        by Lemma 3.5 and invertible matrix theorem I, so $0\leq r = \rank(A) \leq \min(m, n)$.
+    \end{proof}
+
+    \begin{cor}{}
+        For any $A\in M_{m\times n}(\F)$, there exist invertible $P\in M_{m\times m}(\F)$ and $Q\in M_{n\times n}(\F)$ such that $PAQ$ is of the form
+        \begin{equation*}
+            \begin{bmatrix}
+                I_r & O \\ O & O
+            \end{bmatrix}.
+        \end{equation*}
+    \end{cor}	
+
+    \begin{cor}{}
+        Let $A\in M_{m\times n}(\F)$. 
+        \begin{enumerate}
+            \item $\rank(A) = \rank\left( A^{T}  \right) $.
+            \item $\rank(A)$ is the number of maximal independent rows.
+            \item Columns and rows of $A$ span subspaces of $\F^m$ of equal dimension.
+        \end{enumerate}
+    \end{cor}	
+
+    \begin{proof}
+        For (a), let $P\in M_{m\times m}(\F)$ and $Q\in M_{n\times n}$ be invertible matrices discussed in Corollary 3.6.1. Then,
+        \begin{equation*}
+            \rank(A) = \rank(PAQ) = \rank \left( (PAQ)^T \right) = \rank \left( Q^TA^TP^T \right) = \rank (A^T). 
+        \end{equation*}
+        Observe that (b) and (c) are immediate consequences of (a) and Lemma 3.5.
+    \end{proof}
+
+    \begin{cor}{An Invertible Matrix Is a Product of Elementary Matrices}
+        Let $A\in M_{n\times n}(\F)$ be invertible. Then $A$ is a product of elementary matrices.
+    \end{cor}	
+
+    \begin{proof}
+        Since $A$ is invertible, by invertible matrix theorem II, $\rank A = n$, and by Theorem 3.6 and Corollary 3.6.1, there exist invertible $P=\prod^p_{i=1}E_i, Q=\prod^q_{j_1}F_i\in M_{n\times n}(\F)$ such that
+        \begin{equation*}
+            PAQ = I.
+        \end{equation*}
+        That is,
+        \begin{equation*}
+            A = P^{-1}IQ^{-1} = P^{-1}Q^{-1} = E_p^{-1}E_{p-1}^{-1}\cdots E_2^{-1}E_1^{-1} F_q^{-1}F_{q-1}^{-1}\cdots F_2^{-1}F_1^{-1},
+        \end{equation*}
+        where each $E_i^{-1}$ and $F_i^{-1}$ are elementary matrices by Proposition 3.2.
+    \end{proof}
+
+    \begin{prop}{}
+        Let $A\in M_{m\times n}(\F)$ and $B\in M_{n\times p}(\F)$. Then
+        \begin{equation*}
+            \rank(AB) = \min(\rank(A), \rank(B)).
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        First, suppose $\rank (A)\leq \rank(B)$. Observe that
+        \begin{equation*}
+            \rank(AB) = \rank( L_{AB}) = \rank (L_AL_B) = \dim (L_A(\image(L_B)))
+        \end{equation*}
+        where $\image(L_B)\subseteq \F^n$ so $L_A(\image(L_B))\subseteq L_A(\F^n)$. Thus
+        \begin{equation*}
+            \dim (L_A(\image(L_B))) \leq \dim (L_A(\F^n)) = \dim (\image(L_A)) = \rank(A).
+        \end{equation*}
+        When $\rank(B)\leq \rank(A)$, the same argument can be used by taking the transpose of $AB$, $B^TA^T$.
+    \end{proof}
+
+    \section{Four Fundamental Subspaces of a Matrix}
+
+    \begin{definition}{Column Space, Row Space, Null Space, Left Null Space}{of a Matrix}
+        Let $A\in M_{m\times n}(\F)$. Define the \emph{column space} of $A$, $\image(A)$, by
+            \begin{equation*}
+                \image(A) = \spn \left\lbrace x\in \F^m: x\text{ column of }A \right\rbrace \subseteq\F^m.
+            \end{equation*}
+            Similarly, define the \emph{row space} of $A$, $\image\left( A^{T}  \right) $, by
+            \begin{equation*}
+                \image\left( A^{T}  \right)  = \spn \left\lbrace x\in \F^n: x\text{ row of }A \right\rbrace\subseteq\F^n.
+            \end{equation*}
+            Moreover, define the \emph{null space} of $A$, $\ker(A)$, by
+            \begin{equation*}
+                \ker(A) = \left\lbrace x\in \F^n: Ax = 0 \right\rbrace\subseteq\F^n.
+            \end{equation*}
+            Lastly, define the \emph{left null space} of $A$, $\ker\left( A^{T}  \right) $, by
+            \begin{equation*}
+                \ker (A^T) = \left\lbrace x\in \F^m: A^Tx = 0 \right\rbrace\subseteq\F^m.
+            \end{equation*}
+            $\image(A), \image\left( A^{T} \right) , \ker(A), \ker\left( A^{T}  \right)$ together are called the \emph{four fundamental subspaces} of $A$.
+    \end{definition}
+
+    \begin{prop}{Properties of Four Fundamental Subspaces}
+        Let $A\in M_{m\times n}(\F)$. Then the following holds.
+        \begin{enumerate}
+            \item $\image(A)$ and $\ker(A^T)$ are subspaces of $\F^m$ and $\image\left( A^{T}  \right) $ and $\ker(A)$ are subspaces of $\F^n$.
+            \item $\rank(A) = \dim (\image\left( A^{T}  \right) ) = \dim (\image(A))$.
+            \item $\dim (\image(A)) + \dim (\ker( A^T)) = m$ and $\dim (\image\left( A^{T}  \right) ) + \dim (\ker(A)) = n$.
+            \item $\image(A) \oplus \ker(A^T) = \F^m$ and $\image\left( A^{T} \right)  \oplus \ker(A) = \F^n$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        For (a), use Proposition 1.7 for each set. For (b), observe that
+        \begin{align*}
+            \rank(A) & = \text{the number of linearly independent columns of }A \\
+                    & = \dim (\spn \left\lbrace \col_1(A), \ldots, \col_n(A) \right\rbrace) = \dim (\col (A)),
+        \end{align*} 
+        and similar proof holds for $\rank(A) = \dim \left( \image\left( A^{T}  \right)  \right) $. For (c), observe that
+        \begin{equation*}
+            \dim (\F^n) = \dim (\image(L_A)) + \dim (\ker(L_A)) = \rank(A) + \dim (\ker (A)) = \dim \left( \image\left( A^{T} \right)  \right)  + \dim (\ker(A)),
+        \end{equation*}
+        by rank-nullity theorem, and similar proof holds for the remaining part of the statement. For (d), observe that
+        \begin{equation*}
+            \image\left( A^{T} \right)  \cap \ker(A) = \left\lbrace 0 \right\rbrace,
+        \end{equation*}
+        so $\image\left( A^{T} \right) \oplus \ker(A)$ is well defined. Then we have
+        \begin{equation*}
+            \dim \left(\image\left( A^{T}  \right)  \oplus \ker(A)\right) = \dim \left( \image\left( A^{T} \right)  \right)  + \dim (\ker(A)) - \dim (\image\left( A^{T}  \right)  \cup \ker(A)) = n,
+        \end{equation*}
+        where $\image\left( A^{T} \right)  \oplus \ker(A)\subseteq \F^n$, so $\image\left( A^{T} \right)  \oplus \ker(A) = \F^n$. Again, similar proof holds for the remaining part of the statement.
+    \end{proof}
+
+    \clearpage
+    \begin{theorem}{Invertible Matrix Theorem III}
+        Let $A\in M_{n\times n}(\F)$. Then the following are equivalent.
+        \begin{enumerate}
+            \item $A$ is invertible.
+            \item Columns of $A$ form a basis for $\F^n$.
+            \item Rows of $A$ form a basis for $\F^n$.
+            \item $A$ is a product of elementary matrices.
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+        Consider showing that (a) is equivalent to other statements. For (a)$\iff$(b), observe that
+        \begin{align*}
+            A\text{ is invertible} & \iff \rank(A) = n \\
+                                   & \iff \text{maximal number of independent columns is }n \\
+                                   & \iff \text{columns of }A\text{ form a basis for }\F^n.
+        \end{align*}
+        Observe that similar proof holds for (a)$\iff$(c). (a)$\implies$(d) is provided by Corollary 3.6.3. (d)$\implies$(a) is also clear, since each elementary matrix is invertible. 
+    \end{proof}
+
+    \begin{definition}{Augmented}{Matrix}
+        A matrix of the form $\left[ A\mid B \right]$ for some $A\in M_{m\times n}(\F)$ and $B\in M_{m\times p}(\F)$ is called an \emph{augmented matrix}.  
+    \end{definition}
+
+    \begin{prop}{Computing the Inverse Matrix}
+        Let $A\in M_{n\times n}(\F)$ be invertible. Then the following hold.
+        \begin{enumerate}
+            \item There exists finite number of row operations that transforms $[A\mid I]$ into $[I\mid A^{-1}]$.
+            \item If there exists $B\in M_{n\times n}(\F)$ such that $[I\mid B]$ is obtained from $[A\mid I]$ by a finite number of row operations, then $A$ is invertible and $B = A^{-1}$.
+        \end{enumerate}
+    \end{prop}
+
+    \begin{proof}
+        For (a), write $C = [A\mid I] = \begin{bmatrix} C_1 & C_2 & \cdots & C_m \end{bmatrix}$ for convenience. Then for any $B\in M_{n\times n}(\F)$,
+        \begin{equation*}
+            BC = 
+            \begin{bmatrix}
+                BC_1 & BC_2 & \cdots & BC_m
+            \end{bmatrix},
+        \end{equation*}
+        so
+        \begin{equation*}
+            A^{-1}[A\mid I] = [I\mid A^{-1}],
+        \end{equation*}
+        where $A^{-1} = E_1E_2\cdots E_p$ for some elementary matrices $E_1, \ldots, E_p\in M_{n\times n}(\F)$ by Theorem 3.9. That is,
+        \begin{equation*}
+            E_1\cdots E_p [A\mid I] = [I\mid A^{-1}]
+        \end{equation*}
+        which means there exist corresponding row operations to $E_1, \ldots, E_p$ that transform $[A\mid I]$ into $[I\mid A^{-1}]$. For (b), observe that there are elementary matrices $G_1, \ldots, G_q$ corresponding to row operations that transform $[A\mid I]$ into $[I\mid B]$. That is,
+        \begin{equation*}
+            G_1\cdots G_q [A\mid I] = [G_1\cdots G_qA\mid G_1\cdots G_qI] = [I\mid B],
+        \end{equation*}
+        so $G_1\cdots G_q = A^{-1}$ and thus $B = G_1\cdots G_q = A^{-1}$, as desired.
+    \end{proof}
+
+    \section{Systems of Linear Equations}
+
+    \begin{definition}{System of Linear Equations}{}
+        A collection of linear equations of the form
+        \begin{equation*}
+            \begin{cases}
+                a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n & = b_1 \\
+                a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n & = b_2 \\
+                                                           & \vdots \\
+                a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n & = b_m
+            \end{cases},
+        \end{equation*}
+        where $a_{ij}, b_i\in \F$ for all $i\in \left\lbrace 1, \ldots, m \right\rbrace, j\in \left\lbrace 1, \ldots, n \right\rbrace$ and $x_1, \ldots, x_n$ are $n$ variables taking values in $\F$, is called a \emph{system of linear equations} in $n$ unknowns over $\F$.
+    \end{definition}
+
+    \begin{definition}{Coefficient Matrix, Augmented Matrix, Solution, Solution Set}{of a System}
+        Any system can be written as a matrix product $Ax = b$, where
+        \begin{equation*}
+            Ax = 
+            \begin{bmatrix}
+                a_{11} & a_{12} & \cdots & A_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}
+            \end{bmatrix} \ \ 
+            \begin{bmatrix}
+                x_1 \\ x_2 \\ \vdots \\ x_n
+            \end{bmatrix} \ \ 
+            =
+            \begin{bmatrix}
+                b_1 \\ b_2 \\ \vdots \\ b_m
+            \end{bmatrix}
+            = b.
+        \end{equation*}
+        Moreover, the matrix $A$ and $[A\mid b]$ are called the \emph{coefficient matrix} and \emph{augmented matrix} of the system, respectively. We say $c\in \F^n$ is a \emph{solution} of the system if it satisfies $Ac=b$. The set of all solutions $\left\lbrace c\in \F^n: Ac=b \right\rbrace$ is called the \emph{solution set} of the system.
+    \end{definition}
+
+    \begin{definition}{Consistent, Inconsistent, Homogeneous, Inhomogeneous}{System}
+        A system $Ax= b$ is called \emph{consistent} if its solution set is nonempty and \emph{inconsistent} otherwise. Moreover, it is called \emph{homogeneous} if $b=0$ and \emph{inhomogeneous} otherwise.
+    \end{definition}
+
+    \begin{prop}{The Solution Set of a Homogeneous System Is a Subspace}
+        Let $A\in M_{m\times n}(\F)$ and consider $Ax=0$. Then the solution set $K_H$ of the system is a subspace of $\F^n$ and
+        \begin{equation*}
+            \dim\left( K_H \right)  = n - \rank(A).
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Observe that $A0 = 0$ so $0\in K_H$. For closure under subtraction, let $v, u\in K_H$ then
+        \begin{equation*}
+            A(v-u) = Av-Au = 0-0 = 0
+        \end{equation*}
+        so $(v-u)\in K_H$. For closure under multiplication, let $c\in \F$ then
+        \begin{equation*}
+            A(cv) = c(Av) = c0 = 0
+        \end{equation*}
+        so $cv\in K_H$. Moreover, observe that $K_H = \ker(L_A)$, so by the rank-nullity theorem
+        \begin{equation*}
+            n = \dim(\F^n) = \nullity (L_A) + \rank (L_A) = \dim (\ker(L_A)) + \rank(A) = \dim(K_H) + \rank(A)
+        \end{equation*}
+        rearranging which in terms of $\dim(K_H)$ gives
+        \begin{equation*}
+            \dim(K_H) = n - \rank(A). \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \clearpage
+    \begin{cor}{Properties of the Solution Set of a Homogeneous System}
+        Let $K_H$ be the solution set to $Ax=0$. Then the following hold.
+        \begin{enumerate}
+            \item $K_H\neq \emptyset$. In particular, $0\in K_H$.
+            \item $K_H = \left\lbrace 0 \right\rbrace \iff \rank(A) = n$.
+            \item If $m<n$, then the system has a nonzero solution.
+        \end{enumerate}
+    \end{cor}	
+
+    \begin{definition}{Full Column Rank}{of a System}
+            We say a system $Ax=b$ is of \emph{full column rank} if it satisfies (b) of Corollary 3.11.1. 
+    \end{definition}
+
+    \begin{prop}{$K=K_H + \left\lbrace c \right\rbrace$ for any Particular Solution $c$}
+        Suppose $A\in M_{m\times n}(\F)$ and $b\in \F^m$. Let $K$ and $K_H$ be the solution sets for $Ax=b$ and $Ax=0$, respectively. Then for any solution $c$ to $Ax=b$, we have
+        \begin{equation*}
+            K = \left\lbrace c \right\rbrace + K_H = \left\lbrace c+k: k\in K_H \right\rbrace.
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Let $x\in \F^n$ such that $Ax=b$. Then for any $k\in K_H$, observe that
+        \begin{equation*}
+            A(x+k) = Ax+Ak = Ax + 0 = Ax = b,
+        \end{equation*}
+        so $(x+k)\in K$. Moreover, if $z\in \F^n$ such that $Az = b$, then
+        \begin{equation*}
+            A(x-z) = b-b = 0
+        \end{equation*}
+        so $(x-z)\in K_H$. In other words, there exists $w = (x-z)\in K_H$ such that
+        \begin{equation*}
+            x = z + w. \eqedsym
+        \end{equation*}
+    \end{proof}
+
+    \begin{theorem}{Invertible Matrix Theorem IV}
+        Let $A\in M_{n\times n}(\F)$. Then $A$ is invertible if and only if $Ax=b$ has a unique solution.
+    \end{theorem}
+
+    \begin{proof}
+        For the forward direction, suppose that $A$ is invertible. From $Ax=b$, we have
+        \begin{equation*}
+            A^{-1}b = A^{-1}Ax = Ix = x,
+        \end{equation*}
+        so $Ax=b$ has a unique solution $x=A^{-1}b$. For the reverse direction, suppose $Ax=b$ has a unique solution $c\in \F^n$. Let $K_H$ and $K$ be the solution sets for $Ax=0$ and $Ax=b$, respectively. By Proposition 3.12,
+        \begin{equation*}
+            K = \left\lbrace c \right\rbrace = \left\lbrace c \right\rbrace + K_H
+        \end{equation*}
+        so $K_H = \left\lbrace 0 \right\rbrace$ and $\dim(K_H) = 0$. Since
+        \begin{equation*}
+            \dim(K_H) = n - \rank(A),
+        \end{equation*}
+        it follows that $\rank(A) = n$, which means $A$ is invertible.
+    \end{proof}
+
+    \begin{prop}{A System Is Consistent If and Only If $\rank(A) = \rank [A\mid b]$}
+        Let $Ax = b$ be a system of linear equations. Then the system is consistent if and only if $\rank(A) = \rank[A\mid b]$.
+    \end{prop}
+
+    \begin{proof}
+        Observe that
+        \begin{align*}
+            & Ax=b\text{ has a solution} \\ 
+            & \iff b\in \image(L_A) \\
+            & \iff b\in \spn \left\lbrace \col_1(A), \ldots, \col_n(A) \right\rbrace \\
+            & \iff \spn \left\lbrace \col_1(A), \ldots, \col_n(A) \right\rbrace = \spn \left\lbrace \col_1(A), \ldots, \col_n(A), b \right\rbrace \\
+            & \iff \dim \left( \spn \left\lbrace \col_1(A), \ldots, \col_n(A) \right\rbrace \right) = \dim \left( \spn \left\lbrace \col_1(A), \ldots, \col_n(A), b \right\rbrace \right) \\
+            & \iff \rank(A) = \rank [A\mid b],
+        \end{align*}
+        which is the desired result.
+    \end{proof}
+
+    \begin{definition}{Equivalent}{Systems}
+        Two systems of linear equations are called \emph{equivalent} if they have the same solution set.
+    \end{definition}
+
+    \begin{prop}{$CAx=Cb$ Is Equivalent to $Ax=b$ Whenever $C$ Is Invertible}
+            Let $Ax=b$ be a system of $m$ linear equations in $n$ unknowns and let $C\in M_{m\times n}(\F)$ be invertible. Then the system $(CA)x = Cb$ is equivalent to $Ax = b$.
+    \end{prop}
+
+    \begin{proof}
+        Let $K_H$ be the solution set of $Ax=b$ and suppose that $x\in K_H$. Then
+        \begin{equation*}
+            (CA)x = C(Ax) = Cb,
+        \end{equation*}
+        so $x$ is in the solution set of $CAx=Cb$ as well. Moreover, suppose that $x$ is in the solution set of $(CA)x = Cb$, then
+        \begin{equation*}
+            CAx = Cb \iff C^{-1}CAx = C^{-1}Cb \iff Ax = b.
+        \end{equation*}
+        Thus $x\in K_H$, which is the desired result.
+    \end{proof}
+
+    \begin{cor}{}
+        Let $Ax=b$ be a system of $m$ linear equations in $n$ unknowns. If $[A'\mid b']$ is obtained from $[A\mid b]$ by a finite number of elementary row operations, then the system $A'x=b'$ is equivalent to $Ax=b$.
+    \end{cor}	
+
+    \begin{definition}{Reduced Row Echelon Form (RREF), Leading One}{}
+            A matrix is said to be in \emph{reduced row echelon form} if the following three conditions are satisfied.
+            \begin{enumerate}
+                \item Any row containing nonzero entry precedes any row in which all the entries are zero, if any.
+                \item The first nonzero entry in each row is the only nonzero entry in its column.
+                \item The first nonzero entry in each row is $1$, called the \emph{leading one} of the row, and it occurs a column to the right of the first nonzero entry in the preceding row.
+            \end{enumerate}
+    \end{definition}
+
+    \begin{remark}
+        Given $A\in M_{m\times n}(\F)$, we may obtain an RREF from $A$ as follows. 
+        \begin{enumerate}
+            \item In the leftmost nonzero column, use elementary row operations to get $1$ in the first row.
+            \item By means of type 3 elementary row operations, use the first row to obtain zeroes in the remaining entries of the leftmost nonzero column.
+            \item Consider the submatrix consisting of the columns to the right of the column we just modified and the rows beneath the row that just got a leading one. Use elementary row operations - if necessary - to get a leading one in the top of the first nonzero column of this submatrix.
+            \item Use elementary row operations to obtain zeroes below the one created in the preceding step.
+            \item Repeat (c) and (d) until no nonzero rows remain.
+            \item Work upward, beginning with the last nonzero row and add multiples of each rows above to create zeroes above the first nonzero in each row.
+            \item Repeat the precess in (f) for each preceding row until it is performed with the second row, at which time the reduction process is complete.
+        \end{enumerate}
+    \end{remark}
+
+    \begin{definition}{Gaussian Elimination}{}
+        We call the procedure described in Remark 3.4 the \emph{Gaussian elimination}.
+    \end{definition}
+
+    \begin{prop}{Gaussian Elimination}
+        Gaussian elimination transforms any matrix to its RREF, and the RREF of a matrix is unique.
+    \end{prop}
+
+    \begin{definition}{Free Variable}{}
+        Let $R$ be the RREF of a coefficient matrix of a system of linear equations $Ax=b$. If the $j$th column of $R$ does not contain a leading one, then $x_j$ is called a \emph{free variable}.
+    \end{definition}
+
+    \begin{prop}{Number of Free Variables Is Equal to $n-\rank(A)$}
+        Let $A\in M_{m\times n}(\F), b\in \F$, and $B$ be the RREF of $A$. Then the following holds.
+        \begin{equation*}
+            \text{number of free variables} = n - \text{number of leading ones} = n - \rank(A). 
+        \end{equation*}
+    \end{prop}
+
+    \begin{proof}
+        Observe that
+        \begin{equation*} 
+            \rank(A) = \rank(B) = \text{number of reading ones of } B = \text{number of nonzero rows of } B. \eqedsym 
+        \end{equation*}
+    \end{proof}
+
+    \begin{remark}
+        Let $A\in M_{m\times n}(\F)$ and $b\in \F$. Consider solving the system $Ax=b$ by the following algorithm.
+        \begin{enumerate}
+            \item Write the augmented matrix $[A\mid b]$ for the system.
+            \item Use elementary row operations (e.g. Gaussian elimination) to transform the augmented matrix into its RREF $[A'\mid b']$.
+            \item Write the system of linear equations to the RREF.
+            \item If the system contain an equation of the form $0=1$, then the system is inconsistent.
+            \item Otherwise, assign values $t_1, \ldots, t_{n-r}$ to the free variables and then solve the remaining variables in terms of the free variables. Here $r = \rank(A') = \rank(A)$ is the number of nonzero rows of $A'$.
+            \item Then an arbitrary solution to $Ax=b$ is of the form
+                \begin{equation*}
+                    x = x_0 + \sum^{n-r}_{i=1} t_iu_i
+                \end{equation*}
+                where $r$ is the number of nonzero rows in $A'$.
+        \end{enumerate}
+        Then $K$ is given by
+        \begin{equation*}
+            K = \left\lbrace x\in \F^n: x = x_0 + \sum^{n-r}_{i=1} t_iu_i \right\rbrace. 
+        \end{equation*}
+    \end{remark}
+
+    \begin{definition}{Parametric Value}{Assigned to Free Variables}
+        The values $t_1, \ldots, t_{n-r}$ assigned to free variables in (e) of Remark 3.4 are called \emph{parametric values}.
+    \end{definition}
+
+    \begin{prop}{}
+        Let $[A\mid b]$ be a consistent system of $m$ linear equations in $n$ variables. Suppose that the RREF of $[A\mid b]$ has $r$ nonzero rows. If the general solution to $Ax=b$ obtained by the procedure described in Remark 3.4 is of the form
+        \begin{equation*}
+            x = x_0 + \sum^{n-r}_{i=1} t_iu_i,
+        \end{equation*}
+        then $x_0\in \F^n$ is a solution to $Ax=b$ and $\left\lbrace u_1, \ldots, u_{n-r} \right\rbrace$ is a basis for the solution set of the corresponding homogeneous system $Ax = 0$.
+    \end{prop}
+
+    \begin{proof}
+        To verify that $x_0$ is a solution to $Ax=b$, observe that, by setting $t_1, \ldots, t_{n-r} = 0$,
+        \begin{equation*}
+            x = x_0 + \sum^{n-r}_{i=1} 0u_i = x_0.
+        \end{equation*}
+        So, we may verify that $\left\lbrace u_1, \ldots, u_{n-r} \right\rbrace$ generates $K_H$ the following. First, write
+        \begin{equation*}
+            K = \left\lbrace x_0 \right\rbrace + K_H,
+        \end{equation*}
+        where $K_H$ and $K$ are solution sets of $Ax=0$ and $Ax=b$, respectively. Observe that
+        \begin{equation*}
+            K = \left\lbrace x: x + x_0 + \sum^{n-r}_{i=1} t_iu_i \right\rbrace = \left\lbrace x_0 \right\rbrace + \left\lbrace x: x=\sum^{n-r}_{i=1} t_iu_i \right\rbrace,
+        \end{equation*}
+        so it must be the case which $K_H = \left\lbrace x: x=\sum^{n-r}_{i=1} t_iu_i \right\rbrace$. But this means $K_H = \spn \left\lbrace u_1, \ldots, u_{n-r} \right\rbrace$. Lastly, to verify that $\left\lbrace u_1, \ldots, u_{n-r} \right\rbrace$ is linearly independent, observe that
+        \begin{equation*}
+            \dim\left( K_H \right)  = n-\rank(A) = n-r
+        \end{equation*}
+        by Proposition 3.11.
+    \end{proof}
+
+\end{document}
