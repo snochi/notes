@@ -1,0 +1,42 @@
+\documentclass[11pt, oneside, titlepage]{book}
+
+%% ========================================================
+%% package imports
+
+\usepackage{minimal}
+\usepackage{subfiles}
+
+%% ========================================================
+%% document-specific settings
+
+\renewcommand{\doctitle}{MATH 245}
+\renewcommand{\docmaincolor}{independence}
+\renewcommand{\docsubcolor}{columbiablue}
+
+%% ========================================================
+%% document
+
+
+\begin{document}
+
+    \begin{titlepage}
+    \newgeometry{margin=2cm}
+    \centering
+    \vspace*{8.5cm}
+    {\serifastd\huge MATH 245 \par}
+    \vspace{1cm}
+    {\serifastd\Large Linear Algebra II \par}
+    \algebraicon
+    \vspace*{\fill}
+    \cleardoublepage
+    \end{titlepage} 
+
+    \toc
+
+    \subfile{4}
+    \subfile{6}
+    \subfile{7}
+    \subfile{8}
+    \subfile{9}
+
+\end{document}
